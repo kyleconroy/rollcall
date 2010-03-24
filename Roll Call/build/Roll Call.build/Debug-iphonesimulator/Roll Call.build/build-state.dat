@@ -1,0 +1,597 @@
+TRoll Call
+v7
+r0
+t291140090.053624
+cCheck dependencies
+cProcessInfoPlistFile "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Debug-iphonesimulator/Roll Call.app/Info.plist" Roll_Call-Info.plist
+cCompileXIB "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/MainWindow.xib"
+cCompileXIB "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/SecondView.xib"
+cCompileXIB "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/ClassesViewController.xib"
+cCompileXIB "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/StudentsViewController.xib"
+cCompileXIB "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/StudentViewController.xib"
+cCompileXIB "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/ClassViewController.xib"
+cCompileXIB "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/AddStudentViewController.xib"
+cProcessPCH /var/folders/BN/BNh5X7G2HVKDmfegWIOKu++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Roll_Call_Prefix-dphhkwwjycxrjrfgtoxkafffskff/Roll_Call_Prefix.pch.gch Roll_Call_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC "build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Objects-normal/i386/main.o" "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/main.m" normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC "build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Objects-normal/i386/Roll_CallAppDelegate.o" "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/Roll_CallAppDelegate.m" normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC "build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Objects-normal/i386/FirstViewController.o" "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/FirstViewController.m" normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC "build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Objects-normal/i386/ClassesViewController.o" "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/ClassesViewController.m" normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC "build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Objects-normal/i386/StudentsViewController.o" "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/StudentsViewController.m" normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC "build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Objects-normal/i386/StudentViewController.o" "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/StudentViewController.m" normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC "build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Objects-normal/i386/ClassViewController.o" "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/ClassViewController.m" normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC "build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Objects-normal/i386/Student.o" "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/Student.m" normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC "build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Objects-normal/i386/SchoolClass.o" "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/SchoolClass.m" normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC "build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Objects-normal/i386/AddStudentViewController.o" "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/AddStudentViewController.m" normal i386 objective-c com.apple.compilers.gcc.4_2
+cLd "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Debug-iphonesimulator/Roll Call.app/Roll Call" normal i386
+cGenerateDSYMFile "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Debug-iphonesimulator/Roll Call.app.dSYM" "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Debug-iphonesimulator/Roll Call.app/Roll Call"
+cTouch "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Debug-iphonesimulator/Roll Call.app"
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk
+c000000004B5EA9C200000000000000EE
+t1264495042
+s238
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c000000004ABDC853000000000026EE30
+t1253951571
+s2551344
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004ABDC952000000000027E880
+t1253951826
+s2615424
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004ABDC93F0000000000001355
+t1253951807
+s4949
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
+c000000004ABDEE1D0000000000000788
+t1253961245
+s1928
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c000000004ABDEEE200000000016721E0
+t1253961442
+s23536096
+
+N/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/AddStudentViewController.h
+c000000004BAA1EB400000000000001B5
+t1269440180
+s437
+i<UIKit/UIKit.h>
+
+N/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/AddStudentViewController.m
+c000000004BAA1E6600000000000005EA
+t1269440102
+s1514
+i"AddStudentViewController.h"
+
+N/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/AddStudentViewController.xib
+c000000004BAA1EAF0000000000004D57
+t1269440175
+s19799
+
+N/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/Class.h
+c000000004BA8143A00000000000000AC
+t1269306426
+s172
+
+N/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/Class.m
+c000000004BA8142900000000000000B4
+t1269306409
+s180
+i"Class.h"
+
+N/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/ClassViewController.h
+c000000004BA812160000000000000163
+t1269305878
+s355
+i<UIKit/UIKit.h>
+i"Roll_CallAppDelegate.h"
+
+N/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/ClassViewController.m
+c000000004BA813C100000000000010F1
+t1269306305
+s4337
+i"ClassViewController.h"
+
+N/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/ClassViewController.xib
+c000000004BA811710000000000001C84
+t1269305713
+s7300
+
+N/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/ClassesViewController.h
+c000000004BA803CA0000000000000167
+t1269302218
+s359
+i<UIKit/UIKit.h>
+i"Roll_CallAppDelegate.h"
+
+N/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/ClassesViewController.m
+c000000004BAA3A7600000000000012BB
+t1269447286
+s4795
+i"ClassesViewController.h"
+i"SchoolClass.h"
+
+N/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/ClassesViewController.xib
+c000000004BA7D29C00000000000043AD
+t1269289628
+s17325
+
+N/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/FirstViewController.h
+c000000004BA7CA6A00000000000000E9
+t1269287530
+s233
+i<UIKit/UIKit.h>
+
+N/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/FirstViewController.m
+c000000004BA7CA6A00000000000005AE
+t1269287530
+s1454
+i"FirstViewController.h"
+
+N/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/Roll_CallAppDelegate.h
+c000000004BAA37DC0000000000000266
+t1269446620
+s614
+i<UIKit/UIKit.h>
+
+N/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/Roll_CallAppDelegate.m
+c000000004BAA39060000000000000662
+t1269446918
+s1634
+i"Roll_CallAppDelegate.h"
+i"Student.h"
+i"SchoolClass.h"
+
+N/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/SchoolClass.h
+c000000004BAA37A30000000000000130
+t1269446563
+s304
+
+N/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/SchoolClass.m
+c000000004BAA3743000000000000012D
+t1269446467
+s301
+i"SchoolClass.h"
+
+N/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/Student.h
+c000000004BAA377E00000000000001B8
+t1269446526
+s440
+
+N/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/Student.m
+c000000004BAA371C00000000000001BA
+t1269446428
+s442
+i"Student.h"
+
+N/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/StudentViewController.h
+c000000004BA814CB00000000000001CE
+t1269306571
+s462
+i<UIKit/UIKit.h>
+i"Roll_CallAppDelegate.h"
+i"Student.h"
+
+N/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/StudentViewController.m
+c000000004BA8604300000000000011A2
+t1269325891
+s4514
+i"StudentViewController.h"
+
+N/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/StudentViewController.xib
+c000000004BA819DE00000000000042A9
+t1269307870
+s17065
+
+N/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/StudentsViewController.h
+c000000004BAA21210000000000000180
+t1269440801
+s384
+i<UIKit/UIKit.h>
+i"Roll_CallAppDelegate.h"
+
+N/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/StudentsViewController.m
+c000000004BAA318300000000000016FC
+t1269444995
+s5884
+i"StudentsViewController.h"
+i"StudentViewController.h"
+i"AddStudentViewController.h"
+
+N/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/StudentsViewController.xib
+c000000004BA7D7A30000000000001C8D
+t1269290915
+s7309
+
+N/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/MainWindow.xib
+c000000004BA7D7EF0000000000008E5B
+t1269290991
+s36443
+
+N/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Roll_Call_Prefix.pch
+c000000004BA7CA6A00000000000000BB
+t1269287530
+s187
+i<Foundation/Foundation.h>
+i<UIKit/UIKit.h>
+
+N/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/SecondView.xib
+c000000004BA7CA6A00000000000022F1
+t1269287530
+s8945
+
+N/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Debug-iphonesimulator/Roll Call.app
+t1269447290
+s408
+
+N/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Debug-iphonesimulator/Roll Call.app.dSYM
+t1269447290
+s102
+
+N/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Debug-iphonesimulator/Roll Call.app/AddStudentViewController.nib
+t1269440837
+s1946
+
+N/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Debug-iphonesimulator/Roll Call.app/ClassViewController.nib
+t1269305978
+s1386
+
+N/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Debug-iphonesimulator/Roll Call.app/ClassesViewController.nib
+t1269289647
+s1388
+
+N/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Debug-iphonesimulator/Roll Call.app/Info.plist
+t1269288846
+s572
+
+N/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Debug-iphonesimulator/Roll Call.app/MainWindow.nib
+t1269290993
+s4931
+
+N/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Debug-iphonesimulator/Roll Call.app/PkgInfo
+t1269288846
+s8
+
+N/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Debug-iphonesimulator/Roll Call.app/Roll Call
+t1269447290
+s40352
+
+N/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Debug-iphonesimulator/Roll Call.app/SecondView.nib
+t1269288851
+s2510
+
+N/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Debug-iphonesimulator/Roll Call.app/StudentViewController.nib
+t1269307880
+s1355
+
+N/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Debug-iphonesimulator/Roll Call.app/StudentsViewController.nib
+t1269290955
+s1386
+
+N/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Objects-normal/i386/AddStudentViewController.o
+t1269440838
+s32084
+
+N/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Objects-normal/i386/Class.o
+t2
+s0
+
+N/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Objects-normal/i386/ClassViewController.o
+t1269446763
+s40936
+
+N/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Objects-normal/i386/ClassesViewController.o
+t1269447289
+s43132
+
+N/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Objects-normal/i386/FirstViewController.o
+t1269288854
+s29984
+
+N/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Objects-normal/i386/Roll Call.LinkFileList
+c000000004BAA214500000000000006AC
+t1269440837
+s1708
+
+N/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Objects-normal/i386/Roll_CallAppDelegate.o
+t1269446967
+s44704
+
+N/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Objects-normal/i386/SchoolClass.o
+t1269446565
+s7000
+
+N/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Objects-normal/i386/Student.o
+t1269446528
+s9100
+
+N/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Objects-normal/i386/StudentViewController.o
+t1269446763
+s43824
+
+N/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Objects-normal/i386/StudentsViewController.o
+t1269446763
+s46416
+
+N/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Objects-normal/i386/main.o
+t1269288854
+s6020
+
+N/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/main.m
+c000000004BA7CA6A0000000000000164
+t1269287530
+s356
+i<UIKit/UIKit.h>
+
+N/var/folders/BN/BNh5X7G2HVKDmfegWIOKu++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Roll_Call_Prefix-dphhkwwjycxrjrfgtoxkafffskff/Roll_Call_Prefix.pch.gch
+t1269288853
+s13034960
+
+NRoll_Call-Info.plist
+c000000004BA7CA6A000000000000038D
+t1269287530
+s909
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies291140089#291140089#0(0"0(0#1#0"4300885448#0"0#
+
+CCompileC "build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Objects-normal/i386/AddStudentViewController.o" "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/AddStudentViewController.m" normal i386 objective-c com.apple.compilers.gcc.4_2
+s291133637.378895
+e291133638.682882
+r1
+xCompileC
+xbuild/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Objects-normal/i386/AddStudentViewController.o
+x/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/AddStudentViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@113"Compile /Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/AddStudentViewController.m291133637#291133638#0(0"0(0#0#105"/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/AddStudentViewController.m4300885448#2321"    cd "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Roll Call-generated-files.hmap" "-I/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Roll Call-own-target-headers.hmap" "-I/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Roll Call-all-target-headers.hmap" -iquote "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Roll Call-project-headers.hmap" "-F/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Debug-iphonesimulator" "-I/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Debug-iphonesimulator/include" "-I/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/DerivedSources/i386" "-I/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/DerivedSources" -include /var/folders/BN/BNh5X7G2HVKDmfegWIOKu++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Roll_Call_Prefix-dphhkwwjycxrjrfgtoxkafffskff/Roll_Call_Prefix.pch -c "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/AddStudentViewController.m" -o "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Objects-normal/i386/AddStudentViewController.o"0#
+
+CCompileC "build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Objects-normal/i386/Class.o" "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/Class.m" normal i386 objective-c com.apple.compilers.gcc.4_2
+s290999819.252658
+e290999819.381367
+r0
+xCompileC
+xbuild/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Objects-normal/i386/Class.o
+x/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/Class.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+oIn file included from /Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/Class.m:9:
+o/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/Class.h:10: error: 'Class' redeclared as different kind of symbol
+o/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk/usr/include/objc/objc.h:35: error: previous declaration of 'Class'
+o/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/Class.m:14: error: 'Class' redeclared as different kind of symbol
+o/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk/usr/include/objc/objc.h:35: error: previous declaration of 'Class'
+lSLF07#2@94"Compile /Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/Class.m290999819#290999819#0(708"In file included from /Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/Class.m:9:/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/Class.h:10: error: 'Class' redeclared as different kind of symbol/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk/usr/include/objc/objc.h:35: error: previous declaration of 'Class'/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/Class.m:14: error: 'Class' redeclared as different kind of symbol/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk/usr/include/objc/objc.h:35: error: previous declaration of 'Class'4(4@46"'Class' redeclared as different kind of symbol290999819#112#145#2(7@108"In file included from /Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/Class.m290999819#18446744073709551615#0#0(6@86"/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/Class.m290999209#9#0#9#0#0"0(13@136"'Class' redeclared as different kind of symbol in /Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/Class.h290999819#18446744073709551615#0#0(6@86"/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/Class.h290999226#10#0#10#0#0"0(6@86"/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/Class.h290999226#10#0#10#0#0"0(13@31"Previous declaration of 'Class'290999819#257#153#0(6@109"/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk/usr/include/objc/objc.h217656316#35#0#35#0#0"0(4@46"'Class' redeclared as different kind of symbol290999819#410#145#0(6@86"/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/Class.m290999209#14#0#14#0#0"0(13@31"Previous declaration of 'Class'290999819#555#153#0(6@109"/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk/usr/include/objc/objc.h217656316#35#0#35#0#0"0(0#0#86"/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/Class.m4300885448#2283"    cd "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Roll Call-generated-files.hmap" "-I/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Roll Call-own-target-headers.hmap" "-I/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Roll Call-all-target-headers.hmap" -iquote "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Roll Call-project-headers.hmap" "-F/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Debug-iphonesimulator" "-I/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Debug-iphonesimulator/include" "-I/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/DerivedSources/i386" "-I/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/DerivedSources" -include /var/folders/BN/BNh5X7G2HVKDmfegWIOKu++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Roll_Call_Prefix-dphhkwwjycxrjrfgtoxkafffskff/Roll_Call_Prefix.pch -c "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/Class.m" -o "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Objects-normal/i386/Class.o"1#
+
+CCompileC "build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Objects-normal/i386/ClassViewController.o" "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/ClassViewController.m" normal i386 objective-c com.apple.compilers.gcc.4_2
+s291139563.382035
+e291139563.456286
+r1
+xCompileC
+xbuild/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Objects-normal/i386/ClassViewController.o
+x/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/ClassViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@108"Compile /Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/ClassViewController.m291139563#291139563#0(0"0(0#0#100"/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/ClassViewController.m4300885448#2311"    cd "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Roll Call-generated-files.hmap" "-I/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Roll Call-own-target-headers.hmap" "-I/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Roll Call-all-target-headers.hmap" -iquote "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Roll Call-project-headers.hmap" "-F/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Debug-iphonesimulator" "-I/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Debug-iphonesimulator/include" "-I/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/DerivedSources/i386" "-I/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/DerivedSources" -include /var/folders/BN/BNh5X7G2HVKDmfegWIOKu++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Roll_Call_Prefix-dphhkwwjycxrjrfgtoxkafffskff/Roll_Call_Prefix.pch -c "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/ClassViewController.m" -o "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Objects-normal/i386/ClassViewController.o"0#
+
+CCompileC "build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Objects-normal/i386/ClassesViewController.o" "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/ClassesViewController.m" normal i386 objective-c com.apple.compilers.gcc.4_2
+s291140089.888849
+e291140089.981379
+r1
+xCompileC
+xbuild/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Objects-normal/i386/ClassesViewController.o
+x/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/ClassesViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@110"Compile /Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/ClassesViewController.m291140089#291140089#0(0"0(0#0#102"/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/ClassesViewController.m4300885448#2315"    cd "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Roll Call-generated-files.hmap" "-I/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Roll Call-own-target-headers.hmap" "-I/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Roll Call-all-target-headers.hmap" -iquote "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Roll Call-project-headers.hmap" "-F/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Debug-iphonesimulator" "-I/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Debug-iphonesimulator/include" "-I/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/DerivedSources/i386" "-I/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/DerivedSources" -include /var/folders/BN/BNh5X7G2HVKDmfegWIOKu++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Roll_Call_Prefix-dphhkwwjycxrjrfgtoxkafffskff/Roll_Call_Prefix.pch -c "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/ClassesViewController.m" -o "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Objects-normal/i386/ClassesViewController.o"0#
+
+CCompileC "build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Objects-normal/i386/FirstViewController.o" "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/FirstViewController.m" normal i386 objective-c com.apple.compilers.gcc.4_2
+s290981654.423096
+e290981654.484501
+r1
+xCompileC
+xbuild/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Objects-normal/i386/FirstViewController.o
+x/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/FirstViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@108"Compile /Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/FirstViewController.m290981654#290981654#0(0"0(0#0#100"/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/FirstViewController.m4300885448#2311"    cd "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Roll Call-generated-files.hmap" "-I/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Roll Call-own-target-headers.hmap" "-I/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Roll Call-all-target-headers.hmap" -iquote "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Roll Call-project-headers.hmap" "-F/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Debug-iphonesimulator" "-I/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Debug-iphonesimulator/include" "-I/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/DerivedSources/i386" "-I/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/DerivedSources" -include /var/folders/BN/BNh5X7G2HVKDmfegWIOKu++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Roll_Call_Prefix-dphhkwwjycxrjrfgtoxkafffskff/Roll_Call_Prefix.pch -c "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/FirstViewController.m" -o "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Objects-normal/i386/FirstViewController.o"0#
+
+CCompileC "build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Objects-normal/i386/Roll_CallAppDelegate.o" "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/Roll_CallAppDelegate.m" normal i386 objective-c com.apple.compilers.gcc.4_2
+s291139766.920499
+e291139767.004482
+r1
+xCompileC
+xbuild/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Objects-normal/i386/Roll_CallAppDelegate.o
+x/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/Roll_CallAppDelegate.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@109"Compile /Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/Roll_CallAppDelegate.m291139766#291139767#0(0"0(0#0#101"/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/Roll_CallAppDelegate.m4300885448#2313"    cd "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Roll Call-generated-files.hmap" "-I/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Roll Call-own-target-headers.hmap" "-I/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Roll Call-all-target-headers.hmap" -iquote "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Roll Call-project-headers.hmap" "-F/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Debug-iphonesimulator" "-I/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Debug-iphonesimulator/include" "-I/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/DerivedSources/i386" "-I/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/DerivedSources" -include /var/folders/BN/BNh5X7G2HVKDmfegWIOKu++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Roll_Call_Prefix-dphhkwwjycxrjrfgtoxkafffskff/Roll_Call_Prefix.pch -c "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/Roll_CallAppDelegate.m" -o "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Objects-normal/i386/Roll_CallAppDelegate.o"0#
+
+CCompileC "build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Objects-normal/i386/SchoolClass.o" "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/SchoolClass.m" normal i386 objective-c com.apple.compilers.gcc.4_2
+s291139365.123692
+e291139365.184165
+r1
+xCompileC
+xbuild/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Objects-normal/i386/SchoolClass.o
+x/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/SchoolClass.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@100"Compile /Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/SchoolClass.m291139365#291139365#0(0"0(0#0#92"/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/SchoolClass.m4300885448#2295"    cd "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Roll Call-generated-files.hmap" "-I/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Roll Call-own-target-headers.hmap" "-I/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Roll Call-all-target-headers.hmap" -iquote "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Roll Call-project-headers.hmap" "-F/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Debug-iphonesimulator" "-I/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Debug-iphonesimulator/include" "-I/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/DerivedSources/i386" "-I/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/DerivedSources" -include /var/folders/BN/BNh5X7G2HVKDmfegWIOKu++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Roll_Call_Prefix-dphhkwwjycxrjrfgtoxkafffskff/Roll_Call_Prefix.pch -c "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/SchoolClass.m" -o "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Objects-normal/i386/SchoolClass.o"0#
+
+CCompileC "build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Objects-normal/i386/Student.o" "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/Student.m" normal i386 objective-c com.apple.compilers.gcc.4_2
+s291139328.357950
+e291139328.440389
+r1
+xCompileC
+xbuild/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Objects-normal/i386/Student.o
+x/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/Student.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@96"Compile /Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/Student.m291139328#291139328#0(0"0(0#0#88"/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/Student.m4300885448#2287"    cd "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Roll Call-generated-files.hmap" "-I/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Roll Call-own-target-headers.hmap" "-I/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Roll Call-all-target-headers.hmap" -iquote "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Roll Call-project-headers.hmap" "-F/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Debug-iphonesimulator" "-I/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Debug-iphonesimulator/include" "-I/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/DerivedSources/i386" "-I/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/DerivedSources" -include /var/folders/BN/BNh5X7G2HVKDmfegWIOKu++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Roll_Call_Prefix-dphhkwwjycxrjrfgtoxkafffskff/Roll_Call_Prefix.pch -c "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/Student.m" -o "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Objects-normal/i386/Student.o"0#
+
+CCompileC "build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Objects-normal/i386/StudentViewController.o" "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/StudentViewController.m" normal i386 objective-c com.apple.compilers.gcc.4_2
+s291139563.303868
+e291139563.400797
+r1
+xCompileC
+xbuild/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Objects-normal/i386/StudentViewController.o
+x/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/StudentViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@110"Compile /Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/StudentViewController.m291139563#291139563#0(0"0(0#0#102"/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/StudentViewController.m4300885448#2315"    cd "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Roll Call-generated-files.hmap" "-I/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Roll Call-own-target-headers.hmap" "-I/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Roll Call-all-target-headers.hmap" -iquote "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Roll Call-project-headers.hmap" "-F/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Debug-iphonesimulator" "-I/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Debug-iphonesimulator/include" "-I/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/DerivedSources/i386" "-I/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/DerivedSources" -include /var/folders/BN/BNh5X7G2HVKDmfegWIOKu++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Roll_Call_Prefix-dphhkwwjycxrjrfgtoxkafffskff/Roll_Call_Prefix.pch -c "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/StudentViewController.m" -o "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Objects-normal/i386/StudentViewController.o"0#
+
+CCompileC "build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Objects-normal/i386/StudentsViewController.o" "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/StudentsViewController.m" normal i386 objective-c com.apple.compilers.gcc.4_2
+s291139563.274274
+e291139563.381928
+r1
+xCompileC
+xbuild/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Objects-normal/i386/StudentsViewController.o
+x/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/StudentsViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@111"Compile /Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/StudentsViewController.m291139563#291139563#0(0"0(0#0#103"/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/StudentsViewController.m4300885448#2317"    cd "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Roll Call-generated-files.hmap" "-I/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Roll Call-own-target-headers.hmap" "-I/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Roll Call-all-target-headers.hmap" -iquote "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Roll Call-project-headers.hmap" "-F/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Debug-iphonesimulator" "-I/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Debug-iphonesimulator/include" "-I/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/DerivedSources/i386" "-I/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/DerivedSources" -include /var/folders/BN/BNh5X7G2HVKDmfegWIOKu++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Roll_Call_Prefix-dphhkwwjycxrjrfgtoxkafffskff/Roll_Call_Prefix.pch -c "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/StudentsViewController.m" -o "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Objects-normal/i386/StudentsViewController.o"0#
+
+CCompileC "build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Objects-normal/i386/main.o" "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/main.m" normal i386 objective-c com.apple.compilers.gcc.4_2
+s290981654.189056
+e290981654.422966
+r1
+xCompileC
+xbuild/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Objects-normal/i386/main.o
+x/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/main.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@85"Compile /Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/main.m290981654#290981654#0(0"0(0#0#77"/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/main.m4300885448#2273"    cd "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Roll Call-generated-files.hmap" "-I/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Roll Call-own-target-headers.hmap" "-I/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Roll Call-all-target-headers.hmap" -iquote "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Roll Call-project-headers.hmap" "-F/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Debug-iphonesimulator" "-I/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Debug-iphonesimulator/include" "-I/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/DerivedSources/i386" "-I/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/DerivedSources" -include /var/folders/BN/BNh5X7G2HVKDmfegWIOKu++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Roll_Call_Prefix-dphhkwwjycxrjrfgtoxkafffskff/Roll_Call_Prefix.pch -c "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/main.m" -o "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Objects-normal/i386/main.o"0#
+
+CCompileXIB "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/AddStudentViewController.xib"
+s291133637.031012
+e291133637.376696
+r1
+xCompileXIB
+x/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/AddStudentViewController.xib
+lSLF07#2@47"CompileXIB Classes/AddStudentViewController.xib291133637#291133637#0(0"0(0#0#107"/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/AddStudentViewController.xib7147042628417907712#622"    cd "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call"    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 3.1.2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Debug-iphonesimulator/Roll Call.app/AddStudentViewController.nib" "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/AddStudentViewController.xib"0#
+
+CCompileXIB "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/ClassViewController.xib"
+s290998776.115859
+e290998778.679853
+r1
+xCompileXIB
+x/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/ClassViewController.xib
+lSLF07#2@42"CompileXIB Classes/ClassViewController.xib290998776#290998778#0(0"0(0#0#102"/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/ClassViewController.xib4300885448#612"    cd "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call"    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 3.1.2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Debug-iphonesimulator/Roll Call.app/ClassViewController.nib" "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/ClassViewController.xib"0#
+
+CCompileXIB "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/ClassesViewController.xib"
+s290982445.615970
+e290982447.796193
+r1
+xCompileXIB
+x/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/ClassesViewController.xib
+lSLF07#2@44"CompileXIB Classes/ClassesViewController.xib290982445#290982447#0(0"0(0#0#104"/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/ClassesViewController.xib4300885448#616"    cd "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call"    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 3.1.2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Debug-iphonesimulator/Roll Call.app/ClassesViewController.nib" "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/ClassesViewController.xib"0#
+
+CCompileXIB "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/StudentViewController.xib"
+s291000677.909256
+e291000680.164975
+r1
+xCompileXIB
+x/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/StudentViewController.xib
+lSLF07#2@44"CompileXIB Classes/StudentViewController.xib291000677#291000680#0(0"0(0#0#104"/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/StudentViewController.xib4300885448#616"    cd "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call"    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 3.1.2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Debug-iphonesimulator/Roll Call.app/StudentViewController.nib" "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/StudentViewController.xib"0#
+
+CCompileXIB "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/StudentsViewController.xib"
+s290983751.419648
+e290983755.730032
+r1
+xCompileXIB
+x/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/StudentsViewController.xib
+lSLF07#2@45"CompileXIB Classes/StudentsViewController.xib290983751#290983756#0(0"0(0#0#105"/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/StudentsViewController.xib4300885448#618"    cd "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call"    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 3.1.2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Debug-iphonesimulator/Roll Call.app/StudentsViewController.nib" "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/StudentsViewController.xib"0#
+
+CCompileXIB "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/MainWindow.xib"
+s290983792.045761
+e290983793.549572
+r1
+xCompileXIB
+x/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/MainWindow.xib
+lSLF07#2@25"CompileXIB MainWindow.xib290983792#290983793#0(0"0(0#0#85"/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/MainWindow.xib4300885448#586"    cd "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call"    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 3.1.2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Debug-iphonesimulator/Roll Call.app/MainWindow.nib" "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/MainWindow.xib"0#
+
+CCompileXIB "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/SecondView.xib"
+s290981646.625317
+e290981652.341532
+r1
+xCompileXIB
+x/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/SecondView.xib
+oCouldn't open shared capabilities memory GSCapabilities (No such file or directory)
+lSLF07#2@25"CompileXIB SecondView.xib290981646#290981652#0(84"Couldn't open shared capabilities memory GSCapabilities (No such file or directory)0(0#0#85"/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/SecondView.xib4300885448#586"    cd "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call"    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 3.1.2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Debug-iphonesimulator/Roll Call.app/SecondView.nib" "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/SecondView.xib"0#
+
+CGenerateDSYMFile "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Debug-iphonesimulator/Roll Call.app.dSYM" "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Debug-iphonesimulator/Roll Call.app/Roll Call"
+s291140090.010000
+e291140090.049686
+r1
+xGenerateDSYMFile
+x/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Debug-iphonesimulator/Roll Call.app.dSYM
+x/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Debug-iphonesimulator/Roll Call.app/Roll Call
+lSLF07#2@119"GenerateDSYMFile "build/Debug-iphonesimulator/Roll Call.app.dSYM" "build/Debug-iphonesimulator/Roll Call.app/Roll Call"291140090#291140090#0(0"0(0#0#122"/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Debug-iphonesimulator/Roll Call.app/Roll Call4300885448#491"    cd "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call"    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/dsymutil "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Debug-iphonesimulator/Roll Call.app/Roll Call" -o "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Debug-iphonesimulator/Roll Call.app.dSYM"0#
+
+CLd "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Debug-iphonesimulator/Roll Call.app/Roll Call" normal i386
+s291140089.981483
+e291140090.009886
+r1
+xLd
+x/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Debug-iphonesimulator/Roll Call.app/Roll Call
+xnormal
+xi386
+lSLF07#2@127"Link /Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Debug-iphonesimulator/Roll Call.app/Roll Call291140089#291140090#0(0"0(0#0#0"4300885448#1044"    cd "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call"    setenv MACOSX_DEPLOYMENT_TARGET 10.5    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -arch i386 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk "-L/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Debug-iphonesimulator" "-F/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Debug-iphonesimulator" -filelist "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Objects-normal/i386/Roll Call.LinkFileList" -mmacosx-version-min=10.5 -framework Foundation -framework UIKit -framework CoreGraphics -o "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Debug-iphonesimulator/Roll Call.app/Roll Call"0#
+
+CProcessInfoPlistFile "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Debug-iphonesimulator/Roll Call.app/Info.plist" Roll_Call-Info.plist
+s290981646.487392
+e290981646.595250
+r1
+xProcessInfoPlistFile
+x/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Debug-iphonesimulator/Roll Call.app/Info.plist
+xRoll_Call-Info.plist
+lSLF07#2@28"Process Roll_Call-Info.plist290981646#290981646#0(0"0(0#0#91"/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Roll_Call-Info.plist7002868954900423680#587"    cd "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call"    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility Roll_Call-Info.plist -genpkginfo "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Debug-iphonesimulator/Roll Call.app/PkgInfo" -expandbuildsettings -format binary -platform iphonesimulator -o "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Debug-iphonesimulator/Roll Call.app/Info.plist"0#
+
+CProcessPCH /var/folders/BN/BNh5X7G2HVKDmfegWIOKu++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Roll_Call_Prefix-dphhkwwjycxrjrfgtoxkafffskff/Roll_Call_Prefix.pch.gch Roll_Call_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+s290981652.342205
+e290981654.188740
+r1
+xProcessPCH
+x/var/folders/BN/BNh5X7G2HVKDmfegWIOKu++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Roll_Call_Prefix-dphhkwwjycxrjrfgtoxkafffskff/Roll_Call_Prefix.pch.gch
+xRoll_Call_Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@31"Precompile Roll_Call_Prefix.pch290981652#290981654#0(0"0(0#0#91"/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Roll_Call_Prefix.pch4300885448#2129"    cd "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Roll Call-generated-files.hmap" "-I/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Roll Call-own-target-headers.hmap" "-I/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Roll Call-all-target-headers.hmap" -iquote "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/Roll Call-project-headers.hmap" "-F/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Debug-iphonesimulator" "-I/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Debug-iphonesimulator/include" "-I/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/DerivedSources/i386" "-I/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Roll Call.build/Debug-iphonesimulator/Roll Call.build/DerivedSources" -c "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Roll_Call_Prefix.pch" -o /var/folders/BN/BNh5X7G2HVKDmfegWIOKu++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Roll_Call_Prefix-dphhkwwjycxrjrfgtoxkafffskff/Roll_Call_Prefix.pch.gch0#
+
+CTouch "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Debug-iphonesimulator/Roll Call.app"
+s291140090.049779
+e291140090.053574
+r1
+xTouch
+x/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Debug-iphonesimulator/Roll Call.app
+lSLF07#2@118"Touch /Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Debug-iphonesimulator/Roll Call.app291140090#291140090#0(0"0(0#0#0"4300885448#348"    cd "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call"    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/build/Debug-iphonesimulator/Roll Call.app"0#
+

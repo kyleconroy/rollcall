@@ -1,0 +1,21 @@
+//
+//  StudentsViewController.h
+//  Roll Call
+//
+//  Created by Kyle Conroy on Mar22.
+//  Copyright 2010 __MyCompanyName__. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+#import "Roll_CallAppDelegate.h"
+
+
+@interface StudentsViewController : UITableViewController {
+    Roll_CallAppDelegate *aD;
+}
+
+@property(nonatomic, retain) Roll_CallAppDelegate *aD;
+
+- (void) addStudent;
+
+@end
