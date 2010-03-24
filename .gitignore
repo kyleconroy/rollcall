@@ -1,10 +1,10 @@
 # xcode noise
-build/*
-*.pbxuser
-*.mode2v3
-*.mode1v3
-*.perspective
-*.perspectivev3
+Roll Call/build/*
+Roll Call/*.pbxuser
+Roll Call/*.mode2v3
+Roll Call/*.mode1v3
+Roll Call/*.perspective
+Roll Call/*.perspectivev3
  
 # old skool
 .svn
