@@ -1,16 +1,18 @@
 //
-//  ClassesViewController.m
+//  RollSheetViewController.m
 //  Roll Call
 //
-//  Created by Kyle Conroy on Mar22.
+//  Created by Kyle Conroy on Apr3.
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
-#import "ClassesViewController.h"
-#import "SchoolClass.h"
+#import "RollSheetViewController.h"
 
-@implementation ClassesViewController
 
+@implementation RollSheetViewController
+
+@synthesize managedObjectContext;
+@synthesize studentsArray;
 @synthesize aD;
 
 /*
@@ -19,25 +21,40 @@
     if (self = [super initWithStyle:style]) {
     }
     return self;
-}Rool
+}
 */
 
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    [self setTitle:@"All Classes"];
-    
-    aD = (Roll_CallAppDelegate *)[[UIApplication sharedApplication] delegate];
-    
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:nil];
-
-    //[self.navigationController.navigationBar ];
-
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-}
-
+ // Iplement viewDidLoad to do additional setup after loading the view, typically from a nib.
+ - (void)viewDidLoad {
+     aD = (Roll_CallAppDelegate *)[[UIApplication sharedApplication] delegate];
+     managedObjectContext = [aD managedObjectContext];
+     
+     //Get all the current Students in a given class
+     studentsArray = [[NSMutableArray alloc] init];
+     
+     NSFetchRequest *request = [[NSFetchRequest alloc] init];
+     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Student" inManagedObjectContext:managedObjectContext];
+     [request setEntity:entity];
+     
+     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"lastName" ascending:NO];
+     NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+     [request setSortDescriptors:sortDescriptors];
+     [sortDescriptors release];
+     [sortDescriptor release];
+     
+     NSError *error;
+     NSMutableArray *mutableFetchResults = [[managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
+     if (mutableFetchResults == nil) {
+         // Handle the error.
+     }
+     
+     [self setStudentsArray:mutableFetchResults];
+     [mutableFetchResults release];
+     [request release];
+     
+     [super viewDidLoad];
+ }
 
 /*
 - (void)viewWillAppear:(BOOL)animated {
@@ -90,24 +107,21 @@
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [aD.classes count];
+    return 0;
 }
 
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    SchoolClass *myClass = [aD.classes objectAtIndex:indexPath.row];
-    
-    NSString *CellIdentifier = myClass.name;
+    static NSString *CellIdentifier = @"Cell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
     
-    cell.textLabel.text = myClass.name;
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    // Set up the cell...
 	
     return cell;
 }
@@ -162,6 +176,8 @@
 
 
 - (void)dealloc {
+    [studentsArray release];
+    [managedObjectContext release];
     [super dealloc];
 }
 

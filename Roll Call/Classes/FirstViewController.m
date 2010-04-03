@@ -11,6 +11,8 @@
 
 @implementation FirstViewController
 
+@synthesize managedObjectContext;
+@synthesize aD;
 
 /*
 // The designated initializer. Override to perform setup that is required before the view is loaded.
@@ -28,12 +30,14 @@
 }
 */
 
-/*
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad {
+
+// Iplement viewDidLoad to do additional setup after loading the view, typically from a nib.
+- (void)viewDidLoad {   
+    aD = (Roll_CallAppDelegate *)[[UIApplication sharedApplication] delegate];
+    managedObjectContext = [aD managedObjectContext];
     [super viewDidLoad];
 }
-*/
+
 
 /*
 // Override to allow orientations other than the default portrait orientation.
@@ -57,6 +61,7 @@
 
 
 - (void)dealloc {
+    [managedObjectContext release];
     [super dealloc];
 }
 

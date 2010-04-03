@@ -2,21 +2,30 @@
 //  Student.h
 //  Roll Call
 //
-//  Created by Kyle Conroy on Mar22.
+//  Created by Kyle Conroy on Apr3.
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
-//#import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
+@class SchoolClass;
 
-@interface Student : NSObject {
-    NSString *firstName;
-    NSString *lastName;
+@interface Student :  NSManagedObject  
+{
 }
 
-- (id)initWithFirstName:(NSString *)fistname lastName:(NSString *)lastname;
-
-@property (readwrite, assign) NSString *firstName;
-@property (readwrite, assign) NSString *lastName;
+@property (nonatomic, retain) NSString * firstName;
+@property (nonatomic, retain) NSString * lastName;
+@property (nonatomic, retain) NSSet* classes;
 
 @end
+
+
+@interface Student (CoreDataGeneratedAccessors)
+- (void)addClassesObject:(SchoolClass *)value;
+- (void)removeClassesObject:(SchoolClass *)value;
+- (void)addClasses:(NSSet *)value;
+- (void)removeClasses:(NSSet *)value;
+
+@end
+
