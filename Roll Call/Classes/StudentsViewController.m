@@ -2,7 +2,7 @@
 //  StudentsViewController.m
 //  Roll Call
 //
-//  Created by Kyle Conroy on Mar22.
+//  Created by Weizhi Li on Mar22.
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
@@ -12,7 +12,8 @@
 
 @implementation StudentsViewController
 
-@synthesize aD;
+@synthesize aD, filteredListContent, savedSearchTerm, searchWasActive, collation, sectionsArray;
+
 
 /*
 - (id)initWithStyle:(UITableViewStyle)style {
@@ -30,35 +31,75 @@
     [self setTitle:@"All Students"];
     
     aD = (Roll_CallAppDelegate *)[[UIApplication sharedApplication] delegate];
-    
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addStudent)];
-    
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+	self.filteredListContent = [NSMutableArray arrayWithCapacity:[aD.students count]];
+   
+	self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addStudent)];
+    if (self.savedSearchTerm)
+	{
+        [self.searchDisplayController setActive:self.searchWasActive];
+        [self.searchDisplayController.searchBar setText:savedSearchTerm]; 
+        self.savedSearchTerm = nil;
+    }
+	
+	if (aD.students == nil) {
+		self.sectionsArray = nil;
+	}
+	else {
+		[self configureSections];
+	}
+	[self.tableView reloadData];
+	self.tableView.scrollEnabled = YES;
 }
 
-
-/*
 - (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
+	[self configureSections];
+	[self.tableView reloadData];
 }
-*/
-/*
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
+
+- (void)configureSections {
+	NSLog(@"Start Configuring!");
+	// Get the current collation and keep a reference to it.
+	self.collation = [UILocalizedIndexedCollation currentCollation];	
+	NSInteger index, sectionTitlesCount = [[collation sectionTitles] count];	
+	NSMutableArray *newSectionsArray = [[NSMutableArray alloc] initWithCapacity:sectionTitlesCount];
+	// Set up the sections array
+	for (index = 0; index < sectionTitlesCount; index++) {
+		NSMutableArray *array = [[NSMutableArray alloc] init];
+		[newSectionsArray addObject:array];
+		[array release];
+	}
+	// Segregate into the appropriate arrays.
+	for (Student *student in aD.students) {
+		NSInteger sectionNumber = [collation sectionForObject:student collationStringSelector:@selector(lastName)];
+		
+		// Get the array for the section.
+		NSMutableArray *sectionStudents = [newSectionsArray objectAtIndex:sectionNumber];
+				//  Add student to the section.
+		[sectionStudents addObject:student];
+	}
+	// Now that all the data's in place, each section array needs to be sorted.
+	for (index = 0; index < sectionTitlesCount; index++) {
+		
+		NSMutableArray *studentArrayForSection = [newSectionsArray objectAtIndex:index];
+		
+		// If the table view or its contents were editable, you would make a mutable copy here.
+		NSArray *sortedStudentArrayForSection = [collation sortedArrayFromArray:studentArrayForSection collationStringSelector:@selector(lastName)];
+		
+		// Replace the existing array with the sorted array.
+		[newSectionsArray replaceObjectAtIndex:index withObject:sortedStudentArrayForSection];
+	}
+	self.sectionsArray = newSectionsArray;
+	[newSectionsArray release];	
 }
-*/
-/*
-- (void)viewWillDisappear:(BOOL)animated {
-	[super viewWillDisappear:animated];
+
+
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    // save the state of the search UI so that it can be restored if the view is re-created
+    self.searchWasActive = [self.searchDisplayController isActive];
+    self.savedSearchTerm = [self.searchDisplayController.searchBar text];
 }
-*/
-/*
-- (void)viewDidDisappear:(BOOL)animated {
-	[super viewDidDisappear:animated];
-}
-*/
 
 /*
 // Override to allow orientations other than the default portrait orientation.
@@ -69,21 +110,10 @@
 */
 
 - (void)addStudent {
-    AddStudentViewController *addController = [[AddStudentViewController alloc]
-                                              initWithNibName:@"AddStudentViewController" bundle:nil];
-    
-    UINavigationController *navController = [[UINavigationController alloc]
-                                                    initWithRootViewController:addController];
-    
-    [addController setTitle:@"New Student"];
-    
-    addController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:nil];
-    addController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:nil];
-    
+    AddStudentViewController *addController = [[AddStudentViewController alloc] initWithNibName:@"AddStudentViewController" bundle:nil];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:addController];
     [self presentModalViewController:navController animated:YES];
-    
     [navController release];
-    
     [addController release];
 }
 
@@ -97,94 +127,144 @@
 - (void)viewDidUnload {
 	// Release any retained subviews of the main view.
 	// e.g. self.myOutlet = nil;
+	self.filteredListContent = nil;
 }
 
 
+#pragma mark -
 #pragma mark Table view methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+	// The number of sections is the same as the number of titles in the collation.
+    if (tableView == self.searchDisplayController.searchResultsTableView)
+		return 1;
+	return [sectionsArray count];
 }
 
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
-    
-    return [aD.students count];
+	
+	if (tableView == self.searchDisplayController.searchResultsTableView)
+        return [self.filteredListContent count];
+	else
+	{
+		NSArray *studentsInSection = [sectionsArray objectAtIndex:section];
+		return [studentsInSection count];
+	}
 }
 
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    Student *myStudent = [aD.students objectAtIndex:indexPath.row];
-
+	
+	
+	for (NSMutableArray *studentArrayinSection in sectionsArray) {
+		for (Student *astudent in studentArrayinSection)
+			NSLog(@"cellForRowAtIndexPath: %@ %@ %@", astudent.firstName, astudent.lastName, indexPath );
+	}
+	
+	
+	
+	NSArray *studentsInSection = [sectionsArray objectAtIndex:indexPath.section];
+    Student *myStudent = nil;
     NSString *CellIdentifier = [NSString stringWithFormat:@"%@ %@", myStudent.firstName, myStudent.lastName];
-    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-    }
-    
-    cell.textLabel.text = CellIdentifier;
-    
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-	
+		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+	}
+	if (tableView == self.searchDisplayController.searchResultsTableView)
+	{
+        myStudent = [self.filteredListContent objectAtIndex:indexPath.row];
+    } else {
+		myStudent = [studentsInSection objectAtIndex:indexPath.row];
+	}
+	cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", myStudent.firstName, myStudent.lastName];
+	NSLog(@"added row: %@ %@", myStudent.firstName, myStudent.lastName);
     return cell;
 }
 
+		/*
+		 Section-related methods: Retrieve the section titles and section index titles from the collation.
+		 */
+		 
+ - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+		if ([[sectionsArray objectAtIndex:section] count]==0)
+			return 0;
+		return [[collation sectionTitles] objectAtIndex:section];
+}
+		 
+		 
+- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
+	if (tableView == self.searchDisplayController.searchResultsTableView)
+		return nil;
+	return [collation sectionIndexTitles];
+}
+		 
+		 
+- (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index {
+		return [collation sectionForSectionIndexTitleAtIndex:index];
+}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     // Navigation logic may go here. Create and push another view controller.
 	StudentViewController *anotherViewController = [[StudentViewController alloc] initWithNibName:@"StudentViewController" bundle:nil];
-    anotherViewController.currentStudent = [aD.students objectAtIndex:indexPath.row];
+
+	Student *student = nil;
+	if (tableView == self.searchDisplayController.searchResultsTableView)
+	{
+        student = [self.filteredListContent objectAtIndex:indexPath.row];
+    }
+	else
+	{
+		NSArray *studentsInSection = [sectionsArray objectAtIndex:indexPath.section];
+		
+		student = [studentsInSection objectAtIndex:indexPath.row];
+    }
+	anotherViewController.title = [NSString stringWithFormat:@"%@ %@", student.firstName, student.lastName];
+	anotherViewController.currentStudent = student;
 	[self.navigationController pushViewController:anotherViewController animated:YES];
 	[anotherViewController release];
 }
 
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
+- (void)filterContentForSearchText:(NSString*)searchText
+{
+	[self.filteredListContent removeAllObjects]; // First clear the filtered array.
+	/*
+	 Search the main list for products whose type matches the scope (if selected) and whose name matches searchText; add items that match to the filtered array.
+	 */
+		for (Student *student in aD.students)
+		{
+			NSString *name=[[NSString alloc] initWithFormat: @"%@", student.lastName];
+			NSLog(@"Processing Value: %@", name);
+			NSComparisonResult result = [name compare:searchText options:(NSCaseInsensitiveSearch|NSDiacriticInsensitiveSearch) range:NSMakeRange(0, [searchText length])];
+			if (result == NSOrderedSame)
+				{
+					[self.filteredListContent addObject:student];
+				}
+		}
+	
+}
+
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
+{
+	[self filterContentForSearchText:searchString];  
+	self.tableView.sectionIndexMinimumDisplayRowCount=10;
+    // Return YES to cause the search result table view to be reloaded.
     return YES;
 }
-*/
 
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:YES];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 
 - (void)dealloc {
+	[collation release];
+	[aD release];
+	[filteredListContent release];
+	[savedSearchTerm release];
+	[sectionsArray release];
     [super dealloc];
 }
 

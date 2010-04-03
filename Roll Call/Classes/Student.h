@@ -14,7 +14,11 @@
 {
 }
 
+@property (nonatomic, retain) NSString * phone;
+@property (nonatomic, retain) NSString * address;
 @property (nonatomic, retain) NSString * firstName;
+@property (nonatomic, retain) NSData * thumbnailPhoto;
+@property (nonatomic, retain) NSString * email;
 @property (nonatomic, retain) NSString * lastName;
 @property (nonatomic, retain) NSSet* classes;
 

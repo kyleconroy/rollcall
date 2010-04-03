@@ -21,8 +21,10 @@
 		95C3ECD81167B81A00CE11E5 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C3ECD71167B81A00CE11E5 /* CoreData.framework */; };
 		95C3ED081167BF6000CE11E5 /* RollSheetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C3ED061167BF6000CE11E5 /* RollSheetViewController.m */; };
 		95C3ED091167BF6000CE11E5 /* RollSheetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95C3ED071167BF6000CE11E5 /* RollSheetViewController.xib */; };
-		95C3ED201167CD4A00CE11E5 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C3ED1D1167CD4A00CE11E5 /* Student.m */; };
-		95C3ED211167CD4A00CE11E5 /* SchoolClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C3ED1F1167CD4A00CE11E5 /* SchoolClass.m */; };
+		95C3EDE71167E84B00CE11E5 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C3EDE41167E84B00CE11E5 /* Student.m */; };
+		95C3EDE81167E84B00CE11E5 /* SchoolClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C3EDE61167E84B00CE11E5 /* SchoolClass.m */; };
+		95C3EDF31167F74300CE11E5 /* AddStudentNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C3EDF11167F74300CE11E5 /* AddStudentNameViewController.m */; };
+		95C3EDF41167F74300CE11E5 /* AddStudentNameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95C3EDF21167F74300CE11E5 /* AddStudentNameViewController.xib */; };
 		95CAD9B51158092400CBC9E9 /* ClassesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95CAD9B31158092400CBC9E9 /* ClassesViewController.m */; };
 		95CAD9B61158092400CBC9E9 /* ClassesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95CAD9B41158092400CBC9E9 /* ClassesViewController.xib */; };
 		95CAD9EC11580F2300CBC9E9 /* StudentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95CAD9EA11580F2300CBC9E9 /* StudentsViewController.m */; };
@@ -55,10 +57,13 @@
 		95C3ED051167BF6000CE11E5 /* RollSheetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RollSheetViewController.h; sourceTree = "<group>"; };
 		95C3ED061167BF6000CE11E5 /* RollSheetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RollSheetViewController.m; sourceTree = "<group>"; };
 		95C3ED071167BF6000CE11E5 /* RollSheetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RollSheetViewController.xib; path = Classes/RollSheetViewController.xib; sourceTree = "<group>"; };
-		95C3ED1C1167CD4A00CE11E5 /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Student.h; path = Classes/Student.h; sourceTree = "<group>"; };
-		95C3ED1D1167CD4A00CE11E5 /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Student.m; path = Classes/Student.m; sourceTree = "<group>"; };
-		95C3ED1E1167CD4A00CE11E5 /* SchoolClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SchoolClass.h; path = Classes/SchoolClass.h; sourceTree = "<group>"; };
-		95C3ED1F1167CD4A00CE11E5 /* SchoolClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SchoolClass.m; path = Classes/SchoolClass.m; sourceTree = "<group>"; };
+		95C3EDE31167E84B00CE11E5 /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Student.h; path = Classes/Student.h; sourceTree = "<group>"; };
+		95C3EDE41167E84B00CE11E5 /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Student.m; path = Classes/Student.m; sourceTree = "<group>"; };
+		95C3EDE51167E84B00CE11E5 /* SchoolClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SchoolClass.h; path = Classes/SchoolClass.h; sourceTree = "<group>"; };
+		95C3EDE61167E84B00CE11E5 /* SchoolClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SchoolClass.m; path = Classes/SchoolClass.m; sourceTree = "<group>"; };
+		95C3EDF01167F74300CE11E5 /* AddStudentNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddStudentNameViewController.h; sourceTree = "<group>"; };
+		95C3EDF11167F74300CE11E5 /* AddStudentNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddStudentNameViewController.m; sourceTree = "<group>"; };
+		95C3EDF21167F74300CE11E5 /* AddStudentNameViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AddStudentNameViewController.xib; path = Classes/AddStudentNameViewController.xib; sourceTree = "<group>"; };
 		95CAD9B21158092400CBC9E9 /* ClassesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassesViewController.h; sourceTree = "<group>"; };
 		95CAD9B31158092400CBC9E9 /* ClassesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassesViewController.m; sourceTree = "<group>"; };
 		95CAD9B41158092400CBC9E9 /* ClassesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ClassesViewController.xib; path = Classes/ClassesViewController.xib; sourceTree = "<group>"; };
@@ -91,6 +96,8 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				95C3EDF01167F74300CE11E5 /* AddStudentNameViewController.h */,
+				95C3EDF11167F74300CE11E5 /* AddStudentNameViewController.m */,
 				95CAD9B21158092400CBC9E9 /* ClassesViewController.h */,
 				95CAD9B31158092400CBC9E9 /* ClassesViewController.m */,
 				95CADA73115848F100CBC9E9 /* ClassViewController.h */,
@@ -144,6 +151,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				95C3EDF21167F74300CE11E5 /* AddStudentNameViewController.xib */,
 				95C3ED071167BF6000CE11E5 /* RollSheetViewController.xib */,
 				95A84285115A54A0002C6FCB /* AddStudentViewController.xib */,
 				95CADA75115848F100CBC9E9 /* ClassViewController.xib */,
@@ -171,11 +179,11 @@
 		95C07C7A1166A6E800E7A9B3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				95C3EDE31167E84B00CE11E5 /* Student.h */,
+				95C3EDE41167E84B00CE11E5 /* Student.m */,
+				95C3EDE51167E84B00CE11E5 /* SchoolClass.h */,
+				95C3EDE61167E84B00CE11E5 /* SchoolClass.m */,
 				95C07C6F1166A6D200E7A9B3 /* RollCallDataModel.xcdatamodel */,
-				95C3ED1C1167CD4A00CE11E5 /* Student.h */,
-				95C3ED1D1167CD4A00CE11E5 /* Student.m */,
-				95C3ED1E1167CD4A00CE11E5 /* SchoolClass.h */,
-				95C3ED1F1167CD4A00CE11E5 /* SchoolClass.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -230,6 +238,7 @@
 				95CADA77115848F100CBC9E9 /* ClassViewController.xib in Resources */,
 				95A84287115A54A0002C6FCB /* AddStudentViewController.xib in Resources */,
 				95C3ED091167BF6000CE11E5 /* RollSheetViewController.xib in Resources */,
+				95C3EDF41167F74300CE11E5 /* AddStudentNameViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,8 +259,9 @@
 				95A84286115A54A0002C6FCB /* AddStudentViewController.m in Sources */,
 				95C07C701166A6D200E7A9B3 /* RollCallDataModel.xcdatamodel in Sources */,
 				95C3ED081167BF6000CE11E5 /* RollSheetViewController.m in Sources */,
-				95C3ED201167CD4A00CE11E5 /* Student.m in Sources */,
-				95C3ED211167CD4A00CE11E5 /* SchoolClass.m in Sources */,
+				95C3EDE71167E84B00CE11E5 /* Student.m in Sources */,
+				95C3EDE81167E84B00CE11E5 /* SchoolClass.m in Sources */,
+				95C3EDF31167F74300CE11E5 /* AddStudentNameViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,7 +12,11 @@
 
 @implementation Student 
 
+@dynamic phone;
+@dynamic address;
 @dynamic firstName;
+@dynamic thumbnailPhoto;
+@dynamic email;
 @dynamic lastName;
 @dynamic classes;
 
