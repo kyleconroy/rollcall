@@ -11,13 +11,13 @@
 @interface Roll_CallAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate> {
     UIWindow *window;
     UITabBarController *tabBarController;
-    NSArray *students;
+    NSMutableArray *students;
     NSArray *classes;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) IBOutlet UITabBarController *tabBarController;
-@property(nonatomic,retain) NSArray *students;
+@property(nonatomic,retain) NSMutableArray *students;
 @property(nonatomic,retain) NSArray *classes;
 
 @end

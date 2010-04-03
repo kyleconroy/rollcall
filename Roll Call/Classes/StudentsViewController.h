@@ -2,7 +2,7 @@
 //  StudentsViewController.h
 //  Roll Call
 //
-//  Created by Kyle Conroy on Mar22.
+//  Created by Weizhi Li on Mar22.
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
@@ -12,10 +12,22 @@
 
 @interface StudentsViewController : UITableViewController {
     Roll_CallAppDelegate *aD;
+	NSString		*savedSearchTerm;
+    BOOL			searchWasActive;
+	NSMutableArray	*filteredListContent;
+	NSMutableArray *sectionsArray;
+	UILocalizedIndexedCollation *collation;
+	
 }
 
 @property(nonatomic, retain) Roll_CallAppDelegate *aD;
+@property (nonatomic, retain) NSMutableArray *filteredListContent;
+@property (nonatomic, copy) NSString *savedSearchTerm;
+@property (nonatomic) BOOL searchWasActive;
+@property (nonatomic, retain) NSMutableArray *sectionsArray;
+@property (nonatomic, retain) UILocalizedIndexedCollation *collation;
 
 - (void) addStudent;
+- (void)configureSections ;
 
 @end

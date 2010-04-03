@@ -13,6 +13,10 @@
 
 @synthesize firstName;
 @synthesize lastName;
+@synthesize thumbnailPhoto;
+@synthesize phone;
+@synthesize email;
+@synthesize address;
 
 - (id)initWithFirstName:(NSString *)myFirstName lastName:(NSString *)myLastName {
     self.firstName = myFirstName;

@@ -20,10 +20,11 @@
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
     
-    students = [[NSArray alloc] initWithObjects:
+    students = [[NSMutableArray alloc] initWithObjects:
                 [[Student alloc] initWithFirstName:@"Jeff" lastName:@"Jumpy"], 
                 [[Student alloc] initWithFirstName:@"Kyle" lastName:@"Kooky"],
                 [[Student alloc] initWithFirstName:@"Lauren" lastName:@"Lazy"], 
+				[[Student alloc] initWithFirstName:@"Weizhi" lastName:@"Lee"],
                 nil];
     
     classes = [[NSArray alloc] initWithObjects:

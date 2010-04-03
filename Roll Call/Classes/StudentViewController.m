@@ -2,7 +2,7 @@
 //  StudentViewController.m
 //  Roll Call
 //
-//  Created by Kyle Conroy on Mar22.
+//  Created by Weizhi Li on Mar22.
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
