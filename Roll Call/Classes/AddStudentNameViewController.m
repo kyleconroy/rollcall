@@ -7,7 +7,8 @@
 //
 
 #import "AddStudentNameViewController.h"
-#import "Student.h"
+
+@class Student;
 
 @implementation AddStudentNameViewController
 

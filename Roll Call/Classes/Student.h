@@ -8,7 +8,7 @@
 
 #import <CoreData/CoreData.h>
 
-@class SchoolClass;
+@class Course;
 
 @interface Student :  NSManagedObject  
 {
@@ -20,16 +20,16 @@
 @property (nonatomic, retain) NSData * thumbnailPhoto;
 @property (nonatomic, retain) NSString * email;
 @property (nonatomic, retain) NSString * lastName;
-@property (nonatomic, retain) NSSet* classes;
+@property (nonatomic, retain) NSSet* courses;
 
 @end
 
 
 @interface Student (CoreDataGeneratedAccessors)
-- (void)addClassesObject:(SchoolClass *)value;
-- (void)removeClassesObject:(SchoolClass *)value;
-- (void)addClasses:(NSSet *)value;
-- (void)removeClasses:(NSSet *)value;
+- (void)addCoursesObject:(Course *)value;
+- (void)removeCoursesObject:(Course *)value;
+- (void)addCourses:(NSSet *)value;
+- (void)removeCourses:(NSSet *)value;
 
 @end
 

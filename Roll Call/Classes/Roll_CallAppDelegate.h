@@ -31,5 +31,7 @@
 - (NSString *)applicationDocumentsDirectory;
 - (void) installStudents;
 - (void) installCourses;
+- (NSMutableArray *) getAllStudents;
+- (NSMutableArray *) getAllCourses;
 
 @end

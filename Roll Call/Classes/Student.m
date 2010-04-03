@@ -8,7 +8,7 @@
 
 #import "Student.h"
 
-#import "SchoolClass.h"
+#import "Course.h"
 
 @implementation Student 
 
@@ -18,6 +18,6 @@
 @dynamic thumbnailPhoto;
 @dynamic email;
 @dynamic lastName;
-@dynamic classes;
+@dynamic courses;
 
 @end

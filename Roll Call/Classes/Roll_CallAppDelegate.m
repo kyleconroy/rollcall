@@ -17,15 +17,15 @@
 @synthesize students;
 @synthesize classes;
 
-
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
     
     // Configure and show the window.
-    bool install = YES;
+    //bool install = YES;
     
     if (install) {
+        //[self installCourses];
         //[self installStudents];
-        [self installCourses];
+        
     }
     
     // Add the tab bar controller's current view as a subview of the window
@@ -39,17 +39,24 @@
         NSLog(@"Context isn't loading correctly, shit");
     }
     
-    students = [[NSArray alloc] initWithObjects:
+    NSMutableArray *courses = [self getAllCourses];
+    
+    NSArray *kids = [[NSArray alloc] initWithObjects:
                     [NSDictionary dictionaryWithObjectsAndKeys:@"Timmy", @"firstName", @"Took", @"lastName", nil], 
                     [NSDictionary dictionaryWithObjectsAndKeys:@"Kyle", @"firstName", @"Kooky", @"lastName", nil], 
                     [NSDictionary dictionaryWithObjectsAndKeys:@"Lindsay", @"firstName", @"Lame", @"lastName", nil],
                 nil];
 
-    for (NSDictionary *d in students){
+    for (NSDictionary *d in kids){
         NSLog(@"Student %@, %@", [d objectForKey:@"firstName"], [d objectForKey:@"lastName"]);
         Student *student = (Student *)[NSEntityDescription insertNewObjectForEntityForName:@"Student" inManagedObjectContext:context];
         [student setFirstName:[d objectForKey:@"firstName"]];
         [student setLastName:[d objectForKey:@"firstName"]];
+        
+        for (Course *c in courses) {
+            [student addCoursesObject:c];
+        }
+        
     }
     
     NSError *error;
@@ -72,7 +79,7 @@
     
     for (NSDictionary *d in courses){
         NSLog(@"Course %@, %@", [d objectForKey:@"name"]);
-        SchoolClass *course = (SchoolClass *)[NSEntityDescription insertNewObjectForEntityForName:@"SchoolClass" inManagedObjectContext:context];
+        Course *course = (Course *)[NSEntityDescription insertNewObjectForEntityForName:@"Course" inManagedObjectContext:context];
         [course setName:[d objectForKey:@"name"]];
     }
     
@@ -94,6 +101,52 @@
 - (void)tabBarController:(UITabBarController *)tabBarController didEndCustomizingViewControllers:(NSArray *)viewControllers changed:(BOOL)changed {
 }
 */
+
+//Data Helper Methods 
+
+- (NSMutableArray *) getAllStudents {
+    
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Student" inManagedObjectContext:[self managedObjectContext]];
+    [request setEntity:entity];
+    
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"lastName" ascending:NO];
+    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+    [request setSortDescriptors:sortDescriptors];
+    [sortDescriptors release];
+    [sortDescriptor release];
+    
+    NSError *error;
+    NSMutableArray *mutableFetchResults = [[[self managedObjectContext] executeFetchRequest:request error:&error] mutableCopy];
+    if (mutableFetchResults == nil) {
+        NSLog(@"Can't fetch the students array"); 
+    }
+    
+    return mutableFetchResults ;
+    // Make sure to release this array
+}
+
+- (NSMutableArray *) getAllCourses {
+    
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Course" inManagedObjectContext:[self managedObjectContext]];
+    [request setEntity:entity];
+    
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:NO];
+    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+    [request setSortDescriptors:sortDescriptors];
+    [sortDescriptors release];
+    [sortDescriptor release];
+    
+    NSError *error;
+    NSMutableArray *mutableFetchResults = [[[self managedObjectContext] executeFetchRequest:request error:&error] mutableCopy];
+    if (mutableFetchResults == nil) {
+        NSLog(@"Can't fetch the students array"); 
+    }
+    
+    return mutableFetchResults ;
+    // Make sure to release this array
+}
 
 #pragma mark -
 #pragma mark Core Data stack
@@ -129,7 +182,6 @@
     managedObjectModel = [[NSManagedObjectModel mergedModelFromBundles:nil] retain];    
     return managedObjectModel;
 }
-
 
 /**
  Returns the persistent store coordinator for the application.
