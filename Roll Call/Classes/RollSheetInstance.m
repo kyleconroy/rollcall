@@ -9,12 +9,19 @@
 #import "RollSheetInstance.h"
 #import "Student.h"
 
+#define DAY  86400
+
 @implementation RollSheetInstance
 
 @synthesize course;
 @synthesize studentsArray;
 @synthesize myTableView;
+@synthesize myDate;
+
 @synthesize tvCell;
+@synthesize backDate;
+@synthesize forwardDate;
+@synthesize displayDate;
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -30,6 +37,9 @@
 - (void)viewDidLoad {
     [self setTitle:course.name];
     
+    myDate = [NSDate  date];
+    [myDate retain];
+
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"lastName" ascending:YES];
     NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
     
@@ -45,6 +55,9 @@
     studentsArray = [ss sortedArrayUsingDescriptors:sortDescriptors];
     //studentsArray = [[NSArray alloc] initWithObjects:@"HEY", @"YOU", @"THERE", nil];
 
+    [self updateDisplayDate];
+    
+    [sortDescriptors release];
     [ss release];
     [studentsArray retain];
     
@@ -70,6 +83,13 @@
     return [studentsArray count];
 }
 
+- (void) updateDisplayDate {
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateStyle:NSDateFormatterLongStyle];
+    displayDate.text = [formatter stringFromDate:myDate];
+    [formatter release];
+}
+
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -81,8 +101,10 @@
         [[NSBundle mainBundle] loadNibNamed:@"AttendanceTableCell" owner:self options:nil];
         cell = tvCell;
         self.tvCell = nil;
-        cell.selectionStyle = UITableViewCellSelectionStyleBlue;
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
+    
+    cell.contentView.backgroundColor = [UIColor colorWithRed:0.369 green:0.835 blue:0.128 alpha:1.000];
     
     Student * s = [studentsArray objectAtIndex:indexPath.row];
     
@@ -108,11 +130,42 @@
 	// AnotherViewController *anotherViewController = [[AnotherViewController alloc] initWithNibName:@"AnotherView" bundle:nil];
 	// [self.navigationController pushViewController:anotherViewController];
 	// [anotherViewController release];
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    UILabel *label;
+    label = (UILabel *)[cell viewWithTag:1];
+    NSString *statusString = label.text;
+    
+    if([statusString isEqualToString:@"P"]){
+        label.text = @"A";
+        cell.contentView.backgroundColor = [UIColor colorWithRed:0.835 green:0.103 blue:0.182 alpha:1.000];
+    } else if([statusString isEqualToString:@"A"]){
+        label.text = @"T";
+        cell.contentView.backgroundColor = [UIColor colorWithRed:0.835 green:0.737 blue:0.195 alpha:1.000];
+    } else if([statusString isEqualToString:@"T"]){
+        label.text = @"E";
+        cell.contentView.backgroundColor = [UIColor colorWithRed:0.179 green:0.298 blue:0.835 alpha:1.000];
+    } else if([statusString isEqualToString:@"E"]){
+        label.text = @"P";
+        cell.contentView.backgroundColor = [UIColor colorWithRed:0.369 green:0.835 blue:0.128 alpha:1.000];
+    }
+    
 }
 
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     cell.opaque = NO;
+}
+
+- (IBAction)moveBackOneDay {
+    myDate = [myDate addTimeInterval:-DAY];
+    [self updateDisplayDate];
+    [myDate retain];
+}
+
+- (IBAction)moveForwardOneDay {
+    myDate = [myDate addTimeInterval:DAY];
+    [self updateDisplayDate];
+    [myDate retain];
 }
 /*
  // Override to support conditional editing of the table view.

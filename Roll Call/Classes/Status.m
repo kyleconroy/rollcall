@@ -1,21 +1,21 @@
 // 
-//  Course.m
+//  Status.m
 //  Roll Call
 //
 //  Created by Kyle Conroy on Apr4.
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
-#import "Course.h"
+#import "Status.h"
 
-#import "Student.h"
+#import "Presence.h"
 
-@implementation Course 
+@implementation Status 
 
-@dynamic startDate;
-@dynamic name;
-@dynamic endDate;
+@dynamic text;
+@dynamic color;
+@dynamic rank;
+@dynamic letter;
 @dynamic presences;
-@dynamic students;
 
 @end
