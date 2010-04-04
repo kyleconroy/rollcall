@@ -8,7 +8,7 @@
 
 #import "RollSheetInstance.h"
 #import "Student.h"
-#import  "Presence.h"
+#import "Presence.h"
 #import "Status.h"
 
 #define DAY  86400
@@ -17,7 +17,7 @@
 
 @synthesize aD;
 @synthesize course;
-@synthesize eventsArray;
+@synthesize presencesArray;
 @synthesize studentsArray;
 @synthesize myTableView;
 @synthesize myDate;
@@ -41,18 +41,53 @@
 - (void)viewDidLoad {
     
     aD = (Roll_CallAppDelegate *)[[UIApplication sharedApplication] delegate];
+    myDate = [NSDate  date];
     
     [self setTitle:course.name];
-    
-    //update the Date
-    myDate = [NSDate  date];
+        
     [self updateDisplayDate];
+    [self initializeData];
     
+    presencesArray = [[NSMutableArray alloc] init];
+    
+    NSManagedObjectContext *context = [aD managedObjectContext];
+    
+    // Perfom a new fetch request
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Presence" inManagedObjectContext:context];
+    [request setEntity:entity];
+    
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"lastName" ascending:YES];
+    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+    [request setSortDescriptors:sortDescriptors];
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(date >= %@) AND (date <= %@) AND (class == %@)", [self today], [self tomorrow], course];
+    [request setPredicate:predicate];
+    
+    NSError *error;
+    NSMutableArray *mutableFetchResults = [[context executeFetchRequest:request error:&error] mutableCopy];
+    if (mutableFetchResults == nil) {
+        NSLog(@"No results"); 
+    }
+    
+    [self setPresencesArray:mutableFetchResults];
+    
+    // Save and release stuff
+    [myDate retain];
+    
+    [sortDescriptors release];
+    [sortDescriptor release];
+    [mutableFetchResults release];
+    [request release];
+    
+    [super viewDidLoad];
+}
+
+- (void)initializeData {
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"lastName" ascending:YES];
     NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
     
     NSMutableArray * ss = [[NSMutableArray alloc] init];
-    NSMutableArray * ee = [[NSMutableArray alloc] init];
     
     //get all students in the class
     NSEnumerator *e = [course.students objectEnumerator];
@@ -64,12 +99,43 @@
     }
     
     // return the sorted array
-    studentsArray = [ss sortedArrayUsingDescriptors:sortDescriptors];
-    eventsArray = [[NSMutableArray alloc] init];
-    
+    NSArray *students = [ss sortedArrayUsingDescriptors:sortDescriptors];
     
     // get all events associated with this day
-    //NSPredicate *myPredicate = [NSPredicate predicateWithFormat:@"date == %@", myDate];
+    NSDate *today = [self today];
+    NSDate *tomorrow = [self tomorrow];
+    
+    NSPredicate *myPredicate = [NSPredicate predicateWithFormat:@"(date >= %@) AND (date <= %@)", today, tomorrow];
+    Status *currentStatus = [aD getStatusWithLetter:@"P"];
+    NSManagedObjectContext *context = [aD managedObjectContext];
+    
+    for (Student *s in students){
+        NSSet *events = [s.presences filteredSetUsingPredicate:myPredicate];
+        if ([events count] == 0) {
+            Presence *presence = (Presence *)[NSEntityDescription insertNewObjectForEntityForName:@"Presence" inManagedObjectContext:context];
+            presence.date = myDate;
+            presence.student = s;
+            presence.lastName = s.lastName;
+            presence.class = course;
+            presence.status = currentStatus;
+            NSLog(@"Add new event");
+        } else {
+            NSLog(@"Old event");
+        }
+    }
+    
+    // Save the insertions
+    NSError *error;
+    if (![context save:&error]) {
+        // Handle the error.
+    }
+    
+    [sortDescriptor release];
+    [sortDescriptors release];
+    [ss release];
+}
+
+- (NSDate *)today {
     NSDate *now = [NSDate date];
     NSCalendar *calendar = [NSCalendar currentCalendar];
     
@@ -80,63 +146,23 @@
     [comps setMinute:00];
     [comps setSecond:00];
     
-    NSDate *today = [calendar dateFromComponents:comps];
-    
+    return [calendar dateFromComponents:comps];
+}
+
+- (NSDate *)tomorrow {
+    NSDate *now = [NSDate date];
     now = [NSDate dateWithTimeIntervalSinceNow:24 * 60 * 60]; // 24h from now
+    NSCalendar *calendar = [NSCalendar currentCalendar];
     
-    comps = [calendar components:NSYearCalendarUnit | NSMonthCalendarUnit |  NSDayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit 
-                                          fromDate:now];
+    NSDateComponents *comps = [calendar components:NSYearCalendarUnit | NSMonthCalendarUnit |  NSDayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit 
+                        fromDate:now];
     
     [comps setHour:00];
     [comps setMinute:00];
     [comps setSecond:00];
     
-    NSDate *tomorrow = [calendar dateFromComponents:comps];
-    
-    
-    NSPredicate *myPredicate = [NSPredicate predicateWithFormat:@"(date >= %@) AND (date <= %@)", today, tomorrow];
-    Status *currentStatus = [aD getStatusWithLetter:@"P"];
-    NSManagedObjectContext *context = [aD managedObjectContext];
-    
-    for (Student *s in studentsArray){
-        NSSet *events = [s.presences filteredSetUsingPredicate:myPredicate];
-        if ([events count] == 0) {
-            Presence *presence = (Presence *)[NSEntityDescription insertNewObjectForEntityForName:@"Presence" inManagedObjectContext:context];
-            presence.date = myDate;
-            presence.student = s;
-            presence.class = course;
-            presence.status = currentStatus;
-            [ee addObject:presence];
-            NSLog(@"Add new event");
-        } else {
-            [ee addObject:[events anyObject]];
-            NSLog(@"Old event");
-        }
-    }
-    
-    if ([ee count] != [studentsArray count]) {
-        NSLog(@"Incompatible sizes %d %d", [ee count], [studentsArray count]);
-    }
-    
-    eventsArray = [[NSArray arrayWithArray:ee] retain];
-    
-    NSError *error;
-    if (![context save:&error]) {
-        // Handle the error.
-    }
-    
-    // Save and release stuff
-    [myDate retain];
-    [studentsArray retain]; 
-    [context release];
-        
-    [sortDescriptors release];
-    [ss release];
-    [ee release];
-        
-    [super viewDidLoad];
+    return [calendar dateFromComponents:comps];
 }
-
 
 /*
 // Override to allow orientations other than the default portrait orientation.
@@ -153,7 +179,7 @@
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [studentsArray count];
+    return [presencesArray count];
 }
 
 - (void) updateDisplayDate {
@@ -177,21 +203,16 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
-    
-    
-    Student *s = [studentsArray objectAtIndex:indexPath.row];
-    Presence *p = [eventsArray objectAtIndex:indexPath.row];
-    //p.status.letter; THIS ERRORS
+    Presence *s = [presencesArray objectAtIndex:indexPath.row];
     
     UILabel *label;
     label = (UILabel *)[cell viewWithTag:1];
-    label.text = @"HEY";
+    label.text = s.status.letter;
     
-    
-    //cell.contentView.backgroundColor = p.status.color;
+    cell.contentView.backgroundColor = s.status.color;
     
     label = (UILabel *)[cell viewWithTag:2];
-    label.text = [NSString stringWithFormat:@"%@ %@", [s firstName], [s lastName]];
+    label.text = [NSString stringWithFormat:@"%@ %@", s.student.firstName, [s lastName]];
     
     return cell;
 }
@@ -208,24 +229,37 @@
 	// AnotherViewController *anotherViewController = [[AnotherViewController alloc] initWithNibName:@"AnotherView" bundle:nil];
 	// [self.navigationController pushViewController:anotherViewController];
 	// [anotherViewController release];
+    Presence *c = [presencesArray objectAtIndex:indexPath.row];
+    
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     UILabel *label;
     label = (UILabel *)[cell viewWithTag:1];
     NSString *statusString = label.text;
     
     if([statusString isEqualToString:@"P"]){
-        label.text = @"A";
-        cell.contentView.backgroundColor = [UIColor colorWithRed:0.835 green:0.103 blue:0.182 alpha:1.000];
+        
+        c.status = [aD getStatusWithLetter:@"A"];
+        
     } else if([statusString isEqualToString:@"A"]){
-        label.text = @"T";
-        cell.contentView.backgroundColor = [UIColor colorWithRed:0.835 green:0.737 blue:0.195 alpha:1.000];
+        
+        c.status = [aD getStatusWithLetter:@"T"];
+        
     } else if([statusString isEqualToString:@"T"]){
-        label.text = @"E";
-        cell.contentView.backgroundColor = [UIColor colorWithRed:0.179 green:0.298 blue:0.835 alpha:1.000];
+        
+        c.status = [aD getStatusWithLetter:@"E"];
+        
     } else if([statusString isEqualToString:@"E"]){
-        label.text = @"P";
-        cell.contentView.backgroundColor = [UIColor colorWithRed:0.369 green:0.835 blue:0.128 alpha:1.000];
+        
+        c.status = [aD getStatusWithLetter:@"P"];
     }
+    
+    NSError *error;
+    if (![[aD managedObjectContext] save:&error]) {
+        // Handle the error.
+    }
+    
+    label.text = c.status.letter;
+    cell.contentView.backgroundColor = c.status.color;
     
 }
 
@@ -300,7 +334,7 @@
 - (void)dealloc {
     [myDate release];
     [studentsArray release];
-    [eventsArray release];
+    [presencesArray release];
     [super dealloc];
     
 }

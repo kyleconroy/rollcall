@@ -8,6 +8,7 @@
 
 #import "Course.h"
 
+#import "Presence.h"
 #import "Student.h"
 
 @implementation Course 

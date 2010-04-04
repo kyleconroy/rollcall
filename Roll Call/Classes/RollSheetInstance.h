@@ -15,7 +15,7 @@
     Roll_CallAppDelegate *aD;
     
     NSArray * studentsArray;
-    NSArray * eventsArray;
+    NSMutableArray * presencesArray;
     NSDate *myDate;
     UITableView *myTableView;
     
@@ -26,9 +26,9 @@
 }
 
 @property(nonatomic, retain) Course *course;
-@property(nonatomic, retain) NSArray * eventsArray;
+@property(nonatomic, retain) NSMutableArray * presencesArray;
 @property(nonatomic, retain) NSArray * studentsArray;
-@property(nonatomic, retain) NSDate *myDate;\
+@property(nonatomic, retain) NSDate *myDate;
 @property(nonatomic, retain) Roll_CallAppDelegate *aD;
 @property(nonatomic, retain) UITableView *myTableView;
 
@@ -42,6 +42,10 @@
 - (IBAction) moveForwardOneDay;
 - (IBAction) addNote:(id)sender;
 
+- (NSDate *) today;
+- (NSDate *) tomorrow;
+
 - (void) updateDisplayDate;
+- (void) initializeData;
 
 @end

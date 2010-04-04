@@ -8,6 +8,7 @@
 
 #import <CoreData/CoreData.h>
 
+@class Presence;
 @class Student;
 
 @interface Course :  NSManagedObject  
@@ -24,8 +25,8 @@
 
 
 @interface Course (CoreDataGeneratedAccessors)
-- (void)addPresencesObject:(NSManagedObject *)value;
-- (void)removePresencesObject:(NSManagedObject *)value;
+- (void)addPresencesObject:(Presence *)value;
+- (void)removePresencesObject:(Presence *)value;
 - (void)addPresences:(NSSet *)value;
 - (void)removePresences:(NSSet *)value;
 

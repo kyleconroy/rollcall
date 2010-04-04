@@ -9,14 +9,16 @@
 #import <CoreData/CoreData.h>
 
 @class Course;
+@class Status;
 @class Student;
 
 @interface Presence :  NSManagedObject  
 {
 }
 
+@property (nonatomic, retain) NSString * lastName;
 @property (nonatomic, retain) NSDate * date;
-@property (nonatomic, retain) NSManagedObject * status;
+@property (nonatomic, retain) Status * status;
 @property (nonatomic, retain) Student * student;
 @property (nonatomic, retain) Course * class;
 

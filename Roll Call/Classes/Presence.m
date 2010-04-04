@@ -9,10 +9,12 @@
 #import "Presence.h"
 
 #import "Course.h"
+#import "Status.h"
 #import "Student.h"
 
 @implementation Presence 
 
+@dynamic lastName;
 @dynamic date;
 @dynamic status;
 @dynamic student;

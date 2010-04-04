@@ -47,12 +47,12 @@
 		95EC80CD1168B01D00DA720F /* note_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 95EC80CB1168B01D00DA720F /* note_on.png */; };
 		95EC80CE1168B01D00DA720F /* note_outline.png in Resources */ = {isa = PBXBuildFile; fileRef = 95EC80CC1168B01D00DA720F /* note_outline.png */; };
 		95EC80D01168B08E00DA720F /* AttendanceTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95EC80CF1168B08E00DA720F /* AttendanceTableCell.xib */; };
-		95EC812C1168BFFC00DA720F /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EC81251168BFFC00DA720F /* Course.m */; };
-		95EC812D1168BFFC00DA720F /* Presence.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EC81271168BFFC00DA720F /* Presence.m */; };
-		95EC812E1168BFFC00DA720F /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EC81291168BFFC00DA720F /* Student.m */; };
-		95EC812F1168BFFC00DA720F /* Status.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EC812B1168BFFC00DA720F /* Status.m */; };
 		95EC81971168D0E600DA720F /* DebugViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EC81951168D0E600DA720F /* DebugViewController.m */; };
 		95EC81981168D0E600DA720F /* DebugViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95EC81961168D0E600DA720F /* DebugViewController.xib */; };
+		95EC83711169108800DA720F /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EC836A1169108800DA720F /* Course.m */; };
+		95EC83731169108800DA720F /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EC836E1169108800DA720F /* Student.m */; };
+		95EC83741169108800DA720F /* Status.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EC83701169108800DA720F /* Status.m */; };
+		95EC83B111691DED00DA720F /* Presence.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EC83B011691DED00DA720F /* Presence.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -110,17 +110,17 @@
 		95EC80CB1168B01D00DA720F /* note_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = note_on.png; sourceTree = "<group>"; };
 		95EC80CC1168B01D00DA720F /* note_outline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = note_outline.png; sourceTree = "<group>"; };
 		95EC80CF1168B08E00DA720F /* AttendanceTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AttendanceTableCell.xib; sourceTree = "<group>"; };
-		95EC81241168BFFC00DA720F /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
-		95EC81251168BFFC00DA720F /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
-		95EC81261168BFFC00DA720F /* Presence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Presence.h; sourceTree = "<group>"; };
-		95EC81271168BFFC00DA720F /* Presence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Presence.m; sourceTree = "<group>"; };
-		95EC81281168BFFC00DA720F /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
-		95EC81291168BFFC00DA720F /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
-		95EC812A1168BFFC00DA720F /* Status.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Status.h; sourceTree = "<group>"; };
-		95EC812B1168BFFC00DA720F /* Status.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Status.m; sourceTree = "<group>"; };
 		95EC81941168D0E600DA720F /* DebugViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DebugViewController.h; sourceTree = "<group>"; };
 		95EC81951168D0E600DA720F /* DebugViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DebugViewController.m; sourceTree = "<group>"; };
 		95EC81961168D0E600DA720F /* DebugViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = DebugViewController.xib; path = Classes/DebugViewController.xib; sourceTree = "<group>"; };
+		95EC83691169108800DA720F /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
+		95EC836A1169108800DA720F /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
+		95EC836D1169108800DA720F /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
+		95EC836E1169108800DA720F /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
+		95EC836F1169108800DA720F /* Status.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Status.h; sourceTree = "<group>"; };
+		95EC83701169108800DA720F /* Status.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Status.m; sourceTree = "<group>"; };
+		95EC83AF11691DED00DA720F /* Presence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Presence.h; sourceTree = "<group>"; };
+		95EC83B011691DED00DA720F /* Presence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Presence.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -273,14 +273,14 @@
 		95EC81321168C01000DA720F /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				95EC81241168BFFC00DA720F /* Course.h */,
-				95EC81251168BFFC00DA720F /* Course.m */,
-				95EC81261168BFFC00DA720F /* Presence.h */,
-				95EC81271168BFFC00DA720F /* Presence.m */,
-				95EC81281168BFFC00DA720F /* Student.h */,
-				95EC81291168BFFC00DA720F /* Student.m */,
-				95EC812A1168BFFC00DA720F /* Status.h */,
-				95EC812B1168BFFC00DA720F /* Status.m */,
+				95EC83AF11691DED00DA720F /* Presence.h */,
+				95EC83B011691DED00DA720F /* Presence.m */,
+				95EC83691169108800DA720F /* Course.h */,
+				95EC836A1169108800DA720F /* Course.m */,
+				95EC836D1169108800DA720F /* Student.h */,
+				95EC836E1169108800DA720F /* Student.m */,
+				95EC836F1169108800DA720F /* Status.h */,
+				95EC83701169108800DA720F /* Status.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -387,11 +387,11 @@
 				5AB0974D116812A500E0CB9F /* RollCallDataModel.xcdatamodel in Sources */,
 				95C3EEFF116838A200CE11E5 /* AttendanceDayViewController.m in Sources */,
 				95BE6A0A11683BFE00764D65 /* RollSheetInstance.m in Sources */,
-				95EC812C1168BFFC00DA720F /* Course.m in Sources */,
-				95EC812D1168BFFC00DA720F /* Presence.m in Sources */,
-				95EC812E1168BFFC00DA720F /* Student.m in Sources */,
-				95EC812F1168BFFC00DA720F /* Status.m in Sources */,
 				95EC81971168D0E600DA720F /* DebugViewController.m in Sources */,
+				95EC83711169108800DA720F /* Course.m in Sources */,
+				95EC83731169108800DA720F /* Student.m in Sources */,
+				95EC83741169108800DA720F /* Status.m in Sources */,
+				95EC83B111691DED00DA720F /* Presence.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
