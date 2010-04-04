@@ -182,7 +182,6 @@
 		myStudent = [studentsInSection objectAtIndex:indexPath.row];
 	}
 	cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", myStudent.firstName, myStudent.lastName];
-	NSLog(@"added row: %@ %@", myStudent.firstName, myStudent.lastName);
     return cell;
 }
 

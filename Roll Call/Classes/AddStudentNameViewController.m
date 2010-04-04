@@ -8,13 +8,14 @@
 
 #import "AddStudentNameViewController.h"
 #import "Student.h"
+#import "AddStudentNameTableCell.h"
 
 @implementation AddStudentNameViewController
 
 @synthesize firstName;
 @synthesize lastName;
-@synthesize lastNameText;
-@synthesize firstNameText;
+@synthesize tableCell;
+@synthesize aD;
 
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
@@ -22,31 +23,52 @@
 	self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancel)];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(save)];
 	self.title = @"Add Name";
-	self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
-	[firstName becomeFirstResponder];
-	[lastName becomeFirstResponder];
+	self.tableView.allowsSelection = NO;
+	self.tableView.allowsSelectionDuringEditing = NO;
     [super viewDidLoad];
 }
 
 
-
-
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
-	if (textField == firstName) {
-		[firstName resignFirstResponder];
-		firstNameText=firstName.text;
-	}
-	if (textField == lastName) {
-		[lastName resignFirstResponder];
-		lastNameText=lastName.text;
-	}
-	return YES;
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 2;
 }
 
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *CellIdentifier = @"NameCell";
+    
+	aD = (Roll_CallAppDelegate *)[[UIApplication sharedApplication] delegate];
+    AddStudentNameTableCell *cell = (AddStudentNameTableCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+		[[NSBundle mainBundle] loadNibNamed:@"AddStudentNameTableCell" owner:self options:nil];
+        cell = tableCell;
+		self.tableCell = nil;
+    }
+    Student *student=[aD.students lastObject];
+    if (indexPath.row == 0) {
+        cell.textField.text =  student.firstName;
+        cell.textField.placeholder = @"First";
+    }
+	else     {    
+		cell.textField.text = student.lastName;
+        cell.textField.placeholder = @"Last";
+    }
+	
+    return cell;
+}
+
+
 - (void)save {
-	lastNameText=lastName.text;
-	firstNameText=firstName.text;
-	NSLog(@"added: %@ %@", firstNameText, lastNameText);
+	AddStudentNameTableCell *cell;
+	Student *student=[aD.students lastObject];
+
+    cell = (AddStudentNameTableCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    student.firstName = cell.textField.text;
+	
+    cell = (AddStudentNameTableCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
+    student.lastName = cell.textField.text;
+	
+	
+	NSLog(@"added: %@ %@",  student.lastName , student.firstName);
 	[self dismissModalViewControllerAnimated:YES];
 }
 

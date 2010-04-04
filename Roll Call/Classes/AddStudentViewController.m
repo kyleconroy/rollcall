@@ -19,12 +19,14 @@
 @synthesize photoButton;
 @synthesize tableHeaderView;
 @synthesize addNameButton;
-@synthesize addNameViewController;
+
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
 	student=[[Student alloc] init];
+	
 	aD = (Roll_CallAppDelegate *)[[UIApplication sharedApplication] delegate];
+	[aD.students addObject:student];
 	classes=[[NSMutableArray alloc] init];
 	self.title = @"New Student";
 	if (tableHeaderView == nil) {
@@ -45,14 +47,11 @@
 - (void)viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:animated];
-	NSLog(@"show name!: %@ %@", addNameViewController.lastNameText, addNameViewController.firstNameText);
-	if (addNameViewController.lastNameText==nil&&addNameViewController.firstNameText==nil) {
+	if (student.lastName==nil&&student.firstName==nil) {
 		[addNameButton setTitle:@"First Last" forState:UIControlStateNormal];
 		[addNameButton setTitleColor:[UIColor grayColor] forState:UIControlStateSelected];
 	}
 	else {
-		student.lastName=addNameViewController.lastNameText;
-		student.firstName=addNameViewController.firstNameText;
 		NSLog(@"show name!: %@ %@", student.firstName, student.lastName);
 		NSString *fullname = [[NSString alloc] initWithFormat:@"%@ %@", student.firstName, student.lastName];
 		[addNameButton setTitle:fullname forState:UIControlStateNormal];
@@ -76,16 +75,12 @@
     return YES;
 }
 
-- (void)save { 
-	if (student.firstName!=nil&&student.lastName!=nil) {
-		[aD.students addObject:student];
-		NSLog(@"added: %@ %@", student.firstName, student.lastName);
-	}
+- (void)save {
 	[self dismissModalViewControllerAnimated:YES];
 }
 
 
-- (void)cancel {
+- (void)cancel{
 	[self dismissModalViewControllerAnimated:YES];
 }
 
