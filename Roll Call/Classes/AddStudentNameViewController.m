@@ -7,8 +7,9 @@
 //
 
 #import "AddStudentNameViewController.h"
-#import "Student.h"
 #import "AddStudentNameTableCell.h"
+#import"Student.h"
+
 
 @implementation AddStudentNameViewController
 
@@ -16,7 +17,7 @@
 @synthesize lastName;
 @synthesize tableCell;
 @synthesize aD;
-
+@synthesize student;
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
@@ -43,7 +44,6 @@
         cell = tableCell;
 		self.tableCell = nil;
     }
-    Student *student=[aD.students lastObject];
     if (indexPath.row == 0) {
         cell.textField.text =  student.firstName;
         cell.textField.placeholder = @"First";
@@ -59,16 +59,11 @@
 
 - (void)save {
 	AddStudentNameTableCell *cell;
-	Student *student=[aD.students lastObject];
-
     cell = (AddStudentNameTableCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
     student.firstName = cell.textField.text;
-	
     cell = (AddStudentNameTableCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
-    student.lastName = cell.textField.text;
-	
-	
-	NSLog(@"added: %@ %@",  student.lastName , student.firstName);
+	student.lastName = cell.textField.text;
+	//NSLog(@"added: %@ %@",  student.lastName , student.firstName);
 	[self dismissModalViewControllerAnimated:YES];
 }
 

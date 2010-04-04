@@ -1,31 +1,23 @@
-//
+// 
 //  Student.m
 //  Roll Call
 //
-//  Created by Kyle Conroy on Mar22.
+//  Created by Kyle Conroy on Apr3.
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
 #import "Student.h"
 
+#import "Course.h"
 
-@implementation Student
+@implementation Student 
 
-@synthesize firstName;
-@synthesize lastName;
-@synthesize thumbnailPhoto;
-@synthesize phone;
-@synthesize email;
-@synthesize address;
-
-- (id)initWithFirstName:(NSString *)myFirstName lastName:(NSString *)myLastName {
-    self.firstName = myFirstName;
-    self.lastName = myLastName;
-    return self;
-}
-
-- (void)dealloc {
-    [super dealloc];
-}
+@dynamic phone;
+@dynamic address;
+@dynamic firstName;
+@dynamic thumbnailPhoto;
+@dynamic email;
+@dynamic lastName;
+@dynamic courses;
 
 @end

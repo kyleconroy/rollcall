@@ -12,7 +12,7 @@
 
 @implementation StudentsViewController
 
-@synthesize aD, filteredListContent, savedSearchTerm, searchWasActive, collation, sectionsArray;
+@synthesize aD, filteredListContent, savedSearchTerm, searchWasActive, collation, sectionsArray, students;
 
 
 /*
@@ -31,7 +31,9 @@
     [self setTitle:@"All Students"];
     
     aD = (Roll_CallAppDelegate *)[[UIApplication sharedApplication] delegate];
-	self.filteredListContent = [NSMutableArray arrayWithCapacity:[aD.students count]];
+	NSMutableArray *allstudents=[aD getAllStudents];
+	self.filteredListContent = [NSMutableArray arrayWithCapacity:[allstudents count]];
+	
    
 	self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addStudent)];
     if (self.savedSearchTerm)
@@ -41,7 +43,7 @@
         self.savedSearchTerm = nil;
     }
 	
-	if (aD.students == nil) {
+	if (allstudents == nil) {
 		self.sectionsArray = nil;
 	}
 	else {
@@ -49,6 +51,7 @@
 	}
 	[self.tableView reloadData];
 	self.tableView.scrollEnabled = YES;
+	[allstudents release];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -68,8 +71,9 @@
 		[newSectionsArray addObject:array];
 		[array release];
 	}
+	NSMutableArray *allstudents=[aD getAllStudents];
 	// Segregate into the appropriate arrays.
-	for (Student *student in aD.students) {
+	for (Student *student in allstudents) {
 		NSInteger sectionNumber = [collation sectionForObject:student collationStringSelector:@selector(lastName)];
 		
 		// Get the array for the section.
@@ -235,7 +239,8 @@
 	/*
 	 Search the main list for products whose type matches the scope (if selected) and whose name matches searchText; add items that match to the filtered array.
 	 */
-		for (Student *student in aD.students)
+	NSMutableArray *allstudents=[aD getAllStudents];
+		for (Student *student in allstudents)
 		{
 			NSString *name=[[NSString alloc] initWithFormat: @"%@", student.lastName];
 			NSLog(@"Processing Value: %@", name);

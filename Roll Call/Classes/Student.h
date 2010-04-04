@@ -2,29 +2,34 @@
 //  Student.h
 //  Roll Call
 //
-//  Created by Kyle Conroy on Mar22.
+//  Created by Kyle Conroy on Apr3.
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
-//#import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
+@class Course;
 
-@interface Student : NSObject {
-    NSString *firstName;
-    NSString *lastName;
-	NSString *phone;
-	NSString *email;
-	NSString *address;
-	UIImage *thumbnailPhoto;
+@interface Student :  NSManagedObject  
+{
 }
 
-- (id)initWithFirstName:(NSString *)fistname lastName:(NSString *)lastname;
-
-@property (readwrite, assign) NSString *firstName;
-@property (readwrite, assign) NSString *lastName;
-@property (readwrite, assign) NSString *phone;
-@property (readwrite, assign) NSString *email;
-@property (readwrite, assign) NSString *address;
-@property (nonatomic, retain) UIImage *thumbnailPhoto;
+@property (nonatomic, retain) NSString * phone;
+@property (nonatomic, retain) NSString * address;
+@property (nonatomic, retain) NSString * firstName;
+@property (nonatomic, retain) NSData * thumbnailPhoto;
+@property (nonatomic, retain) NSString * email;
+@property (nonatomic, retain) NSString * lastName;
+@property (nonatomic, retain) NSSet* courses;
 
 @end
+
+
+@interface Student (CoreDataGeneratedAccessors)
+- (void)addCoursesObject:(Course *)value;
+- (void)removeCoursesObject:(Course *)value;
+- (void)addCourses:(NSSet *)value;
+- (void)removeCourses:(NSSet *)value;
+
+@end
+

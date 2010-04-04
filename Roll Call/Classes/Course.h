@@ -1,5 +1,5 @@
 //
-//  SchoolClass.h
+//  Course.h
 //  Roll Call
 //
 //  Created by Kyle Conroy on Apr3.
@@ -10,7 +10,7 @@
 
 @class Student;
 
-@interface SchoolClass :  NSManagedObject  
+@interface Course :  NSManagedObject  
 {
 }
 
@@ -22,7 +22,7 @@
 @end
 
 
-@interface SchoolClass (CoreDataGeneratedAccessors)
+@interface Course (CoreDataGeneratedAccessors)
 - (void)addStudentsObject:(Student *)value;
 - (void)removeStudentsObject:(Student *)value;
 - (void)addStudents:(NSSet *)value;

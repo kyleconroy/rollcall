@@ -10,6 +10,8 @@
 #import "Roll_CallAppDelegate.h"
 
 @class Student;
+@class AddStudentNameViewController;
+
 @interface AddStudentViewController : UITableViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate> {
     Roll_CallAppDelegate *aD;
 	Student *student;

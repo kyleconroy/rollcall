@@ -1,16 +1,16 @@
 // 
-//  SchoolClass.m
+//  Course.m
 //  Roll Call
 //
 //  Created by Kyle Conroy on Apr3.
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
-#import "SchoolClass.h"
+#import "Course.h"
 
 #import "Student.h"
 
-@implementation SchoolClass 
+@implementation Course 
 
 @dynamic startDate;
 @dynamic name;

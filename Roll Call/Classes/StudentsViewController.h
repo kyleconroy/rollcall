@@ -16,10 +16,12 @@
     BOOL			searchWasActive;
 	NSMutableArray	*filteredListContent;
 	NSMutableArray *sectionsArray;
+	NSMutableArray *students;
 	UILocalizedIndexedCollation *collation;
 	
 }
 
+@property (nonatomic, retain) NSMutableArray *students;
 @property(nonatomic, retain) Roll_CallAppDelegate *aD;
 @property (nonatomic, retain) NSMutableArray *filteredListContent;
 @property (nonatomic, copy) NSString *savedSearchTerm;

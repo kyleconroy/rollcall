@@ -8,8 +8,8 @@
 
 #import "AddStudentViewController.h"
 #import "Student.h"
-#import "aClass.h"
 #import "AddStudentNameViewController.h"
+#import "StudentsViewController.h"
 
 @implementation AddStudentViewController
 
@@ -23,10 +23,10 @@
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
-	student=[[Student alloc] init];
-	
+
 	aD = (Roll_CallAppDelegate *)[[UIApplication sharedApplication] delegate];
-	[aD.students addObject:student];
+	NSManagedObjectContext *context=[aD managedObjectContext];
+	student = (Student *)[NSEntityDescription insertNewObjectForEntityForName:@"Student" inManagedObjectContext:context];
 	classes=[[NSMutableArray alloc] init];
 	self.title = @"New Student";
 	if (tableHeaderView == nil) {
@@ -40,6 +40,7 @@
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancel)];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(save)];
 	self.tableView.tableHeaderView.backgroundColor = [UIColor groupTableViewBackgroundColor];
+	
 	[super viewDidLoad];
 }
 
@@ -59,8 +60,9 @@
 	if (student.thumbnailPhoto==nil) {
 		[photoButton setImage:[UIImage imageNamed:@"addphoto.jpg"] forState:UIControlStateNormal];
 	} else 
-		[photoButton setImage:student.thumbnailPhoto forState:UIControlStateNormal];
-    [self.tableView reloadData];
+		[photoButton setImage:[UIImage imageNamed:@"addphoto.jpg"] forState:UIControlStateNormal];
+	
+	[self.tableView reloadData];
 }
 
 - (void)viewDidUnload {
@@ -76,6 +78,13 @@
 }
 
 - (void)save {
+	if (student.lastName!=nil&&student.firstName!=nil) {
+		NSManagedObjectContext *context=[aD managedObjectContext];
+		NSError *error;
+		if (![context save:&error]) {
+			// Handle the error.
+		}
+	}
 	[self dismissModalViewControllerAnimated:YES];
 }
 
@@ -87,6 +96,7 @@
 - (IBAction)addName: (id)sender {
     AddStudentNameViewController *addNameView = [[AddStudentNameViewController alloc] initWithNibName:@"AddStudentNameViewController" bundle:nil];
 	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:addNameView];
+	addNameView.student=student;
 	[self presentModalViewController:navController animated:YES];
 	[addNameView release];
 	[navController release];
@@ -134,7 +144,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = nil;
-    NSInteger row = indexPath.row;
 	// For the Classes section, if necessary create a new cell and configure it with an additional label for the amount.
 
 	if (indexPath.section == 1) {
@@ -147,9 +156,9 @@
 				cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ClassesCellIdentifier] autorelease];
 				cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 			}
-            aClass *class = [[aClass alloc] init];
-			class=[classes objectAtIndex:row];
-            cell.textLabel.text = class.name;
+            //Class *class = [[aClass alloc] init];
+			//class=[classes objectAtIndex:row];
+            cell.textLabel.text = @"FIX ME";
         } else {
             // If the row is outside the range, it's the row that was added to allow insertion (see tableView:numberOfRowsInSection:) so give it an appropriate label.
 			static NSString *AddClassCellIdentifier = @"AddClassCell";
@@ -174,7 +183,7 @@
 			cell.editingAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
         }
 		if (indexPath.row == 0) {
-			if (student.phone==nil) {
+			if ([student phone]==nil) {
 				cell.textLabel.text = @"add new phone";
 				cell.textLabel.textColor=[UIColor grayColor];
 			}
@@ -295,21 +304,21 @@
 	 Update the classes array in response to the move.
 	 Update the display order indexes within the range of the move.
 	 */
-    aClass *class = [classes objectAtIndex:fromIndexPath.row];
-    [classes removeObjectAtIndex:fromIndexPath.row];
-    [classes insertObject:class atIndex:toIndexPath.row];
-	
-	NSInteger start = fromIndexPath.row;
-	if (toIndexPath.row < start) {
-		start = toIndexPath.row;
-	}
-	NSInteger end = toIndexPath.row;
-	if (fromIndexPath.row > end) {
-		end = fromIndexPath.row;
-	}
-	for (NSInteger i = start; i <= end; i++) {
-		class = [classes objectAtIndex:i];
-	}
+//    aClass *class = [classes objectAtIndex:fromIndexPath.row];
+//    [classes removeObjectAtIndex:fromIndexPath.row];
+//    [classes insertObject:class atIndex:toIndexPath.row];
+//	
+//	NSInteger start = fromIndexPath.row;
+//	if (toIndexPath.row < start) {
+//		start = toIndexPath.row;
+//	}
+//	NSInteger end = toIndexPath.row;
+//	if (fromIndexPath.row > end) {
+//		end = fromIndexPath.row;
+//	}
+//	for (NSInteger i = start; i <= end; i++) {
+//		class = [classes objectAtIndex:i];
+//	}
 }
 
 
@@ -338,7 +347,7 @@
 	
 	UIGraphicsBeginImageContext(rect.size);
 	[selectedImage drawInRect:rect];
-	student.thumbnailPhoto = UIGraphicsGetImageFromCurrentImageContext();
+	//student.thumbnailPhoto = UIGraphicsGetImageFromCurrentImageContext();
 	UIGraphicsEndImageContext();
     [self dismissModalViewControllerAnimated:YES];
 }
