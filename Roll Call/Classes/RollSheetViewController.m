@@ -7,12 +7,14 @@
 //
 
 #import "RollSheetViewController.h"
-
+#import "Course.h"
+#import "AttendanceDayViewController.h"
+#import "RollSheetInstance.h"
 
 @implementation RollSheetViewController
 
 @synthesize managedObjectContext;
-@synthesize studentsArray;
+@synthesize coursesArray;
 @synthesize aD;
 
 /*
@@ -27,31 +29,15 @@
 
  // Iplement viewDidLoad to do additional setup after loading the view, typically from a nib.
  - (void)viewDidLoad {
+     [self setTitle:@"Roll Sheets"];
+     
      aD = (Roll_CallAppDelegate *)[[UIApplication sharedApplication] delegate];
      managedObjectContext = [aD managedObjectContext];
      
      //Get all the current Students in a given class
-     studentsArray = [[NSMutableArray alloc] init];
-     
-     NSFetchRequest *request = [[NSFetchRequest alloc] init];
-     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Student" inManagedObjectContext:managedObjectContext];
-     [request setEntity:entity];
-     
-     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"lastName" ascending:NO];
-     NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
-     [request setSortDescriptors:sortDescriptors];
-     [sortDescriptors release];
-     [sortDescriptor release];
-     
-     NSError *error;
-     NSMutableArray *mutableFetchResults = [[managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
-     if (mutableFetchResults == nil) {
-         // Handle the error.
-     }
-     
-     [self setStudentsArray:mutableFetchResults];
-     [mutableFetchResults release];
-     [request release];
+     coursesArray = [[NSMutableArray alloc] init];
+
+     [self setCoursesArray:[aD getAllCourses]];
      
      [super viewDidLoad];
  }
@@ -107,7 +93,7 @@
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
+    return [coursesArray count];
 }
 
 
@@ -121,17 +107,21 @@
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
     
-    // Set up the cell...
-	
+    Course *c = (Course *)[coursesArray objectAtIndex:indexPath.row];
+    
+    cell.textLabel.text = c.name;
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+
     return cell;
 }
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     // Navigation logic may go here. Create and push another view controller.
-	// AnotherViewController *anotherViewController = [[AnotherViewController alloc] initWithNibName:@"AnotherView" bundle:nil];
-	// [self.navigationController pushViewController:anotherViewController];
-	// [anotherViewController release];
+	RollSheetInstance *attendanceController = [[RollSheetInstance alloc] initWithNibName:@"RollSheetInstance" bundle:nil];
+    attendanceController.course = (Course *)[coursesArray objectAtIndex:indexPath.row];
+	[self.navigationController pushViewController:attendanceController animated:YES];
+	[attendanceController release];
 }
 
 
@@ -176,7 +166,7 @@
 
 
 - (void)dealloc {
-    [studentsArray release];
+    [coursesArray release];
     [managedObjectContext release];
     [super dealloc];
 }

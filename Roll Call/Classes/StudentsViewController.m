@@ -265,7 +265,6 @@
 
 - (void)dealloc {
 	[collation release];
-	[aD release];
 	[filteredListContent release];
 	[savedSearchTerm release];
 	[sectionsArray release];

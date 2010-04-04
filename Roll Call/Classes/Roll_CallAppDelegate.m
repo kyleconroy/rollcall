@@ -20,11 +20,11 @@
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
     
     // Configure and show the window.
-    bool install = YES;
+    bool install = NO;
     
     if (install) {
-        //[self installCourses];
-        //[self installStudents];
+        [self installCourses];
+        [self installStudents];
         
     }
     
@@ -42,9 +42,31 @@
     NSMutableArray *courses = [self getAllCourses];
     
     NSArray *kids = [[NSArray alloc] initWithObjects:
-                    [NSDictionary dictionaryWithObjectsAndKeys:@"Timmy", @"firstName", @"Took", @"lastName", nil], 
-                    [NSDictionary dictionaryWithObjectsAndKeys:@"Kyle", @"firstName", @"Kooky", @"lastName", nil], 
-                    [NSDictionary dictionaryWithObjectsAndKeys:@"Lindsay", @"firstName", @"Lame", @"lastName", nil],
+                     [NSDictionary dictionaryWithObjectsAndKeys:@"Kristina", @"firstName", @"Chung", @"lastName", nil],
+                     [NSDictionary dictionaryWithObjectsAndKeys:@"Paige", @"firstName", @"Chen", @"lastName", nil],
+                     [NSDictionary dictionaryWithObjectsAndKeys:@"Sherri", @"firstName", @"Melton", @"lastName", nil],
+                     [NSDictionary dictionaryWithObjectsAndKeys:@"Gretchen", @"firstName", @"Hill", @"lastName", nil],
+                     [NSDictionary dictionaryWithObjectsAndKeys:@"Karen", @"firstName", @"Puckett", @"lastName", nil],
+                     [NSDictionary dictionaryWithObjectsAndKeys:@"Patrick", @"firstName", @"Song", @"lastName", nil],
+                     [NSDictionary dictionaryWithObjectsAndKeys:@"Elsie", @"firstName", @"Hamilton", @"lastName", nil],
+                     [NSDictionary dictionaryWithObjectsAndKeys:@"Hazel", @"firstName", @"Bender", @"lastName", nil],
+                     [NSDictionary dictionaryWithObjectsAndKeys:@"Malcolm", @"firstName", @"Wagner", @"lastName", nil],
+                     [NSDictionary dictionaryWithObjectsAndKeys:@"Dolores", @"firstName", @"McLaughlin", @"lastName", nil],
+                     [NSDictionary dictionaryWithObjectsAndKeys:@"Francis", @"firstName", @"McNamara", @"lastName", nil],
+                     [NSDictionary dictionaryWithObjectsAndKeys:@"Sandy", @"firstName", @"Raynor", @"lastName", nil],
+                     [NSDictionary dictionaryWithObjectsAndKeys:@"Marion", @"firstName", @"Moon", @"lastName", nil],
+                     [NSDictionary dictionaryWithObjectsAndKeys:@"Beth", @"firstName", @"Woodard", @"lastName", nil],
+                     [NSDictionary dictionaryWithObjectsAndKeys:@"Julia", @"firstName", @"Desai", @"lastName", nil],
+                     [NSDictionary dictionaryWithObjectsAndKeys:@"Jerome", @"firstName", @"Wallace", @"lastName", nil],
+                     [NSDictionary dictionaryWithObjectsAndKeys:@"Neal", @"firstName", @"Lawrence", @"lastName", nil],
+                     [NSDictionary dictionaryWithObjectsAndKeys:@"Jean", @"firstName", @"Griffin", @"lastName", nil],
+                     [NSDictionary dictionaryWithObjectsAndKeys:@"Kristine", @"firstName", @"Dougherty", @"lastName", nil],
+                     [NSDictionary dictionaryWithObjectsAndKeys:@"Crystal", @"firstName", @"Powers", @"lastName", nil],
+                     [NSDictionary dictionaryWithObjectsAndKeys:@"Alex", @"firstName", @"May", @"lastName", nil],
+                     [NSDictionary dictionaryWithObjectsAndKeys:@"Eric", @"firstName", @"Steele", @"lastName", nil],
+                     [NSDictionary dictionaryWithObjectsAndKeys:@"Wesley", @"firstName", @"Teague", @"lastName", nil],
+                     [NSDictionary dictionaryWithObjectsAndKeys:@"Franklin", @"firstName", @"Vick", @"lastName", nil],
+                     [NSDictionary dictionaryWithObjectsAndKeys:@"Claire", @"firstName", @"Gallagher", @"lastName", nil],
                 nil];
 
     for (NSDictionary *d in kids){

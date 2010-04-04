@@ -11,7 +11,7 @@
 
 @interface RollSheetViewController : UITableViewController {
     
-    NSMutableArray *studentsArray;
+    NSMutableArray *coursesArray;
     NSManagedObjectContext *managedObjectContext;
     Roll_CallAppDelegate *aD;
     
@@ -19,6 +19,6 @@
 
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 @property(nonatomic, retain) Roll_CallAppDelegate *aD;
-@property(nonatomic, retain) NSMutableArray *studentsArray;
+@property(nonatomic, retain) NSMutableArray *coursesArray;
 
 @end
