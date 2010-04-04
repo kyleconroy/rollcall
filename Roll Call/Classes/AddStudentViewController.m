@@ -78,18 +78,29 @@
 }
 
 - (void)save {
-	if (student.lastName!=nil&&student.firstName!=nil) {
-		NSManagedObjectContext *context=[aD managedObjectContext];
-		NSError *error;
-		if (![context save:&error]) {
-			// Handle the error.
-		}
-	}
+	NSManagedObjectContext *context=[aD managedObjectContext];
+    
+    if (student.lastName==nil || student.firstName==nil)
+        [context deleteObject:student];
+        
+    NSError *error;
+    if (![context save:&error]) {
+        // Handle the error.
+    }
+    
 	[self dismissModalViewControllerAnimated:YES];
 }
 
 
 - (void)cancel{
+    NSManagedObjectContext *context=[aD managedObjectContext];
+    [context deleteObject:student];
+    NSError *error;
+    
+    if (![context save:&error]) {
+        NSLog(@"I can't save the new student that I want to cancel");
+    }
+    
 	[self dismissModalViewControllerAnimated:YES];
 }
 
@@ -371,7 +382,6 @@
 
 - (void)dealloc {
 	[aD release];
-	[student release];
 	[classes release];
     [super dealloc];    
 }

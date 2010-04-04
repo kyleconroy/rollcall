@@ -31,8 +31,8 @@
     [self setTitle:@"All Students"];
     
     aD = (Roll_CallAppDelegate *)[[UIApplication sharedApplication] delegate];
-	NSMutableArray *allstudents=[aD getAllStudents];
-	self.filteredListContent = [NSMutableArray arrayWithCapacity:[allstudents count]];
+	students = [aD getAllStudents];
+	self.filteredListContent = [NSMutableArray arrayWithCapacity:[students count]];
 	
    
 	self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addStudent)];
@@ -43,7 +43,7 @@
         self.savedSearchTerm = nil;
     }
 	
-	if (allstudents == nil) {
+	if (students == nil) {
 		self.sectionsArray = nil;
 	}
 	else {
@@ -51,7 +51,6 @@
 	}
 	[self.tableView reloadData];
 	self.tableView.scrollEnabled = YES;
-	[allstudents release];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -71,9 +70,11 @@
 		[newSectionsArray addObject:array];
 		[array release];
 	}
-	NSMutableArray *allstudents=[aD getAllStudents];
+    
+    students = [aD getAllStudents];
+    
 	// Segregate into the appropriate arrays.
-	for (Student *student in allstudents) {
+	for (Student *student in students) {
 		NSInteger sectionNumber = [collation sectionForObject:student collationStringSelector:@selector(lastName)];
 		
 		// Get the array for the section.
@@ -239,8 +240,7 @@
 	/*
 	 Search the main list for products whose type matches the scope (if selected) and whose name matches searchText; add items that match to the filtered array.
 	 */
-	NSMutableArray *allstudents=[aD getAllStudents];
-		for (Student *student in allstudents)
+		for (Student *student in students)
 		{
 			NSString *name=[[NSString alloc] initWithFormat: @"%@", student.lastName];
 			NSLog(@"Processing Value: %@", name);
