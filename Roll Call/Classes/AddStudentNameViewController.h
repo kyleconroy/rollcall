@@ -9,20 +9,24 @@
 
 #import <UIKit/UIKit.h>
 #import "AddStudentViewController.h"
+#import "AddStudentNameTableCell.h"
+#import "Roll_CallAppDelegate.h"
+@class Student;
 
-
-@interface AddStudentNameViewController : UIViewController {
-	IBOutlet UITextField *firstName;
-    IBOutlet UITextField *lastName;
-	NSString *lastNameText;
-    NSString *firstNameText;
+@interface AddStudentNameViewController : UITableViewController {
+	NSString *lastName;
+    NSString *firstName;
+	Student *student;
+	AddStudentNameTableCell *tableCell;
+	Roll_CallAppDelegate *aD;
 }
 
-@property(nonatomic,retain) IBOutlet UITextField *firstName;
-@property(nonatomic,retain) IBOutlet UITextField *lastName;
-@property (nonatomic, retain) NSString *lastNameText;
-@property (nonatomic, retain) NSString *firstNameText;
 
+@property (nonatomic, retain) NSString *lastName;
+@property (nonatomic, retain) NSString *firstName;
+@property (nonatomic, retain) IBOutlet AddStudentNameTableCell *tableCell;
+@property (nonatomic, retain) Roll_CallAppDelegate *aD;
+@property (nonatomic, retain) Student *student;
 - (void)cancel;
 - (void)save;
 

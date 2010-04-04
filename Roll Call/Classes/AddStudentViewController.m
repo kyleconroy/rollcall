@@ -9,6 +9,7 @@
 #import "AddStudentViewController.h"
 #import "Student.h"
 #import "AddStudentNameViewController.h"
+#import "StudentsViewController.h"
 
 @implementation AddStudentViewController
 
@@ -18,12 +19,14 @@
 @synthesize photoButton;
 @synthesize tableHeaderView;
 @synthesize addNameButton;
-@synthesize addNameViewController;
+
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
-	student=[[Student alloc] init];
+
 	aD = (Roll_CallAppDelegate *)[[UIApplication sharedApplication] delegate];
+	NSManagedObjectContext *context=[aD managedObjectContext];
+	student = (Student *)[NSEntityDescription insertNewObjectForEntityForName:@"Student" inManagedObjectContext:context];
 	classes=[[NSMutableArray alloc] init];
 	self.title = @"New Student";
 	if (tableHeaderView == nil) {
@@ -37,6 +40,7 @@
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancel)];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(save)];
 	self.tableView.tableHeaderView.backgroundColor = [UIColor groupTableViewBackgroundColor];
+	
 	[super viewDidLoad];
 }
 
@@ -44,14 +48,11 @@
 - (void)viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:animated];
-	NSLog(@"show name!: %@ %@", addNameViewController.lastNameText, addNameViewController.firstNameText);
-	if (addNameViewController.lastNameText==nil&&addNameViewController.firstNameText==nil) {
+	if (student.lastName==nil&&student.firstName==nil) {
 		[addNameButton setTitle:@"First Last" forState:UIControlStateNormal];
 		[addNameButton setTitleColor:[UIColor grayColor] forState:UIControlStateSelected];
 	}
 	else {
-		student.lastName=addNameViewController.lastNameText;
-		student.firstName=addNameViewController.firstNameText;
 		NSLog(@"show name!: %@ %@", student.firstName, student.lastName);
 		NSString *fullname = [[NSString alloc] initWithFormat:@"%@ %@", student.firstName, student.lastName];
 		[addNameButton setTitle:fullname forState:UIControlStateNormal];
@@ -59,8 +60,9 @@
 	if (student.thumbnailPhoto==nil) {
 		[photoButton setImage:[UIImage imageNamed:@"addphoto.jpg"] forState:UIControlStateNormal];
 	} else 
-		[photoButton setImage:student.thumbnailPhoto forState:UIControlStateNormal];
-    [self.tableView reloadData];
+		[photoButton setImage:[UIImage imageNamed:@"addphoto.jpg"] forState:UIControlStateNormal];
+	
+	[self.tableView reloadData];
 }
 
 - (void)viewDidUnload {
@@ -75,22 +77,26 @@
     return YES;
 }
 
-- (void)save { 
-	if (student.firstName!=nil&&student.lastName!=nil) {
-		[aD.students addObject:student];
-		NSLog(@"added: %@ %@", student.firstName, student.lastName);
+- (void)save {
+	if (student.lastName!=nil&&student.firstName!=nil) {
+		NSManagedObjectContext *context=[aD managedObjectContext];
+		NSError *error;
+		if (![context save:&error]) {
+			// Handle the error.
+		}
 	}
 	[self dismissModalViewControllerAnimated:YES];
 }
 
 
-- (void)cancel {
+- (void)cancel{
 	[self dismissModalViewControllerAnimated:YES];
 }
 
 - (IBAction)addName: (id)sender {
     AddStudentNameViewController *addNameView = [[AddStudentNameViewController alloc] initWithNibName:@"AddStudentNameViewController" bundle:nil];
 	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:addNameView];
+	addNameView.student=student;
 	[self presentModalViewController:navController animated:YES];
 	[addNameView release];
 	[navController release];
@@ -138,7 +144,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = nil;
-    NSInteger row = indexPath.row;
 	// For the Classes section, if necessary create a new cell and configure it with an additional label for the amount.
 
 	if (indexPath.section == 1) {
@@ -178,7 +183,7 @@
 			cell.editingAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
         }
 		if (indexPath.row == 0) {
-			if (student.phone==nil) {
+			if ([student phone]==nil) {
 				cell.textLabel.text = @"add new phone";
 				cell.textLabel.textColor=[UIColor grayColor];
 			}
@@ -342,7 +347,7 @@
 	
 	UIGraphicsBeginImageContext(rect.size);
 	[selectedImage drawInRect:rect];
-	student.thumbnailPhoto = UIGraphicsGetImageFromCurrentImageContext();
+	//student.thumbnailPhoto = UIGraphicsGetImageFromCurrentImageContext();
 	UIGraphicsEndImageContext();
     [self dismissModalViewControllerAnimated:YES];
 }

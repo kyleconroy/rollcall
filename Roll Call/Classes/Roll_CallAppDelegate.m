@@ -20,7 +20,7 @@
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
     
     // Configure and show the window.
-    //bool install = YES;
+    bool install = YES;
     
     if (install) {
         //[self installCourses];
