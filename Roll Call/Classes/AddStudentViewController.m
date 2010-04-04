@@ -381,7 +381,6 @@
 
 
 - (void)dealloc {
-	[aD release];
 	[classes release];
     [super dealloc];    
 }
