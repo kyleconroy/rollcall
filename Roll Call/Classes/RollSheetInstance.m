@@ -181,6 +181,7 @@
     
     Student *s = [studentsArray objectAtIndex:indexPath.row];
     Presence *p = [eventsArray objectAtIndex:indexPath.row];
+    //p.status.letter; THIS ERRORS
     
     UILabel *label;
     label = (UILabel *)[cell viewWithTag:1];

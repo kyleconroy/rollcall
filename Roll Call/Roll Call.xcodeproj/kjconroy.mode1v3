@@ -216,7 +216,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>95EC834111690C6E00DA720F</string>
+						<string>95EC834A11690DF500DA720F</string>
 						<key>history</key>
 						<array>
 							<string>95EC82211168EA1900DA720F</string>
@@ -329,7 +329,7 @@
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {297, 763}}</string>
+							<string>{{0, 25}, {297, 763}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -348,7 +348,7 @@
 							<real>297</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>196 161 1562 822 0 0 1920 1058 </string>
+						<string>68 131 1562 822 0 0 1920 1058 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -378,7 +378,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>95EC834011690C6E00DA720F</string>
+										<string>95EC834911690DF500DA720F</string>
 										<key>history</key>
 										<array>
 											<string>95C3ED301167CE1400CE11E5</string>
@@ -422,9 +422,9 @@
 											<string>95EC824B1168ED4300DA720F</string>
 											<string>95EC82561168EDC200DA720F</string>
 											<string>95EC825E1168EE1300DA720F</string>
-											<string>95EC8325116909A000DA720F</string>
 											<string>95EC833E11690C6E00DA720F</string>
-											<string>95EC833F11690C6E00DA720F</string>
+											<string>95EC834711690DF500DA720F</string>
+											<string>95EC834811690DF500DA720F</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -438,7 +438,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {1243, 538}}</string>
 								<key>RubberWindowFrame</key>
-								<string>196 161 1562 822 0 0 1920 1058 </string>
+								<string>68 131 1562 822 0 0 1920 1058 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -458,7 +458,7 @@
 								<key>Frame</key>
 								<string>{{0, 543}, {1243, 238}}</string>
 								<key>RubberWindowFrame</key>
-								<string>196 161 1562 822 0 0 1920 1058 </string>
+								<string>68 131 1562 822 0 0 1920 1058 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -622,7 +622,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>95EC834211690C6E00DA720F</string>
+		<string>95EC834B11690DF500DA720F</string>
 		<string>95EC82BB1168FF3C00DA720F</string>
 		<string>95EC80861168A9CD00DA720F</string>
 		<string>95EC80871168A9CD00DA720F</string>
@@ -633,7 +633,7 @@
 		<string>/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Roll Call.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>196 161 1562 822 0 0 1920 1058 </string>
+	<string>68 131 1562 822 0 0 1920 1058 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
@@ -808,10 +808,10 @@
 									<key>Frame</key>
 									<string>{{486, 0}, {779, 362}}</string>
 									<key>RubberWindowFrame</key>
-									<string>123 300 1265 720 0 0 1920 1058 </string>
+									<string>122 299 1265 720 0 0 1920 1058 </string>
 								</dict>
 								<key>RubberWindowFrame</key>
-								<string>123 300 1265 720 0 0 1920 1058 </string>
+								<string>122 299 1265 720 0 0 1920 1058 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXDebugSessionModule</string>
@@ -845,7 +845,7 @@
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
 			<key>WindowString</key>
-			<string>123 300 1265 720 0 0 1920 1058 </string>
+			<string>122 299 1265 720 0 0 1920 1058 </string>
 			<key>WindowToolGUID</key>
 			<string>1CD10A99069EF8BA00B06720</string>
 			<key>WindowToolIsVisible</key>
