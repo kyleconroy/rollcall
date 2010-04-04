@@ -42,8 +42,8 @@
 - (IBAction) moveForwardOneDay;
 - (IBAction) addNote:(id)sender;
 
-- (NSDate *) today;
-- (NSDate *) tomorrow;
+- (NSDate *) todayWithDate:(NSDate *)date;
+- (NSDate *) tomorrowWithDate:(NSDate *)date;
 
 - (void) updateDisplayDate;
 - (void) initializeData;

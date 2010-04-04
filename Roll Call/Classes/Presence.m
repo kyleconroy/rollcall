@@ -18,6 +18,6 @@
 @dynamic date;
 @dynamic status;
 @dynamic student;
-@dynamic class;
+@dynamic course;
 
 @end

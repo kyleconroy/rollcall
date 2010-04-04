@@ -41,7 +41,7 @@
 - (void)viewDidLoad {
     
     aD = (Roll_CallAppDelegate *)[[UIApplication sharedApplication] delegate];
-    myDate = [NSDate  date];
+    myDate = [NSDate date];
     
     [self setTitle:course.name];
         
@@ -61,7 +61,8 @@
     NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
     [request setSortDescriptors:sortDescriptors];
     
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(date >= %@) AND (date <= %@) AND (class == %@)", [self today], [self tomorrow], course];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(date >= %@) AND (date <= %@) AND (course == %@)", 
+                              [self todayWithDate:myDate], [self tomorrowWithDate:myDate], course];
     [request setPredicate:predicate];
     
     NSError *error;
@@ -102,10 +103,10 @@
     NSArray *students = [ss sortedArrayUsingDescriptors:sortDescriptors];
     
     // get all events associated with this day
-    NSDate *today = [self today];
-    NSDate *tomorrow = [self tomorrow];
+    NSDate *today = [self todayWithDate:myDate];
+    NSDate *tomorrow = [self tomorrowWithDate:myDate];
     
-    NSPredicate *myPredicate = [NSPredicate predicateWithFormat:@"(date >= %@) AND (date <= %@)", today, tomorrow];
+    NSPredicate *myPredicate = [NSPredicate predicateWithFormat:@"(date >= %@) AND (date <= %@) AND (course.name == %@)", today, tomorrow,course.name];
     Status *currentStatus = [aD getStatusWithLetter:@"P"];
     NSManagedObjectContext *context = [aD managedObjectContext];
     
@@ -116,7 +117,7 @@
             presence.date = myDate;
             presence.student = s;
             presence.lastName = s.lastName;
-            presence.class = course;
+            presence.course = course;
             presence.status = currentStatus;
             NSLog(@"Add new event");
         } else {
@@ -135,12 +136,11 @@
     [ss release];
 }
 
-- (NSDate *)today {
-    NSDate *now = [NSDate date];
+- (NSDate *)todayWithDate:(NSDate *)date {
     NSCalendar *calendar = [NSCalendar currentCalendar];
     
     NSDateComponents *comps = [calendar components:NSYearCalendarUnit | NSMonthCalendarUnit |  NSDayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit 
-                                          fromDate:now];
+                                          fromDate:date];
     
     [comps setHour:00];
     [comps setMinute:00];
@@ -149,9 +149,8 @@
     return [calendar dateFromComponents:comps];
 }
 
-- (NSDate *)tomorrow {
-    NSDate *now = [NSDate date];
-    now = [NSDate dateWithTimeIntervalSinceNow:24 * 60 * 60]; // 24h from now
+- (NSDate *)tomorrowWithDate:(NSDate *)date {
+    NSDate *now = [date addTimeInterval:DAY]; // 24h from now
     NSCalendar *calendar = [NSCalendar currentCalendar];
     
     NSDateComponents *comps = [calendar components:NSYearCalendarUnit | NSMonthCalendarUnit |  NSDayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit 
@@ -335,6 +334,7 @@
     [myDate release];
     [studentsArray release];
     [presencesArray release];
+    [course release];
     [super dealloc];
     
 }
