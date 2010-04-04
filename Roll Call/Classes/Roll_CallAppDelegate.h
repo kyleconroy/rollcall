@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Status.h"
 
 @interface Roll_CallAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate> {
     UIWindow *window;
@@ -29,9 +30,8 @@
 @property (nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
 - (NSString *)applicationDocumentsDirectory;
-- (void) installStudents;
-- (void) installCourses;
 - (NSMutableArray *) getAllStudents;
 - (NSMutableArray *) getAllCourses;
+- (Status *) getStatusWithLetter:(NSString *)letter;
 
 @end

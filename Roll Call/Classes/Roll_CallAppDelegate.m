@@ -19,98 +19,10 @@
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
     
-    // Configure and show the window.
-    bool install = NO;
-    
-    if (install) {
-        [self installCourses];
-        [self installStudents];
-        
-    }
-    
     // Add the tab bar controller's current view as a subview of the window
     [window addSubview:tabBarController.view];
 
 }
-
-- (void) installStudents {
-    NSManagedObjectContext *context = [self managedObjectContext];
-    if (!context) {
-        NSLog(@"Context isn't loading correctly, shit");
-    }
-    
-    NSMutableArray *courses = [self getAllCourses];
-    
-    NSArray *kids = [[NSArray alloc] initWithObjects:
-                     [NSDictionary dictionaryWithObjectsAndKeys:@"Kristina", @"firstName", @"Chung", @"lastName", nil],
-                     [NSDictionary dictionaryWithObjectsAndKeys:@"Paige", @"firstName", @"Chen", @"lastName", nil],
-                     [NSDictionary dictionaryWithObjectsAndKeys:@"Sherri", @"firstName", @"Melton", @"lastName", nil],
-                     [NSDictionary dictionaryWithObjectsAndKeys:@"Gretchen", @"firstName", @"Hill", @"lastName", nil],
-                     [NSDictionary dictionaryWithObjectsAndKeys:@"Karen", @"firstName", @"Puckett", @"lastName", nil],
-                     [NSDictionary dictionaryWithObjectsAndKeys:@"Patrick", @"firstName", @"Song", @"lastName", nil],
-                     [NSDictionary dictionaryWithObjectsAndKeys:@"Elsie", @"firstName", @"Hamilton", @"lastName", nil],
-                     [NSDictionary dictionaryWithObjectsAndKeys:@"Hazel", @"firstName", @"Bender", @"lastName", nil],
-                     [NSDictionary dictionaryWithObjectsAndKeys:@"Malcolm", @"firstName", @"Wagner", @"lastName", nil],
-                     [NSDictionary dictionaryWithObjectsAndKeys:@"Dolores", @"firstName", @"McLaughlin", @"lastName", nil],
-                     [NSDictionary dictionaryWithObjectsAndKeys:@"Francis", @"firstName", @"McNamara", @"lastName", nil],
-                     [NSDictionary dictionaryWithObjectsAndKeys:@"Sandy", @"firstName", @"Raynor", @"lastName", nil],
-                     [NSDictionary dictionaryWithObjectsAndKeys:@"Marion", @"firstName", @"Moon", @"lastName", nil],
-                     [NSDictionary dictionaryWithObjectsAndKeys:@"Beth", @"firstName", @"Woodard", @"lastName", nil],
-                     [NSDictionary dictionaryWithObjectsAndKeys:@"Julia", @"firstName", @"Desai", @"lastName", nil],
-                     [NSDictionary dictionaryWithObjectsAndKeys:@"Jerome", @"firstName", @"Wallace", @"lastName", nil],
-                     [NSDictionary dictionaryWithObjectsAndKeys:@"Neal", @"firstName", @"Lawrence", @"lastName", nil],
-                     [NSDictionary dictionaryWithObjectsAndKeys:@"Jean", @"firstName", @"Griffin", @"lastName", nil],
-                     [NSDictionary dictionaryWithObjectsAndKeys:@"Kristine", @"firstName", @"Dougherty", @"lastName", nil],
-                     [NSDictionary dictionaryWithObjectsAndKeys:@"Crystal", @"firstName", @"Powers", @"lastName", nil],
-                     [NSDictionary dictionaryWithObjectsAndKeys:@"Alex", @"firstName", @"May", @"lastName", nil],
-                     [NSDictionary dictionaryWithObjectsAndKeys:@"Eric", @"firstName", @"Steele", @"lastName", nil],
-                     [NSDictionary dictionaryWithObjectsAndKeys:@"Wesley", @"firstName", @"Teague", @"lastName", nil],
-                     [NSDictionary dictionaryWithObjectsAndKeys:@"Franklin", @"firstName", @"Vick", @"lastName", nil],
-                     [NSDictionary dictionaryWithObjectsAndKeys:@"Claire", @"firstName", @"Gallagher", @"lastName", nil],
-                nil];
-
-    for (NSDictionary *d in kids){
-        NSLog(@"Student %@, %@", [d objectForKey:@"firstName"], [d objectForKey:@"lastName"]);
-        Student *student = (Student *)[NSEntityDescription insertNewObjectForEntityForName:@"Student" inManagedObjectContext:context];
-        [student setFirstName:[d objectForKey:@"firstName"]];
-        [student setLastName:[d objectForKey:@"lastName"]];
-        
-        for (Course *c in courses) {
-            [student addCoursesObject:c];
-        }
-        
-    }
-    
-    NSError *error;
-    if (![context save:&error]) {
-        // Handle the error.
-    }
-}
-
-- (void) installCourses {
-    NSManagedObjectContext *context = [self managedObjectContext];
-    if (!context) {
-        NSLog(@"Context isn't loading correctly, shit");
-    }
-    
-    NSArray *courses = [[NSArray alloc] initWithObjects:
-                        [NSDictionary dictionaryWithObjectsAndKeys:@"Algebra", @"name",nil], 
-                        [NSDictionary dictionaryWithObjectsAndKeys:@"Geometry", @"name", nil], 
-                        [NSDictionary dictionaryWithObjectsAndKeys:@"Math", @"name", nil],
-                        nil];
-    
-    for (NSDictionary *d in courses){
-        NSLog(@"Course %@, %@", [d objectForKey:@"name"]);
-        Course *course = (Course *)[NSEntityDescription insertNewObjectForEntityForName:@"Course" inManagedObjectContext:context];
-        [course setName:[d objectForKey:@"name"]];
-    }
-    
-    NSError *error;
-    if (![context save:&error]) {
-        // Handle the error.
-    }
-}
-
 
 /*
 // Optional UITabBarControllerDelegate method
@@ -169,6 +81,42 @@
     return mutableFetchResults ;
     // Make sure to release this array
 }
+
+-(Status *) getStatusWithLetter:(NSString *)letter {
+	Status *p;
+    
+    NSManagedObjectContext *context = [self managedObjectContext];
+    
+	NSFetchRequest *request = [[NSFetchRequest alloc] init];
+	NSEntityDescription *entity = [NSEntityDescription entityForName: @"Status" inManagedObjectContext:context];
+	[request setEntity:entity];
+    
+	[request setResultType:NSManagedObjectResultType];
+    
+	NSPredicate *predicate = [NSPredicate predicateWithFormat:@"letter == %@", letter];
+	[request setPredicate:predicate];
+    
+	NSError *error;
+	NSArray *objects = [context executeFetchRequest:request error:&error];
+	p = nil;
+	if (objects == nil)
+	{
+		NSLog(@"No Status to return");
+        return nil;
+	}
+	else
+	{
+		if ([objects count] > 0)
+		{
+			p = (Status *)[objects objectAtIndex:0];
+		}
+	}
+    
+	[request release];
+    
+	return p;
+}
+
 
 #pragma mark -
 #pragma mark Core Data stack

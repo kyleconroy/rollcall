@@ -8,33 +8,40 @@
 
 #import <UIKit/UIKit.h>
 #import "Course.h"
+#import "Roll_CallAppDelegate.h"
 
 @interface RollSheetInstance : UIViewController <UITableViewDelegate> {
     Course *course;
-    NSArray * studentsArray;
-    UITableView *myTableView;
-    NSDate *myDate;
+    Roll_CallAppDelegate *aD;
     
-    IBOutlet UITableViewCell *tvCell;
+    NSArray * studentsArray;
+    NSArray * eventsArray;
+    NSDate *myDate;
+    UITableView *myTableView;
+    
     IBOutlet UIButton *backDate;
     IBOutlet UIButton *forwardDate;
     IBOutlet UILabel *displayDate;
+    IBOutlet UITableViewCell *tvCell;
 }
 
 @property(nonatomic, retain) Course *course;
+@property(nonatomic, retain) NSArray * eventsArray;
 @property(nonatomic, retain) NSArray * studentsArray;
+@property(nonatomic, retain) NSDate *myDate;\
+@property(nonatomic, retain) Roll_CallAppDelegate *aD;
 @property(nonatomic, retain) UITableView *myTableView;
-@property(nonatomic, retain) NSDate *myDate;
 
-@property(nonatomic, retain) IBOutlet UITableViewCell *tvCell;
+
 @property(nonatomic, retain)  IBOutlet UIButton *backDate;
 @property(nonatomic, retain)  IBOutlet UIButton *forwardDate;
 @property(nonatomic, retain)  IBOutlet UILabel *displayDate;
+@property(nonatomic, retain)  IBOutlet UITableViewCell *tvCell;
 
--(void) updateDisplayDate;
-- (IBAction)addNote:(id)sender;
-- (IBAction)moveBackOneDay;
-- (IBAction)moveForwardOneDay;
+- (IBAction) moveBackOneDay;
+- (IBAction) moveForwardOneDay;
+- (IBAction) addNote:(id)sender;
 
+- (void) updateDisplayDate;
 
 @end
