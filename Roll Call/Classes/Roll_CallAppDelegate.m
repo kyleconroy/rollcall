@@ -51,7 +51,7 @@
         NSLog(@"Student %@, %@", [d objectForKey:@"firstName"], [d objectForKey:@"lastName"]);
         Student *student = (Student *)[NSEntityDescription insertNewObjectForEntityForName:@"Student" inManagedObjectContext:context];
         [student setFirstName:[d objectForKey:@"firstName"]];
-        [student setLastName:[d objectForKey:@"firstName"]];
+        [student setLastName:[d objectForKey:@"lastName"]];
         
         for (Course *c in courses) {
             [student addCoursesObject:c];

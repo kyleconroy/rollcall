@@ -282,7 +282,7 @@
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {250, 760}}</string>
+							<string>{{0, 25}, {250, 760}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -301,7 +301,7 @@
 							<real>250</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>79 59 1343 819 0 0 1440 878 </string>
+						<string>42 36 1343 819 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -331,7 +331,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>95C3EE8D1168098B00CE11E5</string>
+										<string>95C3EE9711681E7B00CE11E5</string>
 										<key>history</key>
 										<array>
 											<string>95C3ED301167CE1400CE11E5</string>
@@ -340,7 +340,6 @@
 											<string>95C3ED3D1167CE1400CE11E5</string>
 											<string>95C3EE231168016800CE11E5</string>
 											<string>95C3EE241168016800CE11E5</string>
-											<string>95C3EE251168016800CE11E5</string>
 											<string>95C3EE261168016800CE11E5</string>
 											<string>95C3EE271168016800CE11E5</string>
 											<string>95C3EE281168016800CE11E5</string>
@@ -348,18 +347,19 @@
 											<string>95C3EE2A1168016800CE11E5</string>
 											<string>95C3EE2B1168016800CE11E5</string>
 											<string>95C3EE2C1168016800CE11E5</string>
-											<string>95C3EE2D1168016800CE11E5</string>
 											<string>95C3EE2E1168016800CE11E5</string>
 											<string>95C3EE311168016800CE11E5</string>
 											<string>95C3EE321168016800CE11E5</string>
 											<string>95C3EE331168016800CE11E5</string>
 											<string>95C3EE41116804E100CE11E5</string>
-											<string>95C3EE871168098B00CE11E5</string>
-											<string>95C3EE881168098B00CE11E5</string>
 											<string>95C3EE891168098B00CE11E5</string>
 											<string>95C3EE8A1168098B00CE11E5</string>
-											<string>95C3EE8B1168098B00CE11E5</string>
-											<string>95C3EE8C1168098B00CE11E5</string>
+											<string>95C3EE9111681E7B00CE11E5</string>
+											<string>95C3EE9211681E7B00CE11E5</string>
+											<string>95C3EE9311681E7B00CE11E5</string>
+											<string>95C3EE9411681E7B00CE11E5</string>
+											<string>95C3EE9511681E7B00CE11E5</string>
+											<string>95C3EE9611681E7B00CE11E5</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -373,7 +373,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {1071, 560}}</string>
 								<key>RubberWindowFrame</key>
-								<string>79 59 1343 819 0 0 1440 878 </string>
+								<string>42 36 1343 819 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -393,7 +393,7 @@
 								<key>Frame</key>
 								<string>{{0, 565}, {1071, 213}}</string>
 								<key>RubberWindowFrame</key>
-								<string>79 59 1343 819 0 0 1440 878 </string>
+								<string>42 36 1343 819 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -561,11 +561,11 @@
 		<string>95C3EE3B1168016800CE11E5</string>
 		<string>1C78EAAD065D492600B07095</string>
 		<string>95CAD974115801F100CBC9E9</string>
-		<string>/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Roll Call.xcodeproj</string>
 		<string>1CD10A99069EF8BA00B06720</string>
+		<string>/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Roll Call.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>79 59 1343 819 0 0 1440 878 </string>
+	<string>42 36 1343 819 0 0 1440 878 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
@@ -781,7 +781,7 @@
 			<key>WindowToolGUID</key>
 			<string>1CD10A99069EF8BA00B06720</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>Identifier</key>

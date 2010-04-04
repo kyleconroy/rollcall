@@ -9,9 +9,9 @@
 	};
 	1D3623250D0F684500981E51 /* Roll_CallAppDelegate.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1041, 3107}}";
-			sepNavSelRange = "{4200, 0}";
-			sepNavVisRange = "{3577, 1563}";
+			sepNavIntBoundsRect = "{{0, 0}, {1041, 3198}}";
+			sepNavSelRange = "{2859, 68}";
+			sepNavVisRange = "{1986, 1328}";
 		};
 	};
 	1D6058900D05DD3D006BFB54 /* Roll Call */ = {
@@ -49,6 +49,7 @@
 			1D6058900D05DD3D006BFB54 /* Roll Call */,
 		);
 		breakpoints = (
+			95C3EE8F11681E7800CE11E5 /* Roll_CallAppDelegate.m:87 */,
 		);
 		codeSenseManager = 95CAD977115801F100CBC9E9 /* Code sense */;
 		executables = (
@@ -246,6 +247,14 @@
 			95C3EE8B1168098B00CE11E5 /* XDModelBookmark */ = 95C3EE8B1168098B00CE11E5 /* XDModelBookmark */;
 			95C3EE8C1168098B00CE11E5 /* PBXTextBookmark */ = 95C3EE8C1168098B00CE11E5 /* PBXTextBookmark */;
 			95C3EE8D1168098B00CE11E5 /* PBXTextBookmark */ = 95C3EE8D1168098B00CE11E5 /* PBXTextBookmark */;
+			95C3EE8E116819B000CE11E5 /* PBXTextBookmark */ = 95C3EE8E116819B000CE11E5 /* PBXTextBookmark */;
+			95C3EE9111681E7B00CE11E5 /* XDModelBookmark */ = 95C3EE9111681E7B00CE11E5 /* XDModelBookmark */;
+			95C3EE9211681E7B00CE11E5 /* PBXTextBookmark */ = 95C3EE9211681E7B00CE11E5 /* PBXTextBookmark */;
+			95C3EE9311681E7B00CE11E5 /* PBXTextBookmark */ = 95C3EE9311681E7B00CE11E5 /* PBXTextBookmark */;
+			95C3EE9411681E7B00CE11E5 /* PBXTextBookmark */ = 95C3EE9411681E7B00CE11E5 /* PBXTextBookmark */;
+			95C3EE9511681E7B00CE11E5 /* PBXTextBookmark */ = 95C3EE9511681E7B00CE11E5 /* PBXTextBookmark */;
+			95C3EE9611681E7B00CE11E5 /* PBXTextBookmark */ = 95C3EE9611681E7B00CE11E5 /* PBXTextBookmark */;
+			95C3EE9711681E7B00CE11E5 /* PBXTextBookmark */ = 95C3EE9711681E7B00CE11E5 /* PBXTextBookmark */;
 			95CAD9F011580F4200CBC9E9 = 95CAD9F011580F4200CBC9E9 /* PBXTextBookmark */;
 			95CADAD011584D5200CBC9E9 = 95CADAD011584D5200CBC9E9 /* PBXTextBookmark */;
 			95CADAD111584D5200CBC9E9 = 95CADAD111584D5200CBC9E9 /* PBXTextBookmark */;
@@ -295,9 +304,9 @@
 	};
 	95A84284115A54A0002C6FCB /* AddStudentViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1335, 4914}}";
-			sepNavSelRange = "{12149, 71}";
-			sepNavVisRange = "{11631, 749}";
+			sepNavIntBoundsRect = "{{0, 0}, {1335, 4940}}";
+			sepNavSelRange = "{3089, 0}";
+			sepNavVisRange = "{2664, 1354}";
 		};
 	};
 	95A84296115A55EA002C6FCB /* PBXTextBookmark */ = {
@@ -356,7 +365,7 @@
 					chosenTableWidths = (
 						103.000000,
 						22.000000,
-						80.080078,
+						81.080078,
 					);
 				};
 				UIContextForLayoutManager = {
@@ -366,8 +375,8 @@
 						_percentageOfCollapsedView = 0;
 						isCollapsed = yes;
 						sizes = (
-							"{{0, 0}, {698, 218}}",
-							"{{703, 0}, {366, 218}}",
+							"{{0, 0}, {698, 220}}",
+							"{{703, 0}, {366, 220}}",
 						);
 					};
 					diagramSplitGeometry = {
@@ -386,8 +395,8 @@
 						_percentageOfCollapsedView = 0;
 						isCollapsed = yes;
 						sizes = (
-							"{{0, 0}, {230, 218}}",
-							"{{235, 0}, {461, 218}}",
+							"{{0, 0}, {231, 220}}",
+							"{{236, 0}, {462, 220}}",
 						);
 					};
 				};
@@ -476,7 +485,7 @@
 					chosenTableWidthsPT = (
 						128.000000,
 						108.110840,
-						198.570801,
+						199.570801,
 					);
 					chosenTableWidthsRT = (
 						128.000000,
@@ -1032,7 +1041,7 @@
 		fRef = 1D3623250D0F684500981E51 /* Roll_CallAppDelegate.m */;
 		name = "Roll_CallAppDelegate.m: 50";
 		rLen = 0;
-		rLoc = 2489;
+		rLoc = 2488;
 		rType = 0;
 		vrLen = 1748;
 		vrLoc = 283;
@@ -1237,7 +1246,7 @@
 		fRef = 1D3623250D0F684500981E51 /* Roll_CallAppDelegate.m */;
 		name = "Roll_CallAppDelegate.m: 76";
 		rLen = 0;
-		rLoc = 2358;
+		rLoc = 2357;
 		rType = 0;
 		vrLen = 1858;
 		vrLoc = 890;
@@ -1252,7 +1261,7 @@
 		fRef = 1D3623250D0F684500981E51 /* Roll_CallAppDelegate.m */;
 		name = "Roll_CallAppDelegate.m: 76";
 		rLen = 0;
-		rLoc = 2353;
+		rLoc = 2352;
 		rType = 0;
 		vrLen = 1858;
 		vrLoc = 903;
@@ -1686,7 +1695,7 @@
 		fRef = 1D3623250D0F684500981E51 /* Roll_CallAppDelegate.m */;
 		name = "Roll_CallAppDelegate.m: 125";
 		rLen = 0;
-		rLoc = 4423;
+		rLoc = 4422;
 		rType = 0;
 		vrLen = 1287;
 		vrLoc = 3984;
@@ -1696,7 +1705,7 @@
 		fRef = 1D3623250D0F684500981E51 /* Roll_CallAppDelegate.m */;
 		name = "Roll_CallAppDelegate.m: 81";
 		rLen = 0;
-		rLoc = 2922;
+		rLoc = 2921;
 		rType = 0;
 		vrLen = 1321;
 		vrLoc = 1818;
@@ -1716,7 +1725,7 @@
 		fRef = 1D3623250D0F684500981E51 /* Roll_CallAppDelegate.m */;
 		name = "Roll_CallAppDelegate.m: 124";
 		rLen = 0;
-		rLoc = 4268;
+		rLoc = 4267;
 		rType = 0;
 		vrLen = 815;
 		vrLoc = 143;
@@ -1756,7 +1765,7 @@
 		fRef = 1D3623250D0F684500981E51 /* Roll_CallAppDelegate.m */;
 		name = "Roll_CallAppDelegate.m: 56";
 		rLen = 0;
-		rLoc = 1873;
+		rLoc = 1872;
 		rType = 0;
 		vrLen = 1380;
 		vrLoc = 714;
@@ -1786,7 +1795,7 @@
 		fRef = 1D3623250D0F684500981E51 /* Roll_CallAppDelegate.m */;
 		name = "Roll_CallAppDelegate.m: 119";
 		rLen = 0;
-		rLoc = 4011;
+		rLoc = 4010;
 		rType = 0;
 		vrLen = 1301;
 		vrLoc = 3863;
@@ -1796,7 +1805,7 @@
 		fRef = 1D3623250D0F684500981E51 /* Roll_CallAppDelegate.m */;
 		name = "Roll_CallAppDelegate.m: 119";
 		rLen = 0;
-		rLoc = 4011;
+		rLoc = 4010;
 		rType = 0;
 		vrLen = 1478;
 		vrLoc = 3863;
@@ -1806,7 +1815,7 @@
 		fRef = 1D3623250D0F684500981E51 /* Roll_CallAppDelegate.m */;
 		name = "Roll_CallAppDelegate.m: 119";
 		rLen = 0;
-		rLoc = 4011;
+		rLoc = 4010;
 		rType = 0;
 		vrLen = 1443;
 		vrLoc = 3898;
@@ -1816,7 +1825,7 @@
 		fRef = 1D3623250D0F684500981E51 /* Roll_CallAppDelegate.m */;
 		name = "Roll_CallAppDelegate.m: 119";
 		rLen = 0;
-		rLoc = 4011;
+		rLoc = 4010;
 		rType = 0;
 		vrLen = 1377;
 		vrLoc = 3782;
@@ -1826,7 +1835,7 @@
 		fRef = 1D3623250D0F684500981E51 /* Roll_CallAppDelegate.m */;
 		name = "Roll_CallAppDelegate.m: 119";
 		rLen = 0;
-		rLoc = 4011;
+		rLoc = 4010;
 		rType = 0;
 		vrLen = 1377;
 		vrLoc = 3782;
@@ -1856,7 +1865,7 @@
 		fRef = 1D3623250D0F684500981E51 /* Roll_CallAppDelegate.m */;
 		name = "Roll_CallAppDelegate.m: 135";
 		rLen = 0;
-		rLoc = 4595;
+		rLoc = 4594;
 		rType = 0;
 		vrLen = 1347;
 		vrLoc = 4080;
@@ -1866,7 +1875,7 @@
 		fRef = 1D3623250D0F684500981E51 /* Roll_CallAppDelegate.m */;
 		name = "Roll_CallAppDelegate.m: 135";
 		rLen = 0;
-		rLoc = 4595;
+		rLoc = 4594;
 		rType = 0;
 		vrLen = 1354;
 		vrLoc = 3897;
@@ -1876,7 +1885,7 @@
 		fRef = 1D3623250D0F684500981E51 /* Roll_CallAppDelegate.m */;
 		name = "Roll_CallAppDelegate.m: 135";
 		rLen = 0;
-		rLoc = 4595;
+		rLoc = 4594;
 		rType = 0;
 		vrLen = 1324;
 		vrLoc = 3927;
@@ -1886,7 +1895,7 @@
 		fRef = 1D3623250D0F684500981E51 /* Roll_CallAppDelegate.m */;
 		name = "Roll_CallAppDelegate.m: 132";
 		rLen = 0;
-		rLoc = 4475;
+		rLoc = 4474;
 		rType = 0;
 		vrLen = 1430;
 		vrLoc = 3952;
@@ -2120,10 +2129,260 @@
 		fRef = 1D3623250D0F684500981E51 /* Roll_CallAppDelegate.m */;
 		name = "Roll_CallAppDelegate.m: 125";
 		rLen = 0;
-		rLoc = 4200;
+		rLoc = 4199;
 		rType = 0;
 		vrLen = 1563;
 		vrLoc = 3577;
+	};
+	95C3EE8E116819B000CE11E5 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95A84284115A54A0002C6FCB /* AddStudentViewController.m */;
+		name = "AddStudentViewController.m: 345";
+		rLen = 71;
+		rLoc = 12149;
+		rType = 0;
+		vrLen = 803;
+		vrLoc = 11631;
+	};
+	95C3EE8F11681E7800CE11E5 /* Roll_CallAppDelegate.m:87 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 1D3623250D0F684500981E51 /* Roll_CallAppDelegate.m */;
+		functionName = "-installCourses";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 87;
+		modificationTime = 292036216.541235;
+		originalNumberOfMultipleMatches = 0;
+		state = 1;
+	};
+	95C3EE9111681E7B00CE11E5 /* XDModelBookmark */ = {
+		isa = XDModelBookmark;
+		fRef = 95C07C6F1166A6D200E7A9B3 /* RollCallDataModel.xcdatamodel */;
+		fallbackIsa = PBXBookmark;
+		uiCtxt = {
+			UIContextForDetailArea = {
+				_indexOfSelectedPane = 0;
+				_indexOfSelectedView = 0;
+			};
+			UIContextForEntityArea = {
+				_indexOfSelectedView = 0;
+				chosenTableColumnns = (
+					"ET Entity",
+					"ET Abstract",
+					"ET Class",
+				);
+				chosenTableColumnns_sortDirections = (
+					YES,
+				);
+				chosenTableColumnns_sortKeys = (
+					name,
+				);
+				chosenTableColumnns_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableWidths = (
+					103.000000,
+					22.000000,
+					81.080078,
+				);
+			};
+			UIContextForLayoutManager = {
+				detailSplitGeometry = {
+					_collapsingFrameDimension = 0;
+					_indexOfCollapsedView = 0;
+					_percentageOfCollapsedView = 0;
+					isCollapsed = yes;
+					sizes = (
+						"{{0, 0}, {698, 220}}",
+						"{{703, 0}, {366, 220}}",
+					);
+				};
+				diagramSplitGeometry = {
+					_collapsingFrameDimension = 0;
+					_indexOfCollapsedView = 0;
+					_percentageOfCollapsedView = 0;
+					isCollapsed = yes;
+					sizes = (
+						"{{0, 0}, {1069, 220}}",
+						"{{0, 225}, {1069, 318}}",
+					);
+				};
+				tableSplitGeometry = {
+					_collapsingFrameDimension = 0;
+					_indexOfCollapsedView = 0;
+					_percentageOfCollapsedView = 0;
+					isCollapsed = yes;
+					sizes = (
+						"{{0, 0}, {231, 220}}",
+						"{{236, 0}, {462, 220}}",
+					);
+				};
+			};
+			UIContextForPropertyArea = {
+				_indexOfSelectedView = 0;
+				chosenTableColumnnFRTs = (
+					"FT Fetch Request",
+					"FT Predicate",
+				);
+				chosenTableColumnnFRTs_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnFRTs_sortKeys = (
+					name,
+				);
+				chosenTableColumnnFRTs_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableColumnnsAT = (
+					"AT Attribute",
+					"AT Type",
+				);
+				chosenTableColumnnsAT_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnsAT_sortKeys = (
+					name,
+				);
+				chosenTableColumnnsAT_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableColumnnsFPT = (
+					"FP FetchedProperty",
+					"FP Destination",
+					"FP Predicate",
+				);
+				chosenTableColumnnsFPT_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnsFPT_sortKeys = (
+					name,
+				);
+				chosenTableColumnnsFPT_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableColumnnsPT = (
+					"PT Property",
+					"PT Kind",
+					"PT SharedKeyOne",
+				);
+				chosenTableColumnnsPT_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnsPT_sortKeys = (
+					name,
+				);
+				chosenTableColumnnsPT_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableColumnnsRT = (
+					"RT Relationship",
+					"RT Destination",
+				);
+				chosenTableColumnnsRT_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnsRT_sortKeys = (
+					name,
+				);
+				chosenTableColumnnsRT_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableWidthsAT = (
+					128.000000,
+					64.000000,
+				);
+				chosenTableWidthsFPT = (
+					128.000000,
+					64.000000,
+					144.764160,
+				);
+				chosenTableWidthsFRT = (
+					128.000000,
+					249.764160,
+				);
+				chosenTableWidthsPT = (
+					128.000000,
+					108.110840,
+					199.570801,
+				);
+				chosenTableWidthsRT = (
+					128.000000,
+					64.000000,
+				);
+			};
+			"xdesign model browser state key - shown/hidden" = 1;
+			"xdesign model diagram view visible rect key" = "{{-203, 0}, {1054, 303}}";
+			"xdesign model selected entities key" = (
+			);
+			"xdesign model selected properties key" = (
+			);
+		};
+	};
+	95C3EE9211681E7B00CE11E5 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95CAD9E911580F2300CBC9E9 /* StudentsViewController.h */;
+		name = "StudentsViewController.h: 15";
+		rLen = 0;
+		rLoc = 297;
+		rType = 0;
+		vrLen = 877;
+		vrLoc = 0;
+	};
+	95C3EE9311681E7B00CE11E5 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95C3EE041168006000CE11E5 /* Student.m */;
+		name = "Student.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 339;
+		vrLoc = 0;
+	};
+	95C3EE9411681E7B00CE11E5 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95C3EE031168006000CE11E5 /* Student.h */;
+		name = "Student.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 798;
+		vrLoc = 0;
+	};
+	95C3EE9511681E7B00CE11E5 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95A84284115A54A0002C6FCB /* AddStudentViewController.m */;
+		name = "AddStudentViewController.m: 80";
+		rLen = 0;
+		rLoc = 3089;
+		rType = 0;
+		vrLen = 1354;
+		vrLoc = 2664;
+	};
+	95C3EE9611681E7B00CE11E5 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* Roll_CallAppDelegate.m */;
+		name = "Roll_CallAppDelegate.m: 87";
+		rLen = 68;
+		rLoc = 2859;
+		rType = 0;
+		vrLen = 1328;
+		vrLoc = 1986;
+	};
+	95C3EE9711681E7B00CE11E5 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* Roll_CallAppDelegate.m */;
+		name = "Roll_CallAppDelegate.m: 87";
+		rLen = 68;
+		rLoc = 2859;
+		rType = 0;
+		vrLen = 1328;
+		vrLoc = 1986;
 	};
 	95CAD961115801EA00CBC9E9 /* Roll Call */ = {
 		isa = PBXExecutable;
@@ -2187,7 +2446,7 @@
 	};
 	95CAD9E911580F2300CBC9E9 /* StudentsViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1010, 528}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1010, 503}}";
 			sepNavSelRange = "{297, 0}";
 			sepNavVisRange = "{0, 877}";
 			sepNavWindowFrame = "{{38, 16}, {902, 836}}";
