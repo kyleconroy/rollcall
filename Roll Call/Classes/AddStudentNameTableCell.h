@@ -11,8 +11,13 @@
 
 @interface AddStudentNameTableCell : UITableViewCell {
 	UITextField *textField;
+	UITextField *textField1;
+	UITextField *textField2;
+	UITextField *textField3;
 }
-
+@property (nonatomic, retain) IBOutlet UITextField *textField1;
+@property (nonatomic, retain) IBOutlet UITextField *textField2;
+@property (nonatomic, retain) IBOutlet UITextField *textField3;
 @property (nonatomic, retain) IBOutlet UITextField *textField;
 
 @end
