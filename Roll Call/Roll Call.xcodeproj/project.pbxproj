@@ -25,6 +25,8 @@
 		5A1B89FE116A09C300E979FF /* Address.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A1B89F4116A09C300E979FF /* Address.m */; };
 		5A1B89FF116A09C300E979FF /* StudentHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A1B89F5116A09C300E979FF /* StudentHeaderView.xib */; };
 		5A1B8A2F116A0BC100E979FF /* deafultphoto.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 5A1B8A2E116A0BC100E979FF /* deafultphoto.JPG */; };
+		5A334432116A929B0084B1D1 /* AttendanceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A334430116A929B0084B1D1 /* AttendanceTableViewController.m */; };
+		5A334433116A929B0084B1D1 /* AttendanceTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A334431116A929B0084B1D1 /* AttendanceTableViewController.xib */; };
 		5A3911C2116759EB003EF6F8 /* AddStudentHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A3911C1116759EB003EF6F8 /* AddStudentHeaderView.xib */; };
 		5A39130E11678C06003EF6F8 /* addphoto.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5A39130D11678C06003EF6F8 /* addphoto.jpg */; };
 		5A7B2E8A11674DD4004332A7 /* AddStudentNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7B2E8811674DD4004332A7 /* AddStudentNameViewController.m */; };
@@ -93,6 +95,9 @@
 		5A1B89F4116A09C300E979FF /* Address.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Address.m; sourceTree = "<group>"; };
 		5A1B89F5116A09C300E979FF /* StudentHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StudentHeaderView.xib; sourceTree = "<group>"; };
 		5A1B8A2E116A0BC100E979FF /* deafultphoto.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = deafultphoto.JPG; sourceTree = "<group>"; };
+		5A33442F116A929B0084B1D1 /* AttendanceTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttendanceTableViewController.h; sourceTree = "<group>"; };
+		5A334430116A929B0084B1D1 /* AttendanceTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttendanceTableViewController.m; sourceTree = "<group>"; };
+		5A334431116A929B0084B1D1 /* AttendanceTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AttendanceTableViewController.xib; sourceTree = "<group>"; };
 		5A3911C1116759EB003EF6F8 /* AddStudentHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddStudentHeaderView.xib; sourceTree = "<group>"; };
 		5A39130D11678C06003EF6F8 /* addphoto.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = addphoto.jpg; sourceTree = "<group>"; };
 		5A7B2E8711674DD4004332A7 /* AddStudentNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddStudentNameViewController.h; sourceTree = "<group>"; };
@@ -284,6 +289,9 @@
 		5AB0978C1168165E00E0CB9F /* Student */ = {
 			isa = PBXGroup;
 			children = (
+				5A33442F116A929B0084B1D1 /* AttendanceTableViewController.h */,
+				5A334430116A929B0084B1D1 /* AttendanceTableViewController.m */,
+				5A334431116A929B0084B1D1 /* AttendanceTableViewController.xib */,
 				95CAD9E911580F2300CBC9E9 /* StudentsViewController.h */,
 				95CAD9EA11580F2300CBC9E9 /* StudentsViewController.m */,
 				95CAD9EB11580F2300CBC9E9 /* StudentsViewController.xib */,
@@ -432,6 +440,7 @@
 				5A1B89FD116A09C300E979FF /* AddPhoneViewController.xib in Resources */,
 				5A1B89FF116A09C300E979FF /* StudentHeaderView.xib in Resources */,
 				5A1B8A2F116A0BC100E979FF /* deafultphoto.JPG in Resources */,
+				5A334433116A929B0084B1D1 /* AttendanceTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,6 +473,7 @@
 				5A1B89FA116A09C300E979FF /* AddEmailViewController.m in Sources */,
 				5A1B89FC116A09C300E979FF /* AddPhoneViewController.m in Sources */,
 				5A1B89FE116A09C300E979FF /* Address.m in Sources */,
+				5A334432116A929B0084B1D1 /* AttendanceTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
