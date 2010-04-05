@@ -9,57 +9,40 @@
 #import "StudentsViewController.h"
 #import "StudentViewController.h"
 #import "AddStudentViewController.h"
-
+#import "student.h"
 @implementation StudentsViewController
 
-@synthesize aD, filteredListContent, savedSearchTerm, searchWasActive, collation, sectionsArray, students;
-
-
-/*
-- (id)initWithStyle:(UITableViewStyle)style {
-    // Override initWithStyle: if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
-    if (self = [super initWithStyle:style]) {
-    }
-    return self;
-}
-*/
-
+@synthesize aD, filteredListContent, collation, sectionsArray;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     [self setTitle:@"All Students"];
-    
     aD = (Roll_CallAppDelegate *)[[UIApplication sharedApplication] delegate];
-	students = [aD getAllStudents];
-	self.filteredListContent = [NSMutableArray arrayWithCapacity:[students count]];
-	
-   
+	NSMutableArray *allstudents=[aD getAllStudents];
+	self.filteredListContent = [NSMutableArray arrayWithCapacity:[allstudents count]];
 	self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addStudent)];
-    if (self.savedSearchTerm)
-	{
-        [self.searchDisplayController setActive:self.searchWasActive];
-        [self.searchDisplayController.searchBar setText:savedSearchTerm]; 
-        self.savedSearchTerm = nil;
-    }
-	
-	if (students == nil) {
+	if (allstudents == nil) {
 		self.sectionsArray = nil;
 	}
 	else {
 		[self configureSections];
 	}
+	//self.navigationController.navigationBar.barStyle=UIBarStyleBlackTranslucent;
+	self.navigationController.navigationBar.translucent=YES;
 	[self.tableView reloadData];
 	self.tableView.scrollEnabled = YES;
+	[allstudents release];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-	[self configureSections];
-	[self.tableView reloadData];
+ 
+- (void)viewWillAppear:(BOOL)animated {	
+		[self configureSections];
+		[self.searchDisplayController setActive:NO];
+		[self.tableView reloadData];
 }
 
 - (void)configureSections {
-	//NSLog(@"Start Configuring!");
+	NSLog(@"Start Configuring!");
 	// Get the current collation and keep a reference to it.
 	self.collation = [UILocalizedIndexedCollation currentCollation];	
 	NSInteger index, sectionTitlesCount = [[collation sectionTitles] count];	
@@ -70,11 +53,9 @@
 		[newSectionsArray addObject:array];
 		[array release];
 	}
-    
-    students = [aD getAllStudents];
-    
+	NSMutableArray *allstudents=[aD getAllStudents];
 	// Segregate into the appropriate arrays.
-	for (Student *student in students) {
+	for (Student *student in allstudents) {
 		NSInteger sectionNumber = [collation sectionForObject:student collationStringSelector:@selector(lastName)];
 		
 		// Get the array for the section.
@@ -101,32 +82,16 @@
 
 - (void)viewDidDisappear:(BOOL)animated
 {
-    // save the state of the search UI so that it can be restored if the view is re-created
-    self.searchWasActive = [self.searchDisplayController isActive];
-    self.savedSearchTerm = [self.searchDisplayController.searchBar text];
 }
 
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-*/
 
 - (void)addStudent {
+
     AddStudentViewController *addController = [[AddStudentViewController alloc] initWithNibName:@"AddStudentViewController" bundle:nil];
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:addController];
     [self presentModalViewController:navController animated:YES];
     [navController release];
     [addController release];
-}
-
-- (void)didReceiveMemoryWarning {
-	// Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-	
-	// Release any cached data, images, etc that aren't in use.
 }
 
 - (void)viewDidUnload {
@@ -162,19 +127,19 @@
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	
-	NSArray *studentsInSection = [sectionsArray objectAtIndex:indexPath.section];
     Student *myStudent = nil;
     NSString *CellIdentifier = [NSString stringWithFormat:@"%@ %@", myStudent.firstName, myStudent.lastName];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+		
 	}
 	if (tableView == self.searchDisplayController.searchResultsTableView)
 	{
         myStudent = [self.filteredListContent objectAtIndex:indexPath.row];
+		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     } else {
+		NSArray *studentsInSection = [sectionsArray objectAtIndex:indexPath.section];
 		myStudent = [studentsInSection objectAtIndex:indexPath.row];
 	}
 	cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", myStudent.firstName, myStudent.lastName];
@@ -185,7 +150,9 @@
 		 Section-related methods: Retrieve the section titles and section index titles from the collation.
 		 */
 		 
- - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+		if (tableView == self.searchDisplayController.searchResultsTableView)
+			return 0;
 		if ([[sectionsArray objectAtIndex:section] count]==0)
 			return 0;
 		return [[collation sectionTitles] objectAtIndex:section];
@@ -206,7 +173,6 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     // Navigation logic may go here. Create and push another view controller.
 	StudentViewController *anotherViewController = [[StudentViewController alloc] initWithNibName:@"StudentViewController" bundle:nil];
-
 	Student *student = nil;
 	if (tableView == self.searchDisplayController.searchResultsTableView)
 	{
@@ -231,37 +197,31 @@
 	/*
 	 Search the main list for products whose type matches the scope (if selected) and whose name matches searchText; add items that match to the filtered array.
 	 */
-		for (Student *student in students)
+	NSMutableArray *allstudents=[aD getAllStudents];
+	for (Student *student in allstudents)
+	{
+		NSString *name=[[NSString alloc] initWithFormat: @"%@", student.lastName];
+		NSComparisonResult result = [name compare:searchText options:(NSCaseInsensitiveSearch|NSDiacriticInsensitiveSearch) range:NSMakeRange(0, [searchText length])];
+		if (result == NSOrderedSame)
 		{
-			NSString *name=[[NSString alloc] initWithFormat: @"%@", student.lastName];
-			NSLog(@"Processing Value: %@", name);
-			NSComparisonResult result = [name compare:searchText options:(NSCaseInsensitiveSearch|NSDiacriticInsensitiveSearch) range:NSMakeRange(0, [searchText length])];
-			if (result == NSOrderedSame)
-				{
-					[self.filteredListContent addObject:student];
-				}
+			[self.filteredListContent addObject:student];
 		}
-	
+	}	
 }
 
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
 {
 	[self filterContentForSearchText:searchString];  
-	self.tableView.sectionIndexMinimumDisplayRowCount=10;
     // Return YES to cause the search result table view to be reloaded.
     return YES;
 }
 
-
-
 - (void)dealloc {
 	[collation release];
 	[filteredListContent release];
-	[savedSearchTerm release];
 	[sectionsArray release];
     [super dealloc];
 }
-
 
 @end
 

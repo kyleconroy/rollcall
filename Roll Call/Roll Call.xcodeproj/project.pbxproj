@@ -14,6 +14,17 @@
 		282CCBFE0DB6C98000C4EA27 /* SecondView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 282CCBFD0DB6C98000C4EA27 /* SecondView.xib */; };
 		288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765070DF74369002DB57D /* CoreGraphics.framework */; };
 		28AD73880D9D96C1002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD73870D9D96C1002E5188 /* MainWindow.xib */; };
+		5A1B89F6116A09C300E979FF /* AddAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A1B89E8116A09C300E979FF /* AddAddressViewController.m */; };
+		5A1B89F7116A09C300E979FF /* AddAddressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A1B89E9116A09C300E979FF /* AddAddressViewController.xib */; };
+		5A1B89F8116A09C300E979FF /* AddCourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A1B89EB116A09C300E979FF /* AddCourseViewController.m */; };
+		5A1B89F9116A09C300E979FF /* AddCourseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A1B89EC116A09C300E979FF /* AddCourseViewController.xib */; };
+		5A1B89FA116A09C300E979FF /* AddEmailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A1B89EE116A09C300E979FF /* AddEmailViewController.m */; };
+		5A1B89FB116A09C300E979FF /* AddEmailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A1B89EF116A09C300E979FF /* AddEmailViewController.xib */; };
+		5A1B89FC116A09C300E979FF /* AddPhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A1B89F1116A09C300E979FF /* AddPhoneViewController.m */; };
+		5A1B89FD116A09C300E979FF /* AddPhoneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A1B89F2116A09C300E979FF /* AddPhoneViewController.xib */; };
+		5A1B89FE116A09C300E979FF /* Address.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A1B89F4116A09C300E979FF /* Address.m */; };
+		5A1B89FF116A09C300E979FF /* StudentHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A1B89F5116A09C300E979FF /* StudentHeaderView.xib */; };
+		5A1B8A2F116A0BC100E979FF /* deafultphoto.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 5A1B8A2E116A0BC100E979FF /* deafultphoto.JPG */; };
 		5A3911C2116759EB003EF6F8 /* AddStudentHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A3911C1116759EB003EF6F8 /* AddStudentHeaderView.xib */; };
 		5A39130E11678C06003EF6F8 /* addphoto.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5A39130D11678C06003EF6F8 /* addphoto.jpg */; };
 		5A7B2E8A11674DD4004332A7 /* AddStudentNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7B2E8811674DD4004332A7 /* AddStudentNameViewController.m */; };
@@ -58,32 +69,48 @@
 
 /* Begin PBXFileReference section */
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		1D3623240D0F684500981E51 /* Roll_CallAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Roll_CallAppDelegate.h; sourceTree = "<group>"; };
-		1D3623250D0F684500981E51 /* Roll_CallAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Roll_CallAppDelegate.m; sourceTree = "<group>"; };
+		1D3623240D0F684500981E51 /* Roll_CallAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Roll_CallAppDelegate.h; path = Classes/Roll_CallAppDelegate.h; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* Roll_CallAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Roll_CallAppDelegate.m; path = Classes/Roll_CallAppDelegate.m; sourceTree = "<group>"; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		282CCBFD0DB6C98000C4EA27 /* SecondView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondView.xib; sourceTree = "<group>"; };
 		288765070DF74369002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		28A0AB4B0D9B1048005BE974 /* Roll_Call_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Roll_Call_Prefix.pch; sourceTree = "<group>"; };
 		28AD73870D9D96C1002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		5A3911C1116759EB003EF6F8 /* AddStudentHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AddStudentHeaderView.xib; path = Classes/AddStudentHeaderView.xib; sourceTree = "<group>"; };
+		5A1B89E7116A09C300E979FF /* AddAddressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddAddressViewController.h; sourceTree = "<group>"; };
+		5A1B89E8116A09C300E979FF /* AddAddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAddressViewController.m; sourceTree = "<group>"; };
+		5A1B89E9116A09C300E979FF /* AddAddressViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddAddressViewController.xib; sourceTree = "<group>"; };
+		5A1B89EA116A09C300E979FF /* AddCourseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddCourseViewController.h; sourceTree = "<group>"; };
+		5A1B89EB116A09C300E979FF /* AddCourseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddCourseViewController.m; sourceTree = "<group>"; };
+		5A1B89EC116A09C300E979FF /* AddCourseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddCourseViewController.xib; sourceTree = "<group>"; };
+		5A1B89ED116A09C300E979FF /* AddEmailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddEmailViewController.h; sourceTree = "<group>"; };
+		5A1B89EE116A09C300E979FF /* AddEmailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddEmailViewController.m; sourceTree = "<group>"; };
+		5A1B89EF116A09C300E979FF /* AddEmailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddEmailViewController.xib; sourceTree = "<group>"; };
+		5A1B89F0116A09C300E979FF /* AddPhoneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPhoneViewController.h; sourceTree = "<group>"; };
+		5A1B89F1116A09C300E979FF /* AddPhoneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPhoneViewController.m; sourceTree = "<group>"; };
+		5A1B89F2116A09C300E979FF /* AddPhoneViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddPhoneViewController.xib; sourceTree = "<group>"; };
+		5A1B89F3116A09C300E979FF /* Address.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Address.h; sourceTree = "<group>"; };
+		5A1B89F4116A09C300E979FF /* Address.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Address.m; sourceTree = "<group>"; };
+		5A1B89F5116A09C300E979FF /* StudentHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StudentHeaderView.xib; sourceTree = "<group>"; };
+		5A1B8A2E116A0BC100E979FF /* deafultphoto.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = deafultphoto.JPG; sourceTree = "<group>"; };
+		5A3911C1116759EB003EF6F8 /* AddStudentHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddStudentHeaderView.xib; sourceTree = "<group>"; };
 		5A39130D11678C06003EF6F8 /* addphoto.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = addphoto.jpg; sourceTree = "<group>"; };
 		5A7B2E8711674DD4004332A7 /* AddStudentNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddStudentNameViewController.h; sourceTree = "<group>"; };
 		5A7B2E8811674DD4004332A7 /* AddStudentNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddStudentNameViewController.m; sourceTree = "<group>"; };
-		5A7B2E8911674DD4004332A7 /* AddStudentNameViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AddStudentNameViewController.xib; path = Classes/AddStudentNameViewController.xib; sourceTree = "<group>"; };
+		5A7B2E8911674DD4004332A7 /* AddStudentNameViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddStudentNameViewController.xib; sourceTree = "<group>"; };
 		5AB095551167F60C00E0CB9F /* AddStudentNameTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddStudentNameTableCell.h; sourceTree = "<group>"; };
 		5AB095561167F60C00E0CB9F /* AddStudentNameTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddStudentNameTableCell.m; sourceTree = "<group>"; };
-		5AB095651167F75000E0CB9F /* AddStudentNameTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AddStudentNameTableCell.xib; path = Classes/AddStudentNameTableCell.xib; sourceTree = "<group>"; };
+		5AB095651167F75000E0CB9F /* AddStudentNameTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddStudentNameTableCell.xib; sourceTree = "<group>"; };
 		5AB09646116801F300E0CB9F /* Roll Call.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Roll Call.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AB097471168129B00E0CB9F /* RollSheetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RollSheetViewController.h; sourceTree = "<group>"; };
 		5AB097481168129B00E0CB9F /* RollSheetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RollSheetViewController.m; sourceTree = "<group>"; };
 		5AB097491168129B00E0CB9F /* RollSheetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RollSheetViewController.xib; sourceTree = "<group>"; };
-		5AB0974C116812A500E0CB9F /* RollCallDataModel.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = RollCallDataModel.xcdatamodel; sourceTree = "<group>"; };
+		5AB0974C116812A500E0CB9F /* RollCallDataModel.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; name = RollCallDataModel.xcdatamodel; path = Classes/RollCallDataModel.xcdatamodel; sourceTree = "<group>"; };
 		5AB097671168145600E0CB9F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		8D1107310486CEB800E47090 /* Roll_Call-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Roll_Call-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		95A84283115A54A0002C6FCB /* AddStudentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddStudentViewController.h; sourceTree = "<group>"; };
 		95A84284115A54A0002C6FCB /* AddStudentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddStudentViewController.m; sourceTree = "<group>"; };
-		95A84285115A54A0002C6FCB /* AddStudentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AddStudentViewController.xib; path = Classes/AddStudentViewController.xib; sourceTree = "<group>"; };
+		95A84285115A54A0002C6FCB /* AddStudentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddStudentViewController.xib; sourceTree = "<group>"; };
 		95BE6A0711683BFE00764D65 /* RollSheetInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RollSheetInstance.h; sourceTree = "<group>"; };
 		95BE6A0811683BFE00764D65 /* RollSheetInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RollSheetInstance.m; sourceTree = "<group>"; };
 		95BE6A0911683BFE00764D65 /* RollSheetInstance.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RollSheetInstance.xib; sourceTree = "<group>"; };
@@ -98,10 +125,10 @@
 		95CAD9B41158092400CBC9E9 /* ClassesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ClassesViewController.xib; path = Classes/ClassesViewController.xib; sourceTree = "<group>"; };
 		95CAD9E911580F2300CBC9E9 /* StudentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentsViewController.h; sourceTree = "<group>"; };
 		95CAD9EA11580F2300CBC9E9 /* StudentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentsViewController.m; sourceTree = "<group>"; };
-		95CAD9EB11580F2300CBC9E9 /* StudentsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = StudentsViewController.xib; path = Classes/StudentsViewController.xib; sourceTree = "<group>"; };
+		95CAD9EB11580F2300CBC9E9 /* StudentsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StudentsViewController.xib; sourceTree = "<group>"; };
 		95CADA4D1158457500CBC9E9 /* StudentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentViewController.h; sourceTree = "<group>"; };
 		95CADA4E1158457500CBC9E9 /* StudentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentViewController.m; sourceTree = "<group>"; };
-		95CADA4F1158457500CBC9E9 /* StudentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = StudentViewController.xib; path = Classes/StudentViewController.xib; sourceTree = "<group>"; };
+		95CADA4F1158457500CBC9E9 /* StudentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StudentViewController.xib; sourceTree = "<group>"; };
 		95CADA73115848F100CBC9E9 /* ClassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassViewController.h; sourceTree = "<group>"; };
 		95CADA74115848F100CBC9E9 /* ClassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassViewController.m; sourceTree = "<group>"; };
 		95CADA75115848F100CBC9E9 /* ClassViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ClassViewController.xib; path = Classes/ClassViewController.xib; sourceTree = "<group>"; };
@@ -148,7 +175,6 @@
 				95C3EEF91168387500CE11E5 /* Roll Sheet */,
 				5AB0978C1168165E00E0CB9F /* Student */,
 				95EC81A31168D33A00DA720F /* Course */,
-				5AB0974C116812A500E0CB9F /* RollCallDataModel.xcdatamodel */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -164,7 +190,10 @@
 		29B97314FDCFA39411CA2CEA /* Roll Call */ = {
 			isa = PBXGroup;
 			children = (
+				5AB0974C116812A500E0CB9F /* RollCallDataModel.xcdatamodel */,
 				080E96DDFE201D6D7F000001 /* Classes */,
+				1D3623240D0F684500981E51 /* Roll_CallAppDelegate.h */,
+				1D3623250D0F684500981E51 /* Roll_CallAppDelegate.m */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
@@ -193,17 +222,12 @@
 				95BE6B8D11689AD000764D65 /* Arrows */,
 				95BE6B8811689AC000764D65 /* Attendance */,
 				95BE6B3A1168794500764D65 /* bar.png */,
-				5AB095651167F75000E0CB9F /* AddStudentNameTableCell.xib */,
-				95A84285115A54A0002C6FCB /* AddStudentViewController.xib */,
-				5A7B2E8911674DD4004332A7 /* AddStudentNameViewController.xib */,
-				5A3911C1116759EB003EF6F8 /* AddStudentHeaderView.xib */,
+				5A1B8A2E116A0BC100E979FF /* deafultphoto.JPG */,
+				5A39130D11678C06003EF6F8 /* addphoto.jpg */,
 				95CADA75115848F100CBC9E9 /* ClassViewController.xib */,
-				95CADA4F1158457500CBC9E9 /* StudentViewController.xib */,
-				95CAD9EB11580F2300CBC9E9 /* StudentsViewController.xib */,
 				95CAD9B41158092400CBC9E9 /* ClassesViewController.xib */,
 				282CCBFD0DB6C98000C4EA27 /* SecondView.xib */,
 				28AD73870D9D96C1002E5188 /* MainWindow.xib */,
-				5A39130D11678C06003EF6F8 /* addphoto.jpg */,
 				8D1107310486CEB800E47090 /* Roll_Call-Info.plist */,
 			);
 			name = Resources;
@@ -220,19 +244,54 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5A1B8A34116A0C4900E979FF /* AddStudent */ = {
+			isa = PBXGroup;
+			children = (
+				95A84283115A54A0002C6FCB /* AddStudentViewController.h */,
+				95A84284115A54A0002C6FCB /* AddStudentViewController.m */,
+				95A84285115A54A0002C6FCB /* AddStudentViewController.xib */,
+				5A3911C1116759EB003EF6F8 /* AddStudentHeaderView.xib */,
+				5A1B8A35116A0C7C00E979FF /* EditingViews */,
+			);
+			name = AddStudent;
+			sourceTree = "<group>";
+		};
+		5A1B8A35116A0C7C00E979FF /* EditingViews */ = {
+			isa = PBXGroup;
+			children = (
+				5A1B89EA116A09C300E979FF /* AddCourseViewController.h */,
+				5A1B89EB116A09C300E979FF /* AddCourseViewController.m */,
+				5A1B89EC116A09C300E979FF /* AddCourseViewController.xib */,
+				5A1B89E7116A09C300E979FF /* AddAddressViewController.h */,
+				5A1B89E8116A09C300E979FF /* AddAddressViewController.m */,
+				5A1B89E9116A09C300E979FF /* AddAddressViewController.xib */,
+				5A1B89ED116A09C300E979FF /* AddEmailViewController.h */,
+				5A1B89EE116A09C300E979FF /* AddEmailViewController.m */,
+				5A1B89EF116A09C300E979FF /* AddEmailViewController.xib */,
+				5A1B89F0116A09C300E979FF /* AddPhoneViewController.h */,
+				5A1B89F1116A09C300E979FF /* AddPhoneViewController.m */,
+				5A1B89F2116A09C300E979FF /* AddPhoneViewController.xib */,
+				5A7B2E8711674DD4004332A7 /* AddStudentNameViewController.h */,
+				5A7B2E8811674DD4004332A7 /* AddStudentNameViewController.m */,
+				5AB095551167F60C00E0CB9F /* AddStudentNameTableCell.h */,
+				5A7B2E8911674DD4004332A7 /* AddStudentNameViewController.xib */,
+				5AB095561167F60C00E0CB9F /* AddStudentNameTableCell.m */,
+				5AB095651167F75000E0CB9F /* AddStudentNameTableCell.xib */,
+			);
+			name = EditingViews;
+			sourceTree = "<group>";
+		};
 		5AB0978C1168165E00E0CB9F /* Student */ = {
 			isa = PBXGroup;
 			children = (
 				95CAD9E911580F2300CBC9E9 /* StudentsViewController.h */,
 				95CAD9EA11580F2300CBC9E9 /* StudentsViewController.m */,
+				95CAD9EB11580F2300CBC9E9 /* StudentsViewController.xib */,
 				95CADA4D1158457500CBC9E9 /* StudentViewController.h */,
 				95CADA4E1158457500CBC9E9 /* StudentViewController.m */,
-				95A84283115A54A0002C6FCB /* AddStudentViewController.h */,
-				95A84284115A54A0002C6FCB /* AddStudentViewController.m */,
-				5A7B2E8711674DD4004332A7 /* AddStudentNameViewController.h */,
-				5A7B2E8811674DD4004332A7 /* AddStudentNameViewController.m */,
-				5AB095551167F60C00E0CB9F /* AddStudentNameTableCell.h */,
-				5AB095561167F60C00E0CB9F /* AddStudentNameTableCell.m */,
+				95CADA4F1158457500CBC9E9 /* StudentViewController.xib */,
+				5A1B89F5116A09C300E979FF /* StudentHeaderView.xib */,
+				5A1B8A34116A0C4900E979FF /* AddStudent */,
 			);
 			name = Student;
 			sourceTree = "<group>";
@@ -274,6 +333,8 @@
 		95EC81321168C01000DA720F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5A1B89F3116A09C300E979FF /* Address.h */,
+				5A1B89F4116A09C300E979FF /* Address.m */,
 				95EC87E41169DACE00DA720F /* Presence.h */,
 				95EC87E51169DACE00DA720F /* Presence.m */,
 				95EC83691169108800DA720F /* Course.h */,
@@ -293,8 +354,6 @@
 				95CAD9B31158092400CBC9E9 /* ClassesViewController.m */,
 				95CADA73115848F100CBC9E9 /* ClassViewController.h */,
 				95CADA74115848F100CBC9E9 /* ClassViewController.m */,
-				1D3623240D0F684500981E51 /* Roll_CallAppDelegate.h */,
-				1D3623250D0F684500981E51 /* Roll_CallAppDelegate.m */,
 			);
 			name = Course;
 			sourceTree = "<group>";
@@ -367,6 +426,12 @@
 				95EC881E1169E73E00DA720F /* classes.png in Resources */,
 				95EC881F1169E73E00DA720F /* students.png in Resources */,
 				95EC88221169EA3E00DA720F /* notepad.png in Resources */,
+				5A1B89F7116A09C300E979FF /* AddAddressViewController.xib in Resources */,
+				5A1B89F9116A09C300E979FF /* AddCourseViewController.xib in Resources */,
+				5A1B89FB116A09C300E979FF /* AddEmailViewController.xib in Resources */,
+				5A1B89FD116A09C300E979FF /* AddPhoneViewController.xib in Resources */,
+				5A1B89FF116A09C300E979FF /* StudentHeaderView.xib in Resources */,
+				5A1B8A2F116A0BC100E979FF /* deafultphoto.JPG in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,6 +459,11 @@
 				95EC83731169108800DA720F /* Student.m in Sources */,
 				95EC83741169108800DA720F /* Status.m in Sources */,
 				95EC87E61169DACE00DA720F /* Presence.m in Sources */,
+				5A1B89F6116A09C300E979FF /* AddAddressViewController.m in Sources */,
+				5A1B89F8116A09C300E979FF /* AddCourseViewController.m in Sources */,
+				5A1B89FA116A09C300E979FF /* AddEmailViewController.m in Sources */,
+				5A1B89FC116A09C300E979FF /* AddPhoneViewController.m in Sources */,
+				5A1B89FE116A09C300E979FF /* Address.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

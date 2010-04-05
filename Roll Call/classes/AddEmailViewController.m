@@ -1,20 +1,18 @@
 //
-//  AddStudentNameViewController.m
+//  AddEmailViewController.m
 //  Roll Call
 //
-//  Created by Weizhi Li on 4/3/10.
+//  Created by Weizhi on 4/4/10.
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
-#import "AddStudentNameViewController.h"
+#import "AddEmailViewController.h"
 #import "AddStudentNameTableCell.h"
 #import"Student.h"
 
+@implementation AddEmailViewController
 
-@implementation AddStudentNameViewController
-
-@synthesize firstName;
-@synthesize lastName;
+@synthesize email;
 @synthesize tableCell;
 @synthesize student;
 
@@ -22,7 +20,7 @@
 - (void)viewDidLoad {
 	self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancel)];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(save)];
-	self.title = @"Add Name";
+	self.title = @"Add Email";
 	//self.navigationController.navigationBar.barStyle=UIBarStyleBlackTranslucent;
 	self.tableView.allowsSelection = NO;
 	self.tableView.allowsSelectionDuringEditing = NO;
@@ -32,12 +30,12 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 2;
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"NameCell";
-	AddStudentNameTableCell *cell = (AddStudentNameTableCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    AddStudentNameTableCell *cell = (AddStudentNameTableCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
 		[[NSBundle mainBundle] loadNibNamed:@"AddStudentNameTableCell" owner:self options:nil];
         cell = tableCell;
@@ -46,25 +44,18 @@
 	cell.textField1.hidden=YES;
 	cell.textField2.hidden=YES;
 	cell.textField3.hidden=YES;
-    if (indexPath.row == 0) {
-        cell.textField.placeholder = @"First";
-		cell.textField.font=[UIFont boldSystemFontOfSize:20];
-		[cell.textField becomeFirstResponder];
-    }
-	else     {    
-        cell.textField.placeholder = @"Last";
-		cell.textField.font=[UIFont boldSystemFontOfSize:20];
-    }
-    return cell;
+	cell.textField.placeholder = @"Email";
+	cell.textField.font=[UIFont systemFontOfSize:20];
+	cell.textField.autocapitalizationType=UITextAutocapitalizationTypeNone; 
+	[cell.textField becomeFirstResponder];
+	return cell;
 }
 
 
 - (void)save {
 	AddStudentNameTableCell *cell;
     cell = (AddStudentNameTableCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-    student.firstName = cell.textField.text;
-    cell = (AddStudentNameTableCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
-	student.lastName = cell.textField.text;
+    student.email = cell.textField.text;
 	[self dismissModalViewControllerAnimated:YES];
 }
 
@@ -90,18 +81,17 @@
 }
 
 - (void)viewDidUnload {
-	self.firstName = nil;
-	self.lastName = nil;
+	self.email = nil;
 	[super viewDidUnload];
 }
 
 
 - (void)dealloc {
 	[tableCell release];
-    [firstName release];
-    [lastName release];
+    [email release];
 	[student release];
     [super dealloc];    
 }
 
 @end
+

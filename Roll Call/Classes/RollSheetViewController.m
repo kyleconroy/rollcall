@@ -8,7 +8,6 @@
 
 #import "RollSheetViewController.h"
 #import "Course.h"
-#import "AttendanceDayViewController.h"
 #import "RollSheetInstance.h"
 
 @implementation RollSheetViewController
@@ -33,7 +32,6 @@
      
      aD = (Roll_CallAppDelegate *)[[UIApplication sharedApplication] delegate];
      managedObjectContext = [aD managedObjectContext];
-     
      //Get all the current Students in a given class
      coursesArray = [[NSMutableArray alloc] init];
 
