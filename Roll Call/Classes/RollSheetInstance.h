@@ -17,11 +17,14 @@
     NSArray * studentsArray;
     NSMutableArray * presencesArray;
     NSDate *myDate;
-    UITableView *myTableView;
+    NSDate *datePickerDate;
+    bool datePickerVisible;
+    IBOutlet UITableView *myTableView;
+    IBOutlet UIView *myPickerView;
     
     IBOutlet UIButton *backDate;
     IBOutlet UIButton *forwardDate;
-    IBOutlet UILabel *displayDate;
+    IBOutlet UIButton *displayDate;
     IBOutlet UITableViewCell *tvCell;
 }
 
@@ -29,23 +32,30 @@
 @property(nonatomic, retain) NSMutableArray * presencesArray;
 @property(nonatomic, retain) NSArray * studentsArray;
 @property(nonatomic, retain) NSDate *myDate;
+@property(nonatomic, retain) NSDate *datePickerDate;
 @property(nonatomic, retain) Roll_CallAppDelegate *aD;
-@property(nonatomic, retain) UITableView *myTableView;
+@property (readwrite, assign) bool datePickerVisible;
 
-
-@property(nonatomic, retain)  IBOutlet UIButton *backDate;
-@property(nonatomic, retain)  IBOutlet UIButton *forwardDate;
-@property(nonatomic, retain)  IBOutlet UILabel *displayDate;
-@property(nonatomic, retain)  IBOutlet UITableViewCell *tvCell;
+@property(nonatomic, retain) IBOutlet UITableView *myTableView;
+@property(nonatomic, retain) IBOutlet UIView *myPickerView;
+@property(nonatomic, retain) IBOutlet UIButton *backDate;
+@property(nonatomic, retain) IBOutlet UIButton *forwardDate;
+@property(nonatomic, retain) IBOutlet UIButton *displayDate;
+@property(nonatomic, retain) IBOutlet UITableViewCell *tvCell;
 
 - (IBAction) moveBackOneDay;
 - (IBAction) moveForwardOneDay;
 - (IBAction) addNote:(id)sender;
+- (IBAction) showDatePicker;
+- (IBAction) cancelDatePicker;
+- (IBAction) doneDatePicker;
 
 - (NSDate *) todayWithDate:(NSDate *)date;
 - (NSDate *) tomorrowWithDate:(NSDate *)date;
 
 - (void) updateDisplayDate;
 - (void) initializeData;
+- (void) loadData;
+- (void) hideDatePicker;
 
 @end

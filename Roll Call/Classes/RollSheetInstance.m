@@ -21,11 +21,13 @@
 @synthesize studentsArray;
 @synthesize myTableView;
 @synthesize myDate;
-
+@synthesize myPickerView;
+@synthesize datePickerDate;
 @synthesize tvCell;
 @synthesize backDate;
 @synthesize forwardDate;
 @synthesize displayDate;
+@synthesize datePickerVisible;
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -39,14 +41,30 @@
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
+    datePickerVisible = NO;
+    
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:1.0];
+    CGAffineTransform transform = CGAffineTransformMakeTranslation(0, 480);
+    myPickerView.transform = transform;
+    [UIView commitAnimations];
     
     aD = (Roll_CallAppDelegate *)[[UIApplication sharedApplication] delegate];
     myDate = [NSDate date];
     
     [self setTitle:course.name];
-        
+    
     [self updateDisplayDate];
     [self initializeData];
+    [self loadData];
+    
+    // Save and release stuff
+    [myDate retain];
+    
+    [super viewDidLoad];
+}
+
+- (void)loadData {
     
     presencesArray = [[NSMutableArray alloc] init];
     
@@ -73,15 +91,11 @@
     
     [self setPresencesArray:mutableFetchResults];
     
-    // Save and release stuff
-    [myDate retain];
-    
     [sortDescriptors release];
     [sortDescriptor release];
     [mutableFetchResults release];
     [request release];
     
-    [super viewDidLoad];
 }
 
 - (void)initializeData {
@@ -172,6 +186,8 @@
 */
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    //SUPER HACK
+    myTableView = tableView;
     return 1;
 }
 
@@ -184,7 +200,7 @@
 - (void) updateDisplayDate {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateStyle:NSDateFormatterLongStyle];
-    displayDate.text = [formatter stringFromDate:myDate];
+    [displayDate setTitle:[formatter stringFromDate:myDate] forState:UIControlStateNormal];
     [formatter release];
 }
 
@@ -270,14 +286,85 @@
 - (IBAction)moveBackOneDay {
     myDate = [myDate addTimeInterval:-DAY];
     [self updateDisplayDate];
-    [myDate retain];    
+    [myDate retain];
+    
+    [self initializeData];
+    [self loadData];
+    
+    int x = [presencesArray count];
+    
+    NSMutableArray *updatedPaths = [NSMutableArray array];
+    for (int i = 0; i < x; i++) {
+        NSIndexPath *updatedPath = [NSIndexPath indexPathForRow:i inSection:0];
+        [updatedPaths addObject:updatedPath];
+    }
+    [myTableView reloadRowsAtIndexPaths:updatedPaths withRowAnimation:UITableViewRowAnimationRight];
+    
 }
 
 - (IBAction)moveForwardOneDay {
     myDate = [myDate addTimeInterval:DAY];
     [self updateDisplayDate];
     [myDate retain];
+    
+    [self initializeData];
+    [self loadData];
+    
+    int x = [presencesArray count];
+    
+    
+    NSMutableArray *updatedPaths = [NSMutableArray array];
+    for (int i = 0; i < x; i++) {
+        NSIndexPath *updatedPath = [NSIndexPath indexPathForRow:i inSection:0];
+        [updatedPaths addObject:updatedPath];
+    }
+    [myTableView reloadRowsAtIndexPaths:updatedPaths withRowAnimation:UITableViewRowAnimationLeft];
+    
+
+
 }
+
+- (IBAction) showDatePicker {
+
+    if (!datePickerVisible) {
+        datePickerVisible = YES;
+        datePickerDate = nil;
+        [UIView beginAnimations:nil context:nil];
+        [UIView setAnimationDuration:0.5];
+        CGAffineTransform transform = CGAffineTransformMakeTranslation(0, 55);
+        myPickerView.transform = transform;
+        [self.view addSubview:myPickerView];
+        [UIView commitAnimations];
+    }
+    
+}
+
+- (void) hideDatePicker {
+    [UIView beginAnimations:nil context:nil];
+	[UIView setAnimationDuration:0.5];
+	CGAffineTransform transform = CGAffineTransformMakeTranslation(0, 480);
+	myPickerView.transform = transform;
+	[UIView commitAnimations];
+    datePickerVisible = NO;
+}
+
+- (IBAction) doneDatePicker {
+    UIDatePicker *picker = (UIDatePicker *)[myPickerView viewWithTag:1];
+    NSDate *selectedDate = picker.date;
+    [self setMyDate:selectedDate];
+    [self updateDisplayDate];
+    [self initializeData];
+    [self loadData];    
+    [myTableView reloadData];
+    
+    
+    [self hideDatePicker];
+}
+
+- (IBAction) cancelDatePicker {
+    [self hideDatePicker];
+}
+
 /*
  // Override to support conditional editing of the table view.
  - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -329,8 +416,9 @@
 	// e.g. self.myOutlet = nil;
 }
 
-
 - (void)dealloc {
+    [datePickerDate release];
+    [myPickerView release];
     [myDate release];
     [studentsArray release];
     [presencesArray release];
