@@ -52,7 +52,10 @@
 		95EC83711169108800DA720F /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EC836A1169108800DA720F /* Course.m */; };
 		95EC83731169108800DA720F /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EC836E1169108800DA720F /* Student.m */; };
 		95EC83741169108800DA720F /* Status.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EC83701169108800DA720F /* Status.m */; };
-		95EC83B111691DED00DA720F /* Presence.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EC83B011691DED00DA720F /* Presence.m */; };
+		95EC87E61169DACE00DA720F /* Presence.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EC87E51169DACE00DA720F /* Presence.m */; };
+		95EC881E1169E73E00DA720F /* classes.png in Resources */ = {isa = PBXBuildFile; fileRef = 95EC881C1169E73E00DA720F /* classes.png */; };
+		95EC881F1169E73E00DA720F /* students.png in Resources */ = {isa = PBXBuildFile; fileRef = 95EC881D1169E73E00DA720F /* students.png */; };
+		95EC88221169EA3E00DA720F /* notepad.png in Resources */ = {isa = PBXBuildFile; fileRef = 95EC88211169EA3E00DA720F /* notepad.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -119,8 +122,11 @@
 		95EC836E1169108800DA720F /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
 		95EC836F1169108800DA720F /* Status.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Status.h; sourceTree = "<group>"; };
 		95EC83701169108800DA720F /* Status.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Status.m; sourceTree = "<group>"; };
-		95EC83AF11691DED00DA720F /* Presence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Presence.h; sourceTree = "<group>"; };
-		95EC83B011691DED00DA720F /* Presence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Presence.m; sourceTree = "<group>"; };
+		95EC87E41169DACE00DA720F /* Presence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Presence.h; sourceTree = "<group>"; };
+		95EC87E51169DACE00DA720F /* Presence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Presence.m; sourceTree = "<group>"; };
+		95EC881C1169E73E00DA720F /* classes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = classes.png; sourceTree = "<group>"; };
+		95EC881D1169E73E00DA720F /* students.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = students.png; sourceTree = "<group>"; };
+		95EC88211169EA3E00DA720F /* notepad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = notepad.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +190,9 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				95EC88211169EA3E00DA720F /* notepad.png */,
+				95EC881C1169E73E00DA720F /* classes.png */,
+				95EC881D1169E73E00DA720F /* students.png */,
 				95EC81961168D0E600DA720F /* DebugViewController.xib */,
 				95EC80CF1168B08E00DA720F /* AttendanceTableCell.xib */,
 				95BE6B8D11689AD000764D65 /* Arrows */,
@@ -273,8 +282,8 @@
 		95EC81321168C01000DA720F /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				95EC83AF11691DED00DA720F /* Presence.h */,
-				95EC83B011691DED00DA720F /* Presence.m */,
+				95EC87E41169DACE00DA720F /* Presence.h */,
+				95EC87E51169DACE00DA720F /* Presence.m */,
 				95EC83691169108800DA720F /* Course.h */,
 				95EC836A1169108800DA720F /* Course.m */,
 				95EC836D1169108800DA720F /* Student.h */,
@@ -364,6 +373,9 @@
 				95EC80CE1168B01D00DA720F /* note_outline.png in Resources */,
 				95EC80D01168B08E00DA720F /* AttendanceTableCell.xib in Resources */,
 				95EC81981168D0E600DA720F /* DebugViewController.xib in Resources */,
+				95EC881E1169E73E00DA720F /* classes.png in Resources */,
+				95EC881F1169E73E00DA720F /* students.png in Resources */,
+				95EC88221169EA3E00DA720F /* notepad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,7 +403,7 @@
 				95EC83711169108800DA720F /* Course.m in Sources */,
 				95EC83731169108800DA720F /* Student.m in Sources */,
 				95EC83741169108800DA720F /* Status.m in Sources */,
-				95EC83B111691DED00DA720F /* Presence.m in Sources */,
+				95EC87E61169DACE00DA720F /* Presence.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

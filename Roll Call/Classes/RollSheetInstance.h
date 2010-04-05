@@ -15,6 +15,7 @@
     Roll_CallAppDelegate *aD;
     
     NSArray * studentsArray;
+    NSIndexPath *currentIndexPath;
     NSMutableArray * presencesArray;
     NSDate *myDate;
     NSDate *datePickerDate;
@@ -37,7 +38,7 @@
 @property(nonatomic, retain) NSDate *datePickerDate;
 @property(nonatomic, retain) Roll_CallAppDelegate *aD;
 @property (readwrite, assign) bool datePickerVisible;
-
+@property(nonatomic, retain) NSIndexPath *currentIndexPath;
 @property(nonatomic, retain) IBOutlet UITextView *myTextView;
 @property(nonatomic, retain) IBOutlet UITableView *myTableView;
 @property(nonatomic, retain) IBOutlet UIView *myPickerView;

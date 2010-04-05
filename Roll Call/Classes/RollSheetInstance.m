@@ -30,6 +30,8 @@
 @synthesize forwardDate;
 @synthesize displayDate;
 @synthesize datePickerVisible;
+@synthesize currentIndexPath;
+
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -44,7 +46,7 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     datePickerVisible = NO;
-    
+    currentIndexPath = nil;
     // Set up Views
     CGAffineTransform transform = CGAffineTransformMakeTranslation(0, 480);
     
@@ -241,6 +243,12 @@
     label = (UILabel *)[cell viewWithTag:2];
     label.text = [NSString stringWithFormat:@"%@ %@", s.student.firstName, [s lastName]];
     
+    if (s.note) {
+        UIButton *button;
+        button = (UIButton *)[cell viewWithTag:3];
+        [button setImage:[UIImage imageNamed:@"note_on.png"] forState:UIControlStateNormal];
+    }
+    
     return cell;
 }
 
@@ -375,10 +383,18 @@
     //Position Selected Table Row
     UIView *senderButton = (UIView*) sender;
     NSIndexPath *indexPath = [myTableView  indexPathForCell: (UITableViewCell*)[[senderButton superview]superview]];
-    [self showNote];
+    Presence* p = [presencesArray objectAtIndex:indexPath.row];
+    
     [myTableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
     myTableView.scrollEnabled = NO;
+    myTextView.text = p.note;
     
+    UIButton *button;
+    button = (UIButton *)[[myTableView cellForRowAtIndexPath:indexPath] viewWithTag:3];
+    [button setImage:[UIImage imageNamed:@"note_on.png"] forState:UIControlStateNormal];
+    
+    [self setCurrentIndexPath:indexPath];
+    [self showNote];
 }
 
 
@@ -405,17 +421,36 @@
 }
 
 - (IBAction) doneNote {
-//    UIDatePicker *picker = (UIDatePicker *)[myPickerView viewWithTag:1];
-//    NSDate *selectedDate = picker.date;
-//    [self setMyDate:selectedDate];
-//    [self updateDisplayDate];
-//    [self initializeData];
-//    [self loadData];    
-//    [myTableView reloadData];
+    
+    UIButton *button;
+    button = (UIButton *)[[myTableView cellForRowAtIndexPath:currentIndexPath] viewWithTag:3];
+    
+    if ([myTextView.text length] != 0) {
+        Presence* p = [presencesArray objectAtIndex:currentIndexPath.row];
+        p.note = myTextView.text;
+        
+        NSError *error;
+        if (![[aD managedObjectContext] save:&error]) {
+            // Handle the error.
+        }
+    } else {
+        [button setImage:[UIImage imageNamed:@"note_outline.png"] forState:UIControlStateNormal];
+    }
+
+    
+    currentIndexPath = nil;
     [self hideNote];
 }
 
 - (IBAction) cancelNote {
+    
+    Presence* p = [presencesArray objectAtIndex:currentIndexPath.row];
+    if ([p.note length] == 0) {    
+        UIButton *button;
+        button = (UIButton *)[[myTableView cellForRowAtIndexPath:currentIndexPath] viewWithTag:3];
+        [button setImage:[UIImage imageNamed:@"note_outline.png"] forState:UIControlStateNormal];
+    }
+    
     [self hideNote];
 }
 

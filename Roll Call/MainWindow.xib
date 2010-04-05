@@ -12,7 +12,7 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="139"/>
+			<integer value="134"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -53,47 +53,47 @@
 			<object class="IBUITabBarController" id="1034742383">
 				<object class="IBUISimulatedTabBarMetrics" key="IBUISimulatedBottomBarMetrics"/>
 				<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics"/>
-				<object class="IBUIViewController" key="IBUISelectedViewController" id="382420586">
-					<string key="IBUITitle">DEBUG</string>
-					<object class="IBUITabBarItem" key="IBUITabBarItem" id="463894417">
-						<string key="IBUITitle">Item</string>
+				<object class="IBUINavigationController" key="IBUISelectedViewController" id="116853718">
+					<object class="IBUITabBarItem" key="IBUITabBarItem" id="316983924">
+						<string key="IBUITitle">Roll Sheet</string>
+						<object class="NSCustomResource" key="IBUIImage">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">notepad.png</string>
+						</object>
 						<reference key="IBUITabBar"/>
 					</object>
 					<reference key="IBUIParentViewController" ref="1034742383"/>
-					<string key="IBUINibName">DebugViewController</string>
 					<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics"/>
+					<object class="IBUINavigationBar" key="IBUINavigationBar" id="43051829">
+						<nil key="NSNextResponder"/>
+						<int key="NSvFlags">256</int>
+						<string key="NSFrameSize">{0, 0}</string>
+						<bool key="IBUIOpaque">NO</bool>
+						<bool key="IBUIClipsSubviews">YES</bool>
+						<bool key="IBUIMultipleTouchEnabled">YES</bool>
+					</object>
+					<object class="NSMutableArray" key="IBUIViewControllers">
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="IBUIViewController" id="775824047">
+							<object class="IBUINavigationItem" key="IBUINavigationItem" id="239563516">
+								<reference key="IBUINavigationBar"/>
+								<string key="IBUITitle">Root View Controller</string>
+							</object>
+							<reference key="IBUIParentViewController" ref="116853718"/>
+							<string key="IBUINibName">RollSheetViewController</string>
+						</object>
+					</object>
 				</object>
 				<object class="NSMutableArray" key="IBUIViewControllers">
 					<bool key="EncodedWithXMLCoder">YES</bool>
-					<object class="IBUINavigationController" id="116853718">
-						<object class="IBUITabBarItem" key="IBUITabBarItem" id="316983924">
-							<string key="IBUITitle">Roll Sheet</string>
-							<reference key="IBUITabBar"/>
-						</object>
-						<reference key="IBUIParentViewController" ref="1034742383"/>
-						<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics"/>
-						<object class="IBUINavigationBar" key="IBUINavigationBar" id="43051829">
-							<nil key="NSNextResponder"/>
-							<int key="NSvFlags">256</int>
-							<string key="NSFrameSize">{0, 0}</string>
-							<bool key="IBUIOpaque">NO</bool>
-							<bool key="IBUIClipsSubviews">YES</bool>
-							<bool key="IBUIMultipleTouchEnabled">YES</bool>
-						</object>
-						<object class="NSMutableArray" key="IBUIViewControllers">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<object class="IBUIViewController" id="775824047">
-								<object class="IBUINavigationItem" key="IBUINavigationItem" id="239563516">
-									<string key="IBUITitle">Root View Controller</string>
-								</object>
-								<reference key="IBUIParentViewController" ref="116853718"/>
-								<string key="IBUINibName">RollSheetViewController</string>
-							</object>
-						</object>
-					</object>
+					<reference ref="116853718"/>
 					<object class="IBUINavigationController" id="473829939">
 						<object class="IBUITabBarItem" key="IBUITabBarItem" id="937286255">
 							<string key="IBUITitle">Students</string>
+							<object class="NSCustomResource" key="IBUIImage">
+								<string key="NSClassName">NSImage</string>
+								<string key="NSResourceName">students.png</string>
+							</object>
 							<reference key="IBUITabBar"/>
 						</object>
 						<reference key="IBUIParentViewController" ref="1034742383"/>
@@ -120,6 +120,10 @@
 					<object class="IBUINavigationController" id="54732347">
 						<object class="IBUITabBarItem" key="IBUITabBarItem" id="210740802">
 							<string key="IBUITitle">Classes</string>
+							<object class="NSCustomResource" key="IBUIImage">
+								<string key="NSClassName">NSImage</string>
+								<string key="NSResourceName">classes.png</string>
+							</object>
 							<reference key="IBUITabBar"/>
 						</object>
 						<reference key="IBUIParentViewController" ref="1034742383"/>
@@ -144,7 +148,16 @@
 							</object>
 						</object>
 					</object>
-					<reference ref="382420586"/>
+					<object class="IBUIViewController" id="382420586">
+						<string key="IBUITitle">DEBUG</string>
+						<object class="IBUITabBarItem" key="IBUITabBarItem" id="463894417">
+							<string key="IBUITitle">Item</string>
+							<reference key="IBUITabBar"/>
+						</object>
+						<reference key="IBUIParentViewController" ref="1034742383"/>
+						<string key="IBUINibName">DebugViewController</string>
+						<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics"/>
+					</object>
 				</object>
 				<object class="IBUITabBar" key="IBUITabBar" id="795333663">
 					<nil key="NSNextResponder"/>
@@ -460,8 +473,17 @@
 					<string key="className">DebugViewController</string>
 					<string key="superclassName">UIViewController</string>
 					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">installData</string>
-						<string key="NS.object.0">id</string>
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>installData</string>
+							<string>installStatuses</string>
+						</object>
+						<object class="NSMutableArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
+							<string>id</string>
+						</object>
 					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
