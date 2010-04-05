@@ -57,11 +57,13 @@
 	// Segregate into the appropriate arrays.
 	for (Student *student in allstudents) {
 		NSInteger sectionNumber = [collation sectionForObject:student collationStringSelector:@selector(lastName)];
-		
-		// Get the array for the section.
 		NSMutableArray *sectionStudents = [newSectionsArray objectAtIndex:sectionNumber];
+		if (student.lastName!=nil) {
+			[sectionStudents addObject:student];
+
+		}
+		// Get the array for the section.
 				//  Add student to the section.
-		[sectionStudents addObject:student];
 	}
 	// Now that all the data's in place, each section array needs to be sorted.
 	for (index = 0; index < sectionTitlesCount; index++) {

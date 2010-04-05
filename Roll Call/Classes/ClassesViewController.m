@@ -7,7 +7,7 @@
 //
 
 #import "ClassesViewController.h"
-#import "SchoolClass.h"
+#import "Course.h"
 
 @implementation ClassesViewController
 
@@ -97,7 +97,7 @@
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    SchoolClass *myClass = [aD.classes objectAtIndex:indexPath.row];
+    Course *myClass = [aD.classes objectAtIndex:indexPath.row];
     
     NSString *CellIdentifier = myClass.name;
     
