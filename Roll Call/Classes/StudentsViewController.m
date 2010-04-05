@@ -59,7 +59,7 @@
 }
 
 - (void)configureSections {
-	NSLog(@"Start Configuring!");
+	//NSLog(@"Start Configuring!");
 	// Get the current collation and keep a reference to it.
 	self.collation = [UILocalizedIndexedCollation currentCollation];	
 	NSInteger index, sectionTitlesCount = [[collation sectionTitles] count];	
@@ -162,15 +162,6 @@
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-	
-	
-	for (NSMutableArray *studentArrayinSection in sectionsArray) {
-		for (Student *astudent in studentArrayinSection)
-			NSLog(@"cellForRowAtIndexPath: %@ %@ %@", astudent.firstName, astudent.lastName, indexPath );
-	}
-	
-	
 	
 	NSArray *studentsInSection = [sectionsArray objectAtIndex:indexPath.section];
     Student *myStudent = nil;

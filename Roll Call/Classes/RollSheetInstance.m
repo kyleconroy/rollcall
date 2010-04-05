@@ -145,9 +145,9 @@
             presence.lastName = s.lastName;
             presence.course = course;
             presence.status = currentStatus;
-            NSLog(@"Add new event");
+            //NSLog(@"Add new event");
         } else {
-            NSLog(@"Old event");
+            //NSLog(@"Old event");
         }
     }
     
