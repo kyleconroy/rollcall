@@ -763,10 +763,10 @@
 	};
 	95BE6A0811683BFE00764D65 /* RollSheetInstance.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {843, 7553}}";
-			sepNavSelRange = "{12723, 0}";
-			sepNavVisRange = "{12563, 1526}";
-			sepNavWindowFrame = "{{394, 4}, {902, 836}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1139, 7319}}";
+			sepNavSelRange = "{10212, 0}";
+			sepNavVisRange = "{11835, 997}";
+			sepNavWindowFrame = "{{363, 86}, {902, 836}}";
 		};
 	};
 	95BE6A3A116840BA00764D65 /* PBXTextBookmark */ = {
@@ -947,13 +947,25 @@
 		vrLoc = 0;
 	};
 	95C3EEFC116838A200CE11E5 /* AttendanceDayViewController.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = AttendanceDayViewController.h;
+		path = "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/AttendanceDayViewController.h";
+		sourceTree = "<absolute>";
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1060, 491}}";
+			sepNavIntBoundsRect = "{{0, 0}, {964, 569}}";
 			sepNavSelRange = "{176, 0}";
 			sepNavVisRange = "{0, 253}";
 		};
 	};
 	95C3EEFD116838A200CE11E5 /* AttendanceDayViewController.m */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.objc;
+		name = AttendanceDayViewController.m;
+		path = "/Users/kjconroy/Documents/College/cs160/assignments/rollcall/Roll Call/Classes/AttendanceDayViewController.m";
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1069, 2054}}";
 			sepNavSelRange = "{1725, 2487}";

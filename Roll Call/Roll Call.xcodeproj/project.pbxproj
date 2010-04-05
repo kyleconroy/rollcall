@@ -34,8 +34,6 @@
 		95BE6B551168880400764D65 /* arrow_left_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 95BE6B531168880400764D65 /* arrow_left_up.png */; };
 		95BE6B561168880400764D65 /* arrows_left_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 95BE6B541168880400764D65 /* arrows_left_down.png */; };
 		95BE6B9111689AF700764D65 /* attendance_p.png in Resources */ = {isa = PBXBuildFile; fileRef = 95BE6B9011689AF700764D65 /* attendance_p.png */; };
-		95C3EEFF116838A200CE11E5 /* AttendanceDayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C3EEFD116838A200CE11E5 /* AttendanceDayViewController.m */; };
-		95C3EF00116838A200CE11E5 /* AttendanceDayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95C3EEFE116838A200CE11E5 /* AttendanceDayViewController.xib */; };
 		95CAD9B51158092400CBC9E9 /* ClassesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95CAD9B31158092400CBC9E9 /* ClassesViewController.m */; };
 		95CAD9B61158092400CBC9E9 /* ClassesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95CAD9B41158092400CBC9E9 /* ClassesViewController.xib */; };
 		95CAD9EC11580F2300CBC9E9 /* StudentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95CAD9EA11580F2300CBC9E9 /* StudentsViewController.m */; };
@@ -95,9 +93,6 @@
 		95BE6B531168880400764D65 /* arrow_left_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_left_up.png; sourceTree = "<group>"; };
 		95BE6B541168880400764D65 /* arrows_left_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrows_left_down.png; sourceTree = "<group>"; };
 		95BE6B9011689AF700764D65 /* attendance_p.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = attendance_p.png; sourceTree = "<group>"; };
-		95C3EEFC116838A200CE11E5 /* AttendanceDayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttendanceDayViewController.h; sourceTree = "<group>"; };
-		95C3EEFD116838A200CE11E5 /* AttendanceDayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttendanceDayViewController.m; sourceTree = "<group>"; };
-		95C3EEFE116838A200CE11E5 /* AttendanceDayViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AttendanceDayViewController.xib; sourceTree = "<group>"; };
 		95CAD9B21158092400CBC9E9 /* ClassesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassesViewController.h; sourceTree = "<group>"; };
 		95CAD9B31158092400CBC9E9 /* ClassesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassesViewController.m; sourceTree = "<group>"; };
 		95CAD9B41158092400CBC9E9 /* ClassesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ClassesViewController.xib; path = Classes/ClassesViewController.xib; sourceTree = "<group>"; };
@@ -272,9 +267,6 @@
 				5AB097471168129B00E0CB9F /* RollSheetViewController.h */,
 				5AB097481168129B00E0CB9F /* RollSheetViewController.m */,
 				5AB097491168129B00E0CB9F /* RollSheetViewController.xib */,
-				95C3EEFC116838A200CE11E5 /* AttendanceDayViewController.h */,
-				95C3EEFD116838A200CE11E5 /* AttendanceDayViewController.m */,
-				95C3EEFE116838A200CE11E5 /* AttendanceDayViewController.xib */,
 			);
 			name = "Roll Sheet";
 			sourceTree = "<group>";
@@ -361,7 +353,6 @@
 				5A39130E11678C06003EF6F8 /* addphoto.jpg in Resources */,
 				5AB095661167F75000E0CB9F /* AddStudentNameTableCell.xib in Resources */,
 				5AB0974B1168129B00E0CB9F /* RollSheetViewController.xib in Resources */,
-				95C3EF00116838A200CE11E5 /* AttendanceDayViewController.xib in Resources */,
 				95BE6A0B11683BFE00764D65 /* RollSheetInstance.xib in Resources */,
 				95BE6B3B1168794500764D65 /* bar.png in Resources */,
 				95BE6B49116886E500764D65 /* arrow_down.png in Resources */,
@@ -397,7 +388,6 @@
 				5AB095571167F60C00E0CB9F /* AddStudentNameTableCell.m in Sources */,
 				5AB0974A1168129B00E0CB9F /* RollSheetViewController.m in Sources */,
 				5AB0974D116812A500E0CB9F /* RollCallDataModel.xcdatamodel in Sources */,
-				95C3EEFF116838A200CE11E5 /* AttendanceDayViewController.m in Sources */,
 				95BE6A0A11683BFE00764D65 /* RollSheetInstance.m in Sources */,
 				95EC81971168D0E600DA720F /* DebugViewController.m in Sources */,
 				95EC83711169108800DA720F /* Course.m in Sources */,
