@@ -8,7 +8,6 @@
 
 #import "Roll_CallAppDelegate.h"
 #import "Student.h"
-#import "SchoolClass.h"
 
 @implementation Roll_CallAppDelegate
 
