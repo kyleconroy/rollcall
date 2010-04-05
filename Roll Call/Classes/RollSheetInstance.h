@@ -10,7 +10,7 @@
 #import "Course.h"
 #import "Roll_CallAppDelegate.h"
 
-@interface RollSheetInstance : UIViewController <UITableViewDelegate> {
+@interface RollSheetInstance : UIViewController <UITableViewDelegate, UITextViewDelegate> {
     Course *course;
     Roll_CallAppDelegate *aD;
     
@@ -19,13 +19,15 @@
     NSDate *myDate;
     NSDate *datePickerDate;
     bool datePickerVisible;
-    IBOutlet UITableView *myTableView;
-    IBOutlet UIView *myPickerView;
-    
+
     IBOutlet UIButton *backDate;
     IBOutlet UIButton *forwardDate;
     IBOutlet UIButton *displayDate;
     IBOutlet UITableViewCell *tvCell;
+    IBOutlet UITableView *myTableView;
+    IBOutlet UIView *myPickerView;
+    IBOutlet UIView *myNoteView;
+    IBOutlet UITextView *myTextView;
 }
 
 @property(nonatomic, retain) Course *course;
@@ -36,8 +38,10 @@
 @property(nonatomic, retain) Roll_CallAppDelegate *aD;
 @property (readwrite, assign) bool datePickerVisible;
 
+@property(nonatomic, retain) IBOutlet UITextView *myTextView;
 @property(nonatomic, retain) IBOutlet UITableView *myTableView;
 @property(nonatomic, retain) IBOutlet UIView *myPickerView;
+@property(nonatomic, retain) IBOutlet UIView *myNoteView;
 @property(nonatomic, retain) IBOutlet UIButton *backDate;
 @property(nonatomic, retain) IBOutlet UIButton *forwardDate;
 @property(nonatomic, retain) IBOutlet UIButton *displayDate;
@@ -49,6 +53,9 @@
 - (IBAction) showDatePicker;
 - (IBAction) cancelDatePicker;
 - (IBAction) doneDatePicker;
+- (IBAction) showNote;
+- (IBAction) cancelNote;
+- (IBAction) doneNote;
 
 - (NSDate *) todayWithDate:(NSDate *)date;
 - (NSDate *) tomorrowWithDate:(NSDate *)date;
@@ -57,5 +64,6 @@
 - (void) initializeData;
 - (void) loadData;
 - (void) hideDatePicker;
+- (void) hideNote;
 
 @end

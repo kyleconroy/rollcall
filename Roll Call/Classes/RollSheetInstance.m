@@ -19,9 +19,11 @@
 @synthesize course;
 @synthesize presencesArray;
 @synthesize studentsArray;
+@synthesize myTextView;
 @synthesize myTableView;
 @synthesize myDate;
 @synthesize myPickerView;
+@synthesize myNoteView;
 @synthesize datePickerDate;
 @synthesize tvCell;
 @synthesize backDate;
@@ -43,11 +45,21 @@
 - (void)viewDidLoad {
     datePickerVisible = NO;
     
+    // Set up Views
+    CGAffineTransform transform = CGAffineTransformMakeTranslation(0, 480);
+    
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationDuration:1.0];
-    CGAffineTransform transform = CGAffineTransformMakeTranslation(0, 480);
     myPickerView.transform = transform;
+    myNoteView.transform = transform;
     [UIView commitAnimations];
+    
+    // From http://stackoverflow.com/questions/1824463/how-to-style-uitextview-to-like-rounded-rect-text-field
+    
+    //The rounded corner part, where you specify your view's corner radius:
+    //myTextView.layer.cornerRadius = 5;
+    myTextView.clipsToBounds = YES;
+
     
     aD = (Roll_CallAppDelegate *)[[UIApplication sharedApplication] delegate];
     myDate = [NSDate date];
@@ -232,13 +244,6 @@
     return cell;
 }
 
--(IBAction)addNote:(id)sender
-{
-    UIView *senderButton = (UIView*) sender;
-    NSIndexPath *indexPath = [myTableView  indexPathForCell: (UITableViewCell*)[[senderButton superview]superview]];
-}
-
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     // Navigation logic may go here. Create and push another view controller.
 	// AnotherViewController *anotherViewController = [[AnotherViewController alloc] initWithNibName:@"AnotherView" bundle:nil];
@@ -365,6 +370,92 @@
     [self hideDatePicker];
 }
 
+-(IBAction)addNote:(id)sender
+{
+    //Position Selected Table Row
+    UIView *senderButton = (UIView*) sender;
+    NSIndexPath *indexPath = [myTableView  indexPathForCell: (UITableViewCell*)[[senderButton superview]superview]];
+    [self showNote];
+    [myTableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
+    myTableView.scrollEnabled = NO;
+    
+}
+
+
+- (IBAction) showNote {
+    
+    //Position Selected Table Row
+    
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:0.5];
+    CGAffineTransform transform = CGAffineTransformMakeTranslation(0, 95);
+    myNoteView.transform = transform;
+    [self.view addSubview:myNoteView];
+    [UIView commitAnimations];
+   
+}
+
+- (void) hideNote {
+    [UIView beginAnimations:nil context:nil];
+	[UIView setAnimationDuration:0.5];
+	CGAffineTransform transform = CGAffineTransformMakeTranslation(0, 480);
+	myNoteView.transform = transform;
+	[UIView commitAnimations];
+    myTableView.scrollEnabled = YES;
+}
+
+- (IBAction) doneNote {
+//    UIDatePicker *picker = (UIDatePicker *)[myPickerView viewWithTag:1];
+//    NSDate *selectedDate = picker.date;
+//    [self setMyDate:selectedDate];
+//    [self updateDisplayDate];
+//    [self initializeData];
+//    [self loadData];    
+//    [myTableView reloadData];
+    [self hideNote];
+}
+
+- (IBAction) cancelNote {
+    [self hideNote];
+}
+
+
+- (BOOL)textViewShouldBeginEditing:(UITextView *)textView {
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:0.3];
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+    CGAffineTransform transform = CGAffineTransformMakeTranslation(0, -44);
+    myNoteView.transform = transform;
+    [self.view addSubview:myNoteView];
+    [UIView commitAnimations];
+    
+    return YES;
+}
+
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range 
+ replacementText:(NSString *)text
+{
+    // Any new character added is passed in as the "text" parameter
+    if ([text isEqualToString:@"\n"]) {
+        // Be sure to test for equality using the "isEqualToString" message
+        [textView resignFirstResponder];
+        
+        [UIView beginAnimations:nil context:nil];
+        [UIView setAnimationDuration:0.3];
+        [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+        CGAffineTransform transform = CGAffineTransformMakeTranslation(0, 95);
+        myNoteView.transform = transform;
+        [self.view addSubview:myNoteView];
+        [UIView commitAnimations];
+        
+        // Return FALSE so that the final '\n' character doesn't get added
+        return FALSE;
+    }
+    // For any other character return TRUE so that the text gets added to the view
+    return TRUE;
+}
+
+
 /*
  // Override to support conditional editing of the table view.
  - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -420,6 +511,8 @@
     [datePickerDate release];
     [myPickerView release];
     [myDate release];
+    [myNoteView release];
+    [myTextView release];
     [studentsArray release];
     [presencesArray release];
     [course release];
