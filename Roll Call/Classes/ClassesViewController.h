@@ -11,8 +11,12 @@
 
 @interface ClassesViewController : UITableViewController {
     Roll_CallAppDelegate *aD;
+    NSMutableArray *coursesArray;
 }
 
 @property(nonatomic, retain) Roll_CallAppDelegate *aD;
+@property(nonatomic, retain) NSMutableArray *coursesArray;
+
+- (void) addRollSheet;
 
 @end

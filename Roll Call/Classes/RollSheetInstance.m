@@ -66,6 +66,12 @@
     aD = (Roll_CallAppDelegate *)[[UIApplication sharedApplication] delegate];
     myDate = [NSDate date];
     
+    UIButton* infoButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
+    [infoButton addTarget:self action:@selector(showCourseInfo) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *modalButton = [[UIBarButtonItem alloc] initWithCustomView:infoButton];
+    [self.navigationItem setRightBarButtonItem:modalButton animated:YES];
+    [modalButton release];
+    
     [self setTitle:course.name];
     
     [self updateDisplayDate];
@@ -528,7 +534,12 @@
  // Return NO if you do not want the item to be re-orderable.
  return YES;
  }
+
  */
+
+- (void) showCourseInfo {
+    
+}
 
 - (void)didReceiveMemoryWarning {
 	// Releases the view if it doesn't have a superview.
