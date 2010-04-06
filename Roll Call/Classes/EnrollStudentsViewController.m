@@ -1,21 +1,15 @@
 //
-//  RollSheetViewController.m
+//  EnrollStudentsViewController.m
 //  Roll Call
 //
-//  Created by Kyle Conroy on Apr3.
+//  Created by Kyle Conroy on Apr5.
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
-#import "RollSheetViewController.h"
-#import "Course.h"
-#import "RollSheetInstance.h"
-#import "AddRollSheetViewController.h"
+#import "EnrollStudentsViewController.h"
 
-@implementation RollSheetViewController
 
-@synthesize managedObjectContext;
-@synthesize coursesArray;
-@synthesize aD;
+@implementation EnrollStudentsViewController
 
 /*
 - (id)initWithStyle:(UITableViewStyle)style {
@@ -26,23 +20,14 @@
 }
 */
 
+/*
+- (void)viewDidLoad {
+    [super viewDidLoad];
 
- // Iplement viewDidLoad to do additional setup after loading the view, typically from a nib.
- - (void)viewDidLoad {
-     [self setTitle:@"Roll Sheets"];
-     
-     aD = (Roll_CallAppDelegate *)[[UIApplication sharedApplication] delegate];
-     managedObjectContext = [aD managedObjectContext];
-     //Get all the current Students in a given class
-     coursesArray = [[NSMutableArray alloc] init];
-
-     [self setCoursesArray:[aD getAllCourses]];
-     
-     //self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addRollSheet)];
-
-     
-     [super viewDidLoad];
- }
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+*/
 
 /*
 - (void)viewWillAppear:(BOOL)animated {
@@ -95,7 +80,7 @@
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [coursesArray count];
+    return 0;
 }
 
 
@@ -109,21 +94,17 @@
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
     
-    Course *c = (Course *)[coursesArray objectAtIndex:indexPath.row];
-    
-    cell.textLabel.text = c.name;
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-
+    // Set up the cell...
+	
     return cell;
 }
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     // Navigation logic may go here. Create and push another view controller.
-	RollSheetInstance *attendanceController = [[RollSheetInstance alloc] initWithNibName:@"RollSheetInstance" bundle:nil];
-    attendanceController.course = (Course *)[coursesArray objectAtIndex:indexPath.row];
-	[self.navigationController pushViewController:attendanceController animated:YES];
-	[attendanceController release];
+	// AnotherViewController *anotherViewController = [[AnotherViewController alloc] initWithNibName:@"AnotherView" bundle:nil];
+	// [self.navigationController pushViewController:anotherViewController];
+	// [anotherViewController release];
 }
 
 
@@ -166,22 +147,8 @@
 }
 */
 
-- (void) addRollSheet {
-    AddRollSheetViewController *addSheetController = [[AddRollSheetViewController alloc] initWithNibName:@"AddRollSheetViewController" bundle:nil];
-    
-    UINavigationController *nController = [[UINavigationController alloc]
-                                                    initWithRootViewController:addSheetController];
-    
-    
-    [self presentModalViewController:nController animated:YES];
-    [nController release];
-	[addSheetController release];
-}
-
 
 - (void)dealloc {
-    [coursesArray release];
-    [managedObjectContext release];
     [super dealloc];
 }
 

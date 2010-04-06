@@ -35,6 +35,15 @@
 		5AB0974B1168129B00E0CB9F /* RollSheetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AB097491168129B00E0CB9F /* RollSheetViewController.xib */; };
 		5AB0974D116812A500E0CB9F /* RollCallDataModel.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 5AB0974C116812A500E0CB9F /* RollCallDataModel.xcdatamodel */; };
 		5AB097681168145600E0CB9F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AB097671168145600E0CB9F /* CoreData.framework */; };
+		9594A1DA116A8D35008AC99A /* ClassViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9594A1D6116A8D35008AC99A /* ClassViewController.xib */; };
+		9594A1DB116A8D35008AC99A /* DaysOfWeekCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A1D8116A8D35008AC99A /* DaysOfWeekCell.m */; };
+		9594A1DC116A8D35008AC99A /* DaysOfWeekCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9594A1D9116A8D35008AC99A /* DaysOfWeekCell.xib */; };
+		9594A1E6116A8DB2008AC99A /* EnrollStudentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A1E4116A8DB2008AC99A /* EnrollStudentsViewController.m */; };
+		9594A1E7116A8DB2008AC99A /* EnrollStudentsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9594A1E5116A8DB2008AC99A /* EnrollStudentsViewController.xib */; };
+		9594A276116A9876008AC99A /* AddRollSheetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */; };
+		9594A277116A9876008AC99A /* AddRollSheetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9594A275116A9876008AC99A /* AddRollSheetViewController.xib */; };
+		9594A2FB116AA569008AC99A /* AddCourseNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A2F9116AA569008AC99A /* AddCourseNameViewController.m */; };
+		9594A2FC116AA569008AC99A /* AddCourseNameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9594A2FA116AA569008AC99A /* AddCourseNameViewController.xib */; };
 		95A84286115A54A0002C6FCB /* AddStudentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A84284115A54A0002C6FCB /* AddStudentViewController.m */; };
 		95A84287115A54A0002C6FCB /* AddStudentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95A84285115A54A0002C6FCB /* AddStudentViewController.xib */; };
 		95BE6A0A11683BFE00764D65 /* RollSheetInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */; };
@@ -52,7 +61,6 @@
 		95CADA501158457500CBC9E9 /* StudentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95CADA4E1158457500CBC9E9 /* StudentViewController.m */; };
 		95CADA511158457500CBC9E9 /* StudentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95CADA4F1158457500CBC9E9 /* StudentViewController.xib */; };
 		95CADA76115848F100CBC9E9 /* ClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95CADA74115848F100CBC9E9 /* ClassViewController.m */; };
-		95CADA77115848F100CBC9E9 /* ClassViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95CADA75115848F100CBC9E9 /* ClassViewController.xib */; };
 		95EC80CD1168B01D00DA720F /* note_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 95EC80CB1168B01D00DA720F /* note_on.png */; };
 		95EC80CE1168B01D00DA720F /* note_outline.png in Resources */ = {isa = PBXBuildFile; fileRef = 95EC80CC1168B01D00DA720F /* note_outline.png */; };
 		95EC80D01168B08E00DA720F /* AttendanceTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95EC80CF1168B08E00DA720F /* AttendanceTableCell.xib */; };
@@ -108,6 +116,19 @@
 		5AB0974C116812A500E0CB9F /* RollCallDataModel.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; name = RollCallDataModel.xcdatamodel; path = Classes/RollCallDataModel.xcdatamodel; sourceTree = "<group>"; };
 		5AB097671168145600E0CB9F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		8D1107310486CEB800E47090 /* Roll_Call-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Roll_Call-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		9594A1D6116A8D35008AC99A /* ClassViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ClassViewController.xib; path = "../../../../../../Downloads/To Send/ClassViewController.xib"; sourceTree = SOURCE_ROOT; };
+		9594A1D7116A8D35008AC99A /* DaysOfWeekCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DaysOfWeekCell.h; path = "../../../../../../Downloads/To Send/DaysOfWeekCell.h"; sourceTree = SOURCE_ROOT; };
+		9594A1D8116A8D35008AC99A /* DaysOfWeekCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DaysOfWeekCell.m; path = "../../../../../../Downloads/To Send/DaysOfWeekCell.m"; sourceTree = SOURCE_ROOT; };
+		9594A1D9116A8D35008AC99A /* DaysOfWeekCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = DaysOfWeekCell.xib; path = "../../../../../../Downloads/To Send/DaysOfWeekCell.xib"; sourceTree = SOURCE_ROOT; };
+		9594A1E3116A8DB2008AC99A /* EnrollStudentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnrollStudentsViewController.h; sourceTree = "<group>"; };
+		9594A1E4116A8DB2008AC99A /* EnrollStudentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnrollStudentsViewController.m; sourceTree = "<group>"; };
+		9594A1E5116A8DB2008AC99A /* EnrollStudentsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EnrollStudentsViewController.xib; sourceTree = "<group>"; };
+		9594A273116A9876008AC99A /* AddRollSheetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddRollSheetViewController.h; sourceTree = "<group>"; };
+		9594A274116A9876008AC99A /* AddRollSheetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddRollSheetViewController.m; sourceTree = "<group>"; };
+		9594A275116A9876008AC99A /* AddRollSheetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddRollSheetViewController.xib; sourceTree = "<group>"; };
+		9594A2F8116AA569008AC99A /* AddCourseNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddCourseNameViewController.h; sourceTree = "<group>"; };
+		9594A2F9116AA569008AC99A /* AddCourseNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddCourseNameViewController.m; sourceTree = "<group>"; };
+		9594A2FA116AA569008AC99A /* AddCourseNameViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddCourseNameViewController.xib; sourceTree = "<group>"; };
 		95A84283115A54A0002C6FCB /* AddStudentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddStudentViewController.h; sourceTree = "<group>"; };
 		95A84284115A54A0002C6FCB /* AddStudentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddStudentViewController.m; sourceTree = "<group>"; };
 		95A84285115A54A0002C6FCB /* AddStudentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddStudentViewController.xib; sourceTree = "<group>"; };
@@ -131,7 +152,6 @@
 		95CADA4F1158457500CBC9E9 /* StudentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StudentViewController.xib; sourceTree = "<group>"; };
 		95CADA73115848F100CBC9E9 /* ClassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassViewController.h; sourceTree = "<group>"; };
 		95CADA74115848F100CBC9E9 /* ClassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassViewController.m; sourceTree = "<group>"; };
-		95CADA75115848F100CBC9E9 /* ClassViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ClassViewController.xib; path = Classes/ClassViewController.xib; sourceTree = "<group>"; };
 		95EC80CB1168B01D00DA720F /* note_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = note_on.png; sourceTree = "<group>"; };
 		95EC80CC1168B01D00DA720F /* note_outline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = note_outline.png; sourceTree = "<group>"; };
 		95EC80CF1168B08E00DA720F /* AttendanceTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AttendanceTableCell.xib; sourceTree = "<group>"; };
@@ -224,7 +244,6 @@
 				95BE6B3A1168794500764D65 /* bar.png */,
 				5A1B8A2E116A0BC100E979FF /* deafultphoto.JPG */,
 				5A39130D11678C06003EF6F8 /* addphoto.jpg */,
-				95CADA75115848F100CBC9E9 /* ClassViewController.xib */,
 				95CAD9B41158092400CBC9E9 /* ClassesViewController.xib */,
 				282CCBFD0DB6C98000C4EA27 /* SecondView.xib */,
 				28AD73870D9D96C1002E5188 /* MainWindow.xib */,
@@ -259,6 +278,9 @@
 		5A1B8A35116A0C7C00E979FF /* EditingViews */ = {
 			isa = PBXGroup;
 			children = (
+				9594A2F8116AA569008AC99A /* AddCourseNameViewController.h */,
+				9594A2F9116AA569008AC99A /* AddCourseNameViewController.m */,
+				9594A2FA116AA569008AC99A /* AddCourseNameViewController.xib */,
 				5A1B89EA116A09C300E979FF /* AddCourseViewController.h */,
 				5A1B89EB116A09C300E979FF /* AddCourseViewController.m */,
 				5A1B89EC116A09C300E979FF /* AddCourseViewController.xib */,
@@ -326,6 +348,9 @@
 				5AB097471168129B00E0CB9F /* RollSheetViewController.h */,
 				5AB097481168129B00E0CB9F /* RollSheetViewController.m */,
 				5AB097491168129B00E0CB9F /* RollSheetViewController.xib */,
+				9594A273116A9876008AC99A /* AddRollSheetViewController.h */,
+				9594A274116A9876008AC99A /* AddRollSheetViewController.m */,
+				9594A275116A9876008AC99A /* AddRollSheetViewController.xib */,
 			);
 			name = "Roll Sheet";
 			sourceTree = "<group>";
@@ -350,6 +375,13 @@
 		95EC81A31168D33A00DA720F /* Course */ = {
 			isa = PBXGroup;
 			children = (
+				9594A1E3116A8DB2008AC99A /* EnrollStudentsViewController.h */,
+				9594A1E4116A8DB2008AC99A /* EnrollStudentsViewController.m */,
+				9594A1E5116A8DB2008AC99A /* EnrollStudentsViewController.xib */,
+				9594A1D6116A8D35008AC99A /* ClassViewController.xib */,
+				9594A1D7116A8D35008AC99A /* DaysOfWeekCell.h */,
+				9594A1D8116A8D35008AC99A /* DaysOfWeekCell.m */,
+				9594A1D9116A8D35008AC99A /* DaysOfWeekCell.xib */,
 				95CAD9B21158092400CBC9E9 /* ClassesViewController.h */,
 				95CAD9B31158092400CBC9E9 /* ClassesViewController.m */,
 				95CADA73115848F100CBC9E9 /* ClassViewController.h */,
@@ -405,7 +437,6 @@
 				95CAD9B61158092400CBC9E9 /* ClassesViewController.xib in Resources */,
 				95CAD9ED11580F2300CBC9E9 /* StudentsViewController.xib in Resources */,
 				95CADA511158457500CBC9E9 /* StudentViewController.xib in Resources */,
-				95CADA77115848F100CBC9E9 /* ClassViewController.xib in Resources */,
 				95A84287115A54A0002C6FCB /* AddStudentViewController.xib in Resources */,
 				5A7B2E8B11674DD4004332A7 /* AddStudentNameViewController.xib in Resources */,
 				5A3911C2116759EB003EF6F8 /* AddStudentHeaderView.xib in Resources */,
@@ -432,6 +463,11 @@
 				5A1B89FD116A09C300E979FF /* AddPhoneViewController.xib in Resources */,
 				5A1B89FF116A09C300E979FF /* StudentHeaderView.xib in Resources */,
 				5A1B8A2F116A0BC100E979FF /* deafultphoto.JPG in Resources */,
+				9594A1DA116A8D35008AC99A /* ClassViewController.xib in Resources */,
+				9594A1DC116A8D35008AC99A /* DaysOfWeekCell.xib in Resources */,
+				9594A1E7116A8DB2008AC99A /* EnrollStudentsViewController.xib in Resources */,
+				9594A277116A9876008AC99A /* AddRollSheetViewController.xib in Resources */,
+				9594A2FC116AA569008AC99A /* AddCourseNameViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,6 +500,10 @@
 				5A1B89FA116A09C300E979FF /* AddEmailViewController.m in Sources */,
 				5A1B89FC116A09C300E979FF /* AddPhoneViewController.m in Sources */,
 				5A1B89FE116A09C300E979FF /* Address.m in Sources */,
+				9594A1DB116A8D35008AC99A /* DaysOfWeekCell.m in Sources */,
+				9594A1E6116A8DB2008AC99A /* EnrollStudentsViewController.m in Sources */,
+				9594A276116A9876008AC99A /* AddRollSheetViewController.m in Sources */,
+				9594A2FB116AA569008AC99A /* AddCourseNameViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

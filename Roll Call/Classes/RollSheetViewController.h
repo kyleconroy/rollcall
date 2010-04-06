@@ -21,4 +21,6 @@
 @property(nonatomic, retain) Roll_CallAppDelegate *aD;
 @property(nonatomic, retain) NSMutableArray *coursesArray;
 
+- (void) addRollSheet;
+
 @end

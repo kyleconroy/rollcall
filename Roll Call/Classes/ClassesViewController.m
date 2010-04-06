@@ -7,11 +7,14 @@
 //
 
 #import "ClassesViewController.h"
+#import "ClassViewController.h"
+#import "AddRollSheetViewController.h"
 #import "Course.h"
 
 @implementation ClassesViewController
 
 @synthesize aD;
+@synthesize coursesArray;
 
 /*
 - (id)initWithStyle:(UITableViewStyle)style {
@@ -24,20 +27,33 @@
 
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
     
     [self setTitle:@"All Classes"];
     
     aD = (Roll_CallAppDelegate *)[[UIApplication sharedApplication] delegate];
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:nil];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addRollSheet)];
 
-    //[self.navigationController.navigationBar ];
-
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    coursesArray = [[NSMutableArray alloc] init];
+    
+    [self setCoursesArray:[aD getAllCourses]];
+    
+    [super viewDidLoad];
+    
 }
 
+
+- (void) addRollSheet {
+    AddRollSheetViewController *addSheetController = [[AddRollSheetViewController alloc] initWithNibName:@"AddRollSheetViewController" bundle:nil];
+    
+    UINavigationController *nController = [[UINavigationController alloc]
+                                           initWithRootViewController:addSheetController];
+    
+    
+    [self presentModalViewController:nController animated:YES];
+    [nController release];
+	[addSheetController release];
+}
 
 /*
 - (void)viewWillAppear:(BOOL)animated {
@@ -90,34 +106,33 @@
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [aD.classes count];
+    return [coursesArray count];
 }
 
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    Course *myClass = [aD.classes objectAtIndex:indexPath.row];
-    
-    NSString *CellIdentifier = myClass.name;
+    static NSString *CellIdentifier = @"Cell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
     
-    cell.textLabel.text = myClass.name;
+    Course *c = (Course *)[coursesArray objectAtIndex:indexPath.row];
+    
+    cell.textLabel.text = c.name;
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-	
+    
     return cell;
 }
 
 
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     // Navigation logic may go here. Create and push another view controller.
-	// AnotherViewController *anotherViewController = [[AnotherViewController alloc] initWithNibName:@"AnotherView" bundle:nil];
-	// [self.navigationController pushViewController:anotherViewController];
-	// [anotherViewController release];
+
 }
 
 

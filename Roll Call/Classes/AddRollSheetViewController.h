@@ -1,8 +1,8 @@
 //
-//  ClassViewController.h
+//  AddRollSheetViewController.h
 //  Roll Call
 //
-//  Created by Kyle Conroy on Mar22.
+//  Created by Kyle Conroy on Apr5.
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
@@ -11,19 +11,30 @@
 #import "Course.h"
 #import "EnrollStudentsViewController.h"
 
-@interface ClassViewController : UITableViewController {
-    Roll_CallAppDelegate *aD;
-	Course *selectedCourse;
-	IBOutlet UIButton *enrollStudents;
-	EnrollStudentsViewController *enrollStudentsViewController;
-	
-}
+@interface AddRollSheetViewController : UITableViewController {
 
+    Roll_CallAppDelegate *aD;
+    Course *selectedCourse;
+    IBOutlet UIButton *enrollStudents;
+    EnrollStudentsViewController *enrollStudentsViewController;
+    NSMutableArray *addedStudents;
+    NSString *courseName;
+    
+}
+    
 @property(nonatomic, retain) Roll_CallAppDelegate *aD;
 @property (nonatomic, retain) Course *selectedCourse;
 @property (nonatomic, retain) IBOutlet UIButton *enrollStudents;
 @property (nonatomic, retain) EnrollStudentsViewController *enrollStudentsViewController;
+@property (nonatomic, retain)  NSMutableArray *addedStudents;
+@property (readwrite, assign) NSString *courseName;
 
 - (IBAction) enrollStudentsInClass: (id) sender;
+
+- (void) save;
+- (void) cancel;
+- (void) addDate;
+- (void) addTime;
+- (void) addName;
 
 @end

@@ -66,5 +66,6 @@
 - (void) loadData;
 - (void) hideDatePicker;
 - (void) hideNote;
+- (void) showCourseInfo;
 
 @end
