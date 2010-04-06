@@ -11,6 +11,7 @@
 #import "Student.h"
 #import "Address.h"
 
+
 @class AddStudentNameViewController;
 
 @interface StudentViewController : UITableViewController  <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIActionSheetDelegate, UITableViewDelegate> {
@@ -20,7 +21,11 @@
 	UIButton *photoButton;
 	UIButton *addNameButton;
 	UILabel *name;
+	NSInteger tC;
+	NSInteger aC;
+	NSInteger eC;
 }
+
 
 @property(nonatomic, retain) Roll_CallAppDelegate *aD;
 @property(nonatomic, retain) Student *currentStudent;

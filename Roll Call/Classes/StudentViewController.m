@@ -16,6 +16,9 @@
 #import "AddCourseViewController.h"
 #import "Course.h"
 #import "Address.h"
+#import "Presence.h"
+#import "Status.h"
+#import "AttendanceTableViewController.h"
 
 @implementation StudentViewController
 
@@ -64,6 +67,22 @@
 		[photoButton setImage:[UIImage imageNamed:@"deafultphoto.JPG"] forState:UIControlStateNormal];
 	} else                                                 
 		[photoButton setImage:currentStudent.thumbnailPhoto  forState:UIControlStateNormal];
+	
+	aC=0;
+	eC=0;
+	tC=0;
+	NSMutableArray *presences=nil;
+	if (currentStudent.presences!=nil)
+		presences= [[NSMutableArray alloc] initWithArray:[currentStudent.presences allObjects]];
+	for (Presence *presence in presences) {
+		if ([presence.status.letter isEqualToString:@"A"])
+			aC++;
+		if ([presence.status.letter isEqualToString:@"E"])
+			eC++;
+		if ([presence.status.letter isEqualToString:@"T"])
+			tC++;		
+	}
+	[presences release];			
 	[self.tableView reloadData];
 }
 
@@ -232,7 +251,8 @@
 			if (cell == nil) {
 				// Create a cell to display a class.
 				cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ClassesCellIdentifier] autorelease];
-				cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+				cell.accessoryType = UITableViewCellAccessoryNone;
+				cell.selectionStyle = UITableViewCellSelectionStyleNone;
 			}
 			Course *course = [courses objectAtIndex:indexPath.row];
 			cell.textLabel.text = [NSString stringWithFormat:@"%@", course.name];
@@ -257,10 +277,14 @@
 		}
 		cell.textLabel.textAlignment=UITextAlignmentLeft;
 		cell.detailTextLabel.minimumFontSize=20;
+		cell.selectionStyle = UITableViewCellSelectionStyleNone;
 		if (indexPath.row == 0) {
 			cell.textLabel.text=@"Phone";
 			if (currentStudent.phone!=nil) {
 				cell.detailTextLabel.text =currentStudent.phone;
+			}
+			if (self.editing) {
+				cell.selectionStyle = UITableViewCellSelectionStyleBlue;
 			}
 			cell.editingAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
 		}
@@ -269,11 +293,17 @@
 			if (currentStudent.email!=nil) {                            
 				cell.detailTextLabel.text =currentStudent.email;
 			}
+			if (self.editing) {
+				cell.selectionStyle = UITableViewCellSelectionStyleBlue;
+			}
 			cell.editingAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
 		}
 		else if (indexPath.row == 2) {
 			cell.textLabel.text = @"Address";
 			cell.editingAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+			if (self.editing) {
+				cell.selectionStyle = UITableViewCellSelectionStyleBlue;
+			}
 		}
 		else if (indexPath.row == 3) {
 			NSString *address1=@"";
@@ -314,30 +344,31 @@
 			cell.editingAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
 		}
 		cell.textLabel.textAlignment=UITextAlignmentLeft;
-		cell.detailTextLabel.minimumFontSize=20; 
+		cell.detailTextLabel.minimumFontSize=20;  
+		cell.selectionStyle = UITableViewCellSelectionStyleBlue;
 		if (indexPath.row == 0) {
 			cell.textLabel.text = @"Tardy";
-			NSInteger i=0;
-			//if (currentStudent.tardyCount!=nil) 
-			//	i=currentStudent.tardyCount;
-			NSString *count= [[NSString alloc] initWithFormat:@"%d", i];
+			NSString *count= [[NSString alloc] initWithFormat:@"%d", tC];
 			cell.detailTextLabel.text = count;
+			if (self.editing) {
+				cell.selectionStyle = UITableViewCellSelectionStyleNone;
+			}
 		}
 		else if (indexPath.row == 1) {
 			cell.textLabel.text = @"Absent";
-			NSInteger i=0;
-			//if (currentStudent.absentCount!=nil) 
-			//	i=currentStudent.absentCount;
-			NSString *count= [[NSString alloc] initWithFormat:@"%d", i];
+			NSString *count= [[NSString alloc] initWithFormat:@"%d", aC];
 			cell.detailTextLabel.text = count;
+			if (self.editing) {
+				cell.selectionStyle = UITableViewCellSelectionStyleNone;
+			}
 		}
-		else {
+		else if (indexPath.row == 2) {
 			cell.textLabel.text = @"Excused Absent";
-			NSInteger i=0;
-			//if (currentStudent.excAbsentCount!=nil)
-				//i=currentStudent.excAbsentCount;
-			NSString *count= [[NSString alloc] initWithFormat:@"%d", i];
+			NSString *count= [[NSString alloc] initWithFormat:@"%d", eC];
 			cell.detailTextLabel.text = count;
+			if (self.editing) {
+				cell.selectionStyle = UITableViewCellSelectionStyleNone;
+			}
 		}
 	} else if (indexPath.section == 3) {
 		static NSString *NoteCellIdentifier = @"NoteCell";
@@ -346,6 +377,10 @@
 			cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:NoteCellIdentifier] autorelease];
 			cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 			cell.editingAccessoryType=UITableViewCellAccessoryDisclosureIndicator;
+		}
+		cell.selectionStyle = UITableViewCellSelectionStyleBlue;
+		if (self.editing) {
+			cell.selectionStyle = UITableViewCellSelectionStyleNone;
 		}
 		cell.textLabel.text = @"Notes";
 	} else if (indexPath.section == 4&&self.editing) {
@@ -357,6 +392,7 @@
 			cell.editingAccessoryType=UITableViewCellAccessoryNone;
 		}
 		cell.textLabel.text = @"               Delete Student";
+		cell.textLabel.minimumFontSize=22; 
 		cell.backgroundView.backgroundColor= [UIColor redColor];
 		cell.contentView.backgroundColor=[UIColor redColor];
 		cell.textLabel.backgroundColor=[UIColor redColor];
@@ -375,7 +411,33 @@
 				[self addCourse];
 		}
 	} else if (indexPath.section==2) {
-		[self checkAttendance];
+		if (indexPath.row==0) {
+			AttendanceTableViewController *aView = [[AttendanceTableViewController alloc] initWithNibName:@"AttendanceTableViewController" bundle:nil];
+			UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:aView];			
+			aView.type=0;
+			aView.student=currentStudent;
+			[self.navigationController pushViewController:aView animated:YES];
+			[aView release];
+			[navController release];
+		}
+		if (indexPath.row==1) {
+			AttendanceTableViewController *aView = [[AttendanceTableViewController alloc] initWithNibName:@"AttendanceTableViewController" bundle:nil];
+			UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:aView];			
+			aView.type=1;
+			aView.student=currentStudent;
+			[self.navigationController pushViewController:aView animated:YES];
+			[aView release];
+			[navController release];
+		}
+		if (indexPath.row==2) {
+			AttendanceTableViewController *aView = [[AttendanceTableViewController alloc] initWithNibName:@"AttendanceTableViewController" bundle:nil];
+			UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:aView];			
+			aView.type=2;
+			aView.student=currentStudent;
+			[self.navigationController pushViewController:aView animated:YES];
+			[aView release];
+			[navController release];
+		}
 	} else if (indexPath.section==3) {
 		[self checkNotes];
 	} if (self.editing&&(indexPath.section == 1)&&(indexPath.row == 0)) {
