@@ -35,15 +35,26 @@
 		5AB0974B1168129B00E0CB9F /* RollSheetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AB097491168129B00E0CB9F /* RollSheetViewController.xib */; };
 		5AB0974D116812A500E0CB9F /* RollCallDataModel.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 5AB0974C116812A500E0CB9F /* RollCallDataModel.xcdatamodel */; };
 		5AB097681168145600E0CB9F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AB097671168145600E0CB9F /* CoreData.framework */; };
-		9594A1DA116A8D35008AC99A /* ClassViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9594A1D6116A8D35008AC99A /* ClassViewController.xib */; };
-		9594A1DB116A8D35008AC99A /* DaysOfWeekCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A1D8116A8D35008AC99A /* DaysOfWeekCell.m */; };
-		9594A1DC116A8D35008AC99A /* DaysOfWeekCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9594A1D9116A8D35008AC99A /* DaysOfWeekCell.xib */; };
-		9594A1E6116A8DB2008AC99A /* EnrollStudentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A1E4116A8DB2008AC99A /* EnrollStudentsViewController.m */; };
-		9594A1E7116A8DB2008AC99A /* EnrollStudentsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9594A1E5116A8DB2008AC99A /* EnrollStudentsViewController.xib */; };
+		955E41771174129700FF2B8F /* RollSheetTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 955E41761174129700FF2B8F /* RollSheetTableCell.m */; };
+		955E4179117412AB00FF2B8F /* RollSheetTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 955E4178117412AB00FF2B8F /* RollSheetTableCell.xib */; };
+		955E41F21174273900FF2B8F /* cell_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 955E41F11174273900FF2B8F /* cell_background.png */; };
+		955E42031174296800FF2B8F /* button_green.png in Resources */ = {isa = PBXBuildFile; fileRef = 955E42021174296800FF2B8F /* button_green.png */; };
+		955E420C11742B3200FF2B8F /* button_empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 955E420B11742B3200FF2B8F /* button_empty.png */; };
+		955E42521174461000FF2B8F /* Presence.m in Sources */ = {isa = PBXBuildFile; fileRef = 955E424F1174461000FF2B8F /* Presence.m */; };
+		955E42531174461000FF2B8F /* Status.m in Sources */ = {isa = PBXBuildFile; fileRef = 955E42511174461000FF2B8F /* Status.m */; };
+		955E426C11745D8500FF2B8F /* cell_background_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 955E426B11745D8400FF2B8F /* cell_background_down.png */; };
+		955E427111745DBC00FF2B8F /* button_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 955E426D11745DBC00FF2B8F /* button_blue.png */; };
+		955E427211745DBC00FF2B8F /* button_green.png in Resources */ = {isa = PBXBuildFile; fileRef = 955E426E11745DBC00FF2B8F /* button_green.png */; };
+		955E427311745DBC00FF2B8F /* button_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 955E426F11745DBC00FF2B8F /* button_red.png */; };
+		955E427411745DBC00FF2B8F /* button_yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = 955E427011745DBC00FF2B8F /* button_yellow.png */; };
+		955E431E11747CF000FF2B8F /* RollSheetAddNoteController.m in Sources */ = {isa = PBXBuildFile; fileRef = 955E431C11747CF000FF2B8F /* RollSheetAddNoteController.m */; };
+		955E431F11747CF000FF2B8F /* RollSheetAddNoteController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 955E431D11747CF000FF2B8F /* RollSheetAddNoteController.xib */; };
 		9594A276116A9876008AC99A /* AddRollSheetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */; };
 		9594A277116A9876008AC99A /* AddRollSheetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9594A275116A9876008AC99A /* AddRollSheetViewController.xib */; };
 		9594A2FB116AA569008AC99A /* AddCourseNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A2F9116AA569008AC99A /* AddCourseNameViewController.m */; };
 		9594A2FC116AA569008AC99A /* AddCourseNameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9594A2FA116AA569008AC99A /* AddCourseNameViewController.xib */; };
+		9594A39E116ABBFE008AC99A /* AttendanceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9594A39C116ABBFE008AC99A /* AttendanceTableViewController.m */; };
+		9594A39F116ABBFE008AC99A /* AttendanceTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9594A39D116ABBFE008AC99A /* AttendanceTableViewController.xib */; };
 		95A84286115A54A0002C6FCB /* AddStudentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A84284115A54A0002C6FCB /* AddStudentViewController.m */; };
 		95A84287115A54A0002C6FCB /* AddStudentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95A84285115A54A0002C6FCB /* AddStudentViewController.xib */; };
 		95BE6A0A11683BFE00764D65 /* RollSheetInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */; };
@@ -54,13 +65,11 @@
 		95BE6B551168880400764D65 /* arrow_left_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 95BE6B531168880400764D65 /* arrow_left_up.png */; };
 		95BE6B561168880400764D65 /* arrows_left_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 95BE6B541168880400764D65 /* arrows_left_down.png */; };
 		95BE6B9111689AF700764D65 /* attendance_p.png in Resources */ = {isa = PBXBuildFile; fileRef = 95BE6B9011689AF700764D65 /* attendance_p.png */; };
-		95CAD9B51158092400CBC9E9 /* ClassesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95CAD9B31158092400CBC9E9 /* ClassesViewController.m */; };
 		95CAD9B61158092400CBC9E9 /* ClassesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95CAD9B41158092400CBC9E9 /* ClassesViewController.xib */; };
 		95CAD9EC11580F2300CBC9E9 /* StudentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95CAD9EA11580F2300CBC9E9 /* StudentsViewController.m */; };
 		95CAD9ED11580F2300CBC9E9 /* StudentsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95CAD9EB11580F2300CBC9E9 /* StudentsViewController.xib */; };
 		95CADA501158457500CBC9E9 /* StudentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95CADA4E1158457500CBC9E9 /* StudentViewController.m */; };
 		95CADA511158457500CBC9E9 /* StudentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95CADA4F1158457500CBC9E9 /* StudentViewController.xib */; };
-		95CADA76115848F100CBC9E9 /* ClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95CADA74115848F100CBC9E9 /* ClassViewController.m */; };
 		95EC80CD1168B01D00DA720F /* note_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 95EC80CB1168B01D00DA720F /* note_on.png */; };
 		95EC80CE1168B01D00DA720F /* note_outline.png in Resources */ = {isa = PBXBuildFile; fileRef = 95EC80CC1168B01D00DA720F /* note_outline.png */; };
 		95EC80D01168B08E00DA720F /* AttendanceTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95EC80CF1168B08E00DA720F /* AttendanceTableCell.xib */; };
@@ -68,8 +77,6 @@
 		95EC81981168D0E600DA720F /* DebugViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95EC81961168D0E600DA720F /* DebugViewController.xib */; };
 		95EC83711169108800DA720F /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EC836A1169108800DA720F /* Course.m */; };
 		95EC83731169108800DA720F /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EC836E1169108800DA720F /* Student.m */; };
-		95EC83741169108800DA720F /* Status.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EC83701169108800DA720F /* Status.m */; };
-		95EC87E61169DACE00DA720F /* Presence.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EC87E51169DACE00DA720F /* Presence.m */; };
 		95EC881E1169E73E00DA720F /* classes.png in Resources */ = {isa = PBXBuildFile; fileRef = 95EC881C1169E73E00DA720F /* classes.png */; };
 		95EC881F1169E73E00DA720F /* students.png in Resources */ = {isa = PBXBuildFile; fileRef = 95EC881D1169E73E00DA720F /* students.png */; };
 		95EC88221169EA3E00DA720F /* notepad.png in Resources */ = {isa = PBXBuildFile; fileRef = 95EC88211169EA3E00DA720F /* notepad.png */; };
@@ -116,19 +123,33 @@
 		5AB0974C116812A500E0CB9F /* RollCallDataModel.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; name = RollCallDataModel.xcdatamodel; path = Classes/RollCallDataModel.xcdatamodel; sourceTree = "<group>"; };
 		5AB097671168145600E0CB9F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		8D1107310486CEB800E47090 /* Roll_Call-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Roll_Call-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
-		9594A1D6116A8D35008AC99A /* ClassViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ClassViewController.xib; path = "../../../../../../Downloads/To Send/ClassViewController.xib"; sourceTree = SOURCE_ROOT; };
-		9594A1D7116A8D35008AC99A /* DaysOfWeekCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DaysOfWeekCell.h; path = "../../../../../../Downloads/To Send/DaysOfWeekCell.h"; sourceTree = SOURCE_ROOT; };
-		9594A1D8116A8D35008AC99A /* DaysOfWeekCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DaysOfWeekCell.m; path = "../../../../../../Downloads/To Send/DaysOfWeekCell.m"; sourceTree = SOURCE_ROOT; };
-		9594A1D9116A8D35008AC99A /* DaysOfWeekCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = DaysOfWeekCell.xib; path = "../../../../../../Downloads/To Send/DaysOfWeekCell.xib"; sourceTree = SOURCE_ROOT; };
-		9594A1E3116A8DB2008AC99A /* EnrollStudentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnrollStudentsViewController.h; sourceTree = "<group>"; };
-		9594A1E4116A8DB2008AC99A /* EnrollStudentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnrollStudentsViewController.m; sourceTree = "<group>"; };
-		9594A1E5116A8DB2008AC99A /* EnrollStudentsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EnrollStudentsViewController.xib; sourceTree = "<group>"; };
+		955E41751174129700FF2B8F /* RollSheetTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RollSheetTableCell.h; sourceTree = "<group>"; };
+		955E41761174129700FF2B8F /* RollSheetTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RollSheetTableCell.m; sourceTree = "<group>"; };
+		955E4178117412AB00FF2B8F /* RollSheetTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RollSheetTableCell.xib; sourceTree = "<group>"; };
+		955E41F11174273900FF2B8F /* cell_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cell_background.png; sourceTree = "<group>"; };
+		955E42021174296800FF2B8F /* button_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_green.png; sourceTree = "<group>"; };
+		955E420B11742B3200FF2B8F /* button_empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_empty.png; sourceTree = "<group>"; };
+		955E424E1174461000FF2B8F /* Presence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Presence.h; sourceTree = "<group>"; };
+		955E424F1174461000FF2B8F /* Presence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Presence.m; sourceTree = "<group>"; };
+		955E42501174461000FF2B8F /* Status.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Status.h; sourceTree = "<group>"; };
+		955E42511174461000FF2B8F /* Status.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Status.m; sourceTree = "<group>"; };
+		955E426B11745D8400FF2B8F /* cell_background_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cell_background_down.png; sourceTree = "<group>"; };
+		955E426D11745DBC00FF2B8F /* button_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_blue.png; sourceTree = "<group>"; };
+		955E426E11745DBC00FF2B8F /* button_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_green.png; sourceTree = "<group>"; };
+		955E426F11745DBC00FF2B8F /* button_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_red.png; sourceTree = "<group>"; };
+		955E427011745DBC00FF2B8F /* button_yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_yellow.png; sourceTree = "<group>"; };
+		955E431B11747CF000FF2B8F /* RollSheetAddNoteController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RollSheetAddNoteController.h; sourceTree = "<group>"; };
+		955E431C11747CF000FF2B8F /* RollSheetAddNoteController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RollSheetAddNoteController.m; sourceTree = "<group>"; };
+		955E431D11747CF000FF2B8F /* RollSheetAddNoteController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RollSheetAddNoteController.xib; sourceTree = "<group>"; };
 		9594A273116A9876008AC99A /* AddRollSheetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddRollSheetViewController.h; sourceTree = "<group>"; };
 		9594A274116A9876008AC99A /* AddRollSheetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddRollSheetViewController.m; sourceTree = "<group>"; };
 		9594A275116A9876008AC99A /* AddRollSheetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddRollSheetViewController.xib; sourceTree = "<group>"; };
 		9594A2F8116AA569008AC99A /* AddCourseNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddCourseNameViewController.h; sourceTree = "<group>"; };
 		9594A2F9116AA569008AC99A /* AddCourseNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddCourseNameViewController.m; sourceTree = "<group>"; };
 		9594A2FA116AA569008AC99A /* AddCourseNameViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddCourseNameViewController.xib; sourceTree = "<group>"; };
+		9594A39B116ABBFE008AC99A /* AttendanceTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttendanceTableViewController.h; sourceTree = "<group>"; };
+		9594A39C116ABBFE008AC99A /* AttendanceTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttendanceTableViewController.m; sourceTree = "<group>"; };
+		9594A39D116ABBFE008AC99A /* AttendanceTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AttendanceTableViewController.xib; sourceTree = "<group>"; };
 		95A84283115A54A0002C6FCB /* AddStudentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddStudentViewController.h; sourceTree = "<group>"; };
 		95A84284115A54A0002C6FCB /* AddStudentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddStudentViewController.m; sourceTree = "<group>"; };
 		95A84285115A54A0002C6FCB /* AddStudentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddStudentViewController.xib; sourceTree = "<group>"; };
@@ -141,8 +162,6 @@
 		95BE6B531168880400764D65 /* arrow_left_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_left_up.png; sourceTree = "<group>"; };
 		95BE6B541168880400764D65 /* arrows_left_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrows_left_down.png; sourceTree = "<group>"; };
 		95BE6B9011689AF700764D65 /* attendance_p.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = attendance_p.png; sourceTree = "<group>"; };
-		95CAD9B21158092400CBC9E9 /* ClassesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassesViewController.h; sourceTree = "<group>"; };
-		95CAD9B31158092400CBC9E9 /* ClassesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassesViewController.m; sourceTree = "<group>"; };
 		95CAD9B41158092400CBC9E9 /* ClassesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ClassesViewController.xib; path = Classes/ClassesViewController.xib; sourceTree = "<group>"; };
 		95CAD9E911580F2300CBC9E9 /* StudentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentsViewController.h; sourceTree = "<group>"; };
 		95CAD9EA11580F2300CBC9E9 /* StudentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentsViewController.m; sourceTree = "<group>"; };
@@ -150,11 +169,9 @@
 		95CADA4D1158457500CBC9E9 /* StudentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentViewController.h; sourceTree = "<group>"; };
 		95CADA4E1158457500CBC9E9 /* StudentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentViewController.m; sourceTree = "<group>"; };
 		95CADA4F1158457500CBC9E9 /* StudentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StudentViewController.xib; sourceTree = "<group>"; };
-		95CADA73115848F100CBC9E9 /* ClassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassViewController.h; sourceTree = "<group>"; };
-		95CADA74115848F100CBC9E9 /* ClassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassViewController.m; sourceTree = "<group>"; };
 		95EC80CB1168B01D00DA720F /* note_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = note_on.png; sourceTree = "<group>"; };
 		95EC80CC1168B01D00DA720F /* note_outline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = note_outline.png; sourceTree = "<group>"; };
-		95EC80CF1168B08E00DA720F /* AttendanceTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AttendanceTableCell.xib; sourceTree = "<group>"; };
+		95EC80CF1168B08E00DA720F /* AttendanceTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AttendanceTableCell.xib; path = ../AttendanceTableCell.xib; sourceTree = "<group>"; };
 		95EC81941168D0E600DA720F /* DebugViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DebugViewController.h; sourceTree = "<group>"; };
 		95EC81951168D0E600DA720F /* DebugViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DebugViewController.m; sourceTree = "<group>"; };
 		95EC81961168D0E600DA720F /* DebugViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = DebugViewController.xib; path = Classes/DebugViewController.xib; sourceTree = "<group>"; };
@@ -162,10 +179,6 @@
 		95EC836A1169108800DA720F /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
 		95EC836D1169108800DA720F /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
 		95EC836E1169108800DA720F /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
-		95EC836F1169108800DA720F /* Status.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Status.h; sourceTree = "<group>"; };
-		95EC83701169108800DA720F /* Status.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Status.m; sourceTree = "<group>"; };
-		95EC87E41169DACE00DA720F /* Presence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Presence.h; sourceTree = "<group>"; };
-		95EC87E51169DACE00DA720F /* Presence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Presence.m; sourceTree = "<group>"; };
 		95EC881C1169E73E00DA720F /* classes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = classes.png; sourceTree = "<group>"; };
 		95EC881D1169E73E00DA720F /* students.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = students.png; sourceTree = "<group>"; };
 		95EC88211169EA3E00DA720F /* notepad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = notepad.png; sourceTree = "<group>"; };
@@ -190,11 +203,13 @@
 			isa = PBXGroup;
 			children = (
 				95EC81941168D0E600DA720F /* DebugViewController.h */,
+				9594A39B116ABBFE008AC99A /* AttendanceTableViewController.h */,
+				9594A39C116ABBFE008AC99A /* AttendanceTableViewController.m */,
+				9594A39D116ABBFE008AC99A /* AttendanceTableViewController.xib */,
 				95EC81951168D0E600DA720F /* DebugViewController.m */,
 				95EC81321168C01000DA720F /* Models */,
 				95C3EEF91168387500CE11E5 /* Roll Sheet */,
 				5AB0978C1168165E00E0CB9F /* Student */,
-				95EC81A31168D33A00DA720F /* Course */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -234,16 +249,10 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				95EC88211169EA3E00DA720F /* notepad.png */,
-				95EC881C1169E73E00DA720F /* classes.png */,
-				95EC881D1169E73E00DA720F /* students.png */,
+				955E427711745DD100FF2B8F /* Images */,
 				95EC81961168D0E600DA720F /* DebugViewController.xib */,
-				95EC80CF1168B08E00DA720F /* AttendanceTableCell.xib */,
 				95BE6B8D11689AD000764D65 /* Arrows */,
 				95BE6B8811689AC000764D65 /* Attendance */,
-				95BE6B3A1168794500764D65 /* bar.png */,
-				5A1B8A2E116A0BC100E979FF /* deafultphoto.JPG */,
-				5A39130D11678C06003EF6F8 /* addphoto.jpg */,
 				95CAD9B41158092400CBC9E9 /* ClassesViewController.xib */,
 				282CCBFD0DB6C98000C4EA27 /* SecondView.xib */,
 				28AD73870D9D96C1002E5188 /* MainWindow.xib */,
@@ -318,6 +327,27 @@
 			name = Student;
 			sourceTree = "<group>";
 		};
+		955E427711745DD100FF2B8F /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				955E426D11745DBC00FF2B8F /* button_blue.png */,
+				955E426E11745DBC00FF2B8F /* button_green.png */,
+				955E426F11745DBC00FF2B8F /* button_red.png */,
+				955E427011745DBC00FF2B8F /* button_yellow.png */,
+				955E426B11745D8400FF2B8F /* cell_background_down.png */,
+				955E420B11742B3200FF2B8F /* button_empty.png */,
+				955E42021174296800FF2B8F /* button_green.png */,
+				955E41F11174273900FF2B8F /* cell_background.png */,
+				95EC88211169EA3E00DA720F /* notepad.png */,
+				95EC881C1169E73E00DA720F /* classes.png */,
+				95EC881D1169E73E00DA720F /* students.png */,
+				95BE6B3A1168794500764D65 /* bar.png */,
+				5A1B8A2E116A0BC100E979FF /* deafultphoto.JPG */,
+				5A39130D11678C06003EF6F8 /* addphoto.jpg */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		95BE6B8811689AC000764D65 /* Attendance */ = {
 			isa = PBXGroup;
 			children = (
@@ -342,6 +372,7 @@
 		95C3EEF91168387500CE11E5 /* Roll Sheet */ = {
 			isa = PBXGroup;
 			children = (
+				95EC80CF1168B08E00DA720F /* AttendanceTableCell.xib */,
 				95BE6A0711683BFE00764D65 /* RollSheetInstance.h */,
 				95BE6A0811683BFE00764D65 /* RollSheetInstance.m */,
 				95BE6A0911683BFE00764D65 /* RollSheetInstance.xib */,
@@ -351,6 +382,12 @@
 				9594A273116A9876008AC99A /* AddRollSheetViewController.h */,
 				9594A274116A9876008AC99A /* AddRollSheetViewController.m */,
 				9594A275116A9876008AC99A /* AddRollSheetViewController.xib */,
+				955E41751174129700FF2B8F /* RollSheetTableCell.h */,
+				955E41761174129700FF2B8F /* RollSheetTableCell.m */,
+				955E4178117412AB00FF2B8F /* RollSheetTableCell.xib */,
+				955E431B11747CF000FF2B8F /* RollSheetAddNoteController.h */,
+				955E431C11747CF000FF2B8F /* RollSheetAddNoteController.m */,
+				955E431D11747CF000FF2B8F /* RollSheetAddNoteController.xib */,
 			);
 			name = "Roll Sheet";
 			sourceTree = "<group>";
@@ -358,36 +395,18 @@
 		95EC81321168C01000DA720F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				955E424E1174461000FF2B8F /* Presence.h */,
+				955E424F1174461000FF2B8F /* Presence.m */,
+				955E42501174461000FF2B8F /* Status.h */,
+				955E42511174461000FF2B8F /* Status.m */,
 				5A1B89F3116A09C300E979FF /* Address.h */,
 				5A1B89F4116A09C300E979FF /* Address.m */,
-				95EC87E41169DACE00DA720F /* Presence.h */,
-				95EC87E51169DACE00DA720F /* Presence.m */,
 				95EC83691169108800DA720F /* Course.h */,
 				95EC836A1169108800DA720F /* Course.m */,
 				95EC836D1169108800DA720F /* Student.h */,
 				95EC836E1169108800DA720F /* Student.m */,
-				95EC836F1169108800DA720F /* Status.h */,
-				95EC83701169108800DA720F /* Status.m */,
 			);
 			name = Models;
-			sourceTree = "<group>";
-		};
-		95EC81A31168D33A00DA720F /* Course */ = {
-			isa = PBXGroup;
-			children = (
-				9594A1E3116A8DB2008AC99A /* EnrollStudentsViewController.h */,
-				9594A1E4116A8DB2008AC99A /* EnrollStudentsViewController.m */,
-				9594A1E5116A8DB2008AC99A /* EnrollStudentsViewController.xib */,
-				9594A1D6116A8D35008AC99A /* ClassViewController.xib */,
-				9594A1D7116A8D35008AC99A /* DaysOfWeekCell.h */,
-				9594A1D8116A8D35008AC99A /* DaysOfWeekCell.m */,
-				9594A1D9116A8D35008AC99A /* DaysOfWeekCell.xib */,
-				95CAD9B21158092400CBC9E9 /* ClassesViewController.h */,
-				95CAD9B31158092400CBC9E9 /* ClassesViewController.m */,
-				95CADA73115848F100CBC9E9 /* ClassViewController.h */,
-				95CADA74115848F100CBC9E9 /* ClassViewController.m */,
-			);
-			name = Course;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -463,11 +482,19 @@
 				5A1B89FD116A09C300E979FF /* AddPhoneViewController.xib in Resources */,
 				5A1B89FF116A09C300E979FF /* StudentHeaderView.xib in Resources */,
 				5A1B8A2F116A0BC100E979FF /* deafultphoto.JPG in Resources */,
-				9594A1DA116A8D35008AC99A /* ClassViewController.xib in Resources */,
-				9594A1DC116A8D35008AC99A /* DaysOfWeekCell.xib in Resources */,
-				9594A1E7116A8DB2008AC99A /* EnrollStudentsViewController.xib in Resources */,
 				9594A277116A9876008AC99A /* AddRollSheetViewController.xib in Resources */,
 				9594A2FC116AA569008AC99A /* AddCourseNameViewController.xib in Resources */,
+				9594A39F116ABBFE008AC99A /* AttendanceTableViewController.xib in Resources */,
+				955E4179117412AB00FF2B8F /* RollSheetTableCell.xib in Resources */,
+				955E41F21174273900FF2B8F /* cell_background.png in Resources */,
+				955E42031174296800FF2B8F /* button_green.png in Resources */,
+				955E420C11742B3200FF2B8F /* button_empty.png in Resources */,
+				955E426C11745D8500FF2B8F /* cell_background_down.png in Resources */,
+				955E427111745DBC00FF2B8F /* button_blue.png in Resources */,
+				955E427211745DBC00FF2B8F /* button_green.png in Resources */,
+				955E427311745DBC00FF2B8F /* button_red.png in Resources */,
+				955E427411745DBC00FF2B8F /* button_yellow.png in Resources */,
+				955E431F11747CF000FF2B8F /* RollSheetAddNoteController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,10 +507,8 @@
 			files = (
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* Roll_CallAppDelegate.m in Sources */,
-				95CAD9B51158092400CBC9E9 /* ClassesViewController.m in Sources */,
 				95CAD9EC11580F2300CBC9E9 /* StudentsViewController.m in Sources */,
 				95CADA501158457500CBC9E9 /* StudentViewController.m in Sources */,
-				95CADA76115848F100CBC9E9 /* ClassViewController.m in Sources */,
 				95A84286115A54A0002C6FCB /* AddStudentViewController.m in Sources */,
 				5A7B2E8A11674DD4004332A7 /* AddStudentNameViewController.m in Sources */,
 				5AB095571167F60C00E0CB9F /* AddStudentNameTableCell.m in Sources */,
@@ -493,17 +518,18 @@
 				95EC81971168D0E600DA720F /* DebugViewController.m in Sources */,
 				95EC83711169108800DA720F /* Course.m in Sources */,
 				95EC83731169108800DA720F /* Student.m in Sources */,
-				95EC83741169108800DA720F /* Status.m in Sources */,
-				95EC87E61169DACE00DA720F /* Presence.m in Sources */,
 				5A1B89F6116A09C300E979FF /* AddAddressViewController.m in Sources */,
 				5A1B89F8116A09C300E979FF /* AddCourseViewController.m in Sources */,
 				5A1B89FA116A09C300E979FF /* AddEmailViewController.m in Sources */,
 				5A1B89FC116A09C300E979FF /* AddPhoneViewController.m in Sources */,
 				5A1B89FE116A09C300E979FF /* Address.m in Sources */,
-				9594A1DB116A8D35008AC99A /* DaysOfWeekCell.m in Sources */,
-				9594A1E6116A8DB2008AC99A /* EnrollStudentsViewController.m in Sources */,
 				9594A276116A9876008AC99A /* AddRollSheetViewController.m in Sources */,
 				9594A2FB116AA569008AC99A /* AddCourseNameViewController.m in Sources */,
+				9594A39E116ABBFE008AC99A /* AttendanceTableViewController.m in Sources */,
+				955E41771174129700FF2B8F /* RollSheetTableCell.m in Sources */,
+				955E42521174461000FF2B8F /* Presence.m in Sources */,
+				955E42531174461000FF2B8F /* Status.m in Sources */,
+				955E431E11747CF000FF2B8F /* RollSheetAddNoteController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,9 +10,6 @@
 #import "AddStudentNameViewController.h"
 #import "AddCourseNameViewController.h"
 
-#import "DaysOfWeekCell.h"
-
-
 @implementation AddRollSheetViewController
 
 
@@ -161,9 +158,6 @@
 		switch (customCellType) {
 			case 0:
 				cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-				break;
-			case 1:
-				cell = [[[DaysOfWeekCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
 				break;
 		}
 	}

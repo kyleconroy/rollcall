@@ -2,7 +2,7 @@
 //  Presence.m
 //  Roll Call
 //
-//  Created by Kyle Conroy on Apr5.
+//  Created by Kyle Conroy on Apr12.
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
@@ -14,7 +14,6 @@
 
 @implementation Presence 
 
-@dynamic lastName;
 @dynamic note;
 @dynamic date;
 @dynamic status;

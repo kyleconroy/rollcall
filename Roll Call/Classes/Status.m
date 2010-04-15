@@ -2,7 +2,7 @@
 //  Status.m
 //  Roll Call
 //
-//  Created by Kyle Conroy on Apr4.
+//  Created by Kyle Conroy on Apr12.
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
@@ -12,10 +12,11 @@
 
 @implementation Status 
 
-@dynamic text;
 @dynamic color;
-@dynamic rank;
 @dynamic letter;
+@dynamic imageName;
+@dynamic rank;
+@dynamic text;
 @dynamic presences;
 
 @end

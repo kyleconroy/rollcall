@@ -2,7 +2,7 @@
 //  Presence.h
 //  Roll Call
 //
-//  Created by Kyle Conroy on Apr5.
+//  Created by Kyle Conroy on Apr12.
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
@@ -16,7 +16,6 @@
 {
 }
 
-@property (nonatomic, retain) NSString * lastName;
 @property (nonatomic, retain) NSString * note;
 @property (nonatomic, retain) NSDate * date;
 @property (nonatomic, retain) Status * status;
