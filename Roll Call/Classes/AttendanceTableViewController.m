@@ -10,15 +10,16 @@
 #import "Presence.h"
 #import "Status.h"
 #import "Course.h"
-
+#import "Student.h"
+#import "Roll_CallAppDelegate.h"
+#import "NoteViewController.h"
+#import "RollSheetInstance.h"
 
 @implementation AttendanceTableViewController
 
 @synthesize statuses;
 @synthesize student;
 @synthesize type;
-@synthesize myNoteView;
-@synthesize myTextView;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -40,18 +41,14 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-	self.tableView.allowsSelection=NO;
 	if (type==0) 
 		self.title = @"Tardy";
 	if (type==1) 
 		self.title = @"Absence";
 	if (type==2) 
 		self.title = @"Excused Absence";
-	if (type==3) {
-		self.tableView.allowsSelection=YES;
+	if (type==3) 
 		self.title = @"Notes";
-	}
-	
 	NSMutableArray *presences=nil;
 	if (student.presences!=nil)
 		presences= [[NSMutableArray alloc] initWithArray:[student.presences allObjects]];
@@ -77,7 +74,6 @@
 			}
 		}
 	}	
-	
 	[presences release];
 	[super viewWillAppear:animated];
 	
@@ -118,79 +114,27 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	
+	Presence  *presence=[statuses objectAtIndex:indexPath.row];
 	if (type==3) {
-		[self addNote: indexPath];
-		//[self showNote];
+		NoteViewController *myNoteView = [[NoteViewController alloc] initWithNibName:@"NoteViewController" bundle:nil];
+		myNoteView.presence=presence;
+		[self presentModalViewController:myNoteView animated:YES];
 	}
-	
+/*	
+	else {
+		RollSheetInstance *rollView = [[RollSheetInstance alloc] initWithNibName:@"RollSheetInstance" bundle:nil];
+		[rollView setMyDate:presence.date];
+		rollView.course=presence.course;
+		[self.navigationController pushViewController:rollView animated:YES];
+	}
+*/
+		
 }	
 
 
--(IBAction)addNote: (NSIndexPath *)indexPath
-{
-    //Position Selected Table Row
-    Presence* p = [statuses objectAtIndex:indexPath.row];
-    
-    [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
-    self.tableView.scrollEnabled = NO;
-    myTextView.text = p.note;
-    
-    UIButton *button;
-    button = (UIButton *)[[self.tableView cellForRowAtIndexPath:indexPath] viewWithTag:3];
-    [button setImage:[UIImage imageNamed:@"note_on.png"] forState:UIControlStateNormal];
-    
-    //[self setCurrentIndexPath:indexPath];
-    [self showNote];
-}
-
-
-- (IBAction) showNote {
-    
-    //Position Selected Table Row
-    
-    [UIView beginAnimations:nil context:nil];
-    [UIView setAnimationDuration:0.5];
-    CGAffineTransform transform = CGAffineTransformMakeTranslation(0, 95);
-    myNoteView.transform = transform;
-    [self.view addSubview:myNoteView];
-    [UIView commitAnimations];
-	
-}
-
-- (IBAction) hideNote {
-    [UIView beginAnimations:nil context:nil];
-	[UIView setAnimationDuration:0.5];
-	CGAffineTransform transform = CGAffineTransformMakeTranslation(0, 480);
-	myNoteView.transform = transform;
-	[UIView commitAnimations];
-    self.tableView.scrollEnabled = YES;
-}
-
-
-
-- (BOOL)textViewShouldBeginEditing:(UITextView *)textView {
-    [UIView beginAnimations:nil context:nil];
-    [UIView setAnimationDuration:0.3];
-    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-    CGAffineTransform transform = CGAffineTransformMakeTranslation(0, -44);
-    myNoteView.transform = transform;
-    [self.view addSubview:myNoteView];
-    [UIView commitAnimations];
-    
-    return YES;
-}
-
-/*
- - (UITableViewCellAccessoryType)tableView:(UITableView *)tableView 
- accessoryTypeForRowWithIndexPath:(NSIndexPath *)indexPath
- {
- return UITableViewCellAccessoryDisclosureIndicator;
- }*/
-
-
-
 - (void)dealloc {
+	[statuses release];
+	[student release];
     [super dealloc];
 }
 

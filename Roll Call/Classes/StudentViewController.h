@@ -10,7 +10,7 @@
 #import "Roll_CallAppDelegate.h"
 #import "Student.h"
 #import "Address.h"
-
+#import "KalViewController.h"
 
 @class AddStudentNameViewController;
 
@@ -24,6 +24,7 @@
 	NSInteger tC;
 	NSInteger aC;
 	NSInteger eC;
+	KalViewController *calendar;
 }
 
 
@@ -33,6 +34,8 @@
 @property (nonatomic, retain) IBOutlet UIButton *photoButton;
 @property (nonatomic, retain) IBOutlet UIButton *addNameButton;
 @property (nonatomic, retain) IBOutlet UILabel *name;
+@property(nonatomic, retain) KalViewController *calendar;
+
 
 - (IBAction) photoTapped;
 - (IBAction) addName: (id)sender;
@@ -41,7 +44,6 @@
 - (void) addEmail;
 - (void) addAddress;
 - (void) addCourse;
-- (void) checkAttendance;
-- (void) checkNotes;
 - (void) updatePhotoButton;
+
 @end

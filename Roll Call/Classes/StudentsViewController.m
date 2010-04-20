@@ -28,7 +28,7 @@
 		[self configureSections];
 	}
 	//self.navigationController.navigationBar.barStyle=UIBarStyleBlackTranslucent;
-	self.navigationController.navigationBar.translucent=YES;
+	//self.navigationController.navigationBar.translucent=YES;
 	[self.tableView reloadData];
 	self.tableView.scrollEnabled = YES;
 	[allstudents release];
@@ -36,6 +36,7 @@
 
  
 - (void)viewWillAppear:(BOOL)animated {	
+		self.navigationItem.hidesBackButton = YES;
 		[self configureSections];
 		[self.searchDisplayController setActive:NO];
 		[self.tableView reloadData];

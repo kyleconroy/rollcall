@@ -27,6 +27,35 @@
 		5A1B8A2F116A0BC100E979FF /* deafultphoto.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 5A1B8A2E116A0BC100E979FF /* deafultphoto.JPG */; };
 		5A3911C2116759EB003EF6F8 /* AddStudentHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A3911C1116759EB003EF6F8 /* AddStudentHeaderView.xib */; };
 		5A39130E11678C06003EF6F8 /* addphoto.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5A39130D11678C06003EF6F8 /* addphoto.jpg */; };
+		5A7A320A117DA31900C3855B /* kal_grid_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A7A31E6117DA31900C3855B /* kal_grid_background.png */; };
+		5A7A320B117DA31900C3855B /* kal_grid_shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A7A31E7117DA31900C3855B /* kal_grid_shadow.png */; };
+		5A7A320C117DA31900C3855B /* kal_header_text_fill.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A7A31E8117DA31900C3855B /* kal_header_text_fill.png */; };
+		5A7A320D117DA31900C3855B /* kal_left_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A7A31E9117DA31900C3855B /* kal_left_arrow.png */; };
+		5A7A320E117DA31900C3855B /* kal_marker.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A7A31EA117DA31900C3855B /* kal_marker.png */; };
+		5A7A320F117DA31900C3855B /* kal_marker_dim.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A7A31EB117DA31900C3855B /* kal_marker_dim.png */; };
+		5A7A3210117DA31900C3855B /* kal_marker_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A7A31EC117DA31900C3855B /* kal_marker_selected.png */; };
+		5A7A3211117DA31900C3855B /* kal_marker_today.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A7A31ED117DA31900C3855B /* kal_marker_today.png */; };
+		5A7A3212117DA31900C3855B /* kal_right_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A7A31EE117DA31900C3855B /* kal_right_arrow.png */; };
+		5A7A3213117DA31900C3855B /* kal_tile.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A7A31EF117DA31900C3855B /* kal_tile.png */; };
+		5A7A3214117DA31900C3855B /* kal_tile_dim_text_fill.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A7A31F0117DA31900C3855B /* kal_tile_dim_text_fill.png */; };
+		5A7A3215117DA31900C3855B /* kal_tile_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A7A31F1117DA31900C3855B /* kal_tile_selected.png */; };
+		5A7A3216117DA31900C3855B /* kal_tile_text_fill.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A7A31F2117DA31900C3855B /* kal_tile_text_fill.png */; };
+		5A7A3217117DA31900C3855B /* kal_tile_today.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A7A31F3117DA31900C3855B /* kal_tile_today.png */; };
+		5A7A3218117DA31900C3855B /* kal_tile_today_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A7A31F4117DA31900C3855B /* kal_tile_today_selected.png */; };
+		5A7A3219117DA31900C3855B /* KalDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7A31F6117DA31900C3855B /* KalDataSource.m */; };
+		5A7A321A117DA31900C3855B /* KalDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7A31F8117DA31900C3855B /* KalDate.m */; };
+		5A7A321B117DA31900C3855B /* KalGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7A31FA117DA31900C3855B /* KalGridView.m */; };
+		5A7A321C117DA31900C3855B /* KalLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7A31FC117DA31900C3855B /* KalLogic.m */; };
+		5A7A321D117DA31900C3855B /* KalMonthView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7A31FE117DA31900C3855B /* KalMonthView.m */; };
+		5A7A321E117DA31900C3855B /* KalTileView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7A3201117DA31900C3855B /* KalTileView.m */; };
+		5A7A321F117DA31900C3855B /* KalView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7A3203117DA31900C3855B /* KalView.m */; };
+		5A7A3220117DA31900C3855B /* KalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7A3205117DA31900C3855B /* KalViewController.m */; };
+		5A7A3221117DA31900C3855B /* NSDateAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7A3207117DA31900C3855B /* NSDateAdditions.m */; };
+		5A7A3222117DA31900C3855B /* UIViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7A3209117DA31900C3855B /* UIViewAdditions.m */; };
+		5A7A324F117DA34300C3855B /* KalViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A7A3223117DA34300C3855B /* KalViewCell.xib */; };
+		5A7A3250117DA34300C3855B /* KalViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7A3225117DA34300C3855B /* KalViewDataSource.m */; };
+		5A7A3251117DA34300C3855B /* NoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7A3227117DA34300C3855B /* NoteViewController.m */; };
+		5A7A3252117DA34300C3855B /* NoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A7A3228117DA34300C3855B /* NoteViewController.xib */; };
 		5A7B2E8A11674DD4004332A7 /* AddStudentNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7B2E8811674DD4004332A7 /* AddStudentNameViewController.m */; };
 		5A7B2E8B11674DD4004332A7 /* AddStudentNameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A7B2E8911674DD4004332A7 /* AddStudentNameViewController.xib */; };
 		5AB095571167F60C00E0CB9F /* AddStudentNameTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AB095561167F60C00E0CB9F /* AddStudentNameTableCell.m */; };
@@ -110,6 +139,49 @@
 		5A1B8A2E116A0BC100E979FF /* deafultphoto.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = deafultphoto.JPG; sourceTree = "<group>"; };
 		5A3911C1116759EB003EF6F8 /* AddStudentHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddStudentHeaderView.xib; sourceTree = "<group>"; };
 		5A39130D11678C06003EF6F8 /* addphoto.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = addphoto.jpg; sourceTree = "<group>"; };
+		5A7A31E5117DA31900C3855B /* Kal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Kal.h; sourceTree = "<group>"; };
+		5A7A31E6117DA31900C3855B /* kal_grid_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kal_grid_background.png; sourceTree = "<group>"; };
+		5A7A31E7117DA31900C3855B /* kal_grid_shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kal_grid_shadow.png; sourceTree = "<group>"; };
+		5A7A31E8117DA31900C3855B /* kal_header_text_fill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kal_header_text_fill.png; sourceTree = "<group>"; };
+		5A7A31E9117DA31900C3855B /* kal_left_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kal_left_arrow.png; sourceTree = "<group>"; };
+		5A7A31EA117DA31900C3855B /* kal_marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kal_marker.png; sourceTree = "<group>"; };
+		5A7A31EB117DA31900C3855B /* kal_marker_dim.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kal_marker_dim.png; sourceTree = "<group>"; };
+		5A7A31EC117DA31900C3855B /* kal_marker_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kal_marker_selected.png; sourceTree = "<group>"; };
+		5A7A31ED117DA31900C3855B /* kal_marker_today.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kal_marker_today.png; sourceTree = "<group>"; };
+		5A7A31EE117DA31900C3855B /* kal_right_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kal_right_arrow.png; sourceTree = "<group>"; };
+		5A7A31EF117DA31900C3855B /* kal_tile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kal_tile.png; sourceTree = "<group>"; };
+		5A7A31F0117DA31900C3855B /* kal_tile_dim_text_fill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kal_tile_dim_text_fill.png; sourceTree = "<group>"; };
+		5A7A31F1117DA31900C3855B /* kal_tile_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kal_tile_selected.png; sourceTree = "<group>"; };
+		5A7A31F2117DA31900C3855B /* kal_tile_text_fill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kal_tile_text_fill.png; sourceTree = "<group>"; };
+		5A7A31F3117DA31900C3855B /* kal_tile_today.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kal_tile_today.png; sourceTree = "<group>"; };
+		5A7A31F4117DA31900C3855B /* kal_tile_today_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kal_tile_today_selected.png; sourceTree = "<group>"; };
+		5A7A31F5117DA31900C3855B /* KalDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KalDataSource.h; sourceTree = "<group>"; };
+		5A7A31F6117DA31900C3855B /* KalDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KalDataSource.m; sourceTree = "<group>"; };
+		5A7A31F7117DA31900C3855B /* KalDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KalDate.h; sourceTree = "<group>"; };
+		5A7A31F8117DA31900C3855B /* KalDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KalDate.m; sourceTree = "<group>"; };
+		5A7A31F9117DA31900C3855B /* KalGridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KalGridView.h; sourceTree = "<group>"; };
+		5A7A31FA117DA31900C3855B /* KalGridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KalGridView.m; sourceTree = "<group>"; };
+		5A7A31FB117DA31900C3855B /* KalLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KalLogic.h; sourceTree = "<group>"; };
+		5A7A31FC117DA31900C3855B /* KalLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KalLogic.m; sourceTree = "<group>"; };
+		5A7A31FD117DA31900C3855B /* KalMonthView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KalMonthView.h; sourceTree = "<group>"; };
+		5A7A31FE117DA31900C3855B /* KalMonthView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KalMonthView.m; sourceTree = "<group>"; };
+		5A7A31FF117DA31900C3855B /* KalPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KalPrivate.h; sourceTree = "<group>"; };
+		5A7A3200117DA31900C3855B /* KalTileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KalTileView.h; sourceTree = "<group>"; };
+		5A7A3201117DA31900C3855B /* KalTileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KalTileView.m; sourceTree = "<group>"; };
+		5A7A3202117DA31900C3855B /* KalView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KalView.h; sourceTree = "<group>"; };
+		5A7A3203117DA31900C3855B /* KalView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KalView.m; sourceTree = "<group>"; };
+		5A7A3204117DA31900C3855B /* KalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KalViewController.h; sourceTree = "<group>"; };
+		5A7A3205117DA31900C3855B /* KalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KalViewController.m; sourceTree = "<group>"; };
+		5A7A3206117DA31900C3855B /* NSDateAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDateAdditions.h; sourceTree = "<group>"; };
+		5A7A3207117DA31900C3855B /* NSDateAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDateAdditions.m; sourceTree = "<group>"; };
+		5A7A3208117DA31900C3855B /* UIViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewAdditions.h; sourceTree = "<group>"; };
+		5A7A3209117DA31900C3855B /* UIViewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewAdditions.m; sourceTree = "<group>"; };
+		5A7A3223117DA34300C3855B /* KalViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KalViewCell.xib; sourceTree = "<group>"; };
+		5A7A3224117DA34300C3855B /* KalViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KalViewDataSource.h; sourceTree = "<group>"; };
+		5A7A3225117DA34300C3855B /* KalViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KalViewDataSource.m; sourceTree = "<group>"; };
+		5A7A3226117DA34300C3855B /* NoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteViewController.h; sourceTree = "<group>"; };
+		5A7A3227117DA34300C3855B /* NoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteViewController.m; sourceTree = "<group>"; };
+		5A7A3228117DA34300C3855B /* NoteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteViewController.xib; sourceTree = "<group>"; };
 		5A7B2E8711674DD4004332A7 /* AddStudentNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddStudentNameViewController.h; sourceTree = "<group>"; };
 		5A7B2E8811674DD4004332A7 /* AddStudentNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddStudentNameViewController.m; sourceTree = "<group>"; };
 		5A7B2E8911674DD4004332A7 /* AddStudentNameViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddStudentNameViewController.xib; sourceTree = "<group>"; };
@@ -312,9 +384,54 @@
 			name = EditingViews;
 			sourceTree = "<group>";
 		};
+		5A7A31E4117DA31900C3855B /* Kal */ = {
+			isa = PBXGroup;
+			children = (
+				5A7A31E5117DA31900C3855B /* Kal.h */,
+				5A7A31E6117DA31900C3855B /* kal_grid_background.png */,
+				5A7A31E7117DA31900C3855B /* kal_grid_shadow.png */,
+				5A7A31E8117DA31900C3855B /* kal_header_text_fill.png */,
+				5A7A31E9117DA31900C3855B /* kal_left_arrow.png */,
+				5A7A31EA117DA31900C3855B /* kal_marker.png */,
+				5A7A31EB117DA31900C3855B /* kal_marker_dim.png */,
+				5A7A31EC117DA31900C3855B /* kal_marker_selected.png */,
+				5A7A31ED117DA31900C3855B /* kal_marker_today.png */,
+				5A7A31EE117DA31900C3855B /* kal_right_arrow.png */,
+				5A7A31EF117DA31900C3855B /* kal_tile.png */,
+				5A7A31F0117DA31900C3855B /* kal_tile_dim_text_fill.png */,
+				5A7A31F1117DA31900C3855B /* kal_tile_selected.png */,
+				5A7A31F2117DA31900C3855B /* kal_tile_text_fill.png */,
+				5A7A31F3117DA31900C3855B /* kal_tile_today.png */,
+				5A7A31F4117DA31900C3855B /* kal_tile_today_selected.png */,
+				5A7A31F5117DA31900C3855B /* KalDataSource.h */,
+				5A7A31F6117DA31900C3855B /* KalDataSource.m */,
+				5A7A31F7117DA31900C3855B /* KalDate.h */,
+				5A7A31F8117DA31900C3855B /* KalDate.m */,
+				5A7A31F9117DA31900C3855B /* KalGridView.h */,
+				5A7A31FA117DA31900C3855B /* KalGridView.m */,
+				5A7A31FB117DA31900C3855B /* KalLogic.h */,
+				5A7A31FC117DA31900C3855B /* KalLogic.m */,
+				5A7A31FD117DA31900C3855B /* KalMonthView.h */,
+				5A7A31FE117DA31900C3855B /* KalMonthView.m */,
+				5A7A31FF117DA31900C3855B /* KalPrivate.h */,
+				5A7A3200117DA31900C3855B /* KalTileView.h */,
+				5A7A3201117DA31900C3855B /* KalTileView.m */,
+				5A7A3202117DA31900C3855B /* KalView.h */,
+				5A7A3203117DA31900C3855B /* KalView.m */,
+				5A7A3204117DA31900C3855B /* KalViewController.h */,
+				5A7A3205117DA31900C3855B /* KalViewController.m */,
+				5A7A3206117DA31900C3855B /* NSDateAdditions.h */,
+				5A7A3207117DA31900C3855B /* NSDateAdditions.m */,
+				5A7A3208117DA31900C3855B /* UIViewAdditions.h */,
+				5A7A3209117DA31900C3855B /* UIViewAdditions.m */,
+			);
+			path = Kal;
+			sourceTree = SOURCE_ROOT;
+		};
 		5AB0978C1168165E00E0CB9F /* Student */ = {
 			isa = PBXGroup;
 			children = (
+				5A7A31E4117DA31900C3855B /* Kal */,
 				95CAD9E911580F2300CBC9E9 /* StudentsViewController.h */,
 				95CAD9EA11580F2300CBC9E9 /* StudentsViewController.m */,
 				95CAD9EB11580F2300CBC9E9 /* StudentsViewController.xib */,
@@ -378,6 +495,12 @@
 				95BE6A0911683BFE00764D65 /* RollSheetInstance.xib */,
 				5AB097471168129B00E0CB9F /* RollSheetViewController.h */,
 				5AB097481168129B00E0CB9F /* RollSheetViewController.m */,
+				5A7A3223117DA34300C3855B /* KalViewCell.xib */,
+				5A7A3224117DA34300C3855B /* KalViewDataSource.h */,
+				5A7A3225117DA34300C3855B /* KalViewDataSource.m */,
+				5A7A3226117DA34300C3855B /* NoteViewController.h */,
+				5A7A3227117DA34300C3855B /* NoteViewController.m */,
+				5A7A3228117DA34300C3855B /* NoteViewController.xib */,
 				5AB097491168129B00E0CB9F /* RollSheetViewController.xib */,
 				9594A273116A9876008AC99A /* AddRollSheetViewController.h */,
 				9594A274116A9876008AC99A /* AddRollSheetViewController.m */,
@@ -495,6 +618,23 @@
 				955E427311745DBC00FF2B8F /* button_red.png in Resources */,
 				955E427411745DBC00FF2B8F /* button_yellow.png in Resources */,
 				955E431F11747CF000FF2B8F /* RollSheetAddNoteController.xib in Resources */,
+				5A7A320A117DA31900C3855B /* kal_grid_background.png in Resources */,
+				5A7A320B117DA31900C3855B /* kal_grid_shadow.png in Resources */,
+				5A7A320C117DA31900C3855B /* kal_header_text_fill.png in Resources */,
+				5A7A320D117DA31900C3855B /* kal_left_arrow.png in Resources */,
+				5A7A320E117DA31900C3855B /* kal_marker.png in Resources */,
+				5A7A320F117DA31900C3855B /* kal_marker_dim.png in Resources */,
+				5A7A3210117DA31900C3855B /* kal_marker_selected.png in Resources */,
+				5A7A3211117DA31900C3855B /* kal_marker_today.png in Resources */,
+				5A7A3212117DA31900C3855B /* kal_right_arrow.png in Resources */,
+				5A7A3213117DA31900C3855B /* kal_tile.png in Resources */,
+				5A7A3214117DA31900C3855B /* kal_tile_dim_text_fill.png in Resources */,
+				5A7A3215117DA31900C3855B /* kal_tile_selected.png in Resources */,
+				5A7A3216117DA31900C3855B /* kal_tile_text_fill.png in Resources */,
+				5A7A3217117DA31900C3855B /* kal_tile_today.png in Resources */,
+				5A7A3218117DA31900C3855B /* kal_tile_today_selected.png in Resources */,
+				5A7A324F117DA34300C3855B /* KalViewCell.xib in Resources */,
+				5A7A3252117DA34300C3855B /* NoteViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -530,6 +670,18 @@
 				955E42521174461000FF2B8F /* Presence.m in Sources */,
 				955E42531174461000FF2B8F /* Status.m in Sources */,
 				955E431E11747CF000FF2B8F /* RollSheetAddNoteController.m in Sources */,
+				5A7A3219117DA31900C3855B /* KalDataSource.m in Sources */,
+				5A7A321A117DA31900C3855B /* KalDate.m in Sources */,
+				5A7A321B117DA31900C3855B /* KalGridView.m in Sources */,
+				5A7A321C117DA31900C3855B /* KalLogic.m in Sources */,
+				5A7A321D117DA31900C3855B /* KalMonthView.m in Sources */,
+				5A7A321E117DA31900C3855B /* KalTileView.m in Sources */,
+				5A7A321F117DA31900C3855B /* KalView.m in Sources */,
+				5A7A3220117DA31900C3855B /* KalViewController.m in Sources */,
+				5A7A3221117DA31900C3855B /* NSDateAdditions.m in Sources */,
+				5A7A3222117DA31900C3855B /* UIViewAdditions.m in Sources */,
+				5A7A3250117DA34300C3855B /* KalViewDataSource.m in Sources */,
+				5A7A3251117DA34300C3855B /* NoteViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
