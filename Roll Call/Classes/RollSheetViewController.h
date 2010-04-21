@@ -22,5 +22,5 @@
 @property(nonatomic, retain) NSMutableArray *coursesArray;
 
 - (void) addRollSheet;
-
+- (void) installStatuses;
 @end

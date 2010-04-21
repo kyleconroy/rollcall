@@ -8,6 +8,7 @@
 
 #import "RollSheetViewController.h"
 #import "Course.h"
+#import "Status.h"
 #import "RollSheetInstance.h"
 #import "AddRollSheetViewController.h"
 
@@ -29,9 +30,21 @@
 
  // Iplement viewDidLoad to do additional setup after loading the view, typically from a nib.
  - (void)viewDidLoad {
+     aD = (Roll_CallAppDelegate *)[[UIApplication sharedApplication] delegate];
      [self setTitle:@"Classes"];
      
-     aD = (Roll_CallAppDelegate *)[[UIApplication sharedApplication] delegate];
+     // Check if application launching for first time
+     // If so, install initial statuses
+     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];  
+     if (![defaults objectForKey:@"firstRun"]){
+         [self installStatuses];
+         [defaults setObject:[NSDate date] forKey:@"firstRun"];
+     }
+     
+     [[NSUserDefaults standardUserDefaults] synchronize];
+     
+     
+     
      managedObjectContext = [aD managedObjectContext];
      //Get all the current Students in a given class
      coursesArray = [[NSMutableArray alloc] init];
@@ -43,6 +56,37 @@
      
      [super viewDidLoad];
  }
+
+-(void) installStatuses {
+    NSManagedObjectContext *context = [aD managedObjectContext];
+    
+    NSArray *statuses = [[NSArray alloc] initWithObjects:
+                         [NSDictionary dictionaryWithObjectsAndKeys:@"Present", @"text", [NSNumber numberWithInt:1], @"rank", @"P", @"letter", 
+                          [UIColor colorWithRed:0.369 green:0.835 blue:0.128 alpha:1.000], @"color", @"button_green.png", @"image", nil],
+                         [NSDictionary dictionaryWithObjectsAndKeys:@"Absent", @"text", [NSNumber numberWithInt:4 ], @"rank", @"A", @"letter", 
+                          [UIColor colorWithRed:0.835 green:0.103 blue:0.182 alpha:1.000], @"color", @"button_red.png", @"image", nil],
+                         [NSDictionary dictionaryWithObjectsAndKeys:@"Tardy", @"text", [NSNumber numberWithInt:3 ], @"rank", @"T", @"letter", 
+                          [UIColor colorWithRed:1.000 green:0.830 blue:0.081 alpha:1.000], @"color", @"button_yellow.png", @"image", nil],
+                         [NSDictionary dictionaryWithObjectsAndKeys:@"Excused", @"text", [NSNumber numberWithInt:2 ], @"rank", @"E", @"letter", 
+                          [UIColor colorWithRed:0.179 green:0.298 blue:0.835 alpha:1.000], @"color", @"button_blue.png", @"image", nil],
+                         nil];
+    
+    for (NSDictionary *d in statuses){
+        NSLog(@"Status %@", [d objectForKey:@"text"]);
+        Status *status = (Status *)[NSEntityDescription insertNewObjectForEntityForName:@"Status" inManagedObjectContext:context];
+        status.text = [d objectForKey:@"text"];
+        status.rank = [d objectForKey:@"rank"];
+        status.color = [d objectForKey:@"color"];
+        status.letter = [d objectForKey:@"letter"];
+        status.imageName = [d objectForKey:@"image"];
+    }
+    
+    NSError *error;
+    if (![context save:&error]) {
+        // Handle the error.
+    }
+    
+}
 
 /*
 - (void)viewWillAppear:(BOOL)animated {

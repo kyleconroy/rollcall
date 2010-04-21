@@ -277,7 +277,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>22</integer>
+									<integer>25</integer>
 									<integer>16</integer>
 									<integer>1</integer>
 									<integer>0</integer>
@@ -333,7 +333,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>9509E06E117EE7F500A468EB</string>
+										<string>9509E08A117EF6B700A468EB</string>
 										<key>history</key>
 										<array>
 											<string>95C3ED301167CE1400CE11E5</string>
@@ -380,11 +380,9 @@
 											<string>955E42581174465500FF2B8F</string>
 											<string>955E425C1174474A00FF2B8F</string>
 											<string>955E428511745F6800FF2B8F</string>
-											<string>955E4323117497BA00FF2B8F</string>
 											<string>95B5B75711771BF700A4A356</string>
 											<string>95B5B7D61177256500A4A356</string>
 											<string>95B5B7D71177256500A4A356</string>
-											<string>95B5B81F117727CC00A4A356</string>
 											<string>95B5B820117727CC00A4A356</string>
 											<string>95D2B6731177409C0047F6F0</string>
 											<string>95D2B6A61177453A0047F6F0</string>
@@ -393,12 +391,14 @@
 											<string>951AE04D1177EC3300E7ADED</string>
 											<string>951AE04E1177EC3300E7ADED</string>
 											<string>951AE06A117885B900E7ADED</string>
-											<string>951AE06B117885B900E7ADED</string>
 											<string>9509E010117EC6DF00A468EB</string>
 											<string>9509E043117ECD2600A468EB</string>
 											<string>9509E06A117EE60800A468EB</string>
 											<string>9509E06B117EE60800A468EB</string>
-											<string>9509E06C117EE60800A468EB</string>
+											<string>9509E077117EF4C200A468EB</string>
+											<string>9509E078117EF4C200A468EB</string>
+											<string>9509E083117EF51000A468EB</string>
+											<string>9509E084117EF51000A468EB</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -820,7 +820,7 @@
 			<key>WindowToolGUID</key>
 			<string>1CD10A99069EF8BA00B06720</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>Identifier</key>

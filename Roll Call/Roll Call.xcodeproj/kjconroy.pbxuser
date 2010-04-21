@@ -49,7 +49,7 @@
 			95EC844C1169235500DA720F /* RollSheetInstance.m:213 */,
 			95EC845B116923C600DA720F /* RollSheetInstance.m:103 */,
 			955E42B1117469A100FF2B8F /* AttendanceTableCell.m:22 */,
-			9509E01D117EC87400A468EB /* RollSheetInstance.m:94 */,
+			9509E072117EF4C000A468EB /* RollSheetViewController.m:40 */,
 		);
 		codeSenseManager = 95CAD977115801F100CBC9E9 /* Code sense */;
 		executables = (
@@ -174,6 +174,17 @@
 			9509E06C117EE60800A468EB /* PBXTextBookmark */ = 9509E06C117EE60800A468EB /* PBXTextBookmark */;
 			9509E06D117EE60800A468EB /* PBXTextBookmark */ = 9509E06D117EE60800A468EB /* PBXTextBookmark */;
 			9509E06E117EE7F500A468EB /* PBXTextBookmark */ = 9509E06E117EE7F500A468EB /* PBXTextBookmark */;
+			9509E06F117EE87700A468EB /* PBXTextBookmark */ = 9509E06F117EE87700A468EB /* PBXTextBookmark */;
+			9509E076117EF4C200A468EB /* PBXTextBookmark */ = 9509E076117EF4C200A468EB /* PBXTextBookmark */;
+			9509E077117EF4C200A468EB /* PBXTextBookmark */ = 9509E077117EF4C200A468EB /* PBXTextBookmark */;
+			9509E078117EF4C200A468EB /* PBXTextBookmark */ = 9509E078117EF4C200A468EB /* PBXTextBookmark */;
+			9509E079117EF4C200A468EB /* PBXTextBookmark */ = 9509E079117EF4C200A468EB /* PBXTextBookmark */;
+			9509E07A117EF4C200A468EB /* PBXTextBookmark */ = 9509E07A117EF4C200A468EB /* PBXTextBookmark */;
+			9509E081117EF4FE00A468EB /* PBXTextBookmark */ = 9509E081117EF4FE00A468EB /* PBXTextBookmark */;
+			9509E083117EF51000A468EB /* PBXTextBookmark */ = 9509E083117EF51000A468EB /* PBXTextBookmark */;
+			9509E084117EF51000A468EB /* PBXTextBookmark */ = 9509E084117EF51000A468EB /* PBXTextBookmark */;
+			9509E085117EF51000A468EB /* PBXTextBookmark */ = 9509E085117EF51000A468EB /* PBXTextBookmark */;
+			9509E08A117EF6B700A468EB /* PBXTextBookmark */ = 9509E08A117EF6B700A468EB /* PBXTextBookmark */;
 			951AE0201177E82900E7ADED = 951AE0201177E82900E7ADED /* PBXTextBookmark */;
 			951AE04D1177EC3300E7ADED = 951AE04D1177EC3300E7ADED /* PBXTextBookmark */;
 			951AE04E1177EC3300E7ADED = 951AE04E1177EC3300E7ADED /* PBXTextBookmark */;
@@ -296,16 +307,16 @@
 	};
 	5AB097471168129B00E0CB9F /* RollSheetViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1090, 469}}";
-			sepNavSelRange = "{608, 0}";
-			sepNavVisRange = "{0, 615}";
+			sepNavIntBoundsRect = "{{0, 0}, {1361, 819}}";
+			sepNavSelRange = "{611, 0}";
+			sepNavVisRange = "{0, 640}";
 		};
 	};
 	5AB097481168129B00E0CB9F /* RollSheetViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1516, 2405}}";
-			sepNavSelRange = "{4836, 0}";
-			sepNavVisRange = "{4183, 1455}";
+			sepNavIntBoundsRect = "{{0, 0}, {1361, 2860}}";
+			sepNavSelRange = "{884, 0}";
+			sepNavVisRange = "{683, 2962}";
 		};
 	};
 	5AB0974C116812A500E0CB9F /* RollCallDataModel.xcdatamodel */ = {
@@ -570,24 +581,6 @@
 		vrLen = 2148;
 		vrLoc = 2801;
 	};
-	9509E01D117EC87400A468EB /* RollSheetInstance.m:94 */ = {
-		isa = PBXFileBreakpoint;
-		actions = (
-		);
-		breakpointStyle = 0;
-		continueAfterActions = 0;
-		countType = 0;
-		delayBeforeContinue = 0;
-		fileReference = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
-		functionName = "-viewDidLoad";
-		hitCount = 1;
-		ignoreCount = 0;
-		lineNumber = 94;
-		location = "Roll Call";
-		modificationTime = 293521632.849626;
-		originalNumberOfMultipleMatches = 1;
-		state = 1;
-	};
 	9509E021117EC87700A468EB /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
@@ -808,6 +801,131 @@
 		vrLen = 1981;
 		vrLoc = 2843;
 	};
+	9509E06F117EE87700A468EB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
+		name = "RollSheetInstance.m: 128";
+		rLen = 0;
+		rLoc = 4103;
+		rType = 0;
+		vrLen = 2105;
+		vrLoc = 6621;
+	};
+	9509E072117EF4C000A468EB /* RollSheetViewController.m:40 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 5AB097481168129B00E0CB9F /* RollSheetViewController.m */;
+		functionName = "-viewDidLoad";
+		hitCount = 1;
+		ignoreCount = 0;
+		lineNumber = 40;
+		location = "Roll Call";
+		modificationTime = 293532927.747793;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
+	};
+	9509E076117EF4C200A468EB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
+		name = "RollSheetInstance.m: 71";
+		rLen = 0;
+		rLoc = 2210;
+		rType = 0;
+		vrLen = 2099;
+		vrLoc = 1195;
+	};
+	9509E077117EF4C200A468EB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95EC81951168D0E600DA720F /* DebugViewController.m */;
+		name = "DebugViewController.m: 115";
+		rLen = 1903;
+		rLoc = 5732;
+		rType = 0;
+		vrLen = 2886;
+		vrLoc = 5314;
+	};
+	9509E078117EF4C200A468EB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5AB097471168129B00E0CB9F /* RollSheetViewController.h */;
+		name = "RollSheetViewController.h: 25";
+		rLen = 0;
+		rLoc = 611;
+		rType = 0;
+		vrLen = 640;
+		vrLoc = 0;
+	};
+	9509E079117EF4C200A468EB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5AB097481168129B00E0CB9F /* RollSheetViewController.m */;
+		name = "RollSheetViewController.m: 51";
+		rLen = 0;
+		rLoc = 1532;
+		rType = 0;
+		vrLen = 3000;
+		vrLoc = 683;
+	};
+	9509E07A117EF4C200A468EB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5AB097481168129B00E0CB9F /* RollSheetViewController.m */;
+		name = "RollSheetViewController.m: 51";
+		rLen = 0;
+		rLoc = 1532;
+		rType = 0;
+		vrLen = 2957;
+		vrLoc = 683;
+	};
+	9509E081117EF4FE00A468EB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5AB097481168129B00E0CB9F /* RollSheetViewController.m */;
+		name = "RollSheetViewController.m: 33";
+		rLen = 0;
+		rLoc = 884;
+		rType = 0;
+		vrLen = 2962;
+		vrLoc = 683;
+	};
+	9509E083117EF51000A468EB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5AB097481168129B00E0CB9F /* RollSheetViewController.m */;
+		name = "RollSheetViewController.m: 33";
+		rLen = 0;
+		rLoc = 884;
+		rType = 0;
+		vrLen = 2962;
+		vrLoc = 683;
+	};
+	9509E084117EF51000A468EB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
+		rLen = 0;
+		rLoc = 96;
+		rType = 1;
+	};
+	9509E085117EF51000A468EB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
+		name = "RollSheetInstance.m: 97";
+		rLen = 0;
+		rLoc = 3013;
+		rType = 0;
+		vrLen = 2153;
+		vrLoc = 1951;
+	};
+	9509E08A117EF6B700A468EB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
+		name = "RollSheetInstance.m: 104";
+		rLen = 0;
+		rLoc = 3155;
+		rType = 0;
+		vrLen = 2191;
+		vrLoc = 1951;
+	};
 	951AE0201177E82900E7ADED /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 95B5B82911772B0E00A4A356 /* RollSheetInfoViewController.h */;
@@ -853,7 +971,7 @@
 		fRef = 5AB097481168129B00E0CB9F /* RollSheetViewController.m */;
 		name = "RollSheetViewController.m: 162";
 		rLen = 0;
-		rLoc = 4836;
+		rLoc = 7157;
 		rType = 0;
 		vrLen = 1455;
 		vrLoc = 4183;
@@ -995,9 +1113,9 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 22;
-		modificationTime = 293521647.063613;
+		modificationTime = 293532927.134084;
 		originalNumberOfMultipleMatches = 1;
-		state = 1;
+		state = 0;
 	};
 	955E431B11747CF000FF2B8F /* RollSheetAddNoteController.h */ = {
 		uiCtxt = {
@@ -1304,9 +1422,9 @@
 	};
 	95BE6A0811683BFE00764D65 /* RollSheetInstance.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1361, 5291}}";
-			sepNavSelRange = "{3609, 0}";
-			sepNavVisRange = "{2843, 1981}";
+			sepNavIntBoundsRect = "{{0, 0}, {1361, 5187}}";
+			sepNavSelRange = "{3155, 0}";
+			sepNavVisRange = "{1951, 2191}";
 			sepNavWindowFrame = "{{687, 222}, {902, 836}}";
 		};
 	};
@@ -1601,9 +1719,9 @@
 	};
 	95EC81951168D0E600DA720F /* DebugViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1146, 2314}}";
-			sepNavSelRange = "{7528, 0}";
-			sepNavVisRange = "{5639, 1998}";
+			sepNavIntBoundsRect = "{{0, 0}, {1361, 2249}}";
+			sepNavSelRange = "{5732, 1903}";
+			sepNavVisRange = "{5314, 2886}";
 		};
 	};
 	95EC822B1168EA6B00DA720F /* PBXTextBookmark */ = {
@@ -1682,9 +1800,9 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 55;
-		modificationTime = 293521647.063572;
+		modificationTime = 293532927.133939;
 		originalNumberOfMultipleMatches = 1;
-		state = 1;
+		state = 0;
 	};
 	95EC844C1169235500DA720F /* RollSheetInstance.m:213 */ = {
 		isa = PBXFileBreakpoint;
@@ -1700,7 +1818,7 @@
 		ignoreCount = 0;
 		lineNumber = 213;
 		location = "Roll Call";
-		modificationTime = 293521630.337154;
+		modificationTime = 293532927.134012;
 		originalNumberOfMultipleMatches = 1;
 		state = 2;
 	};
@@ -1718,7 +1836,7 @@
 		ignoreCount = 0;
 		lineNumber = 103;
 		location = "Roll Call";
-		modificationTime = 293521630.337417;
+		modificationTime = 293532927.134052;
 		originalNumberOfMultipleMatches = 1;
 		state = 2;
 	};
