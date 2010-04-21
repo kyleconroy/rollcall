@@ -67,6 +67,16 @@ static BOOL IsDateBetweenInclusive(NSDate *date, NSDate *begin, NSDate *end)
     UILabel *label = (UILabel *)[cell viewWithTag:2];
 	label.textAlignment=UITextAlignmentCenter;
 	label.text = presence.course.name;
+	
+	UILabel *dateLabel = (UILabel *)[cell viewWithTag:3];
+	dateLabel.textAlignment=UITextAlignmentRight;
+	NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+	[dateFormat setDateFormat:@"EEEE, ha"];
+	NSDate *date=presence.date;
+	NSString *theDate = [dateFormat stringFromDate:date];
+	dateLabel.text =[NSString stringWithFormat:@"%@", theDate];
+	
+	
 	return cell;
 }
 

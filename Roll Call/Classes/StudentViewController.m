@@ -20,6 +20,7 @@
 #import "Status.h"
 #import "AttendanceTableViewController.h"
 #import "KalViewDataSource.h"
+#import "GraphController.h"
 
 @implementation StudentViewController
 
@@ -30,11 +31,20 @@
 @synthesize addNameButton;
 @synthesize name;
 @synthesize calendar;
+@synthesize tvCell;
+@synthesize presences;
+@synthesize tableCell;
+@synthesize cellLabel;
+@synthesize cellImage;
+@synthesize cB;
 
 
 - (void)viewDidLoad {
     
     [self setTitle:@"Student"];
+	presences=nil;
+	if (currentStudent.presences!=nil)
+		presences= [[NSMutableArray alloc] initWithArray:[currentStudent.presences allObjects]];
     aD = (Roll_CallAppDelegate *)[[UIApplication sharedApplication] delegate];
 	if (tableHeaderView == nil) {
         [[NSBundle mainBundle] loadNibNamed:@"StudentHeaderView" owner:self options:nil];
@@ -46,6 +56,7 @@
 	self.tableView.tableHeaderView.backgroundColor = [UIColor groupTableViewBackgroundColor];
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
+	self.tableView.rowHeight=50.0;
 	[self.tableView reloadData];
 	[super viewDidLoad];
 }
@@ -77,9 +88,9 @@
 		aC=0;
 		eC=0;
 		tC=0;
-		NSMutableArray *presences=nil;
+		presences=nil;
 		if (currentStudent.presences!=nil)
-		presences= [[NSMutableArray alloc] initWithArray:[currentStudent.presences allObjects]];
+			presences= [[NSMutableArray alloc] initWithArray:[currentStudent.presences allObjects]];
 		for (Presence *presence in presences) {
 			if ([presence.status.letter isEqualToString:@"A"])
 				aC++;
@@ -88,7 +99,6 @@
 			if ([presence.status.letter isEqualToString:@"T"])
 				tC++;		
 		}
-		[presences release];
 	}
 	[self.tableView reloadData];
 }
@@ -163,6 +173,17 @@
 	[navController release];
 }
 
+- (IBAction) showKal {
+	KalViewDataSource *data= [[KalViewDataSource alloc] init];
+	id<KalDataSource> source = data;
+	data.statuses=presences;
+	calendar = [[KalViewController alloc] init];
+	calendar.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Today" style:UIBarButtonItemStyleBordered target:self action:@selector(showAndSelectToday)] autorelease];
+	calendar.dataSource=source;
+	calendar.title=currentStudent.firstName;
+	[self.navigationController pushViewController:calendar animated:YES];
+}
+
 
 - (IBAction)deleteStudent
 {
@@ -226,7 +247,7 @@
 	else if (section==3) 
 		return 5;
 	else if (section==1)
-		return 4;   //not sure//not sure//not sure//not sure//not sure
+		return 2;   //not sure//not sure//not sure//not sure//not sure
 	else if (section==2) {
 		return 1;  //not sure//not sure//not sure//not sure//not sure
 	} else if (section==4) {
@@ -333,58 +354,56 @@
 			cell.detailTextLabel.text = address2;
 		}
 	} else if (indexPath.section == 1) {
-		static NSString *AttandanceCellIdentifier = @"AttandanceCell";
-		cell = [tableView dequeueReusableCellWithIdentifier:AttandanceCellIdentifier];
-		if (cell == nil) {
-			cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:AttandanceCellIdentifier] autorelease];
-		}
-		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-		cell.selectionStyle = UITableViewCellSelectionStyleBlue;
-		cell.textLabel.textAlignment=UITextAlignmentLeft;
-		cell.detailTextLabel.minimumFontSize=20;  
 		if (indexPath.row == 0) {
-			cell.textLabel.text = @"Tardy";
-			NSString *count= [[NSString alloc] initWithFormat:@"%d", tC];
-			cell.detailTextLabel.text = count;
-			cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-			if (self.editing) {
-				cell.selectionStyle = UITableViewCellSelectionStyleNone;
+			static NSString *CellIdentifier = @"AttendanceCell";
+			UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+			if (cell == nil) {
+				[[NSBundle mainBundle] loadNibNamed:@"AttendanceCell" owner:self options:nil];
+				cell = tvCell;
+				self.tvCell = nil;
+				cell.selectionStyle = UITableViewCellSelectionStyleBlue;
 			}
+			[aB setTitle:@"A" forState: UIControlStateNormal];
+			[aB setBackgroundImage:[UIImage imageNamed:@"button_red.png"] forState:UIControlStateNormal];
+			aL.text=[[NSString alloc] initWithFormat:@"%d", aC];
+			[tB setTitle:@"T" forState: UIControlStateNormal];
+			[tB setBackgroundImage:[UIImage imageNamed:@"button_yellow.png"] forState:UIControlStateNormal];
+			tL.text=[[NSString alloc] initWithFormat:@"%d", tC];
+			[eB setTitle:@"E" forState: UIControlStateNormal];
+			[eB setBackgroundImage:[UIImage imageNamed:@"button_blue.png"] forState:UIControlStateNormal];
+			eL.text=[[NSString alloc] initWithFormat:@"%d", eC];
+			cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+			return cell;
 		}
 		else if (indexPath.row == 1) {
-			cell.textLabel.text = @"Absent";
-			NSString *count= [[NSString alloc] initWithFormat:@"%d", aC];
-			cell.detailTextLabel.text = count;
-			if (self.editing) {
-				cell.selectionStyle = UITableViewCellSelectionStyleNone;
+			static NSString *CellIdentifier = @"OverViewCell";
+			UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+			if (cell == nil) {
+				[[NSBundle mainBundle] loadNibNamed:@"ChatTableCell" owner:self options:nil];
+				cell = tableCell;
+				self.tableCell = nil;
+				cellLabel.text=@"Monthly Overview";
+				cB.hidden=YES;
+				cellImage.hidden=NO;
+				[cellImage setImage:[UIImage imageNamed:@"icon_chart_lg.png"]];
+				cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 			}
-		}
-		else if (indexPath.row == 2) {
-			cell.textLabel.text = @"Excused Absent";
-			NSString *count= [[NSString alloc] initWithFormat:@"%d", eC];
-			cell.detailTextLabel.text = count;
-			if (self.editing) {
-				cell.selectionStyle = UITableViewCellSelectionStyleNone;
-			}
-		}
-		else if (indexPath.row == 3) {
-			cell.textLabel.text = @"Overall";
-			if (self.editing) {
-				cell.selectionStyle = UITableViewCellSelectionStyleNone;
-			}
+			return cell;
 		}
 	} else if (indexPath.section == 2) {
-		static NSString *NoteCellIdentifier = @"NoteCell";
-		cell = [tableView dequeueReusableCellWithIdentifier:NoteCellIdentifier];
+		static NSString *CellIdentifier = @"OverViewCell";
+		UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 		if (cell == nil) {
-			cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:NoteCellIdentifier] autorelease];
+			[[NSBundle mainBundle] loadNibNamed:@"ChatTableCell" owner:self options:nil];
+			cell = tableCell;
+			self.tableCell = nil;
+			cellLabel.text=@"Notes";
+			cB.hidden=NO;
+			cellImage.hidden=YES;
+			[cB setBackgroundImage:[UIImage imageNamed:@"note_on.png"] forState:UIControlStateNormal];
 			cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 		}
-		cell.selectionStyle = UITableViewCellSelectionStyleBlue;
-		if (self.editing) {
-			cell.selectionStyle = UITableViewCellSelectionStyleNone;
-		}
-		cell.textLabel.text = @"Notes";
+		return cell;
 	} else if (indexPath.section == 4&&self.editing) {
 		static NSString *DeleteCellIdentifier = @"DeleteCell";
 		cell = [tableView dequeueReusableCellWithIdentifier:DeleteCellIdentifier];
@@ -413,37 +432,19 @@
 				[self addCourse];
 		}
 	} else if (indexPath.section==1) {
-		if ((!self.editing)&&indexPath.row==0) {
-			AttendanceTableViewController *aView = [[AttendanceTableViewController alloc] initWithNibName:@"AttendanceTableViewController" bundle:nil];
-			//UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:aView];			
-			aView.type=0;
-			aView.student=currentStudent;
-			[self.navigationController pushViewController:aView animated:YES];
-			[aView release];
-			//[navController release];
-		}
 		if ((!self.editing)&&indexPath.row==1) {
-			AttendanceTableViewController *aView = [[AttendanceTableViewController alloc] initWithNibName:@"AttendanceTableViewController" bundle:nil];
-			//UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:aView];			
-			aView.type=1;
-			aView.student=currentStudent;
-			[self.navigationController pushViewController:aView animated:YES];
-			[aView release];
-			//[navController release];
+			GraphController *vc = [[GraphController alloc] init];
+			vc.presences=presences;
+			vc.lastName=currentStudent.lastName;
+			vc.firstName=currentStudent.firstName;
+			[vc setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+			[self presentModalViewController:vc animated:YES];
+			[vc release];	
 		}
-		if ((!self.editing)&&indexPath.row==2) {
-			AttendanceTableViewController *aView = [[AttendanceTableViewController alloc] initWithNibName:@"AttendanceTableViewController" bundle:nil];
-			//UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:aView];			
-			aView.type=2;
-			aView.student=currentStudent;
-			[self.navigationController pushViewController:aView animated:YES];
-			[aView release];
-			//[navController release];
-		}
-		if ((!self.editing)&&indexPath.row==3) {
+		if ((!self.editing)&&indexPath.row==0) {
 			KalViewDataSource *data= [[KalViewDataSource alloc] init];
 			id<KalDataSource> source = data;
-			data.statuses=[[NSMutableArray alloc] initWithArray:[currentStudent.presences allObjects]];
+			data.statuses=presences;
 			calendar = [[KalViewController alloc] init];
 			calendar.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Today" style:UIBarButtonItemStyleBordered target:self action:@selector(showAndSelectToday)] autorelease];
 			calendar.dataSource=source;
@@ -608,8 +609,6 @@
 	[photoButton setImage:[UIImage imageNamed:@"addphoto.jpg"] forState:UIControlStateNormal];
 }
 
-
-
 - (void)dealloc {
 	[currentStudent release];
 	[photoButton release];
@@ -617,6 +616,10 @@
 	[addNameButton release];
 	[name release];
 	[calendar release];
+	[presences release];
+	[cellImage release];
+	[tableCell release];
+	[cellLabel release];
 	[super dealloc];
 }
 
