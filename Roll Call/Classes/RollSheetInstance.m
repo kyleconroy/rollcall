@@ -11,6 +11,7 @@
 #import "Presence.h"
 #import "Status.h"
 #import "RollSheetAddNoteController.h"
+#import "RollSheetInfoViewController.h"
 
 #define DAY  86400
 
@@ -63,7 +64,8 @@
     UIButton* infoButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
     [infoButton addTarget:self action:@selector(showCourseInfo) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *modalButton = [[UIBarButtonItem alloc] initWithCustomView:infoButton];
-    [self.navigationItem setRightBarButtonItem:modalButton animated:YES];
+    modalButton.width = 80.0;
+    [self.navigationItem setRightBarButtonItem:modalButton animated:NO];
     [modalButton release];
     
     [self setTitle:course.name];
@@ -88,16 +90,51 @@
     studentsArray = [ss sortedArrayUsingDescriptors:sortDescriptors];
     
     [self updateDisplayDate];
+    [self updateAttendance];
+
     
     // Save and release stuff
     [myDate retain];
     [studentsArray retain];
+    
     
     [sortDescriptor release];
     [sortDescriptors release];
     [ss release];
     
     [super viewDidLoad];
+}
+
+- (void) updateAttendance {
+    [presencesArray release];
+    presencesArray = [[NSMutableArray alloc] init];
+    
+    NSDate *today = [self todayWithDate:myDate];
+    NSDate *tomorrow = [self tomorrowWithDate:myDate];
+    NSManagedObjectContext *context = [aD managedObjectContext];
+    NSPredicate *myPredicate = [NSPredicate predicateWithFormat:@"(date >= %@) AND (date <= %@) AND (course == %@)", today, tomorrow, course];
+    
+    Status *stat = [aD getStatusWithLetter:@"P"];
+    
+    for(Student* s in studentsArray){
+        NSSet *events = [s.presences filteredSetUsingPredicate:myPredicate];
+        Presence *p = [events anyObject];
+        if (p == nil) {
+            p = (Presence *)[NSEntityDescription insertNewObjectForEntityForName:@"Presence" inManagedObjectContext:context];
+            p.date = myDate;
+            p.student = s;
+            p.course = course;
+            p.status = stat;
+        }
+        [presencesArray addObject:p];
+    }
+    
+    NSError *error;
+    if (![[aD managedObjectContext] save:&error]) {
+        // Handle the error.
+    }
+    
+    [presencesArray retain];
 }
 
 - (NSDate *)todayWithDate:(NSDate *)date {
@@ -159,42 +196,24 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     static NSString *CellIdentifier = @"Cell";
-    NSManagedObjectContext *context = [aD managedObjectContext];
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         [[NSBundle mainBundle] loadNibNamed:@"AttendanceTableCell" owner:self options:nil];
         cell = tvCell;
         self.tvCell = nil;
-        cell.selectionStyle = UITableViewCellSelectionStyleBlue;
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
     Student *s = [studentsArray objectAtIndex:indexPath.row];
+    Presence *p = [presencesArray objectAtIndex:indexPath.row];
     
     UIButton *button;
     button = (UIButton *)[cell viewWithTag:1];
     
-    NSDate *today = [self todayWithDate:myDate];
-    NSDate *tomorrow = [self tomorrowWithDate:myDate];
-    
-    NSPredicate *myPredicate = [NSPredicate predicateWithFormat:@"(date >= %@) AND (date <= %@)", today, tomorrow];
-    
-    NSSet *events = [s.presences filteredSetUsingPredicate:myPredicate];
-    Presence *p = [events anyObject];
-    Status *stat = [aD getStatusWithLetter:@"P"];
-    if (p) {
-        [button setTitle:p.status.letter forState: UIControlStateNormal];
-        [button setBackgroundImage:[UIImage imageNamed:p.status.imageName] forState:UIControlStateNormal];
-    } else {
-        p = (Presence *)[NSEntityDescription insertNewObjectForEntityForName:@"Presence" inManagedObjectContext:context];
-        p.date = myDate;
-        p.student = s;
-        p.course = course;
-        p.status = stat;
-        [button setTitle:stat.letter forState: UIControlStateNormal];
-        [button setBackgroundImage:[UIImage imageNamed:stat.imageName] forState:UIControlStateNormal];
-    }
-    
+    [button setTitle:p.status.letter forState: UIControlStateNormal];
+    [button setBackgroundImage:[UIImage imageNamed:p.status.imageName] forState:UIControlStateNormal];
+        
     UILabel *label = (UILabel *)[cell viewWithTag:2];
     label.text = [NSString stringWithFormat:@"%@ %@", s.firstName, s.lastName];
     
@@ -212,15 +231,7 @@
     NSIndexPath *indexPath = [myTableView  indexPathForCell: (UITableViewCell*)[[senderButton superview]superview]];
     UITableViewCell *cell = [myTableView  cellForRowAtIndexPath:indexPath];
     
-    Student *s = [studentsArray objectAtIndex:indexPath.row];
-    
-    NSDate *today = [self todayWithDate:myDate];
-    NSDate *tomorrow = [self tomorrowWithDate:myDate];    
-    NSPredicate *myPredicate = [NSPredicate predicateWithFormat:@"(date >= %@) AND (date <= %@)", today, tomorrow];
-    
-    NSSet *events = [s.presences filteredSetUsingPredicate:myPredicate];
-    Presence *p = [events anyObject];
-    
+    Presence *p = [presencesArray objectAtIndex:indexPath.row];
     
     UIButton *button;
     button = (UIButton *)[cell viewWithTag:1];
@@ -261,6 +272,7 @@
 - (IBAction)moveBackOneDay {
     myDate = [myDate addTimeInterval:-DAY];
     [self updateDisplayDate];
+    [self updateAttendance];
     [myDate retain];
     
     NSMutableArray *updatedPaths = [NSMutableArray array];
@@ -275,6 +287,7 @@
 - (IBAction)moveForwardOneDay {
     myDate = [myDate addTimeInterval:DAY];
     [self updateDisplayDate];
+    [self updateAttendance];
     [myDate retain];
     
     NSMutableArray *updatedPaths = [NSMutableArray array];
@@ -294,7 +307,7 @@
         datePickerDate = nil;
         [UIView beginAnimations:nil context:nil];
         [UIView setAnimationDuration:0.5];
-        CGAffineTransform transform = CGAffineTransformMakeTranslation(0, 55);
+        CGAffineTransform transform = CGAffineTransformMakeTranslation(0, 44);
         myPickerView.transform = transform;
         [self.view addSubview:myPickerView];
         [UIView commitAnimations];
@@ -333,15 +346,7 @@
     //Position Selected Table Row
     UIView *senderButton = (UIView*) sender;
     NSIndexPath *indexPath = [myTableView  indexPathForCell: (UITableViewCell*)[[senderButton superview]superview]];
-    Student *s = [studentsArray objectAtIndex:indexPath.row];
-    
-    NSDate *today = [self todayWithDate:myDate];
-    NSDate *tomorrow = [self tomorrowWithDate:myDate];
-    
-    NSPredicate *myPredicate = [NSPredicate predicateWithFormat:@"(date >= %@) AND (date <= %@)", today, tomorrow];
-    
-    NSSet *events = [s.presences filteredSetUsingPredicate:myPredicate];
-    Presence *p = [events anyObject];
+    Presence *p = [presencesArray objectAtIndex:indexPath.row];
     
     UIButton *button;
     button = (UIButton *)[[myTableView cellForRowAtIndexPath:indexPath] viewWithTag:3];
@@ -359,6 +364,13 @@
 }
 
 - (void) showCourseInfo {
+    
+    RollSheetInfoViewController *courseInfoController = [[RollSheetInfoViewController alloc] 
+                                                         initWithNibName:@"RollSheetInfoViewController" bundle:nil];
+    
+    [self.navigationController pushViewController:courseInfoController animated:YES];
+    
+    [courseInfoController release];
     
 }
 

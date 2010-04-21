@@ -31,13 +31,13 @@
 
 
 - (void)viewDidLoad {
-    self.title = @"New Roll Sheet";
+    self.title = @"New Class";
     
 	//self.editing=YES;
 	//self.navigationController.navigationBar.barStyle=UIBarStyleBlackTranslucent;
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancel)];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(save)];
-	self.navigationItem.rightBarButtonItem.enabled=NO;
+	self.navigationItem.rightBarButtonItem.enabled = NO;
     
     [super viewDidLoad];
 
@@ -109,32 +109,9 @@
     return 4;
 }
 
-- (NSString *) tableView:(UITableView *) tableView titleForHeaderInSection: (NSInteger) section {
-	NSString *title = nil;
-	switch (section) {
-		case 3:
-			title = @"Enrolled Students";
-			break;
-		default:
-			break;
-	}
-	return title;
-}
-
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    //class name and meeting days
-	if (section == 0) {
-		return 1;
-	} else if (section == 1 || section == 2) {
-		//start/end time/date
-		return 2;
-	} else if (section == 3) {
-		//enrolled students
-		return [addedStudents count] + 1;
-	} else {
-		return 0;
-	}
+    
 }
 
 
@@ -199,36 +176,6 @@
 	// AnotherViewController *anotherViewController = [[AnotherViewController alloc] initWithNibName:@"AnotherView" bundle:nil];
 	// [self.navigationController pushViewController:anotherViewController];
 	// [anotherViewController release];
-
-    
-    if (indexPath.section == 3) {
-        AddCourseNameViewController *addStudentsView = [[AddCourseNameViewController alloc] initWithNibName:@"AddStudentNameViewController" bundle:nil];
-        
-    } else {
-        AddCourseNameViewController *addNameView = [[AddCourseNameViewController alloc] initWithNibName:@"AddCourseNameViewController" bundle:nil];
-        addNameView.parentCell = [tableView cellForRowAtIndexPath:indexPath];
-        
-        if (indexPath.section == 0) {
-            addNameView.labelText = @"Name";
-        } else if (indexPath.section == 1) {
-            if(indexPath.row == 0) {
-                addNameView.labelText = @"Start Date";
-            } else {
-                addNameView.labelText = @"End Date";
-            }
-        } else if (indexPath.section == 2) {
-            if (indexPath.row == 0) {
-                addNameView.labelText = @"Start Time";
-            } else {
-                addNameView.labelText = @"End Time";
-            }
-        } else {
-                addNameView.labelText = @"Enroll Students";
-        }
-        [self.navigationController pushViewController:addNameView animated:YES];
-    }
-    
-    
 	
 }
 

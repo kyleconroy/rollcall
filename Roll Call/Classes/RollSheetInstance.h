@@ -57,6 +57,7 @@
 - (NSDate *) tomorrowWithDate:(NSDate *)date;
 
 - (void) updateDisplayDate;
+- (void) updateAttendance;
 - (void) hideDatePicker;
 - (void) showCourseInfo;
 

@@ -29,7 +29,7 @@
 
  // Iplement viewDidLoad to do additional setup after loading the view, typically from a nib.
  - (void)viewDidLoad {
-     [self setTitle:@"Roll Sheets"];
+     [self setTitle:@"Classes"];
      
      aD = (Roll_CallAppDelegate *)[[UIApplication sharedApplication] delegate];
      managedObjectContext = [aD managedObjectContext];
@@ -38,7 +38,7 @@
 
      [self setCoursesArray:[aD getAllCourses]];
      
-     //self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addRollSheet)];
+     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addRollSheet)];
 
      
      [super viewDidLoad];
