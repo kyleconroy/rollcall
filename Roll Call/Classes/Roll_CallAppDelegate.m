@@ -81,6 +81,28 @@
     // Make sure to release this array
 }
 
+- (NSMutableArray *) getAllStatuses {
+    
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Status" inManagedObjectContext:[self managedObjectContext]];
+    [request setEntity:entity];
+    
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"rank" ascending:YES];
+    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+    [request setSortDescriptors:sortDescriptors];
+    [sortDescriptors release];
+    [sortDescriptor release];
+    
+    NSError *error;
+    NSMutableArray *mutableFetchResults = [[[self managedObjectContext] executeFetchRequest:request error:&error] mutableCopy];
+    if (mutableFetchResults == nil) {
+        NSLog(@"Can't fetch the status array"); 
+    }
+    
+    return mutableFetchResults ;
+    // Make sure to release this array
+}
+
 -(Status *) getStatusWithLetter:(NSString *)letter {
 	Status *p;
     
@@ -94,6 +116,45 @@
     
 	NSPredicate *predicate = [NSPredicate predicateWithFormat:@"letter == %@", letter];
 	[request setPredicate:predicate];
+    
+	NSError *error;
+	NSArray *objects = [context executeFetchRequest:request error:&error];
+	p = nil;
+	if (objects == nil)
+	{
+		NSLog(@"No Status to return");
+        return nil;
+	}
+	else
+	{
+		if ([objects count] > 0)
+		{
+			p = (Status *)[objects objectAtIndex:0];
+		}
+	}
+    
+	[request release];
+    
+	return p;
+}
+
+-(Status *) getStatusWithLowestRank {
+	Status *p;
+    
+    NSManagedObjectContext *context = [self managedObjectContext];
+    
+	NSFetchRequest *request = [[NSFetchRequest alloc] init];
+	NSEntityDescription *entity = [NSEntityDescription entityForName: @"Status" inManagedObjectContext:context];
+	[request setEntity:entity];
+    
+	[request setResultType:NSManagedObjectResultType];
+    
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc]
+                                        
+                                        initWithKey:@"rank" ascending:YES];
+    
+    [request setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+    [sortDescriptor release];
     
 	NSError *error;
 	NSArray *objects = [context executeFetchRequest:request error:&error];

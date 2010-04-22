@@ -34,6 +34,10 @@
 		5AB0974B1168129B00E0CB9F /* RollSheetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AB097491168129B00E0CB9F /* RollSheetViewController.xib */; };
 		5AB0974D116812A500E0CB9F /* RollCallDataModel.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 5AB0974C116812A500E0CB9F /* RollCallDataModel.xcdatamodel */; };
 		5AB097681168145600E0CB9F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AB097671168145600E0CB9F /* CoreData.framework */; };
+		9509E09F117F81BF00A468EB /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 9509E09E117F81BF00A468EB /* gear.png */; };
+		9509E0A2117F862600A468EB /* sync.png in Resources */ = {isa = PBXBuildFile; fileRef = 9509E0A1117F862600A468EB /* sync.png */; };
+		9509E0B6117F88B100A468EB /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */; };
+		9509E0B7117F88B100A468EB /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9509E0B5117F88B100A468EB /* SettingsViewController.xib */; };
 		955E41771174129700FF2B8F /* RollSheetTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 955E41761174129700FF2B8F /* RollSheetTableCell.m */; };
 		955E4179117412AB00FF2B8F /* RollSheetTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 955E4178117412AB00FF2B8F /* RollSheetTableCell.xib */; };
 		955E41F21174273900FF2B8F /* cell_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 955E41F11174273900FF2B8F /* cell_background.png */; };
@@ -123,6 +127,11 @@
 		5AB0974C116812A500E0CB9F /* RollCallDataModel.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; name = RollCallDataModel.xcdatamodel; path = Classes/RollCallDataModel.xcdatamodel; sourceTree = "<group>"; };
 		5AB097671168145600E0CB9F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		8D1107310486CEB800E47090 /* Roll_Call-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Roll_Call-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		9509E09E117F81BF00A468EB /* gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear.png; sourceTree = "<group>"; };
+		9509E0A1117F862600A468EB /* sync.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sync.png; sourceTree = "<group>"; };
+		9509E0B3117F88B100A468EB /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		9509E0B4117F88B100A468EB /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		9509E0B5117F88B100A468EB /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		955E41751174129700FF2B8F /* RollSheetTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RollSheetTableCell.h; sourceTree = "<group>"; };
 		955E41761174129700FF2B8F /* RollSheetTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RollSheetTableCell.m; sourceTree = "<group>"; };
 		955E4178117412AB00FF2B8F /* RollSheetTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RollSheetTableCell.xib; sourceTree = "<group>"; };
@@ -210,6 +219,7 @@
 				95EC81941168D0E600DA720F /* DebugViewController.h */,
 				95EC81321168C01000DA720F /* Models */,
 				95C3EEF91168387500CE11E5 /* Roll Sheet */,
+				9509E0AC117F886100A468EB /* Settings */,
 				5AB0978C1168165E00E0CB9F /* Student */,
 			);
 			path = Classes;
@@ -329,9 +339,21 @@
 			name = Student;
 			sourceTree = "<group>";
 		};
+		9509E0AC117F886100A468EB /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				9509E0B3117F88B100A468EB /* SettingsViewController.h */,
+				9509E0B4117F88B100A468EB /* SettingsViewController.m */,
+				9509E0B5117F88B100A468EB /* SettingsViewController.xib */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
 		955E427711745DD100FF2B8F /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				9509E0A1117F862600A468EB /* sync.png */,
+				9509E09E117F81BF00A468EB /* gear.png */,
 				955E426D11745DBC00FF2B8F /* button_blue.png */,
 				955E426E11745DBC00FF2B8F /* button_green.png */,
 				955E426F11745DBC00FF2B8F /* button_red.png */,
@@ -500,6 +522,9 @@
 				955E427411745DBC00FF2B8F /* button_yellow.png in Resources */,
 				955E431F11747CF000FF2B8F /* RollSheetAddNoteController.xib in Resources */,
 				95B5B82D11772B0E00A4A356 /* RollSheetInfoViewController.xib in Resources */,
+				9509E09F117F81BF00A468EB /* gear.png in Resources */,
+				9509E0A2117F862600A468EB /* sync.png in Resources */,
+				9509E0B7117F88B100A468EB /* SettingsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -536,6 +561,7 @@
 				955E42531174461000FF2B8F /* Status.m in Sources */,
 				955E431E11747CF000FF2B8F /* RollSheetAddNoteController.m in Sources */,
 				95B5B82C11772B0E00A4A356 /* RollSheetInfoViewController.m in Sources */,
+				9509E0B6117F88B100A468EB /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

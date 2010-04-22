@@ -43,8 +43,6 @@
      
      [[NSUserDefaults standardUserDefaults] synchronize];
      
-     
-     
      managedObjectContext = [aD managedObjectContext];
      //Get all the current Students in a given class
      coursesArray = [[NSMutableArray alloc] init];

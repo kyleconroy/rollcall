@@ -32,6 +32,8 @@
 - (NSString *)applicationDocumentsDirectory;
 - (NSMutableArray *) getAllStudents;
 - (NSMutableArray *) getAllCourses;
+- (NSMutableArray *) getAllStatuses;
 - (Status *) getStatusWithLetter:(NSString *)letter;
+- (Status *) getStatusWithLowestRank;
 
 @end
