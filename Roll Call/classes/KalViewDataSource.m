@@ -11,6 +11,7 @@
 #import "Status.h"
 #import "Course.h"
 #import "RollSheetAddNoteController.h"
+#import "AttendanceEditViewController.h"
 
 
 static BOOL IsDateBetweenInclusive(NSDate *date, NSDate *begin, NSDate *end)
@@ -24,7 +25,7 @@ static BOOL IsDateBetweenInclusive(NSDate *date, NSDate *begin, NSDate *end)
 
 @implementation KalViewDataSource
 
-@synthesize statuses, tvCell;
+@synthesize statuses, tvCell, kal, name;
 
 + (KalViewDataSource *)dataSource
 {
@@ -39,8 +40,6 @@ static BOOL IsDateBetweenInclusive(NSDate *date, NSDate *begin, NSDate *end)
 	}
 	return self;
 }
-
-
 
 - (Presence *) presenceAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -60,6 +59,7 @@ static BOOL IsDateBetweenInclusive(NSDate *date, NSDate *begin, NSDate *end)
         self.tvCell = nil;
         cell.selectionStyle = UITableViewCellSelectionStyleBlue;
     }
+	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 	UIButton *button;
     button = (UIButton *)[cell viewWithTag:1];
 	[button setTitle:presence.status.letter forState: UIControlStateNormal];
@@ -67,17 +67,24 @@ static BOOL IsDateBetweenInclusive(NSDate *date, NSDate *begin, NSDate *end)
     UILabel *label = (UILabel *)[cell viewWithTag:2];
 	label.textAlignment=UITextAlignmentCenter;
 	label.text = presence.course.name;
-	
 	UILabel *dateLabel = (UILabel *)[cell viewWithTag:3];
 	dateLabel.textAlignment=UITextAlignmentRight;
 	NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
 	[dateFormat setDateFormat:@"EEEE, ha"];
-	NSDate *date=presence.date;
-	NSString *theDate = [dateFormat stringFromDate:date];
+	NSString *theDate = [dateFormat stringFromDate:presence.date];
 	dateLabel.text =[NSString stringWithFormat:@"%@", theDate];
-	
-	
+	[dateFormat release];
 	return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	NSLog(@"Asfafasf");
+	Presence *presence = [self presenceAtIndexPath:indexPath];
+	AttendanceEditViewController *vc = [[AttendanceEditViewController alloc] init];
+	vc.name=name;
+	vc.presence=presence;
+	[kal.navigationController pushViewController:vc animated:YES];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -148,6 +155,7 @@ static BOOL IsDateBetweenInclusive(NSDate *date, NSDate *begin, NSDate *end)
 {
 	[items release];
 	[presences release];
+	[kal release];
 	[super dealloc];
 }
 

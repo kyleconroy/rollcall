@@ -21,20 +21,8 @@
 	self.title = @"Add Course";
 }
 
-- (void)didReceiveMemoryWarning {
-	// Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-	
-	// Release any cached data, images, etc that aren't in use.
-}
-
-- (void)viewDidUnload {
-	// Release any retained subviews of the main view.
-	// e.g. self.myOutlet = nil;
-}
-
 - (void)cancel {
-	[self dismissModalViewControllerAnimated:YES];
+	[self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark Table view methods
@@ -75,38 +63,13 @@
 	[student addCoursesObject:course];
 	[course addStudentsObject: student];
 	[allcourses release];
-	[self dismissModalViewControllerAnimated:YES];
+	[self.navigationController popViewControllerAnimated:YES];
 }
-
-/*
- - (UITableViewCellAccessoryType)tableView:(UITableView *)tableView 
- accessoryTypeForRowWithIndexPath:(NSIndexPath *)indexPath
- {
- return UITableViewCellAccessoryDisclosureIndicator;
- }*/
-
-
-/*
- // Override to support editing the table view.
- - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
- 
- if (editingStyle == UITableViewCellEditingStyleDelete) {
- // Delete the row from the data source
- [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:YES];
- }   
- else if (editingStyle == UITableViewCellEditingStyleInsert) {
- // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
- }   
- }
- */
-
 
 - (void)dealloc {
 	[student release];
     [super dealloc];
 }
-
-
 
 @end
 

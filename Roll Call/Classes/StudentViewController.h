@@ -37,6 +37,7 @@
 	IBOutlet UILabel *cellLabel;
 	IBOutlet UIImageView *cellImage;
 	IBOutlet UIButton  *cB;
+	IBOutlet UITableViewCell *dsCell;
 }
 
 @property(nonatomic, retain) Roll_CallAppDelegate *aD;
@@ -52,6 +53,7 @@
 @property(nonatomic, retain) IBOutlet UILabel *cellLabel;
 @property(nonatomic, retain) IBOutlet UIImageView *cellImage;
 @property(nonatomic, retain) IBOutlet UIButton  *cB;
+@property(nonatomic, retain) IBOutlet UITableViewCell *dsCell;
 
 - (IBAction) photoTapped;
 - (IBAction) addName: (id)sender;
@@ -62,5 +64,6 @@
 - (void) addCourse;
 - (void) updatePhotoButton;
 - (IBAction) showKal;
+- (IBAction) showNotes;
 
 @end

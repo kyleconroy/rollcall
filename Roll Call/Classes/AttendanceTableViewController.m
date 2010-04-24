@@ -119,16 +119,7 @@
 		NoteViewController *myNoteView = [[NoteViewController alloc] initWithNibName:@"NoteViewController" bundle:nil];
 		myNoteView.presence=presence;
 		[self presentModalViewController:myNoteView animated:YES];
-	}
-/*	
-	else {
-		RollSheetInstance *rollView = [[RollSheetInstance alloc] initWithNibName:@"RollSheetInstance" bundle:nil];
-		[rollView setMyDate:presence.date];
-		rollView.course=presence.course;
-		[self.navigationController pushViewController:rollView animated:YES];
-	}
-*/
-		
+	}		
 }	
 
 

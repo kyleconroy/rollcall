@@ -27,6 +27,13 @@
 		5A1B8A2F116A0BC100E979FF /* deafultphoto.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 5A1B8A2E116A0BC100E979FF /* deafultphoto.JPG */; };
 		5A3911C2116759EB003EF6F8 /* AddStudentHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A3911C1116759EB003EF6F8 /* AddStudentHeaderView.xib */; };
 		5A39130E11678C06003EF6F8 /* addphoto.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5A39130D11678C06003EF6F8 /* addphoto.jpg */; };
+		5A7393A51182E0CA009B69AB /* NotesTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A7393A41182E0CA009B69AB /* NotesTableCell.xib */; };
+		5A75C42E1181853E0071F0C3 /* TKOverviewHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A75C4291181853E0071F0C3 /* TKOverviewHeaderView.m */; };
+		5A75C42F1181853E0071F0C3 /* TKOverviewIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A75C42B1181853E0071F0C3 /* TKOverviewIndicatorView.m */; };
+		5A75C4301181853E0071F0C3 /* TKOverviewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A75C42D1181853E0071F0C3 /* TKOverviewTableViewController.m */; };
+		5A75C4331181859B0071F0C3 /* AttendanceEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A75C4321181859B0071F0C3 /* AttendanceEditViewController.m */; };
+		5A75C44F118186C50071F0C3 /* NSStringAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A75C44E118186C50071F0C3 /* NSStringAdditions.m */; };
+		5A75C5C91181998E0071F0C3 /* AttendanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A75C5C81181998E0071F0C3 /* AttendanceViewController.m */; };
 		5A7A320A117DA31900C3855B /* kal_grid_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A7A31E6117DA31900C3855B /* kal_grid_background.png */; };
 		5A7A320B117DA31900C3855B /* kal_grid_shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A7A31E7117DA31900C3855B /* kal_grid_shadow.png */; };
 		5A7A320C117DA31900C3855B /* kal_header_text_fill.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A7A31E8117DA31900C3855B /* kal_header_text_fill.png */; };
@@ -57,10 +64,14 @@
 		5A7A3251117DA34300C3855B /* NoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7A3227117DA34300C3855B /* NoteViewController.m */; };
 		5A7A3252117DA34300C3855B /* NoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A7A3228117DA34300C3855B /* NoteViewController.xib */; };
 		5A7A947C117E5B4F00CBE6D2 /* AttendanceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A7A947B117E5B4F00CBE6D2 /* AttendanceCell.xib */; };
+		5A7ADCB9118243C40078F9AC /* ind_y_l.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A7ADCB6118243C40078F9AC /* ind_y_l.png */; };
+		5A7ADCBA118243C40078F9AC /* ind_y_m.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A7ADCB7118243C40078F9AC /* ind_y_m.png */; };
+		5A7ADCBB118243C40078F9AC /* ind_y_r.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A7ADCB8118243C40078F9AC /* ind_y_r.png */; };
 		5A7B2E8A11674DD4004332A7 /* AddStudentNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7B2E8811674DD4004332A7 /* AddStudentNameViewController.m */; };
 		5A7B2E8B11674DD4004332A7 /* AddStudentNameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A7B2E8911674DD4004332A7 /* AddStudentNameViewController.xib */; };
 		5A7FE788117ED5C000AB5008 /* ChatTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A7FE787117ED5C000AB5008 /* ChatTableCell.xib */; };
 		5A7FE790117ED69A00AB5008 /* icon_chart_lg.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A7FE78F117ED69A00AB5008 /* icon_chart_lg.png */; };
+		5A8202521182698700998208 /* DeleteTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A8202511182698700998208 /* DeleteTableCell.xib */; };
 		5A850D08117E7E6C00AA102F /* GraphController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A850CFC117E7E6C00AA102F /* GraphController.m */; };
 		5A850D09117E7E6C00AA102F /* TapkuLibrary.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5A850CFD117E7E6C00AA102F /* TapkuLibrary.bundle */; };
 		5A850D0A117E7E6C00AA102F /* TKGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A850CFF117E7E6C00AA102F /* TKGlobal.m */; };
@@ -150,6 +161,19 @@
 		5A1B8A2E116A0BC100E979FF /* deafultphoto.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = deafultphoto.JPG; sourceTree = "<group>"; };
 		5A3911C1116759EB003EF6F8 /* AddStudentHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddStudentHeaderView.xib; sourceTree = "<group>"; };
 		5A39130D11678C06003EF6F8 /* addphoto.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = addphoto.jpg; sourceTree = "<group>"; };
+		5A7393A41182E0CA009B69AB /* NotesTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotesTableCell.xib; sourceTree = "<group>"; };
+		5A75C4281181853E0071F0C3 /* TKOverviewHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOverviewHeaderView.h; sourceTree = "<group>"; };
+		5A75C4291181853E0071F0C3 /* TKOverviewHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOverviewHeaderView.m; sourceTree = "<group>"; };
+		5A75C42A1181853E0071F0C3 /* TKOverviewIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOverviewIndicatorView.h; sourceTree = "<group>"; };
+		5A75C42B1181853E0071F0C3 /* TKOverviewIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOverviewIndicatorView.m; sourceTree = "<group>"; };
+		5A75C42C1181853E0071F0C3 /* TKOverviewTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKOverviewTableViewController.h; sourceTree = "<group>"; };
+		5A75C42D1181853E0071F0C3 /* TKOverviewTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKOverviewTableViewController.m; sourceTree = "<group>"; };
+		5A75C4311181859B0071F0C3 /* AttendanceEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttendanceEditViewController.h; sourceTree = "<group>"; };
+		5A75C4321181859B0071F0C3 /* AttendanceEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttendanceEditViewController.m; sourceTree = "<group>"; };
+		5A75C44D118186C50071F0C3 /* NSStringAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSStringAdditions.h; sourceTree = "<group>"; };
+		5A75C44E118186C50071F0C3 /* NSStringAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringAdditions.m; sourceTree = "<group>"; };
+		5A75C5C71181998E0071F0C3 /* AttendanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttendanceViewController.h; sourceTree = "<group>"; };
+		5A75C5C81181998E0071F0C3 /* AttendanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttendanceViewController.m; sourceTree = "<group>"; };
 		5A7A31E5117DA31900C3855B /* Kal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Kal.h; sourceTree = "<group>"; };
 		5A7A31E6117DA31900C3855B /* kal_grid_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kal_grid_background.png; sourceTree = "<group>"; };
 		5A7A31E7117DA31900C3855B /* kal_grid_shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kal_grid_shadow.png; sourceTree = "<group>"; };
@@ -194,11 +218,15 @@
 		5A7A3227117DA34300C3855B /* NoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteViewController.m; sourceTree = "<group>"; };
 		5A7A3228117DA34300C3855B /* NoteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteViewController.xib; sourceTree = "<group>"; };
 		5A7A947B117E5B4F00CBE6D2 /* AttendanceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AttendanceCell.xib; sourceTree = "<group>"; };
+		5A7ADCB6118243C40078F9AC /* ind_y_l.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ind_y_l.png; sourceTree = SOURCE_ROOT; };
+		5A7ADCB7118243C40078F9AC /* ind_y_m.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ind_y_m.png; sourceTree = SOURCE_ROOT; };
+		5A7ADCB8118243C40078F9AC /* ind_y_r.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ind_y_r.png; sourceTree = SOURCE_ROOT; };
 		5A7B2E8711674DD4004332A7 /* AddStudentNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddStudentNameViewController.h; sourceTree = "<group>"; };
 		5A7B2E8811674DD4004332A7 /* AddStudentNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddStudentNameViewController.m; sourceTree = "<group>"; };
 		5A7B2E8911674DD4004332A7 /* AddStudentNameViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddStudentNameViewController.xib; sourceTree = "<group>"; };
 		5A7FE787117ED5C000AB5008 /* ChatTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatTableCell.xib; sourceTree = "<group>"; };
 		5A7FE78F117ED69A00AB5008 /* icon_chart_lg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_chart_lg.png; sourceTree = "<group>"; };
+		5A8202511182698700998208 /* DeleteTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeleteTableCell.xib; sourceTree = "<group>"; };
 		5A850CFB117E7E6C00AA102F /* GraphController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphController.h; sourceTree = "<group>"; };
 		5A850CFC117E7E6C00AA102F /* GraphController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphController.m; sourceTree = "<group>"; };
 		5A850CFD117E7E6C00AA102F /* TapkuLibrary.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TapkuLibrary.bundle; sourceTree = "<group>"; };
@@ -467,8 +495,19 @@
 				5A850D01117E7E6C00AA102F /* TKGraphController.m */,
 				5A850D02117E7E6C00AA102F /* TKGraphView.h */,
 				5A850D03117E7E6C00AA102F /* TKGraphView.m */,
+				5A75C4281181853E0071F0C3 /* TKOverviewHeaderView.h */,
+				5A75C4291181853E0071F0C3 /* TKOverviewHeaderView.m */,
+				5A75C42A1181853E0071F0C3 /* TKOverviewIndicatorView.h */,
+				5A75C42B1181853E0071F0C3 /* TKOverviewIndicatorView.m */,
+				5A75C42C1181853E0071F0C3 /* TKOverviewTableViewController.h */,
+				5A75C42D1181853E0071F0C3 /* TKOverviewTableViewController.m */,
 				5A850D66117E813300AA102F /* UIViewAdditions.h */,
 				5A850D67117E813300AA102F /* UIViewAdditions.m */,
+				5A7ADCB6118243C40078F9AC /* ind_y_l.png */,
+				5A7ADCB7118243C40078F9AC /* ind_y_m.png */,
+				5A7ADCB8118243C40078F9AC /* ind_y_r.png */,
+				5A75C44D118186C50071F0C3 /* NSStringAdditions.h */,
+				5A75C44E118186C50071F0C3 /* NSStringAdditions.m */,
 				5A850D04117E7E6C00AA102F /* UIImageAdditions.h */,
 				5A850D05117E7E6C00AA102F /* UIImageAdditions.m */,
 			);
@@ -481,8 +520,10 @@
 				5A850CFA117E7E6C00AA102F /* TKGraph */,
 				5A7A31E4117DA31900C3855B /* Kal */,
 				5A7A3223117DA34300C3855B /* KalViewCell.xib */,
+				5A8202511182698700998208 /* DeleteTableCell.xib */,
 				5A7A947B117E5B4F00CBE6D2 /* AttendanceCell.xib */,
 				5A7FE787117ED5C000AB5008 /* ChatTableCell.xib */,
+				5A7393A41182E0CA009B69AB /* NotesTableCell.xib */,
 				5A7A3224117DA34300C3855B /* KalViewDataSource.h */,
 				5A7A3225117DA34300C3855B /* KalViewDataSource.m */,
 				95CAD9E911580F2300CBC9E9 /* StudentsViewController.h */,
@@ -495,6 +536,10 @@
 				5A7A3226117DA34300C3855B /* NoteViewController.h */,
 				5A7A3227117DA34300C3855B /* NoteViewController.m */,
 				5A7A3228117DA34300C3855B /* NoteViewController.xib */,
+				5A75C5C71181998E0071F0C3 /* AttendanceViewController.h */,
+				5A75C5C81181998E0071F0C3 /* AttendanceViewController.m */,
+				5A75C4311181859B0071F0C3 /* AttendanceEditViewController.h */,
+				5A75C4321181859B0071F0C3 /* AttendanceEditViewController.m */,
 				9594A39B116ABBFE008AC99A /* AttendanceTableViewController.h */,
 				9594A39C116ABBFE008AC99A /* AttendanceTableViewController.m */,
 				9594A39D116ABBFE008AC99A /* AttendanceTableViewController.xib */,
@@ -693,6 +738,11 @@
 				5A850D09117E7E6C00AA102F /* TapkuLibrary.bundle in Resources */,
 				5A7FE788117ED5C000AB5008 /* ChatTableCell.xib in Resources */,
 				5A7FE790117ED69A00AB5008 /* icon_chart_lg.png in Resources */,
+				5A7ADCB9118243C40078F9AC /* ind_y_l.png in Resources */,
+				5A7ADCBA118243C40078F9AC /* ind_y_m.png in Resources */,
+				5A7ADCBB118243C40078F9AC /* ind_y_r.png in Resources */,
+				5A8202521182698700998208 /* DeleteTableCell.xib in Resources */,
+				5A7393A51182E0CA009B69AB /* NotesTableCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -746,6 +796,12 @@
 				5A850D0C117E7E6C00AA102F /* TKGraphView.m in Sources */,
 				5A850D0D117E7E6C00AA102F /* UIImageAdditions.m in Sources */,
 				5A850D68117E813300AA102F /* UIViewAdditions.m in Sources */,
+				5A75C42E1181853E0071F0C3 /* TKOverviewHeaderView.m in Sources */,
+				5A75C42F1181853E0071F0C3 /* TKOverviewIndicatorView.m in Sources */,
+				5A75C4301181853E0071F0C3 /* TKOverviewTableViewController.m in Sources */,
+				5A75C4331181859B0071F0C3 /* AttendanceEditViewController.m in Sources */,
+				5A75C44F118186C50071F0C3 /* NSStringAdditions.m in Sources */,
+				5A75C5C91181998E0071F0C3 /* AttendanceViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

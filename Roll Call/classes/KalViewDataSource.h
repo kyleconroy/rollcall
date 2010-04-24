@@ -11,16 +11,20 @@
 
 @class Presence;
 
-@interface KalViewDataSource : NSObject <KalDataSource>{
+@interface KalViewDataSource : NSObject <KalDataSource, UITableViewDelegate>{
 		
 	NSMutableArray *items;
 	NSMutableArray *presences;
 	NSMutableArray *statuses;
 	IBOutlet UITableViewCell *tvCell;
+	KalViewController *kal;
+	NSString *name;
 }
 
 @property (nonatomic, retain) NSMutableArray *statuses;
 @property (nonatomic, retain) IBOutlet UITableViewCell *tvCell;
+@property (nonatomic, retain) KalViewController *kal;
+@property (nonatomic, retain) NSString *name;
 
 + (KalViewDataSource *)dataSource;
 - (Presence *)presenceAtIndexPath:(NSIndexPath *)indexPath; 

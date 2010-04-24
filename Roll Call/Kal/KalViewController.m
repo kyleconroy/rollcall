@@ -174,6 +174,9 @@ void mach_absolute_difference(uint64_t end, uint64_t start, struct timespec *tp)
 
 - (void)viewWillAppear:(BOOL)animated
 {
+	NSLog(@"ssss%@", delegate);
+	
+	NSLog(@"ssss%@", self.delegate);
 	self.tabBarController.tabBar.hidden = YES;
 	[super viewWillAppear:animated];
 	[tableView reloadData];
