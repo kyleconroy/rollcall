@@ -18,14 +18,20 @@
 @synthesize button1;
 @synthesize button2;
 @synthesize presence;
+@synthesize edit;
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     myTextView.text = presence.note;
 	[button1 setTitle:@"Edit"];
+	[button2 setTitle:@"Back"];
 	[button1 setAction:@selector(editNote)];
 	myTextView.keyboardAppearance=NO;
 	myTextView.editable=NO;
+	if (edit) {
+		[self editNote];
+		[button2 setTitle:@"Cancel"];
+	}
     [super viewDidLoad];
 }
 
@@ -50,6 +56,8 @@
     if (![[aD managedObjectContext] save:&error]) {
         NSLog(@"%@", [error localizedDescription]);
     }
+	if (edit)
+		[self dismissModalViewControllerAnimated:YES];    
 	myTextView.keyboardAppearance=NO;
 	myTextView.editable=NO;
 	[button1 setTitle:@"Edit"];

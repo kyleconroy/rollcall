@@ -35,6 +35,7 @@
 #import "Status.h"
 #import "RollSheetAddNoteController.h"
 #import "Roll_CallAppDelegate.h"
+#import "NoteViewController.h"
 
 
 @implementation AttendanceEditViewController
@@ -187,6 +188,7 @@
 			 cell = nCell;
 			 self.nCell = nil;
 			 notes.text=presence.note;
+			 cell.selectionStyle = UITableViewCellSelectionStyleNone;
 		 }
 		 return cell;
 	 }
@@ -257,8 +259,9 @@
 }
 
 - (IBAction) showNotes {
-	RollSheetAddNoteController *myNoteView = [[RollSheetAddNoteController alloc] initWithNibName:@"RollSheetAddNoteController" bundle:nil];
+	NoteViewController *myNoteView = [[NoteViewController alloc] initWithNibName:@"NoteViewController" bundle:nil];
 	myNoteView.presence=presence;
+	myNoteView.edit=YES;
 	[self presentModalViewController:myNoteView animated:YES];
 	[myNoteView release];
 }
