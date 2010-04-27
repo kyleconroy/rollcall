@@ -206,13 +206,13 @@
     }
     
     Student *s = [studentsArray objectAtIndex:indexPath.row];
-    Presence *p = [presencesArray objectAtIndex:indexPath.row];
+    //Presence *p = [presencesArray objectAtIndex:indexPath.row];
     
     UIButton *button;
     button = (UIButton *)[cell viewWithTag:1];
     
-    [button setTitle:p.status.letter forState: UIControlStateNormal];
-    [button setBackgroundImage:[UIImage imageNamed:p.status.imageName] forState:UIControlStateNormal];
+    //[button setTitle:p.status.letter forState: UIControlStateNormal];
+    //[button setBackgroundImage:[UIImage imageNamed:p.status.imageName] forState:UIControlStateNormal];
         
     UILabel *label = (UILabel *)[cell viewWithTag:2];
     label.text = [NSString stringWithFormat:@"%@ %@", s.firstName, s.lastName];

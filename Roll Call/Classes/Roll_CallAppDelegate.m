@@ -76,9 +76,9 @@
     if (mutableFetchResults == nil) {
         NSLog(@"Can't fetch the students array"); 
     }
+    [request release];
     
-    return mutableFetchResults ;
-    // Make sure to release this array
+    return mutableFetchResults ;    
 }
 
 - (NSMutableArray *) getAllStatuses {
@@ -99,8 +99,10 @@
         NSLog(@"Can't fetch the status array"); 
     }
     
+    [request release];
+    
     return mutableFetchResults ;
-    // Make sure to release this array
+    
 }
 
 -(Status *) getStatusWithLetter:(NSString *)letter {
