@@ -61,7 +61,7 @@
     self.navigationItem.rightBarButtonItem = saveButton;
     [saveButton release];
 	UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc]
-                                     initWithTitle:NSLocalizedString(@"Cancel", @"Cancel - for button to cancel changes")
+                                     initWithTitle:NSLocalizedString(@"Back", @"Cancel - for button to cancel changes")
                                      style:UIBarButtonItemStylePlain
                                      target:self
                                      action:@selector(cancel)];
@@ -99,6 +99,7 @@
         self.lastIndexPath = newPath;
         [newPath release];
     }
+	[tableView reloadData];
 	notes.text=presence.note;
 }
 
@@ -150,11 +151,9 @@
 
 #pragma mark Table view methods
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-	if (presence.note!=nil) {
-		return 2;
-	}
-	return 1;
+	return 2;
 }
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section==0)
 		return 4;
@@ -181,16 +180,27 @@
 		 cell.accessoryType = (row == oldRow && lastIndexPath != nil) ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
 		 return cell;
 	 } else {
-		 static NSString *NoteCellIdentifier = @"NoteCell";
-		 UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NoteCellIdentifier];
-		 if (cell == nil) {
-			 [[NSBundle mainBundle] loadNibNamed:@"NotesTableCell" owner:self options:nil];
-			 cell = nCell;
-			 self.nCell = nil;
-			 notes.text=presence.note;
-			 cell.selectionStyle = UITableViewCellSelectionStyleNone;
-		 }
-		 return cell;
+		 if (presence.note==nil) {
+			 static NSString *CellIdentifier = @"Cell";
+			 UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+			 if (cell == nil) {
+				 cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+				 cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+			 }
+			 cell.textLabel.text =@"Add Note";
+			 return cell;
+		 } else {
+			 static NSString *NoteCellIdentifier = @"NoteCell";
+			 UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NoteCellIdentifier];
+			 if (cell == nil) {
+				 [[NSBundle mainBundle] loadNibNamed:@"NotesTableCell" owner:self options:nil];
+				 cell = nCell;
+				 self.nCell = nil;
+				 notes.text=presence.note;
+				 cell.selectionStyle = UITableViewCellSelectionStyleNone;
+			 }
+			 return cell;
+		}
 	 }
 }
 
@@ -223,6 +233,13 @@
 			lastIndexPath = indexPath;
 		}
 		[self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+	} else if (indexPath.section==1) {
+		if (presence.note==nil) {
+			RollSheetAddNoteController *myNoteView = [[RollSheetAddNoteController alloc] initWithNibName:@"RollSheetAddNoteController" bundle:nil];
+			myNoteView.presence=presence;
+			[self presentModalViewController:myNoteView animated:YES];
+			[myNoteView release];
+		}
 	}
 }
 
@@ -236,6 +253,10 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
 	if (indexPath.section==0)
 		return 40;
+	if (indexPath.section==1) {
+		if (presence.note==nil)
+			return 40;
+	}
 	return 160;
 }
 

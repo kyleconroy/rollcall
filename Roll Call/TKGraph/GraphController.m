@@ -83,7 +83,7 @@
 	NSDate *now = [NSDate date];
 	NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
 	NSDateComponents *comps = [[NSDateComponents alloc] init];
-	[comps setMonth:-1];// 1 month before
+	[comps setDay:-30];// 1 month before
 	NSDate *toDate = [gregorian dateByAddingComponents:comps toDate: now options:0];
 	
 	NSDate *newDate = toDate;
