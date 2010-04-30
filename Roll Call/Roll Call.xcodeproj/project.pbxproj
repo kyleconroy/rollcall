@@ -39,6 +39,14 @@
 		9509E0B6117F88B100A468EB /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */; };
 		9509E0B7117F88B100A468EB /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9509E0B5117F88B100A468EB /* SettingsViewController.xib */; };
 		952086A5118AC08C00F12AB9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 952086A4118AC08C00F12AB9 /* QuartzCore.framework */; };
+		952086C7118ACBA000F12AB9 /* NoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 952086C5118ACBA000F12AB9 /* NoteViewController.m */; };
+		952086C8118ACBA000F12AB9 /* NoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 952086C6118ACBA000F12AB9 /* NoteViewController.xib */; };
+		952086CB118ACBB800F12AB9 /* KalViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 952086CA118ACBB800F12AB9 /* KalViewDataSource.m */; };
+		952086DD118ACC7400F12AB9 /* AttendanceEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 952086DC118ACC7400F12AB9 /* AttendanceEditViewController.m */; };
+		9520878A118AD50400F12AB9 /* AttendanceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95208789118AD50400F12AB9 /* AttendanceCell.xib */; };
+		952087D4118AD5C000F12AB9 /* ChatTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 952087D3118AD5C000F12AB9 /* ChatTableCell.xib */; };
+		952087DE118AD61300F12AB9 /* icon_chart_lg.png in Resources */ = {isa = PBXBuildFile; fileRef = 952087DD118AD61300F12AB9 /* icon_chart_lg.png */; };
+		952087E8118AD67E00F12AB9 /* DeleteTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 952087E7118AD67E00F12AB9 /* DeleteTableCell.xib */; };
 		955E41771174129700FF2B8F /* RollSheetTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 955E41761174129700FF2B8F /* RollSheetTableCell.m */; };
 		955E4179117412AB00FF2B8F /* RollSheetTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 955E4178117412AB00FF2B8F /* RollSheetTableCell.xib */; };
 		955E41F21174273900FF2B8F /* cell_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 955E41F11174273900FF2B8F /* cell_background.png */; };
@@ -170,6 +178,17 @@
 		9509E0B4117F88B100A468EB /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		9509E0B5117F88B100A468EB /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		952086A4118AC08C00F12AB9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		952086C4118ACBA000F12AB9 /* NoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteViewController.h; sourceTree = "<group>"; };
+		952086C5118ACBA000F12AB9 /* NoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteViewController.m; sourceTree = "<group>"; };
+		952086C6118ACBA000F12AB9 /* NoteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteViewController.xib; sourceTree = "<group>"; };
+		952086C9118ACBB800F12AB9 /* KalViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KalViewDataSource.h; sourceTree = "<group>"; };
+		952086CA118ACBB800F12AB9 /* KalViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KalViewDataSource.m; sourceTree = "<group>"; };
+		952086DB118ACC7400F12AB9 /* AttendanceEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttendanceEditViewController.h; sourceTree = "<group>"; };
+		952086DC118ACC7400F12AB9 /* AttendanceEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttendanceEditViewController.m; sourceTree = "<group>"; };
+		95208789118AD50400F12AB9 /* AttendanceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AttendanceCell.xib; sourceTree = "<group>"; };
+		952087D3118AD5C000F12AB9 /* ChatTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatTableCell.xib; sourceTree = "<group>"; };
+		952087DD118AD61300F12AB9 /* icon_chart_lg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_chart_lg.png; sourceTree = "<group>"; };
+		952087E7118AD67E00F12AB9 /* DeleteTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeleteTableCell.xib; sourceTree = "<group>"; };
 		955E41751174129700FF2B8F /* RollSheetTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RollSheetTableCell.h; sourceTree = "<group>"; };
 		955E41761174129700FF2B8F /* RollSheetTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RollSheetTableCell.m; sourceTree = "<group>"; };
 		955E4178117412AB00FF2B8F /* RollSheetTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RollSheetTableCell.xib; sourceTree = "<group>"; };
@@ -311,15 +330,15 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				95E6B30A1189525B00C3F6B3 /* TKGraph */,
-				95E6B2C91189524500C3F6B3 /* Kal */,
-				95EC81961168D0E600DA720F /* DebugViewController.xib */,
-				95EC81951168D0E600DA720F /* DebugViewController.m */,
 				95EC81941168D0E600DA720F /* DebugViewController.h */,
+				95EC81951168D0E600DA720F /* DebugViewController.m */,
+				95EC81961168D0E600DA720F /* DebugViewController.xib */,
+				95E6B2C91189524500C3F6B3 /* Kal */,
 				95EC81321168C01000DA720F /* Models */,
 				95C3EEF91168387500CE11E5 /* Roll Sheet */,
 				9509E0AC117F886100A468EB /* Settings */,
 				5AB0978C1168165E00E0CB9F /* Student */,
+				95E6B30A1189525B00C3F6B3 /* TKGraph */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -384,10 +403,10 @@
 		5A1B8A34116A0C4900E979FF /* AddStudent */ = {
 			isa = PBXGroup;
 			children = (
+				5A3911C1116759EB003EF6F8 /* AddStudentHeaderView.xib */,
 				95A84283115A54A0002C6FCB /* AddStudentViewController.h */,
 				95A84284115A54A0002C6FCB /* AddStudentViewController.m */,
 				95A84285115A54A0002C6FCB /* AddStudentViewController.xib */,
-				5A3911C1116759EB003EF6F8 /* AddStudentHeaderView.xib */,
 				5A1B8A35116A0C7C00E979FF /* EditingViews */,
 			);
 			name = AddStudent;
@@ -396,27 +415,27 @@
 		5A1B8A35116A0C7C00E979FF /* EditingViews */ = {
 			isa = PBXGroup;
 			children = (
+				5A1B89E7116A09C300E979FF /* AddAddressViewController.h */,
+				5A1B89E8116A09C300E979FF /* AddAddressViewController.m */,
+				5A1B89E9116A09C300E979FF /* AddAddressViewController.xib */,
 				9594A2F8116AA569008AC99A /* AddCourseNameViewController.h */,
 				9594A2F9116AA569008AC99A /* AddCourseNameViewController.m */,
 				9594A2FA116AA569008AC99A /* AddCourseNameViewController.xib */,
 				5A1B89EA116A09C300E979FF /* AddCourseViewController.h */,
 				5A1B89EB116A09C300E979FF /* AddCourseViewController.m */,
 				5A1B89EC116A09C300E979FF /* AddCourseViewController.xib */,
-				5A1B89E7116A09C300E979FF /* AddAddressViewController.h */,
-				5A1B89E8116A09C300E979FF /* AddAddressViewController.m */,
-				5A1B89E9116A09C300E979FF /* AddAddressViewController.xib */,
 				5A1B89ED116A09C300E979FF /* AddEmailViewController.h */,
 				5A1B89EE116A09C300E979FF /* AddEmailViewController.m */,
 				5A1B89EF116A09C300E979FF /* AddEmailViewController.xib */,
 				5A1B89F0116A09C300E979FF /* AddPhoneViewController.h */,
 				5A1B89F1116A09C300E979FF /* AddPhoneViewController.m */,
 				5A1B89F2116A09C300E979FF /* AddPhoneViewController.xib */,
-				5A7B2E8711674DD4004332A7 /* AddStudentNameViewController.h */,
-				5A7B2E8811674DD4004332A7 /* AddStudentNameViewController.m */,
 				5AB095551167F60C00E0CB9F /* AddStudentNameTableCell.h */,
-				5A7B2E8911674DD4004332A7 /* AddStudentNameViewController.xib */,
 				5AB095561167F60C00E0CB9F /* AddStudentNameTableCell.m */,
 				5AB095651167F75000E0CB9F /* AddStudentNameTableCell.xib */,
+				5A7B2E8711674DD4004332A7 /* AddStudentNameViewController.h */,
+				5A7B2E8811674DD4004332A7 /* AddStudentNameViewController.m */,
+				5A7B2E8911674DD4004332A7 /* AddStudentNameViewController.xib */,
 			);
 			name = EditingViews;
 			sourceTree = "<group>";
@@ -424,17 +443,24 @@
 		5AB0978C1168165E00E0CB9F /* Student */ = {
 			isa = PBXGroup;
 			children = (
+				952087E7118AD67E00F12AB9 /* DeleteTableCell.xib */,
+				952087D3118AD5C000F12AB9 /* ChatTableCell.xib */,
+				5A1B8A34116A0C4900E979FF /* AddStudent */,
+				95208789118AD50400F12AB9 /* AttendanceCell.xib */,
+				952086DB118ACC7400F12AB9 /* AttendanceEditViewController.h */,
+				952086DC118ACC7400F12AB9 /* AttendanceEditViewController.m */,
 				9594A39B116ABBFE008AC99A /* AttendanceTableViewController.h */,
 				9594A39C116ABBFE008AC99A /* AttendanceTableViewController.m */,
 				9594A39D116ABBFE008AC99A /* AttendanceTableViewController.xib */,
+				952086C9118ACBB800F12AB9 /* KalViewDataSource.h */,
+				952086CA118ACBB800F12AB9 /* KalViewDataSource.m */,
+				5A1B89F5116A09C300E979FF /* StudentHeaderView.xib */,
 				95CAD9E911580F2300CBC9E9 /* StudentsViewController.h */,
 				95CAD9EA11580F2300CBC9E9 /* StudentsViewController.m */,
 				95CAD9EB11580F2300CBC9E9 /* StudentsViewController.xib */,
 				95CADA4D1158457500CBC9E9 /* StudentViewController.h */,
 				95CADA4E1158457500CBC9E9 /* StudentViewController.m */,
 				95CADA4F1158457500CBC9E9 /* StudentViewController.xib */,
-				5A1B89F5116A09C300E979FF /* StudentHeaderView.xib */,
-				5A1B8A34116A0C4900E979FF /* AddStudent */,
 			);
 			name = Student;
 			sourceTree = "<group>";
@@ -452,6 +478,7 @@
 		955E427711745DD100FF2B8F /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				952087DD118AD61300F12AB9 /* icon_chart_lg.png */,
 				9509E0A1117F862600A468EB /* sync.png */,
 				9509E09E117F81BF00A468EB /* gear.png */,
 				955E426D11745DBC00FF2B8F /* button_blue.png */,
@@ -496,25 +523,28 @@
 		95C3EEF91168387500CE11E5 /* Roll Sheet */ = {
 			isa = PBXGroup;
 			children = (
+				9594A273116A9876008AC99A /* AddRollSheetViewController.h */,
+				9594A274116A9876008AC99A /* AddRollSheetViewController.m */,
+				9594A275116A9876008AC99A /* AddRollSheetViewController.xib */,
 				95EC80CF1168B08E00DA720F /* AttendanceTableCell.xib */,
+				952086C4118ACBA000F12AB9 /* NoteViewController.h */,
+				952086C5118ACBA000F12AB9 /* NoteViewController.m */,
+				952086C6118ACBA000F12AB9 /* NoteViewController.xib */,
+				955E431B11747CF000FF2B8F /* RollSheetAddNoteController.h */,
+				955E431C11747CF000FF2B8F /* RollSheetAddNoteController.m */,
+				955E431D11747CF000FF2B8F /* RollSheetAddNoteController.xib */,
 				95B5B82911772B0E00A4A356 /* RollSheetInfoViewController.h */,
 				95B5B82A11772B0E00A4A356 /* RollSheetInfoViewController.m */,
 				95B5B82B11772B0E00A4A356 /* RollSheetInfoViewController.xib */,
 				95BE6A0711683BFE00764D65 /* RollSheetInstance.h */,
 				95BE6A0811683BFE00764D65 /* RollSheetInstance.m */,
 				95BE6A0911683BFE00764D65 /* RollSheetInstance.xib */,
-				5AB097471168129B00E0CB9F /* RollSheetViewController.h */,
-				5AB097481168129B00E0CB9F /* RollSheetViewController.m */,
-				5AB097491168129B00E0CB9F /* RollSheetViewController.xib */,
-				9594A273116A9876008AC99A /* AddRollSheetViewController.h */,
-				9594A274116A9876008AC99A /* AddRollSheetViewController.m */,
-				9594A275116A9876008AC99A /* AddRollSheetViewController.xib */,
 				955E41751174129700FF2B8F /* RollSheetTableCell.h */,
 				955E41761174129700FF2B8F /* RollSheetTableCell.m */,
 				955E4178117412AB00FF2B8F /* RollSheetTableCell.xib */,
-				955E431B11747CF000FF2B8F /* RollSheetAddNoteController.h */,
-				955E431C11747CF000FF2B8F /* RollSheetAddNoteController.m */,
-				955E431D11747CF000FF2B8F /* RollSheetAddNoteController.xib */,
+				5AB097471168129B00E0CB9F /* RollSheetViewController.h */,
+				5AB097481168129B00E0CB9F /* RollSheetViewController.m */,
+				5AB097491168129B00E0CB9F /* RollSheetViewController.xib */,
 			);
 			name = "Roll Sheet";
 			sourceTree = "<group>";
@@ -594,14 +624,14 @@
 		95EC81321168C01000DA720F /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				955E424E1174461000FF2B8F /* Presence.h */,
-				955E424F1174461000FF2B8F /* Presence.m */,
-				955E42501174461000FF2B8F /* Status.h */,
-				955E42511174461000FF2B8F /* Status.m */,
 				5A1B89F3116A09C300E979FF /* Address.h */,
 				5A1B89F4116A09C300E979FF /* Address.m */,
 				95EC83691169108800DA720F /* Course.h */,
 				95EC836A1169108800DA720F /* Course.m */,
+				955E424E1174461000FF2B8F /* Presence.h */,
+				955E424F1174461000FF2B8F /* Presence.m */,
+				955E42501174461000FF2B8F /* Status.h */,
+				955E42511174461000FF2B8F /* Status.m */,
 				95EC836D1169108800DA720F /* Student.h */,
 				95EC836E1169108800DA720F /* Student.m */,
 			);
@@ -713,6 +743,11 @@
 				95E6B2FC1189524500C3F6B3 /* kal_tile_today.png in Resources */,
 				95E6B2FD1189524500C3F6B3 /* kal_tile_today_selected.png in Resources */,
 				95E6B3221189525B00C3F6B3 /* TapkuLibrary.bundle in Resources */,
+				952086C8118ACBA000F12AB9 /* NoteViewController.xib in Resources */,
+				9520878A118AD50400F12AB9 /* AttendanceCell.xib in Resources */,
+				952087D4118AD5C000F12AB9 /* ChatTableCell.xib in Resources */,
+				952087DE118AD61300F12AB9 /* icon_chart_lg.png in Resources */,
+				952087E8118AD67E00F12AB9 /* DeleteTableCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -770,6 +805,9 @@
 				95E6B3281189525B00C3F6B3 /* TKOverviewTableViewController.m in Sources */,
 				95E6B3291189525B00C3F6B3 /* UIImageAdditions.m in Sources */,
 				95E6B32A1189525B00C3F6B3 /* UIViewAdditions.m in Sources */,
+				952086C7118ACBA000F12AB9 /* NoteViewController.m in Sources */,
+				952086CB118ACBB800F12AB9 /* KalViewDataSource.m in Sources */,
+				952086DD118ACC7400F12AB9 /* AttendanceEditViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
