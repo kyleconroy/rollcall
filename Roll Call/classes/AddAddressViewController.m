@@ -83,13 +83,13 @@
 	student.address.city = cell.textField1.text;
 	student.address.state = cell.textField2.text;
 	student.address.zip = cell.textField3.text;
-	[self dismissModalViewControllerAnimated:YES];
+	[self.navigationController popViewControllerAnimated:YES];
 }
 
 
 
 - (void)cancel {
-	[self dismissModalViewControllerAnimated:YES];
+	[self.navigationController popViewControllerAnimated:YES];
 }
 
 

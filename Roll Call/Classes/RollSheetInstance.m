@@ -206,7 +206,7 @@
     }
     
     Student *s = [studentsArray objectAtIndex:indexPath.row];
-    //Presence *p = [presencesArray objectAtIndex:indexPath.row];
+    Presence *p = [presencesArray objectAtIndex:indexPath.row];
     
     UIButton *button;
     button = (UIButton *)[cell viewWithTag:1];
@@ -399,3 +399,4 @@
 
 
 @end
+

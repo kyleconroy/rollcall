@@ -113,49 +113,42 @@
 #pragma mark Change view methods
 
 - (IBAction)addName: (id)sender {
-    AddStudentNameViewController *addNameView = [[AddStudentNameViewController alloc] initWithNibName:@"AddStudentNameViewController" bundle:nil];
-	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:addNameView];
-	addNameView.student=student;
-	[self presentModalViewController:navController animated:YES];
-	[addNameView release];
-	[navController release];
+	if (self.editing) {
+		AddStudentNameViewController *addNameView = [[AddStudentNameViewController alloc] initWithNibName:@"AddStudentNameViewController" bundle:nil];
+		addNameView.student=student;
+		[self.navigationController pushViewController:addNameView animated:YES];
+		[addNameView release];
+	}
 }
 
 - (void) addPhone {
 	AddPhoneViewController *addPhoneView = [[AddPhoneViewController alloc] initWithNibName:@"AddPhoneViewController" bundle:nil];
-	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:addPhoneView];
 	addPhoneView.student=student;
-	[self presentModalViewController:navController animated:YES];
+	[self.navigationController pushViewController:addPhoneView animated:YES];
 	[addPhoneView release];
-	[navController release];
 }
 
 - (void) addEmail{
 	AddEmailViewController *addEmailView = [[AddEmailViewController alloc] initWithNibName:@"AddEmailViewController" bundle:nil];
-	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:addEmailView];
 	addEmailView.student=student;
-	[self presentModalViewController:navController animated:YES];
+	[self.navigationController pushViewController:addEmailView animated:YES];
 	[addEmailView release];
-	[navController release];
 }
 
 - (void) addAddress{
 	AddAddressViewController *addAddressView = [[AddAddressViewController alloc] initWithNibName:@"AddAddressViewController" bundle:nil];
-	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:addAddressView];
 	addAddressView.student=student;
-	[self presentModalViewController:navController animated:YES];
+	[self.navigationController pushViewController:addAddressView animated:YES];
 	[addAddressView release];
-	[navController release];
 }
 
 - (void) addCourse{
 	AddCourseViewController *addCourseView = [[AddCourseViewController alloc] initWithNibName:@"AddCourseViewController" bundle:nil];
-	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:addCourseView];
 	addCourseView.student=student;
-	[self presentModalViewController:navController animated:YES];
+	[self.navigationController pushViewController:addCourseView animated:YES];
 	[addCourseView release];
-	[navController release];
 }
+
 
 - (void)setEditing:(BOOL)editing animated:(BOOL)animated {
 
@@ -207,7 +200,7 @@
 			if (cell == nil) {
 				// Create a cell to display a class.
 				cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ClassesCellIdentifier] autorelease];
-				cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+				cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
 			}
 			Course *course = [courses objectAtIndex:indexPath.row];
 			cell.textLabel.text = [NSString stringWithFormat:@"%@", course.name];
@@ -218,11 +211,11 @@
 			cell = [tableView dequeueReusableCellWithIdentifier:AddClassCellIdentifier];
 			if (cell == nil) {
 				cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:AddClassCellIdentifier] autorelease];
-				cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+				cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
 			}
             cell.textLabel.text = @"add new course";
 			cell.textLabel.textColor=[UIColor grayColor];
-			cell.editingAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+			cell.editingAccessoryType = UITableViewCellAccessoryDetailDisclosureButton;
         }		
     } else {
 		static NSString *MyIdentifier = @"GenericCell";
@@ -230,10 +223,11 @@
         cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
         if (cell == nil) {
             cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:MyIdentifier] autorelease];
-			cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+			cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
         }
 		cell.textLabel.textAlignment=UITextAlignmentLeft;
 		cell.detailTextLabel.minimumFontSize=20; 
+		cell.editingAccessoryType = UITableViewCellAccessoryDetailDisclosureButton;
 		if (indexPath.row == 0) {
 			if ([student phone]==nil) {
 				cell.textLabel.text = @"Phone";
@@ -270,7 +264,7 @@
 				cell.detailTextLabel.textColor=[UIColor blackColor];
 				cell.textLabel.text = @"Address";
 			}
-		} else {
+		} else if (indexPath.row == 3) {
 			if (student.address.zip==nil) {
 				cell.detailTextLabel.text = @"";
 				cell.detailTextLabel.textColor=[UIColor grayColor];
@@ -281,10 +275,9 @@
 				cell.detailTextLabel.textColor=[UIColor blackColor];
 				cell.textLabel.text = @"Address";
 			}
-			
+			cell.accessoryType = UITableViewCellAccessoryNone;
+			cell.editingAccessoryType = UITableViewCellAccessoryNone;
 		}
-
-		cell.editingAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
 	}
     return cell;
 }

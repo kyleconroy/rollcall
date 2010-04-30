@@ -28,7 +28,7 @@
 		[self configureSections];
 	}
 	//self.navigationController.navigationBar.barStyle=UIBarStyleBlackTranslucent;
-	self.navigationController.navigationBar.translucent=YES;
+	//self.navigationController.navigationBar.translucent=YES;
 	[self.tableView reloadData];
 	self.tableView.scrollEnabled = YES;
 	[allstudents release];
@@ -36,13 +36,14 @@
 
  
 - (void)viewWillAppear:(BOOL)animated {	
+		self.navigationItem.hidesBackButton = YES;
 		[self configureSections];
 		[self.searchDisplayController setActive:NO];
 		[self.tableView reloadData];
 }
 
 - (void)configureSections {
-	NSLog(@"Start Configuring!");
+	
 	// Get the current collation and keep a reference to it.
 	self.collation = [UILocalizedIndexedCollation currentCollation];	
 	NSInteger index, sectionTitlesCount = [[collation sectionTitles] count];	
@@ -56,7 +57,7 @@
 	NSMutableArray *allstudents=[aD getAllStudents];
 	// Segregate into the appropriate arrays.
 	for (Student *student in allstudents) {
-		NSInteger sectionNumber = [collation sectionForObject:student collationStringSelector:@selector(lastName)];
+		NSInteger sectionNumber = [collation sectionForObject:student collationStringSelector:@selector(firstName)];
 		NSMutableArray *sectionStudents = [newSectionsArray objectAtIndex:sectionNumber];
 		if (student.lastName!=nil) {
 			[sectionStudents addObject:student];
@@ -202,7 +203,7 @@
 	NSMutableArray *allstudents=[aD getAllStudents];
 	for (Student *student in allstudents)
 	{
-		NSString *name=[[NSString alloc] initWithFormat: @"%@", student.lastName];
+		NSString *name=[[NSString alloc] initWithFormat: @"%@", student.firstName];
 		NSComparisonResult result = [name compare:searchText options:(NSCaseInsensitiveSearch|NSDiacriticInsensitiveSearch) range:NSMakeRange(0, [searchText length])];
 		if (result == NSOrderedSame)
 		{
