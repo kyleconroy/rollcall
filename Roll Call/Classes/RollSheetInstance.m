@@ -47,16 +47,6 @@
 - (void)viewDidLoad {
     datePickerVisible = NO;
     currentIndexPath = nil;
-    // Set up Views
-    CGAffineTransform transform = CGAffineTransformMakeTranslation(0, 480);
-    
-    [UIView beginAnimations:nil context:nil];
-    [UIView setAnimationDuration:1.0];
-    myPickerView.transform = transform;
-    [UIView commitAnimations];
-    
-    // From http://stackoverflow.com/questions/1824463/how-to-style-uitextview-to-like-rounded-rect-text-field
-
     
     aD = (Roll_CallAppDelegate *)[[UIApplication sharedApplication] delegate];
     myDate = [NSDate date];
@@ -302,43 +292,28 @@
 
 - (IBAction) showDatePicker {
 
-    if (!datePickerVisible) {
-        datePickerVisible = YES;
-        datePickerDate = nil;
-        [UIView beginAnimations:nil context:nil];
-        [UIView setAnimationDuration:0.5];
-        CGAffineTransform transform = CGAffineTransformMakeTranslation(0, 44);
-        myPickerView.transform = transform;
-        [self.view addSubview:myPickerView];
-        [UIView commitAnimations];
+    ChangeDateViewController *dateController = [[ChangeDateViewController alloc]
+                                                 
+                                                 initWithNibName:@"ChangeDateViewController" bundle:nil];
+    
+    dateController.myDate = myDate;
+    dateController.delegate = self;
+    
+    [self presentModalViewController:dateController animated:YES];
+    
+    [dateController release];
+    
+}
+
+- (void)changeDateViewController:(ChangeDateViewController *)changeDateViewController
+
+                   didChangeDate:(NSDate *)date {
+    if (date) {
+        [self setMyDate:date];
+        [self updateDisplayDate];
+        [myTableView reloadData];
     }
-    
-}
-
-- (void) hideDatePicker {
-    [UIView beginAnimations:nil context:nil];
-	[UIView setAnimationDuration:0.5];
-	CGAffineTransform transform = CGAffineTransformMakeTranslation(0, 480);
-	myPickerView.transform = transform;
-	[UIView commitAnimations];
-    datePickerVisible = NO;
-}
-
-- (IBAction) doneDatePicker {
-    
-    
-    UIDatePicker *picker = (UIDatePicker *)[myPickerView viewWithTag:1];
-    NSDate *selectedDate = picker.date;
-    [self setMyDate:selectedDate];
-    
-    
-    [self updateDisplayDate];
-    [myTableView reloadData];
-    [self hideDatePicker];
-}
-
-- (IBAction) cancelDatePicker {
-    [self hideDatePicker];
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 -(IBAction)addNote:(id)sender

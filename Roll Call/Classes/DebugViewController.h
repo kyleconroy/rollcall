@@ -18,7 +18,6 @@
 @property(nonatomic, retain) Roll_CallAppDelegate *aD;
 
 -(IBAction) installData;
--(IBAction) installStatuses;
 
 -(void) installStudents;
 -(void) installCourses;

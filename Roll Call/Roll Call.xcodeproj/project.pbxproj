@@ -47,6 +47,8 @@
 		952087D4118AD5C000F12AB9 /* ChatTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 952087D3118AD5C000F12AB9 /* ChatTableCell.xib */; };
 		952087DE118AD61300F12AB9 /* icon_chart_lg.png in Resources */ = {isa = PBXBuildFile; fileRef = 952087DD118AD61300F12AB9 /* icon_chart_lg.png */; };
 		952087E8118AD67E00F12AB9 /* DeleteTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 952087E7118AD67E00F12AB9 /* DeleteTableCell.xib */; };
+		95345137118BDA9A006EF65B /* ChangeDateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95345135118BDA9A006EF65B /* ChangeDateViewController.m */; };
+		95345138118BDA9A006EF65B /* ChangeDateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95345136118BDA9A006EF65B /* ChangeDateViewController.xib */; };
 		955E41771174129700FF2B8F /* RollSheetTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 955E41761174129700FF2B8F /* RollSheetTableCell.m */; };
 		955E4179117412AB00FF2B8F /* RollSheetTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 955E4178117412AB00FF2B8F /* RollSheetTableCell.xib */; };
 		955E41F21174273900FF2B8F /* cell_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 955E41F11174273900FF2B8F /* cell_background.png */; };
@@ -189,6 +191,9 @@
 		952087D3118AD5C000F12AB9 /* ChatTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatTableCell.xib; sourceTree = "<group>"; };
 		952087DD118AD61300F12AB9 /* icon_chart_lg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_chart_lg.png; sourceTree = "<group>"; };
 		952087E7118AD67E00F12AB9 /* DeleteTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeleteTableCell.xib; sourceTree = "<group>"; };
+		95345134118BDA9A006EF65B /* ChangeDateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeDateViewController.h; sourceTree = "<group>"; };
+		95345135118BDA9A006EF65B /* ChangeDateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeDateViewController.m; sourceTree = "<group>"; };
+		95345136118BDA9A006EF65B /* ChangeDateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangeDateViewController.xib; sourceTree = "<group>"; };
 		955E41751174129700FF2B8F /* RollSheetTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RollSheetTableCell.h; sourceTree = "<group>"; };
 		955E41761174129700FF2B8F /* RollSheetTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RollSheetTableCell.m; sourceTree = "<group>"; };
 		955E4178117412AB00FF2B8F /* RollSheetTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RollSheetTableCell.xib; sourceTree = "<group>"; };
@@ -533,6 +538,9 @@
 				955E431B11747CF000FF2B8F /* RollSheetAddNoteController.h */,
 				955E431C11747CF000FF2B8F /* RollSheetAddNoteController.m */,
 				955E431D11747CF000FF2B8F /* RollSheetAddNoteController.xib */,
+				95345134118BDA9A006EF65B /* ChangeDateViewController.h */,
+				95345135118BDA9A006EF65B /* ChangeDateViewController.m */,
+				95345136118BDA9A006EF65B /* ChangeDateViewController.xib */,
 				95B5B82911772B0E00A4A356 /* RollSheetInfoViewController.h */,
 				95B5B82A11772B0E00A4A356 /* RollSheetInfoViewController.m */,
 				95B5B82B11772B0E00A4A356 /* RollSheetInfoViewController.xib */,
@@ -748,6 +756,7 @@
 				952087D4118AD5C000F12AB9 /* ChatTableCell.xib in Resources */,
 				952087DE118AD61300F12AB9 /* icon_chart_lg.png in Resources */,
 				952087E8118AD67E00F12AB9 /* DeleteTableCell.xib in Resources */,
+				95345138118BDA9A006EF65B /* ChangeDateViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -808,6 +817,7 @@
 				952086C7118ACBA000F12AB9 /* NoteViewController.m in Sources */,
 				952086CB118ACBB800F12AB9 /* KalViewDataSource.m in Sources */,
 				952086DD118ACC7400F12AB9 /* AttendanceEditViewController.m in Sources */,
+				95345137118BDA9A006EF65B /* ChangeDateViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

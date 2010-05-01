@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "Course.h"
 #import "Roll_CallAppDelegate.h"
+#import "ChangeDateViewController.h"
 
-@interface RollSheetInstance : UIViewController <UITableViewDelegate> {
+@interface RollSheetInstance : UIViewController <UITableViewDelegate, DateChangeDelegate> {
     Course *course;
     Roll_CallAppDelegate *aD;
     
@@ -50,15 +51,12 @@
 - (IBAction) addNote:(id)sender;
 - (IBAction) changeAttendance:(id)sender;
 - (IBAction) showDatePicker;
-- (IBAction) cancelDatePicker;
-- (IBAction) doneDatePicker;
 
 - (NSDate *) todayWithDate:(NSDate *)date;
 - (NSDate *) tomorrowWithDate:(NSDate *)date;
 
 - (void) updateDisplayDate;
 - (void) updateAttendance;
-- (void) hideDatePicker;
 - (void) showCourseInfo;
 
 @end
