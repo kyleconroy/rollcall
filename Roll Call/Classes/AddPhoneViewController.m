@@ -47,6 +47,8 @@
 	cell.textField.placeholder = @"Phone";
 	cell.textField.font=[UIFont boldSystemFontOfSize:20];
 	cell.textField.keyboardType=UIKeyboardTypePhonePad;
+	if (student.phone!=nil)
+		cell.textField.text=student.phone;
 	[cell.textField becomeFirstResponder];
 	return cell;
 }

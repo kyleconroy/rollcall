@@ -159,25 +159,20 @@ void mach_absolute_difference(uint64_t end, uint64_t start, struct timespec *tp)
 
 - (void)loadView
 {
-  //self.title = @"Calendar";
-  
-  KalView *kalView = [[KalView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame] delegate:self logic:logic];
-  self.view = kalView;
-  tableView = kalView.tableView;
-  tableView.dataSource = dataSource;
-  tableView.delegate = delegate;
-  [tableView retain];
-  [kalView selectDate:[KalDate dateFromNSDate:initialSelectedDate]];
-  [kalView release];
-  [self reloadData];
+	//self.title = @"Calendar";
+	KalView *kalView = [[KalView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame] delegate:self logic:logic];
+	self.view = kalView;
+	tableView = kalView.tableView;
+	tableView.dataSource = dataSource;
+	tableView.delegate = delegate;
+	[tableView retain];
+	[kalView selectDate:[KalDate dateFromNSDate:initialSelectedDate]];
+	[self reloadData];
+	[kalView release];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-	NSLog(@"ssss%@", delegate);
-	
-	NSLog(@"ssss%@", self.delegate);
-	self.tabBarController.tabBar.hidden = YES;
 	[super viewWillAppear:animated];
 	[tableView reloadData];
 }
@@ -188,10 +183,6 @@ void mach_absolute_difference(uint64_t end, uint64_t start, struct timespec *tp)
   [tableView flashScrollIndicators];
 }
 
-- (void)viewWillDisappear: (BOOL)animated 
-{ 
-	self.tabBarController.tabBar.hidden = NO;
-}
 
 #pragma mark -
 

@@ -31,6 +31,7 @@
 
 #import "TKOverviewTableViewController.h"
 @class Presence;
+@class KalViewController;
 
 @interface AttendanceEditViewController : TKOverviewTableViewController <UIActionSheetDelegate> {
 	Presence *presence;
@@ -39,6 +40,7 @@
 	NSInteger initialSelection;
 	IBOutlet UITableViewCell *nCell;
 	IBOutlet UITextView *notes;
+	KalViewController *kal;
 }
 
 @property (nonatomic, retain) Presence *presence;
@@ -47,6 +49,7 @@
 @property NSInteger initialSelection;
 @property (nonatomic, retain) IBOutlet UITableViewCell *nCell;
 @property (nonatomic, retain) IBOutlet UITextView *notes;
+@property (nonatomic, retain) KalViewController *kal;
 
 - (IBAction) showNotes;
 

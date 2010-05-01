@@ -21,6 +21,7 @@
 #import "AttendanceTableViewController.h"
 #import "KalViewDataSource.h"
 #import "GraphController.h"
+#import "RollSheetInfoViewController.h"
 
 @implementation StudentViewController
 
@@ -79,6 +80,7 @@
 			name.text=fullname;
 			name.textColor=[UIColor blackColor];
 			name.font=[UIFont boldSystemFontOfSize:20];
+			[fullname release];
 		}
 		if (currentStudent.thumbnailPhoto==nil) {
 			[photoButton setImage:[UIImage imageNamed:@"deafultphoto.JPG"] forState:UIControlStateNormal];
@@ -165,6 +167,7 @@
 
 - (IBAction) showKal {
 	calendar = [[KalViewController alloc] init];
+	calendar.hidesBottomBarWhenPushed=YES;
 	KalViewDataSource *data= [[KalViewDataSource alloc] init];
 	id<KalDataSource> source = data;
 	id<UITableViewDelegate> delegate=data;
@@ -176,6 +179,8 @@
 	calendar.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Today" style:UIBarButtonItemStyleBordered target:self action:@selector(showAndSelectToday)] autorelease];
 	calendar.title=currentStudent.firstName;
 	[self.navigationController pushViewController:calendar animated:YES];
+	[data release];
+	[calendar release];
 }
 
 - (IBAction) showNotes {
@@ -221,7 +226,8 @@
 				// Handle the error.
 			}
 			[self.navigationController pushViewController:targetViewController animated:NO];	
-			
+			[targetViewController release];
+			[courses release];
 			break;
 		}
 	}
@@ -238,7 +244,7 @@
 	NSMutableArray *courses=nil;
 	if (currentStudent.courses!=nil)
 		courses = [[NSMutableArray alloc] initWithArray:[currentStudent.courses allObjects]];
-	if (section==0){
+	if (section==2){
 		NSInteger cout=[courses count];
 		if (self.editing) 
 			cout++;
@@ -246,14 +252,15 @@
 	}
 	else if (section==3) 
 		return 5;
-	else if (section==1)
+	else if (section==0)
 		return 2;   //not sure//not sure//not sure//not sure//not sure
-	else if (section==2) {
+	else if (section==1) {
 		return 1;  //not sure//not sure//not sure//not sure//not sure
 	} else if (section==4) {
 		if (self.editing) 
 			return 1;
 	}
+	[courses release];
 	return 0;
 }
 
@@ -263,20 +270,22 @@
 	if (currentStudent.courses!=nil)
 		courses = [[NSMutableArray alloc] initWithArray:[currentStudent.courses allObjects]];
 	UITableViewCell *cell = nil;
-    if (indexPath.section == 0) {
+    if (indexPath.section == 2) {
         if (indexPath.row < [courses count]) {
             // If the row is within the range, then configure the cell to show the class name.
 			static NSString *ClassesCellIdentifier = @"CoursesCell";
 			cell = [tableView dequeueReusableCellWithIdentifier:ClassesCellIdentifier];
 			if (cell == nil) {
 				// Create a cell to display a class.
-				cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ClassesCellIdentifier] autorelease];
-				cell.accessoryType = UITableViewCellAccessoryNone;
-				cell.selectionStyle = UITableViewCellSelectionStyleNone;
+				cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ClassesCellIdentifier] autorelease];
+				cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+				cell.selectionStyle = UITableViewCellSelectionStyleBlue;
 			}
 			Course *course = [courses objectAtIndex:indexPath.row];
-			cell.textLabel.text = [NSString stringWithFormat:@"%@", course.name];
-			cell.editingAccessoryType = UITableViewCellAccessoryNone;
+			NSString *courseName=[NSString stringWithFormat:@"%@", course.name];
+			cell.textLabel.text = courseName;
+			cell.editingAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+			[course release];
         } else {
             // If the row is outside the range, it's the row that was added to allow insertion (see tableView:numberOfRowsInSection:) so give it an appropriate label.
 			static NSString *AddClassCellIdentifier = @"AddCourseCell";
@@ -350,10 +359,9 @@
 				city=@"";
 			}
 			address2 = [[NSString alloc] initWithFormat:@" %@     %@  %@", city, state, zip];
-			[state release];
 			cell.detailTextLabel.text = address2;
 		}
-	} else if (indexPath.section == 1) {
+	} else if (indexPath.section == 0) {
 		if (indexPath.row == 0) {
 			static NSString *CellIdentifier = @"AttendanceCell";
 			UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -390,7 +398,7 @@
 			}
 			return cell;
 		}
-	} else if (indexPath.section == 2) {
+	} else if (indexPath.section == 1) {
 		static NSString *CellIdentifier = @"OverViewCell";
 		UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 		if (cell == nil) {
@@ -419,8 +427,10 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-	if (indexPath.section==1||indexPath.section==2)
+	if (indexPath.section==0||indexPath.section==1)
 		return 50;
+	if (indexPath.section==3)
+		return 45;
 	if (indexPath.section==4)
 		return 29;
 	return 45;
@@ -430,11 +440,17 @@
 	NSMutableArray *courses=nil;
 	if (currentStudent.courses!=nil)
 		courses = [[NSMutableArray alloc] initWithArray:[currentStudent.courses allObjects]];
-	if (indexPath.section==0) {
+	if (indexPath.section==2) {
 		if (indexPath.row == [courses count]) {
 			[self addCourse];
 		}
-	} else if (indexPath.section==1) {
+		else if (indexPath.row != [courses count]){
+			RollSheetInfoViewController *coursesInfo = [[RollSheetInfoViewController alloc] initWithNibName:@"RollSheetInfoViewController" bundle:nil];
+			[self.navigationController pushViewController:coursesInfo animated:YES];
+			//coursesInfo.course=[courses objectAtIndex:indexPath.row];
+			[coursesInfo release];
+		}
+	} else if (indexPath.section==0) {
 		if (indexPath.row==1) {
 			GraphController *vc = [[GraphController alloc] init];
 			vc.presences=presences;
@@ -447,7 +463,7 @@
 		if (indexPath.row==0) {
 			[self showKal];
 		}
-	} else if (indexPath.section==2) {
+	} else if (indexPath.section==1) {
 		[self showNotes];
 	} if (self.editing&&(indexPath.section == 3)&&(indexPath.row == 0)) {
 		[self addPhone];
@@ -461,11 +477,11 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-	if  (section==0)
+	if  (section==2)
 		return @"Course(s)";
 	if  (section==3)
 		return @"Contact Info";
-	if  (section==1)
+	if  (section==0)
 		return @"Attendance";
 	return @"";
 }
@@ -488,7 +504,7 @@
 	NSMutableArray *courses=nil;
 	if (currentStudent.courses!=nil)
 		courses = [[NSMutableArray alloc] initWithArray:[currentStudent.courses allObjects]];
-    if ((editingStyle == UITableViewCellEditingStyleDelete) && (indexPath.section == 0)){
+    if ((editingStyle == UITableViewCellEditingStyleDelete) && (indexPath.section == 2)){
         // Delete the row from the data source
 		Course *course = [courses objectAtIndex:indexPath.row];
 		[currentStudent removeCoursesObject:course];
@@ -496,10 +512,11 @@
 		[courses removeObjectAtIndex:indexPath.row];		
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:YES];
 	}
+	[courses release];
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-	if (indexPath.section==0||indexPath.section==3)
+	if (indexPath.section==2||indexPath.section==3)
 		return TRUE;
 	return FALSE;
 }
@@ -514,7 +531,7 @@
 	
 	[self.tableView beginUpdates];
 	NSUInteger count = [courses count];
-    NSArray *classesInsertIndexPath = [NSArray arrayWithObject:[NSIndexPath indexPathForRow:count inSection:0]];
+    NSArray *classesInsertIndexPath = [NSArray arrayWithObject:[NSIndexPath indexPathForRow:count inSection:2]];
 	NSArray *deleteInsertIndexPath = [NSArray arrayWithObject:[NSIndexPath indexPathForRow:0 inSection:4]];
 	[self.navigationItem setHidesBackButton:editing animated:animated];
     if (editing) {
@@ -538,6 +555,7 @@
 		}
 	}
     [self.tableView endUpdates];
+	[courses release];
 }
 
 
@@ -546,7 +564,7 @@
 	NSMutableArray *courses=nil;
 	if (currentStudent.courses!=nil)
 		courses = [[NSMutableArray alloc] initWithArray:[currentStudent.courses allObjects]];
-	if (indexPath.section == 0) {
+	if (indexPath.section == 2) {
         // If this is the last item, it's the insertion row.
         if (indexPath.row == [courses count]) {
             style = UITableViewCellEditingStyleInsert;
@@ -556,6 +574,7 @@
         }		
     } else 
 		style = UITableViewCellEditingStyleNone;
+	[courses release];
     return style;
 }
 

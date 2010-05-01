@@ -36,6 +36,7 @@
 #import "RollSheetAddNoteController.h"
 #import "Roll_CallAppDelegate.h"
 #import "NoteViewController.h"
+#import "KalViewController.h"
 
 
 @implementation AttendanceEditViewController
@@ -44,6 +45,7 @@
 @synthesize lastIndexPath;
 @synthesize initialSelection;
 @synthesize nCell, notes;
+@synthesize kal;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -278,6 +280,7 @@
 		self.header.indicator.color = TKOverviewIndicatorViewColorYellow;
 	}
 }
+
 
 - (IBAction) showNotes {
 	NoteViewController *myNoteView = [[NoteViewController alloc] initWithNibName:@"NoteViewController" bundle:nil];

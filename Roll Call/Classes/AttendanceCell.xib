@@ -85,7 +85,7 @@
 							<object class="IBUIButton" id="115129037">
 								<reference key="NSNextResponder" ref="741003105"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{10, 7}, {34.9961, 37}}</string>
+								<string key="NSFrame">{{9, 1}, {45.9648, 45}}</string>
 								<reference key="NSSuperview" ref="741003105"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<int key="IBUITag">1</int>
@@ -120,7 +120,7 @@
 							<object class="IBUIButton" id="405652525">
 								<reference key="NSNextResponder" ref="741003105"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{108, 7}, {34.9961, 37}}</string>
+								<string key="NSFrame">{{108, 1}, {45, 45}}</string>
 								<reference key="NSSuperview" ref="741003105"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<int key="IBUITag">1</int>
@@ -139,7 +139,7 @@
 							<object class="IBUIButton" id="213074595">
 								<reference key="NSNextResponder" ref="741003105"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{205, 7}, {34.9961, 37}}</string>
+								<string key="NSFrame">{{205, 1}, {45, 45}}</string>
 								<reference key="NSSuperview" ref="741003105"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<int key="IBUITag">1</int>
@@ -309,9 +309,9 @@
 							<reference ref="852138329"/>
 							<reference ref="925981762"/>
 							<reference ref="799610463"/>
-							<reference ref="115129037"/>
 							<reference ref="405652525"/>
 							<reference ref="213074595"/>
+							<reference ref="115129037"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -368,7 +368,7 @@
 					<string>UIResponder</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-					<string>{{690, 605}, {320, 44}}</string>
+					<string>{{803, 605}, {320, 44}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -408,9 +408,11 @@
 							<string>deleteStudent</string>
 							<string>photoTapped</string>
 							<string>showKal</string>
+							<string>showNotes</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 							<string>id</string>
@@ -427,6 +429,7 @@
 							<string>cB</string>
 							<string>cellImage</string>
 							<string>cellLabel</string>
+							<string>dsCell</string>
 							<string>eB</string>
 							<string>eL</string>
 							<string>name</string>
@@ -445,6 +448,7 @@
 							<string>UIButton</string>
 							<string>UIImageView</string>
 							<string>UILabel</string>
+							<string>UITableViewCell</string>
 							<string>UIButton</string>
 							<string>UILabel</string>
 							<string>UILabel</string>

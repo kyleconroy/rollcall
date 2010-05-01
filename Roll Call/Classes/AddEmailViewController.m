@@ -46,6 +46,8 @@
 	cell.textField3.hidden=YES;
 	cell.textField.placeholder = @"Email";
 	cell.textField.font=[UIFont systemFontOfSize:20];
+	if (student.email!=nil)
+		cell.textField.text=student.email;
 	cell.textField.autocapitalizationType=UITextAutocapitalizationTypeNone; 
 	[cell.textField becomeFirstResponder];
 	return cell;

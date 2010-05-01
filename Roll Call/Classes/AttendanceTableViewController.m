@@ -119,6 +119,7 @@
 		NoteViewController *myNoteView = [[NoteViewController alloc] initWithNibName:@"NoteViewController" bundle:nil];
 		myNoteView.presence=presence;
 		[self presentModalViewController:myNoteView animated:YES];
+		[myNoteView release];
 	}		
 }	
 

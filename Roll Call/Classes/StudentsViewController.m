@@ -209,6 +209,7 @@
 		{
 			[self.filteredListContent addObject:student];
 		}
+		[name release];
 	}	
 }
 
