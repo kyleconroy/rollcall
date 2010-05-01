@@ -35,5 +35,6 @@
 - (NSMutableArray *) getAllStatuses;
 - (Status *) getStatusWithLetter:(NSString *)letter;
 - (Status *) getStatusWithLowestRank;
+- (Status *) getStatusWithNextRank:(NSInteger)rank;
 
 @end

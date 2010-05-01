@@ -50,7 +50,7 @@
 							<object class="IBUILabel" id="230845599">
 								<reference key="NSNextResponder" ref="643833839"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{44, 0}, {217, 41}}</string>
+								<string key="NSFrame">{{59, 0}, {210, 41}}</string>
 								<reference key="NSSuperview" ref="643833839"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -111,7 +111,7 @@
 							<object class="IBUIButton" id="906148214">
 								<reference key="NSNextResponder" ref="643833839"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrameSize">{45, 45}</string>
+								<string key="NSFrameSize">{51, 45}</string>
 								<reference key="NSSuperview" ref="643833839"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<int key="IBUITag">1</int>
@@ -263,7 +263,7 @@
 					<string>RollSheetInstance</string>
 					<string>UIResponder</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-					<string>{{825, 636}, {325, 45}}</string>
+					<string>{{845, 542}, {325, 45}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -298,17 +298,13 @@
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>addNote:</string>
-							<string>cancelDatePicker</string>
 							<string>changeAttendance:</string>
-							<string>doneDatePicker</string>
 							<string>moveBackOneDay</string>
 							<string>moveForwardOneDay</string>
 							<string>showDatePicker</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>id</string>
-							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 							<string>id</string>
@@ -340,6 +336,20 @@
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">Classes/RollSheetInstance.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">UIView</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">Kal/UIViewAdditions.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">UIView</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">TKGraph/UIViewAdditions.h</string>
 					</object>
 				</object>
 			</object>
@@ -441,6 +451,20 @@
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBFrameworkSource</string>
 						<string key="minorKey">Foundation.framework/Headers/NSXMLParser.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">NSObject</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBFrameworkSource</string>
+						<string key="minorKey">QuartzCore.framework/Headers/CAAnimation.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">NSObject</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBFrameworkSource</string>
+						<string key="minorKey">QuartzCore.framework/Headers/CALayer.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">

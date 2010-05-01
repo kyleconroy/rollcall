@@ -59,13 +59,13 @@
     NSManagedObjectContext *context = [aD managedObjectContext];
     
     NSArray *statuses = [[NSArray alloc] initWithObjects:
-                         [NSDictionary dictionaryWithObjectsAndKeys:@"Present", @"text", [NSNumber numberWithInt:1], @"rank", @"P", @"letter", 
+                         [NSDictionary dictionaryWithObjectsAndKeys:@"Present", @"text", [NSNumber numberWithInt:0], @"rank", @"P", @"letter", 
                           [UIColor colorWithRed:0.369 green:0.835 blue:0.128 alpha:1.000], @"color", @"button_green.png", @"image", nil],
-                         [NSDictionary dictionaryWithObjectsAndKeys:@"Absent", @"text", [NSNumber numberWithInt:4 ], @"rank", @"A", @"letter", 
+                         [NSDictionary dictionaryWithObjectsAndKeys:@"Absent", @"text", [NSNumber numberWithInt:1 ], @"rank", @"A", @"letter", 
                           [UIColor colorWithRed:0.835 green:0.103 blue:0.182 alpha:1.000], @"color", @"button_red.png", @"image", nil],
-                         [NSDictionary dictionaryWithObjectsAndKeys:@"Tardy", @"text", [NSNumber numberWithInt:3 ], @"rank", @"T", @"letter", 
+                         [NSDictionary dictionaryWithObjectsAndKeys:@"Tardy", @"text", [NSNumber numberWithInt:2 ], @"rank", @"T", @"letter", 
                           [UIColor colorWithRed:1.000 green:0.830 blue:0.081 alpha:1.000], @"color", @"button_yellow.png", @"image", nil],
-                         [NSDictionary dictionaryWithObjectsAndKeys:@"Excused", @"text", [NSNumber numberWithInt:2 ], @"rank", @"E", @"letter", 
+                         [NSDictionary dictionaryWithObjectsAndKeys:@"Excused", @"text", [NSNumber numberWithInt:3 ], @"rank", @"E", @"letter", 
                           [UIColor colorWithRed:0.179 green:0.298 blue:0.835 alpha:1.000], @"color", @"button_blue.png", @"image", nil],
                          nil];
     

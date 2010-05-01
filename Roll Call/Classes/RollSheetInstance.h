@@ -18,6 +18,8 @@
     NSArray * studentsArray;
     NSIndexPath *currentIndexPath;
     NSMutableArray * presencesArray;
+    NSMutableArray * statusArray;
+    
     NSDate *myDate;
     NSDate *datePickerDate;
     bool datePickerVisible;
@@ -45,6 +47,7 @@
 @property(nonatomic, retain) IBOutlet UIButton *forwardDate;
 @property(nonatomic, retain) IBOutlet UIButton *displayDate;
 @property(nonatomic, retain) IBOutlet UITableViewCell *tvCell;
+@property(nonatomic, assign) NSMutableArray * statusArray;
 
 - (IBAction) moveBackOneDay;
 - (IBAction) moveForwardOneDay;

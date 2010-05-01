@@ -21,6 +21,7 @@
 @synthesize course;
 @synthesize presencesArray;
 @synthesize studentsArray;
+@synthesize statusArray;
 @synthesize myTableView;
 @synthesize myDate;
 @synthesize myPickerView;
@@ -78,6 +79,7 @@
     
     // return the sorted array
     studentsArray = [ss sortedArrayUsingDescriptors:sortDescriptors];
+    statusArray = [aD getAllStatuses];
     
     [self updateDisplayDate];
     [self updateAttendance];
@@ -86,7 +88,7 @@
     // Save and release stuff
     [myDate retain];
     [studentsArray retain];
-    
+    [statusArray retain];
     
     [sortDescriptor release];
     [sortDescriptors release];
@@ -104,7 +106,7 @@
     NSManagedObjectContext *context = [aD managedObjectContext];
     NSPredicate *myPredicate = [NSPredicate predicateWithFormat:@"(date >= %@) AND (date <= %@) AND (course == %@)", today, tomorrow, course];
     
-    Status *stat = [aD getStatusWithLetter:@"P"];
+    Status *stat = [aD getStatusWithLowestRank];
     
     for(Student* s in studentsArray){
         NSSet *events = [s.presences filteredSetUsingPredicate:myPredicate];
@@ -201,8 +203,8 @@
     UIButton *button;
     button = (UIButton *)[cell viewWithTag:1];
     
-    //[button setTitle:p.status.letter forState: UIControlStateNormal];
-    //[button setBackgroundImage:[UIImage imageNamed:p.status.imageName] forState:UIControlStateNormal];
+    [button setTitle:p.status.letter forState: UIControlStateNormal];
+    [button setBackgroundImage:[UIImage imageNamed:p.status.imageName] forState:UIControlStateNormal];
         
     UILabel *label = (UILabel *)[cell viewWithTag:2];
     label.text = [NSString stringWithFormat:@"%@ %@", s.firstName, s.lastName];
@@ -223,26 +225,17 @@
     
     Presence *p = [presencesArray objectAtIndex:indexPath.row];
     
+    NSNumber *currentRank = p.status.rank   ;
+    
+    if ([currentRank intValue] + 1 >= [statusArray count]) {
+        p.status = [statusArray objectAtIndex:0];
+    } else {
+        p.status = [statusArray objectAtIndex:[currentRank intValue] + 1]; 
+    }
+
+    
     UIButton *button;
     button = (UIButton *)[cell viewWithTag:1];
-    NSString *statusString = [button currentTitle];
-    
-    if([statusString isEqualToString:@"P"]){
-        
-        p.status = [aD getStatusWithLetter:@"A"];
-        
-    } else if([statusString isEqualToString:@"A"]){
-        
-        p.status = [aD getStatusWithLetter:@"T"];
-        
-    } else if([statusString isEqualToString:@"T"]){
-        
-        p.status = [aD getStatusWithLetter:@"E"];
-        
-    } else if([statusString isEqualToString:@"E"]){
-        
-        p.status = [aD getStatusWithLetter:@"P"];
-    }
     
     NSError *error;
     if (![[aD managedObjectContext] save:&error]) {
@@ -367,6 +360,7 @@
     [myDate release];
     [studentsArray release];
     [presencesArray release];
+    [statusArray release];
     [course release];
     [super dealloc];
     

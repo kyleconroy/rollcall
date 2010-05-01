@@ -13,6 +13,7 @@
 
 @synthesize statusArray;
 @synthesize aD;
+@synthesize myTableView;
 
 #pragma mark -
 #pragma mark View lifecycle

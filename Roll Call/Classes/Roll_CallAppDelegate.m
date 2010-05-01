@@ -179,6 +179,34 @@
 	return p;
 }
 
+-(Status *) getStatusWithNextRank:(NSInteger)rank {
+	Status *p;
+    
+    NSManagedObjectContext *context = [self managedObjectContext];
+    
+	NSFetchRequest *request = [[NSFetchRequest alloc] init];
+	NSEntityDescription *entity = [NSEntityDescription entityForName: @"Status" inManagedObjectContext:context];
+	[request setEntity:entity];
+    
+	[request setResultType:NSManagedObjectResultType];
+    
+	NSPredicate *predicate = [NSPredicate predicateWithFormat:@"rank == %@", rank];
+	[request setPredicate:predicate];
+    
+	NSError *error;
+	NSArray *objects = [context executeFetchRequest:request error:&error];
+	p = nil;
+	if (objects == nil || [objects count] < 1) {
+        return [self getStatusWithLowestRank];
+	} else {
+        p = (Status *)[objects objectAtIndex:0];
+	}
+    
+	[request release];
+    
+	return p;
+}
+
 
 #pragma mark -
 #pragma mark Core Data stack
