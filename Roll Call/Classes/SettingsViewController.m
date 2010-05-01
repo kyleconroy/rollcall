@@ -7,7 +7,7 @@
 //
 
 #import "SettingsViewController.h"
-
+#import "StatusInstanceViewController.h"
 
 @implementation SettingsViewController
 
@@ -21,7 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setTitle:@"Settings"];
+    [self setTitle:@"Statuses"];
     
     aD = (Roll_CallAppDelegate *)[[UIApplication sharedApplication] delegate];
     
@@ -44,11 +44,12 @@
     [super viewWillAppear:animated];
 }
 */
-/*
+
 - (void)viewDidAppear:(BOOL)animated {
+    [myTableView reloadData];
     [super viewDidAppear:animated];
 }
-*/
+
 /*
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
@@ -134,26 +135,27 @@
 
 
 
-/*
-// Override to support editing the table view.
+
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
+        Status *s = [statusArray objectAtIndex:indexPath.row];
+        [[aD managedObjectContext] deleteObject:s];
+        [statusArray removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:YES];
     }   
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+    }
+    
+    [self recalculateRank];
+    
+    NSError *error;
+    if (![[aD managedObjectContext] save:&error]) {
+        // Handle the error.
+    }
 }
-*/
 
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
 
 - (NSIndexPath *)tableView:(UITableView *)tableView
 
@@ -186,10 +188,23 @@ targetIndexPathForMoveFromRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath
       toIndexPath:(NSIndexPath *)toIndexPath {
-    Status *s = [[statusArray objectAtIndex:fromIndexPath.row] retain];
-    [statusArray removeObject:s];
-    [statusArray insertObject:s atIndex:toIndexPath.row];
-    [s release];
+    Status *moved = [statusArray objectAtIndex:fromIndexPath.row];
+    [statusArray removeObject:moved];
+    [statusArray insertObject:moved atIndex:toIndexPath.row];
+    
+    [self recalculateRank];
+    
+    NSError *error;
+    if (![[aD managedObjectContext] save:&error]) {
+        // Handle the error.
+    }
+}
+
+- (void) recalculateRank {
+    for (int i = 0; i < [statusArray count]; i++) {
+        Status *p = [statusArray objectAtIndex:i];
+        p.rank = [NSNumber numberWithInt:i];
+    }
 }
 
 - (void) editTable {
@@ -225,14 +240,11 @@ targetIndexPathForMoveFromRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 #pragma mark Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Navigation logic may go here. Create and push another view controller.
-	/*
-	 <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-	 [self.navigationController pushViewController:detailViewController animated:YES];
-	 [detailViewController release];
-	 */
+	StatusInstanceViewController *statusController = [[StatusInstanceViewController alloc] 
+                                                          initWithNibName:@"StatusInstanceViewController" bundle:nil];
+    statusController.myStatus = [statusArray objectAtIndex:indexPath.row];
+	[self.navigationController pushViewController:statusController animated:YES];
+	[statusController release];
 }
 
 

@@ -20,5 +20,6 @@
 @property(nonatomic, assign) IBOutlet UITableView * myTableView;
 
 - (void) editTable;
+- (void) recalculateRank;
 
 @end

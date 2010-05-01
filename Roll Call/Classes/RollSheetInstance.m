@@ -79,7 +79,7 @@
     
     // return the sorted array
     studentsArray = [ss sortedArrayUsingDescriptors:sortDescriptors];
-    statusArray = [aD getAllStatuses];
+    
     
     [self updateDisplayDate];
     [self updateAttendance];
@@ -88,7 +88,6 @@
     // Save and release stuff
     [myDate retain];
     [studentsArray retain];
-    [statusArray retain];
     
     [sortDescriptor release];
     [sortDescriptors release];
@@ -127,6 +126,13 @@
     }
     
     [presencesArray retain];
+}
+
+- (void) viewDidAppear:(BOOL)animated {
+    statusArray = [aD getAllStatuses];
+    [statusArray retain];
+    
+    [super viewDidAppear:animated];
 }
 
 - (NSDate *)todayWithDate:(NSDate *)date {

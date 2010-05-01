@@ -60,7 +60,7 @@
 
 
 - (void)save {
-	AddStudentNameTableCell *cell;
+	AddStudentNameTableCell *cell; 
     cell = (AddStudentNameTableCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
     student.firstName = cell.textField.text;
     cell = (AddStudentNameTableCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
