@@ -17,6 +17,7 @@
 @synthesize managedObjectContext;
 @synthesize coursesArray;
 @synthesize aD;
+@synthesize myTableView;
 
 /*
 - (id)initWithStyle:(UITableViewStyle)style {
@@ -211,7 +212,7 @@
 - (void) addRollSheet {
     AddRollSheetViewController *addSheetController = [[AddRollSheetViewController alloc] initWithNibName:@"AddRollSheetViewController" bundle:nil];
     
-    
+    addSheetController.delegate = self;
     addSheetController.courseName = @"Course Name";
     UINavigationController *nController = [[UINavigationController alloc]
                                                     initWithRootViewController:addSheetController];
@@ -221,10 +222,20 @@
 	[addSheetController release];
 }
 
+- (void) addRollSheetViewController:(AddRollSheetViewController*)addRollSheetViewController withCourse:(Course *)course {
+    if (course) {
+        [self setCoursesArray:[aD getAllCourses]];
+        [myTableView reloadData];
+    }
+    [self dismissModalViewControllerAnimated:YES];
+}
+
+
 
 - (void)dealloc {
     [coursesArray release];
     [managedObjectContext release];
+    [myTableView release];
     [super dealloc];
 }
 

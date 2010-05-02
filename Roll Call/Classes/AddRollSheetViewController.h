@@ -10,10 +10,21 @@
 #import "Roll_CallAppDelegate.h"
 #import "EditTextFieldViewController.h"
 #import "EnrollStudentsViewController.h"
+#import "Course.h"
+
+@class AddRollSheetViewController;
+
+@protocol AddCourseDelegate <NSObject>
+
+- (void) addRollSheetViewController:(AddRollSheetViewController*)addRollSheetViewController withCourse:(Course *)course;
+
+@end
+
 
 
 @interface AddRollSheetViewController : UITableViewController <EditTextFieldDelegate, EnrollDelegate> {
-
+    
+    id <AddCourseDelegate> delegate;
     Roll_CallAppDelegate *aD;
     NSMutableArray *addedStudents;
     NSString *courseName;
@@ -26,7 +37,7 @@
     
 }
     
-
+@property (readwrite, assign) id <AddCourseDelegate> delegate;
 @property (nonatomic, retain) NSMutableArray *addedStudents;
 @property (nonatomic, retain) NSString *courseName;
 @property (nonatomic, retain) Roll_CallAppDelegate *aD;

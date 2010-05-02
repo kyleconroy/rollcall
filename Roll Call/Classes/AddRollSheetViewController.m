@@ -12,7 +12,7 @@
 
 @implementation AddRollSheetViewController
 
-
+@synthesize delegate;
 @synthesize aD;
 @synthesize addedStudents;
 @synthesize myTableView;
@@ -39,6 +39,8 @@
 - (void)viewDidLoad {
     self.title = @"New Class";
     
+    aD = (Roll_CallAppDelegate *)[[UIApplication sharedApplication] delegate];
+    
     studentsComplete = NO;
     nameComplete = NO;
     
@@ -62,17 +64,25 @@
 
 - (void)save {
 	
-	NSManagedObjectContext *context=[aD managedObjectContext];
-	NSError *error;
-	if (![context save:&error]) {
+    NSManagedObjectContext *context = [aD managedObjectContext];
+    Course *course = (Course *)[NSEntityDescription insertNewObjectForEntityForName:@"Course" inManagedObjectContext:context];
+    [course setName:courseName];
+    
+    for (Student *s in addedStudents){
+       [s addCoursesObject:course]; 
+    }
+
+    NSError *error;
+    if (![context save:&error]) {
         // Handle the error.
-	}
-	[self dismissModalViewControllerAnimated:YES];
+    }
+
+    [delegate addRollSheetViewController:self withCourse:course];
 }
 
 
 - (void)cancel{
-	[self dismissModalViewControllerAnimated:YES];
+	[delegate addRollSheetViewController:self withCourse:nil];
 }
 
 

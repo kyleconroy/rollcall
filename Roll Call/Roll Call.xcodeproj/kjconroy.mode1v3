@@ -286,7 +286,7 @@
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 6}, {393, 726}}</string>
+							<string>{{0, 0}, {393, 726}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -335,7 +335,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>95345AA9118DF77A006EF65B</string>
+										<string>95345AEB118E002B006EF65B</string>
 										<key>history</key>
 										<array>
 											<string>95C3ED301167CE1400CE11E5</string>
@@ -379,11 +379,9 @@
 											<string>9509E06A117EE60800A468EB</string>
 											<string>9509E06B117EE60800A468EB</string>
 											<string>9509E0A3117F876B00A468EB</string>
-											<string>9509E0E4117F8C1E00A468EB</string>
 											<string>952086CF118ACBCD00F12AB9</string>
 											<string>95208703118AD0F400F12AB9</string>
 											<string>952087EB118AD8E700F12AB9</string>
-											<string>95345121118BD613006EF65B</string>
 											<string>95345141118BDD4B006EF65B</string>
 											<string>95345142118BDD4B006EF65B</string>
 											<string>95345143118BDD4B006EF65B</string>
@@ -407,21 +405,23 @@
 											<string>953455FF118C70AC006EF65B</string>
 											<string>953458A0118CD81D006EF65B</string>
 											<string>953458A1118CD81D006EF65B</string>
-											<string>953458D0118CDF01006EF65B</string>
 											<string>953458FE118CE164006EF65B</string>
 											<string>95345900118CE164006EF65B</string>
 											<string>95345997118CF17D006EF65B</string>
-											<string>953459EF118D02B1006EF65B</string>
 											<string>95345A0D118D03E7006EF65B</string>
-											<string>95345A28118D065B006EF65B</string>
-											<string>95345A29118D065B006EF65B</string>
 											<string>95345A7B118D0984006EF65B</string>
 											<string>95345A8D118D0B1B006EF65B</string>
 											<string>95345A8E118D0B1B006EF65B</string>
 											<string>95345A93118DF075006EF65B</string>
-											<string>95345A9D118DF23A006EF65B</string>
-											<string>95345AA7118DF77A006EF65B</string>
-											<string>95345AA8118DF77A006EF65B</string>
+											<string>95345AB0118DFBFB006EF65B</string>
+											<string>95345AB4118DFCB5006EF65B</string>
+											<string>95345AC7118DFE84006EF65B</string>
+											<string>95345AC8118DFE84006EF65B</string>
+											<string>95345AC9118DFE84006EF65B</string>
+											<string>95345AD0118DFEE6006EF65B</string>
+											<string>95345ADB118DFFBD006EF65B</string>
+											<string>95345AE9118E002B006EF65B</string>
+											<string>95345AEA118E002B006EF65B</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -619,7 +619,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>95345AAA118DF77A006EF65B</string>
+		<string>95345AE8118E0019006EF65B</string>
 		<string>9534512E118BD613006EF65B</string>
 		<string>9534512F118BD613006EF65B</string>
 		<string>1CD10A99069EF8BA00B06720</string>
