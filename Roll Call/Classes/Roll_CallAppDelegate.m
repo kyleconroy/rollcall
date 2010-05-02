@@ -43,7 +43,7 @@
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Student" inManagedObjectContext:[self managedObjectContext]];
     [request setEntity:entity];
     
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"lastName" ascending:NO];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"firstName" ascending:YES];
     NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
     [request setSortDescriptors:sortDescriptors];
     [sortDescriptors release];

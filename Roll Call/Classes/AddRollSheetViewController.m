@@ -7,14 +7,20 @@
 //
 
 #import "AddRollSheetViewController.h"
-#import "AddStudentNameViewController.h"
-#import "AddCourseNameViewController.h"
+#import "EnrollStudentsViewController.h"
+#import "Student.h"
 
 @implementation AddRollSheetViewController
 
 
-@synthesize aD, selectedCourse, enrollStudents, enrollStudentsViewController, addedStudents;
+@synthesize aD;
+@synthesize addedStudents;
+@synthesize myTableView;
 @synthesize courseName;
+@synthesize studentsSection;
+@synthesize courseSection;
+@synthesize studentsComplete;
+@synthesize nameComplete;
 
 /*
 - (id)initWithStyle:(UITableViewStyle)style {
@@ -33,8 +39,17 @@
 - (void)viewDidLoad {
     self.title = @"New Class";
     
+    studentsComplete = NO;
+    nameComplete = NO;
+    
+    addedStudents = [[NSMutableArray alloc] initWithCapacity:0];
+    courseSection = 0;
+    studentsSection = 1;
+    
+    [super setEditing:YES animated:NO];
+    [myTableView setEditing:YES animated:NO];
+    
 	//self.editing=YES;
-	//self.navigationController.navigationBar.barStyle=UIBarStyleBlackTranslucent;
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancel)];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(save)];
 	self.navigationItem.rightBarButtonItem.enabled = NO;
@@ -106,69 +121,80 @@
 #pragma mark Table view methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 4;
+    return 2;
 }
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
+    if (section == courseSection) {
+        return 1;
+    } else {
+        return [addedStudents count] + 1;
+    }
 }
 
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	int customCellType = 0;
-	static NSString *CellIdentifier;
-	if (indexPath.section == 3) {
-		//only different cell type for meeting days
-		customCellType = 1;
-		CellIdentifier = @"DaysOfWeekCell";
-	} else {
-		CellIdentifier = @"Cell";
-	}
-
-	
+	static NSString *CellIdentifier = @"Cell";
 	UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 	
 
 	if (cell == nil) {
-		switch (customCellType) {
-			case 0:
-				cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-				break;
-		}
+		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
 	}
     
-    if (indexPath.section != 3)
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-	
-    // Set up the cell...
-	if (indexPath.section == 0) {
-        cell.textLabel.textColor = [UIColor grayColor];
-		cell.textLabel.text = @"Course Name";
-	} else if (indexPath.section == 1) {
-		NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-		[dateFormat setDateFormat:@"MM/DD/YYYY"];
-        cell.textLabel.textColor = [UIColor grayColor];
-		if (indexPath.row == 0) {
-			cell.textLabel.text = @"Start Date";
-		} else {
-			cell.textLabel.text = @"End Date";
-		}
-	} else if (indexPath.section == 2) {
-		NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-		[dateFormat setDateFormat:@"h:mm a"];
-        cell.textLabel.textColor = [UIColor grayColor];
-		if (indexPath.row == 0) {
-			cell.textLabel.text = @"Start Time";
-		} else {
-			cell.textLabel.text = @"End Time";
-		}
-	} else {
-		cell.textLabel.text = @"Enroll Students";
-	}
+    if (indexPath.section == courseSection) {
+        cell.editingAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        
+        if ([courseName isEqual:@"Course Name"])
+            cell.textLabel.textColor = [UIColor grayColor];
+        else
+            cell.textLabel.textColor = [UIColor blackColor];
+        
+		cell.textLabel.text = courseName;
+	} else if (indexPath.section == studentsSection && indexPath.row >= [addedStudents count]) {
+        cell.textLabel.text = @"enroll students";
+    } else {
+        Student *s = [addedStudents objectAtIndex:indexPath.row];
+        cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", s.firstName, s.lastName];
+    }
+
 	
     return cell;
+}
+
+- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	if (self.editing) {
+        if (indexPath.section == studentsSection && indexPath.row >= [addedStudents count]) {
+            return indexPath;
+        } else if (indexPath.section == courseSection) {
+            return indexPath;
+        } else {
+            return nil;
+        }
+    } else {
+        return indexPath;
+    }
+    
+}
+
+- (BOOL)tableView:(UITableView *)tableView shouldIndentWhileEditingRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == courseSection) {
+        return NO;
+    } else {
+        return YES;
+    }
+}
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == courseSection) {
+        return UITableViewCellEditingStyleNone;
+    } else if (indexPath.section == studentsSection && indexPath.row >= [addedStudents count]) {
+        return UITableViewCellEditingStyleInsert;
+    } else {
+        return UITableViewCellEditingStyleDelete;
+    }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -176,21 +202,65 @@
 	// AnotherViewController *anotherViewController = [[AnotherViewController alloc] initWithNibName:@"AnotherView" bundle:nil];
 	// [self.navigationController pushViewController:anotherViewController];
 	// [anotherViewController release];
+    if (indexPath.section == courseSection){
+        
+        EditTextFieldViewController *textController = [[EditTextFieldViewController alloc] 
+                                                       initWithNibName:@"EditTextFieldViewController" bundle:nil];
+        textController.delegate = self;
+        textController.myType = [NSNumber numberWithInt:indexPath.row];
+        textController.myTitle = @"Course Name";
+        
+        if (![courseName isEqual:@"Course Name"])
+             textController.myText = courseName;
+        
+        [self.navigationController pushViewController:textController animated:YES];
+        [textController release];
+        
+    } else if (indexPath.section == studentsSection && indexPath.row >= [addedStudents count]) {
+        
+        EnrollStudentsViewController *enrollController = [[EnrollStudentsViewController alloc] 
+                                                       initWithNibName:@"EnrollStudentsViewController" bundle:nil];
+        enrollController.delegate = self;
+        enrollController.initial = addedStudents;
+        [self.navigationController pushViewController:enrollController animated:YES];
+        [enrollController release];
+    }
+
 	
 }
 
-- (void) addDate {
+- (void)enrollStudentsViewController:(EnrollStudentsViewController *)enrollStudentsViewController
+
+                        withStudents:(NSMutableArray *)enrolled {
     
+    if (enrolled) {
+        addedStudents = enrolled;
+        studentsComplete = YES;
+        [myTableView reloadData];
+        if(nameComplete && studentsComplete)
+            self.navigationItem.rightBarButtonItem.enabled = YES;
+    }
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (void) addTime {
+- (void)editTextFieldViewController:(EditTextFieldViewController *)editTextFieldViewController
+
+                           withType: (NSNumber*)type didChangeText:(NSString *)text {
     
+    if(text){
+        courseName = text;
+        [courseName retain];
+        [myTableView reloadData];
+        nameComplete = YES;
+        if(nameComplete && studentsComplete)
+            self.navigationItem.rightBarButtonItem.enabled = YES;
+            
+    }
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (void) addName {
-    AddCourseNameViewController *addNameView = [[AddCourseNameViewController alloc] initWithNibName:@"AddCourseNameViewController" bundle:nil];
-    [self.navigationController pushViewController:addNameView animated:YES];
-}
 
 
 /*
@@ -234,6 +304,7 @@
 
 
 - (void)dealloc {
+    [myTableView release];
     [super dealloc];
 }
 

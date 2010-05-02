@@ -8,6 +8,8 @@
 
 #import "SettingsViewController.h"
 #import "StatusInstanceViewController.h"
+#import "AddStatusViewController.h"
+#import "Status.h"
 
 @implementation SettingsViewController
 
@@ -27,7 +29,9 @@
     
     statusArray = [aD getAllStatuses];
     [statusArray retain];
-
+    
+    myTableView.allowsSelectionDuringEditing = YES;
+    
     // Uncomment the following line to preserve selection between presentations.
     //self.clearsSelectionOnViewWillAppear = NO;
  
@@ -240,11 +244,62 @@ targetIndexPathForMoveFromRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 #pragma mark Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	StatusInstanceViewController *statusController = [[StatusInstanceViewController alloc] 
+    if (indexPath.row >= [statusArray count]) {
+        
+        AddStatusViewController *statusController = [[AddStatusViewController alloc] 
+                                                     initWithNibName:@"AddStatusViewController" bundle:nil];
+        statusController.delegate = self;
+        [self.navigationController pushViewController:statusController animated:YES];
+        [statusController release];
+        
+    } else {
+        
+        StatusInstanceViewController *statusController = [[StatusInstanceViewController alloc] 
                                                           initWithNibName:@"StatusInstanceViewController" bundle:nil];
-    statusController.myStatus = [statusArray objectAtIndex:indexPath.row];
-	[self.navigationController pushViewController:statusController animated:YES];
-	[statusController release];
+        statusController.myStatus = [statusArray objectAtIndex:indexPath.row];
+        [self.navigationController pushViewController:statusController animated:YES];
+        [statusController release];
+        
+    }
+}
+
+- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	if (self.editing) {
+        if (indexPath.row >= [statusArray count]) {
+            return indexPath;
+        }
+        return nil;
+    } else {
+        return indexPath;
+    }
+
+}
+
+- (void)addStatusViewController:(AddStatusViewController *)addStatusViewController
+
+                       withText:(NSString *)text letter:(NSString *)letter imageName:(NSString *)imageName {
+    
+    NSManagedObjectContext *context = [aD managedObjectContext];
+    
+    if (text && letter && imageName){
+        Status *p = (Status *)[NSEntityDescription insertNewObjectForEntityForName:@"Status" inManagedObjectContext:context];
+        p.text = text;
+        p.letter = letter;
+        p.imageName = imageName;
+        p.rank = [NSNumber numberWithInt:[statusArray count]];
+        
+        NSError *error;
+        if (![context save:&error]) {
+            // Handle the error.
+        }
+        
+        [statusArray addObject:p]; 
+        
+    }
+
+    [myTableView reloadData];
+    [self.navigationController popViewControllerAnimated:YES];
+    
 }
 
 

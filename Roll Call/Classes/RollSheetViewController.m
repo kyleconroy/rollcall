@@ -211,9 +211,10 @@
 - (void) addRollSheet {
     AddRollSheetViewController *addSheetController = [[AddRollSheetViewController alloc] initWithNibName:@"AddRollSheetViewController" bundle:nil];
     
+    
+    addSheetController.courseName = @"Course Name";
     UINavigationController *nController = [[UINavigationController alloc]
                                                     initWithRootViewController:addSheetController];
-    
     
     [self presentModalViewController:nController animated:YES];
     [nController release];

@@ -8,33 +8,37 @@
 
 #import <UIKit/UIKit.h>
 #import "Roll_CallAppDelegate.h"
-#import "Course.h"
+#import "EditTextFieldViewController.h"
 #import "EnrollStudentsViewController.h"
 
-@interface AddRollSheetViewController : UITableViewController {
+
+@interface AddRollSheetViewController : UITableViewController <EditTextFieldDelegate, EnrollDelegate> {
 
     Roll_CallAppDelegate *aD;
-    Course *selectedCourse;
-    IBOutlet UIButton *enrollStudents;
-    EnrollStudentsViewController *enrollStudentsViewController;
     NSMutableArray *addedStudents;
     NSString *courseName;
+    IBOutlet UITableView *myTableView;
+    
+    int courseSection;
+    int studentsSection;
+    bool studentsComplete;
+    bool nameComplete;
     
 }
     
-@property(nonatomic, retain) Roll_CallAppDelegate *aD;
-@property (nonatomic, retain) Course *selectedCourse;
-@property (nonatomic, retain) IBOutlet UIButton *enrollStudents;
-@property (nonatomic, retain) EnrollStudentsViewController *enrollStudentsViewController;
-@property (nonatomic, retain)  NSMutableArray *addedStudents;
-@property (readwrite, assign) NSString *courseName;
+
+@property (nonatomic, retain) NSMutableArray *addedStudents;
+@property (nonatomic, retain) NSString *courseName;
+@property (nonatomic, retain) Roll_CallAppDelegate *aD;
+@property (nonatomic, retain) IBOutlet UITableView *myTableView;
+@property (readwrite, assign) int studentsSection;
+@property (readwrite, assign) int courseSection;
+@property (readwrite, assign) bool nameComplete;
+@property (readwrite, assign) bool studentsComplete;
 
 - (IBAction) enrollStudentsInClass: (id) sender;
 
 - (void) save;
 - (void) cancel;
-- (void) addDate;
-- (void) addTime;
-- (void) addName;
 
 @end

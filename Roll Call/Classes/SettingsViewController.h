@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "Roll_CallAppDelegate.h"
+#import "AddStatusViewController.h"
 
-@interface SettingsViewController : UITableViewController {
+@interface SettingsViewController : UITableViewController <AddStatusDelegate> {
     NSMutableArray * statusArray;
     Roll_CallAppDelegate *aD;
     IBOutlet UITableView * myTableView; 

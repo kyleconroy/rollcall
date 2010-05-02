@@ -2,111 +2,96 @@
 //  EnrollStudentsViewController.m
 //  Roll Call
 //
-//  Created by Kyle Conroy on Apr5.
+//  Created by Kyle Conroy on May1.
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
 #import "EnrollStudentsViewController.h"
-
+#import "Student.h"
 
 @implementation EnrollStudentsViewController
 
-/*
-- (id)initWithStyle:(UITableViewStyle)style {
-    // Override initWithStyle: if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
-    if (self = [super initWithStyle:style]) {
-    }
-    return self;
-}
-*/
+@synthesize delegate;
+@synthesize aD;
+@synthesize chosen;
+@synthesize students;
+@synthesize myTableView;
+@synthesize initial;
 
-/*
+#pragma mark -
+#pragma mark View lifecycle
+
+
 - (void)viewDidLoad {
+    aD = (Roll_CallAppDelegate *)[[UIApplication sharedApplication] delegate];
+    students = [aD getAllStudents];
+    chosen = [[NSMutableArray alloc] init];
+    
+    for (int i = 0; i < [students count]; i++){
+        if ([initial containsObject:[students objectAtIndex:i]]) {
+            [chosen addObject:[NSNumber numberWithInt:i]];
+        }
+    }
+    
+    [self setTitle:@"Enroll Students"];
+    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancel)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(save)];
+	
+    
     [super viewDidLoad];
 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-}
-*/
-
-/*
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-}
-*/
-/*
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-}
-*/
-/*
-- (void)viewWillDisappear:(BOOL)animated {
-	[super viewWillDisappear:animated];
-}
-*/
-/*
-- (void)viewDidDisappear:(BOOL)animated {
-	[super viewDidDisappear:animated];
-}
-*/
-
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-*/
-
-- (void)didReceiveMemoryWarning {
-	// Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-	
-	// Release any cached data, images, etc that aren't in use.
-}
-
-- (void)viewDidUnload {
-	// Release any retained subviews of the main view.
-	// e.g. self.myOutlet = nil;
 }
 
 
-#pragma mark Table view methods
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
+#pragma mark -
+#pragma mark Table view data source
 
 
-// Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
+    return [students count];
 }
 
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"EnrollCell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
     
-    // Set up the cell...
-	
+    if ([chosen containsObject:[NSNumber numberWithInt:indexPath.row]]) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    } else {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
+    
+    Student *s = [students objectAtIndex: indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", s.firstName, s.lastName];
+    
     return cell;
 }
 
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Navigation logic may go here. Create and push another view controller.
-	// AnotherViewController *anotherViewController = [[AnotherViewController alloc] initWithNibName:@"AnotherView" bundle:nil];
-	// [self.navigationController pushViewController:anotherViewController];
-	// [anotherViewController release];
+- (void) save {
+    NSMutableArray *result = [[NSMutableArray alloc] init];
+    
+    [chosen sortUsingSelector:@selector(compare:)];
+    
+    for (NSNumber *n in chosen) {
+        [result addObject:[students objectAtIndex:[n intValue]]];
+    }
+    
+    [delegate enrollStudentsViewController:self withStudents:result];
+    
 }
 
+- (void) cancel {
+    [delegate enrollStudentsViewController:self withStudents:nil];
+}
 
 /*
 // Override to support conditional editing of the table view.
@@ -148,7 +133,43 @@
 */
 
 
+#pragma mark -
+#pragma mark Table view delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    if ([chosen containsObject:[NSNumber numberWithInt:indexPath.row]]) {
+        [[tableView cellForRowAtIndexPath:indexPath] setAccessoryType:UITableViewCellAccessoryNone];
+        [chosen removeObject:[NSNumber numberWithInt:indexPath.row]];
+    } else {
+        [[tableView cellForRowAtIndexPath:indexPath] setAccessoryType:UITableViewCellAccessoryCheckmark];
+        [chosen addObject:[NSNumber numberWithInt:indexPath.row]];
+    }
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+
+}
+
+
+#pragma mark -
+#pragma mark Memory management
+
+- (void)didReceiveMemoryWarning {
+    // Releases the view if it doesn't have a superview.
+    [super didReceiveMemoryWarning];
+    
+    // Relinquish ownership any cached data, images, etc that aren't in use.
+}
+
+- (void)viewDidUnload {
+    // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
+    // For example: self.myOutlet = nil;
+}
+
+
 - (void)dealloc {
+    [chosen release];
+    [students release];
     [super dealloc];
 }
 
