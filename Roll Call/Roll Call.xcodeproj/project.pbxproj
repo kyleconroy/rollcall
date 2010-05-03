@@ -71,6 +71,7 @@
 		95345E63118EA7BF006EF65B /* ABTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95345E60118EA7BF006EF65B /* ABTableViewCell.m */; };
 		95345E67118EA7FC006EF65B /* AttendanceViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95345E66118EA7FC006EF65B /* AttendanceViewCell.m */; };
 		95345E8B118EACCC006EF65B /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95345E8A118EACCC006EF65B /* CustomCell.m */; };
+		95346114118F5739006EF65B /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95346113118F5739006EF65B /* MessageUI.framework */; };
 		955E41771174129700FF2B8F /* RollSheetTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 955E41761174129700FF2B8F /* RollSheetTableCell.m */; };
 		955E4179117412AB00FF2B8F /* RollSheetTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 955E4178117412AB00FF2B8F /* RollSheetTableCell.xib */; };
 		955E41F21174273900FF2B8F /* cell_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 955E41F11174273900FF2B8F /* cell_background.png */; };
@@ -245,6 +246,7 @@
 		95345E66118EA7FC006EF65B /* AttendanceViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttendanceViewCell.m; sourceTree = "<group>"; };
 		95345E89118EACCC006EF65B /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomCell.h; path = "../../../../../../Downloads/CustomTableCell-States-Code/States-IB/Classes/CustomCell.h"; sourceTree = SOURCE_ROOT; };
 		95345E8A118EACCC006EF65B /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomCell.m; path = "../../../../../../Downloads/CustomTableCell-States-Code/States-IB/Classes/CustomCell.m"; sourceTree = SOURCE_ROOT; };
+		95346113118F5739006EF65B /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		955E41751174129700FF2B8F /* RollSheetTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RollSheetTableCell.h; sourceTree = "<group>"; };
 		955E41761174129700FF2B8F /* RollSheetTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RollSheetTableCell.m; sourceTree = "<group>"; };
 		955E4178117412AB00FF2B8F /* RollSheetTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RollSheetTableCell.xib; sourceTree = "<group>"; };
@@ -376,6 +378,7 @@
 				288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */,
 				5AB097681168145600E0CB9F /* CoreData.framework in Frameworks */,
 				952086A5118AC08C00F12AB9 /* QuartzCore.framework in Frameworks */,
+				95346114118F5739006EF65B /* MessageUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,6 +455,7 @@
 				288765070DF74369002DB57D /* CoreGraphics.framework */,
 				5AB097671168145600E0CB9F /* CoreData.framework */,
 				952086A4118AC08C00F12AB9 /* QuartzCore.framework */,
+				95346113118F5739006EF65B /* MessageUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

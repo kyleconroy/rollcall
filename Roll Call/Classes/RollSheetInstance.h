@@ -31,6 +31,7 @@
     IBOutlet UIButton *displayDate;
     IBOutlet UITableViewCell *tvCell;
     IBOutlet UITableView *myTableView;
+    IBOutlet UIButton *markDefault;
     
 }
 
@@ -46,6 +47,7 @@
 @property (nonatomic, retain) NSIndexPath *currentIndexPath;
 @property (nonatomic, retain) IBOutlet UITableView *myTableView;
 @property (nonatomic, retain) IBOutlet UIButton *backDate;
+@property (nonatomic, retain) IBOutlet UIButton *markDefault;
 @property (nonatomic, retain) IBOutlet UIButton *forwardDate;
 @property (nonatomic, retain) IBOutlet UIButton *displayDate;
 @property (nonatomic, retain) IBOutlet UITableViewCell *tvCell;
@@ -56,6 +58,7 @@
 - (IBAction) addNote:(id)sender;
 - (IBAction) changeAttendance:(id)sender;
 - (IBAction) showDatePicker;
+- (IBAction) markEmptyDefault;
 
 - (NSDate *) todayWithDate:(NSDate *)date;
 - (NSDate *) tomorrowWithDate:(NSDate *)date;

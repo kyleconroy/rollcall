@@ -35,7 +35,7 @@
 @synthesize displayDate;
 @synthesize datePickerVisible;
 @synthesize currentIndexPath;
-
+@synthesize markDefault;
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -201,10 +201,6 @@
         UIButton *noteButton = [UIButton buttonWithType:UIButtonTypeCustom];
         noteButton.frame = CGRectMake(269, 0, 56, 44); // position in the parent view and set the size of the button
         noteButton.tag = noteTag;
-        [noteButton setImage:[UIImage imageNamed:@"note_outline.png"] forState:UIControlStateNormal];
-        [noteButton setImage:[UIImage imageNamed:@"notes_on.png"] forState:UIControlStateSelected];
-        [noteButton setImage:[UIImage imageNamed:@"notes_on.png"] forState:UIControlStateHighlighted];
-        [noteButton addTarget:self action:nil forControlEvents:UIControlEventTouchUpInside];
         [cell.contentView  addSubview:noteButton]; 
 		
 		UILabel *nameLabel = [[UILabel alloc] init];
@@ -225,19 +221,28 @@
     
     UIButton *button;
     button = (UIButton *)[cell viewWithTag:attendanceTag];
+    UIButton *note;
+    note = (UIButton *)[cell viewWithTag:noteTag];
     
     if (p){
         [button setTitle:p.status.letter forState: UIControlStateNormal];
         [button setBackgroundImage:[UIImage imageNamed:p.status.imageName] forState:UIControlStateNormal];
+        [note setImage:[UIImage imageNamed:@"note_outline.png"] forState:UIControlStateNormal];
+        [note setImage:[UIImage imageNamed:@"notes_on.png"] forState:UIControlStateSelected];
+        [note setImage:[UIImage imageNamed:@"notes_on.png"] forState:UIControlStateHighlighted];
+        [note addTarget:self action:@selector(addNote:) forControlEvents:UIControlEventTouchUpInside];
     } else {
         [button setTitle:@"" forState: UIControlStateNormal];
         [button setBackgroundImage:[UIImage imageNamed:@"button_white.png"] forState:UIControlStateNormal];
+        [note setImage:nil forState:UIControlStateNormal];
+        [note setImage:nil forState:UIControlStateSelected];
+        [note setImage:nil forState:UIControlStateHighlighted];
+        [note addTarget:self action:nil forControlEvents:UIControlEventTouchUpInside];
     }
     
     
     if (p.note) {
-        button = (UIButton *)[cell viewWithTag:3];
-        [button setImage:[UIImage imageNamed:@"note_on.png"] forState:UIControlStateNormal];
+        [note setImage:[UIImage imageNamed:@"note_on.png"] forState:UIControlStateNormal];
     }
     
 	UILabel * nameLabel = (UILabel *) [cell.contentView viewWithTag:nameTag];
@@ -287,6 +292,8 @@
     
     [button setTitle: p.status.letter forState: UIControlStateNormal];
     [button setBackgroundImage:[UIImage imageNamed:p.status.imageName] forState:UIControlStateNormal];
+    
+    [myTableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     
     manualUpdate = NO;
     
@@ -341,7 +348,14 @@
     //Position Selected Table Row
     UIView *senderButton = (UIView*) sender;
     NSIndexPath *indexPath = [myTableView  indexPathForCell: (UITableViewCell*)[[senderButton superview]superview]];
-    Presence *p = [presencesArray objectAtIndex:indexPath.row];
+    
+    Student *s = [fetchController objectAtIndexPath:indexPath];
+    
+    NSDate *today = [self todayWithDate:myDate];
+    NSDate *tomorrow = [self tomorrowWithDate:myDate];
+    NSPredicate *myPredicate = [NSPredicate predicateWithFormat:@"(date >= %@) AND (date <= %@) AND (course == %@)", today, tomorrow, course];    
+    NSSet *events = [s.presences filteredSetUsingPredicate:myPredicate];
+    Presence *p = [events anyObject];
     
     UIButton *button;
     button = (UIButton *)[[myTableView cellForRowAtIndexPath:indexPath] viewWithTag:3];
@@ -370,6 +384,10 @@
     [self.navigationController pushViewController:courseInfoController animated:YES];
     
     [courseInfoController release];
+    
+}
+
+- (IBAction) markEmptyDefault {
     
 }
 
