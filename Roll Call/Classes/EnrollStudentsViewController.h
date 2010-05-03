@@ -29,14 +29,14 @@
     Roll_CallAppDelegate *aD;
     NSMutableArray *chosen;
     NSMutableArray *students;
-    NSMutableArray *initial;
+    NSArray *initial;
     UITableView *myTableView;
 }   
 
 @property (nonatomic, assign) id <EnrollDelegate> delegate;
 @property (nonatomic, retain) NSMutableArray *chosen;
 @property (nonatomic, retain) NSMutableArray *students;
-@property (nonatomic, retain) NSMutableArray *initial;
+@property (nonatomic, retain) NSArray *initial;
 @property (nonatomic, assign) Roll_CallAppDelegate *aD;
 @property (nonatomic, assign) UITableView *myTableView;
 

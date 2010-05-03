@@ -12,10 +12,13 @@
 #import "Status.h"
 #import "RollSheetAddNoteController.h"
 #import "RollSheetInfoViewController.h"
+#import "AttendanceViewCell.h"
 
 #define DAY  86400
 
 @implementation RollSheetInstance
+
+@synthesize fetchController;
 
 @synthesize aD;
 @synthesize course;
@@ -24,9 +27,9 @@
 @synthesize statusArray;
 @synthesize myTableView;
 @synthesize myDate;
-@synthesize myPickerView;
 @synthesize datePickerDate;
 @synthesize tvCell;
+@synthesize manualUpdate;
 @synthesize backDate;
 @synthesize forwardDate;
 @synthesize displayDate;
@@ -47,81 +50,65 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     datePickerVisible = NO;
+    manualUpdate = NO;
     currentIndexPath = nil;
     
     aD = (Roll_CallAppDelegate *)[[UIApplication sharedApplication] delegate];
-    myDate = [NSDate date];
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Info" 
                                                 style:UIBarButtonItemStylePlain target:self action:@selector(showCourseInfo)];
     
     [self setTitle:course.name];
     
+    myTableView.allowsSelection = NO;
     
-    //Get the students, and sort them by last name
+    
+    NSManagedObjectContext *context = [aD managedObjectContext];
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Student" inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:
+                              @"ANY courses == %@", course];
+    
+    [fetchRequest setPredicate:predicate];
+    
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"firstName" ascending:YES];
     NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+    [fetchRequest setSortDescriptors:sortDescriptors];
     
-    NSMutableArray * ss = [[NSMutableArray alloc] init];
+    [sortDescriptors release];
+    [sortDescriptor release];
     
-    //get all students in the class
-    NSEnumerator *e = [course.students objectEnumerator];
-    id collectionMemberObject;
+    fetchController = [[NSFetchedResultsController alloc]
+                        
+                        initWithFetchRequest:fetchRequest
+                        
+                        managedObjectContext:context
+                        
+                        sectionNameKeyPath:nil
+                        
+                        cacheName:nil];
     
-    //add them to a temporary array
-    while ( (collectionMemberObject = [e nextObject]) ) {
-        [ss addObject:collectionMemberObject];
+    fetchController.delegate = self;
+    
+    [fetchRequest release];
+    
+    
+    
+    NSError *error; 
+    BOOL success = [fetchController performFetch:&error];
+    
+    if (!success) {
+        NSLog(@"Cannot get NSFetchedResultsController for Statuses");
     }
     
-    // return the sorted array
-    studentsArray = [ss sortedArrayUsingDescriptors:sortDescriptors];
-    
-    
-    [self updateDisplayDate];
-    [self updateAttendance];
-
-    
-    // Save and release stuff
+    [self updateDate:[NSDate date]];
     [myDate retain];
-    [studentsArray retain];
-    
-    [sortDescriptor release];
-    [sortDescriptors release];
-    [ss release];
     
     [super viewDidLoad];
-}
-
-- (void) updateAttendance {
-    [presencesArray release];
-    presencesArray = [[NSMutableArray alloc] init];
-    
-    NSDate *today = [self todayWithDate:myDate];
-    NSDate *tomorrow = [self tomorrowWithDate:myDate];
-    NSManagedObjectContext *context = [aD managedObjectContext];
-    NSPredicate *myPredicate = [NSPredicate predicateWithFormat:@"(date >= %@) AND (date <= %@) AND (course == %@)", today, tomorrow, course];
-    
-    Status *stat = [aD getStatusWithLowestRank];
-    
-    for(Student* s in studentsArray){
-        NSSet *events = [s.presences filteredSetUsingPredicate:myPredicate];
-        Presence *p = [events anyObject];
-        if (p == nil) {
-            p = (Presence *)[NSEntityDescription insertNewObjectForEntityForName:@"Presence" inManagedObjectContext:context];
-            p.date = myDate;
-            p.student = s;
-            p.course = course;
-            p.status = stat;
-        }
-        [presencesArray addObject:p];
-    }
-    
-    NSError *error;
-    if (![[aD managedObjectContext] save:&error]) {
-        // Handle the error.
-    }
-    
-    [presencesArray retain];
 }
 
 - (void) viewDidAppear:(BOOL)animated {
@@ -167,21 +154,27 @@
 */
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    //SUPER HACK
-    myTableView = tableView;
-    return 1;
+    
+    return [[fetchController sections] count];
+    
 }
 
 
-// Customize the number of rows in the table view.
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [studentsArray count];
+
+- (NSInteger)tableView:(UITableView *)table numberOfRowsInSection:(NSInteger)section {
+    
+    id <NSFetchedResultsSectionInfo> sectionInfo = [[fetchController sections] objectAtIndex:section];
+    
+    return [sectionInfo numberOfObjects];
+    
 }
 
-- (void) updateDisplayDate {
+- (void) updateDate:(NSDate *)date {
+    myDate = date;
+    [myDate retain];
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateStyle:NSDateFormatterLongStyle];
-    [displayDate setTitle:[formatter stringFromDate:myDate] forState:UIControlStateNormal];
+    [displayDate setTitle:[formatter stringFromDate:date] forState:UIControlStateNormal];
     [formatter release];
 }
 
@@ -189,100 +182,133 @@
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"AttendanceViewCell";
+    
+	static NSInteger attendanceTag = 1;
+    static NSInteger nameTag = 2;
+	static NSInteger noteTag = 3;
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        [[NSBundle mainBundle] loadNibNamed:@"AttendanceTableCell" owner:self options:nil];
-        cell = tvCell;
-        self.tvCell = nil;
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
+
+        UIButton *attendanceButton  = [UIButton buttonWithType:UIButtonTypeCustom];
+        attendanceButton.frame = CGRectMake(0, 0, 51, 44); // position in the parent view and set the size of the button
+        attendanceButton.tag = attendanceTag;
+        [attendanceButton addTarget:self action:@selector(changeAttendance:) forControlEvents:UIControlEventTouchUpInside];
+        [cell.contentView addSubview:attendanceButton];
+        
+        UIButton *noteButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        noteButton.frame = CGRectMake(269, 0, 56, 44); // position in the parent view and set the size of the button
+        noteButton.tag = noteTag;
+        [noteButton setImage:[UIImage imageNamed:@"note_outline.png"] forState:UIControlStateNormal];
+        [noteButton setImage:[UIImage imageNamed:@"notes_on.png"] forState:UIControlStateSelected];
+        [noteButton setImage:[UIImage imageNamed:@"notes_on.png"] forState:UIControlStateHighlighted];
+        [noteButton addTarget:self action:nil forControlEvents:UIControlEventTouchUpInside];
+        [cell.contentView  addSubview:noteButton]; 
+		
+		UILabel *nameLabel = [[UILabel alloc] init];
+        nameLabel.frame = CGRectMake(59, 0, 205, 41);
+		nameLabel.tag = nameTag;
+		[cell.contentView addSubview:nameLabel];
+		[nameLabel release];
+        
     }
     
-    Student *s = [studentsArray objectAtIndex:indexPath.row];
-    Presence *p = [presencesArray objectAtIndex:indexPath.row];
+    Student *s = [fetchController objectAtIndexPath:indexPath];
+
+    NSDate *today = [self todayWithDate:myDate];
+    NSDate *tomorrow = [self tomorrowWithDate:myDate];
+    NSPredicate *myPredicate = [NSPredicate predicateWithFormat:@"(date >= %@) AND (date <= %@) AND (course == %@)", today, tomorrow, course];    
+    NSSet *events = [s.presences filteredSetUsingPredicate:myPredicate];
+    Presence *p = [events anyObject];
     
     UIButton *button;
-    button = (UIButton *)[cell viewWithTag:1];
+    button = (UIButton *)[cell viewWithTag:attendanceTag];
     
-    [button setTitle:p.status.letter forState: UIControlStateNormal];
-    [button setBackgroundImage:[UIImage imageNamed:p.status.imageName] forState:UIControlStateNormal];
-        
-    UILabel *label = (UILabel *)[cell viewWithTag:2];
-    label.text = [NSString stringWithFormat:@"%@ %@", s.firstName, s.lastName];
+    if (p){
+        [button setTitle:p.status.letter forState: UIControlStateNormal];
+        [button setBackgroundImage:[UIImage imageNamed:p.status.imageName] forState:UIControlStateNormal];
+    } else {
+        [button setTitle:@"" forState: UIControlStateNormal];
+        [button setBackgroundImage:[UIImage imageNamed:@"button_white.png"] forState:UIControlStateNormal];
+    }
+    
     
     if (p.note) {
         button = (UIButton *)[cell viewWithTag:3];
         [button setImage:[UIImage imageNamed:@"note_on.png"] forState:UIControlStateNormal];
     }
     
+	UILabel * nameLabel = (UILabel *) [cell.contentView viewWithTag:nameTag];
+	nameLabel.text = [NSString stringWithFormat:@"%@ %@", s.firstName, s.lastName];
+    
     return cell;
 }
 
 -(IBAction)changeAttendance:(id)sender {
     //Position Selected Table Row
+    
+    manualUpdate = YES;
     UIView *senderButton = (UIView*) sender;
     NSIndexPath *indexPath = [myTableView  indexPathForCell: (UITableViewCell*)[[senderButton superview]superview]];
     UITableViewCell *cell = [myTableView  cellForRowAtIndexPath:indexPath];
     
-    Presence *p = [presencesArray objectAtIndex:indexPath.row];
+    Student *s = [fetchController objectAtIndexPath:indexPath];
     
-    NSNumber *currentRank = p.status.rank   ;
-    
-    if ([currentRank intValue] + 1 >= [statusArray count]) {
-        p.status = [statusArray objectAtIndex:0];
-    } else {
-        p.status = [statusArray objectAtIndex:[currentRank intValue] + 1]; 
-    }
+    NSDate *today = [self todayWithDate:myDate];
+    NSDate *tomorrow = [self tomorrowWithDate:myDate];
+    NSPredicate *myPredicate = [NSPredicate predicateWithFormat:@"(date >= %@) AND (date <= %@) AND (course == %@)", today, tomorrow, course];    
+    NSSet *events = [s.presences filteredSetUsingPredicate:myPredicate];
+    Presence *p = [events anyObject];
 
     
-    UIButton *button;
-    button = (UIButton *)[cell viewWithTag:1];
+    if (p == nil) {
+
+        NSManagedObjectContext *context = [aD managedObjectContext];
+        p = (Presence *)[NSEntityDescription insertNewObjectForEntityForName:@"Presence" inManagedObjectContext:context];
+        p.date = myDate;
+        p.student = s;
+        p.course = course;
+        p.status = [statusArray objectAtIndex:0];
+    } else if ([p.status.rank intValue] + 1 >= [statusArray count]) {
+        p.status = [statusArray objectAtIndex:0];
+    } else {
+        p.status = [statusArray objectAtIndex:[p.status.rank intValue] + 1]; 
+    }
     
     NSError *error;
     if (![[aD managedObjectContext] save:&error]) {
         // Handle the error.
     }
     
+    UIButton *button;
+    button = (UIButton *)[cell viewWithTag:1];
+    
     [button setTitle: p.status.letter forState: UIControlStateNormal];
     [button setBackgroundImage:[UIImage imageNamed:p.status.imageName] forState:UIControlStateNormal];
     
+    manualUpdate = NO;
+    
 }
 
-
-- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-    cell.opaque = NO;
+- (void) updateAttendance:(UITableViewRowAnimation)rowAnimation {
+    NSMutableArray *updatedPaths = [NSMutableArray array];
+    for (NSManagedObject *managed in [fetchController fetchedObjects]) {
+        [updatedPaths addObject:[fetchController indexPathForObject:managed]];
+    }
+    
+    [myTableView reloadRowsAtIndexPaths:updatedPaths withRowAnimation:rowAnimation];
 }
 
 - (IBAction)moveBackOneDay {
-    myDate = [myDate addTimeInterval:-DAY];
-    [self updateDisplayDate];
-    [self updateAttendance];
-    [myDate retain];
-    
-    NSMutableArray *updatedPaths = [NSMutableArray array];
-    for (int i = 0; i < [studentsArray count]; i++) {
-        NSIndexPath *updatedPath = [NSIndexPath indexPathForRow:i inSection:0];
-        [updatedPaths addObject:updatedPath];
-    }
-    [myTableView reloadRowsAtIndexPaths:updatedPaths withRowAnimation:UITableViewRowAnimationRight];
-    
+    [self updateDate:[myDate addTimeInterval:-DAY]];
+    [self updateAttendance:UITableViewRowAnimationRight];
 }
 
 - (IBAction)moveForwardOneDay {
-    myDate = [myDate addTimeInterval:DAY];
-    [self updateDisplayDate];
-    [self updateAttendance];
-    [myDate retain];
-    
-    NSMutableArray *updatedPaths = [NSMutableArray array];
-    for (int i = 0; i < [studentsArray count]; i++) {
-        NSIndexPath *updatedPath = [NSIndexPath indexPathForRow:i inSection:0];
-        [updatedPaths addObject:updatedPath];
-    }
-    
-    [myTableView reloadRowsAtIndexPaths:updatedPaths withRowAnimation:UITableViewRowAnimationLeft];
-
+    [self updateDate:[myDate addTimeInterval:DAY]];
+    [self updateAttendance:UITableViewRowAnimationLeft];
 }
 
 - (IBAction) showDatePicker {
@@ -304,8 +330,7 @@
 
                    didChangeDate:(NSDate *)date {
     if (date) {
-        [self setMyDate:date];
-        [self updateDisplayDate];
+        [self updateDate:date];
         [myTableView reloadData];
     }
     [self dismissModalViewControllerAnimated:YES];
@@ -338,16 +363,135 @@
     RollSheetInfoViewController *courseInfoController = [[RollSheetInfoViewController alloc] 
                                                          initWithNibName:@"AddRollSheetViewController" bundle:nil];
     
-    courseInfoController.courseName = course.name;
     courseInfoController.course = course;
     NSMutableArray *copyOfStudents = [[NSMutableArray alloc] initWithArray:studentsArray];
-    courseInfoController.addedStudents = copyOfStudents;
     [copyOfStudents release];
     
     [self.navigationController pushViewController:courseInfoController animated:YES];
     
     [courseInfoController release];
     
+}
+
+- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
+
+    if (!manualUpdate) {
+        [self.myTableView beginUpdates];
+    }
+    
+}
+
+
+- (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo
+
+           atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type {
+    
+    
+    
+    switch(type) {
+            
+        case NSFetchedResultsChangeInsert:
+            
+            
+            [self.myTableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex]
+             
+                            withRowAnimation:UITableViewRowAnimationFade];
+            
+            break;
+            
+            
+            
+        case NSFetchedResultsChangeDelete:
+            
+            
+            
+            [self.myTableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex]
+             
+                            withRowAnimation:UITableViewRowAnimationFade];
+            
+            break;
+            
+    }
+    
+}
+
+
+
+
+
+- (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject
+
+       atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type
+
+      newIndexPath:(NSIndexPath *)newIndexPath {
+    
+    
+    
+    UITableView *tableView = self.myTableView;
+    
+    
+    
+    switch(type) {
+            
+            
+            
+        case NSFetchedResultsChangeInsert:
+            
+            [tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath]
+             
+                             withRowAnimation:UITableViewRowAnimationRight];
+            
+            break;
+            
+            
+            
+        case NSFetchedResultsChangeDelete:
+            
+            
+            [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
+             
+                             withRowAnimation:UITableViewRowAnimationRight];
+            
+            break;
+            
+            
+            
+        case NSFetchedResultsChangeUpdate:
+            
+            //[self configureCell:[tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
+            
+            break;
+            
+            
+            
+        case NSFetchedResultsChangeMove:
+            
+                
+                [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
+                 
+                                 withRowAnimation:UITableViewRowAnimationRight];
+                
+                [tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath]
+                 
+                                 withRowAnimation:UITableViewRowAnimationRight];
+
+            
+            break;
+            
+    }
+    
+}
+
+
+
+
+
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
+    
+    if (!manualUpdate) {
+        [myTableView reloadData];
+        [myTableView endUpdates];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -363,8 +507,9 @@
 }
 
 - (void)dealloc {
+    [fetchController release];
     [datePickerDate release];
-    [myPickerView release];
+    [myTableView release];
     [myDate release];
     [studentsArray release];
     [presencesArray release];

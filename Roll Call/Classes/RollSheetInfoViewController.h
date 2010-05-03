@@ -21,29 +21,28 @@
 @end
 
 
-@interface RollSheetInfoViewController : UITableViewController <EditTextFieldDelegate, EnrollDelegate> {
+@interface RollSheetInfoViewController : UITableViewController <EditTextFieldDelegate, EnrollDelegate, NSFetchedResultsControllerDelegate> {
     
     
     Course *course;
     Roll_CallAppDelegate *aD;
-    NSMutableArray *addedStudents;
-    NSString *courseName;
+    NSFetchedResultsController *fetchController;
     IBOutlet UITableView *myTableView;
-    
     int courseSection;
     int studentsSection;
+    int rowCount;
     bool studentsComplete;
     bool nameComplete;
     
 }
 
 @property (nonatomic, assign) Course *course;
-@property (nonatomic, retain) NSMutableArray *addedStudents;
-@property (nonatomic, retain) NSString *courseName;
+@property (nonatomic, retain) NSFetchedResultsController *fetchController;
 @property (nonatomic, retain) Roll_CallAppDelegate *aD;
 @property (nonatomic, retain) IBOutlet UITableView *myTableView;
 @property (readwrite, assign) int studentsSection;
 @property (readwrite, assign) int courseSection;
+@property (readwrite, assign) int rowCount;
 @property (readwrite, assign) bool nameComplete;
 @property (readwrite, assign) bool studentsComplete;
 

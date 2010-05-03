@@ -15,13 +15,13 @@
 
 @synthesize course;
 @synthesize aD;
-@synthesize addedStudents;
 @synthesize myTableView;
-@synthesize courseName;
+@synthesize fetchController;
 @synthesize studentsSection;
 @synthesize courseSection;
 @synthesize studentsComplete;
 @synthesize nameComplete;
+@synthesize rowCount;
 
 - (IBAction) enrollStudentsInClass: (id) sender {
     
@@ -36,11 +36,53 @@
     studentsComplete = NO;
     nameComplete = NO;
     
-    if(!addedStudents)
-        addedStudents = [[NSMutableArray alloc] initWithCapacity:0];
+    NSManagedObjectContext *context = [aD managedObjectContext];
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Student" inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:
+                              @"ANY courses == %@", course];
+    
+    [fetchRequest setPredicate:predicate];
+    
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"firstName" ascending:YES];
+    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+    [fetchRequest setSortDescriptors:sortDescriptors];
+    
+    [sortDescriptors release];
+    [sortDescriptor release];
+    
+    fetchController = [[NSFetchedResultsController alloc]
+                       
+                       initWithFetchRequest:fetchRequest
+                       
+                       managedObjectContext:context
+                       
+                       sectionNameKeyPath:nil
+                       
+                       cacheName:@"RollSheetInfoView"];
+    
+    fetchController.delegate = self;
+    
+    [fetchRequest release];
+    
+    
+    
+    NSError *error; 
+    BOOL success = [fetchController performFetch:&error];
+    
+    if (!success) {
+        NSLog(@"Cannot get NSFetchedResultsController for Statuses");
+    }
+    
     
     courseSection = 0;
     studentsSection = 1;
+    rowCount = [[[fetchController sections] objectAtIndex:0] numberOfObjects];
+    
     
 	//self.editing=YES;
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
@@ -55,7 +97,7 @@
     [super setEditing:editing animated:animated];
     [myTableView setEditing:editing animated:animated];
     [self.navigationItem setHidesBackButton:editing animated:animated];
-    NSArray *updatedPaths = [NSArray arrayWithObjects:[NSIndexPath indexPathForRow:[addedStudents count] inSection:studentsSection],nil];
+    NSArray *updatedPaths = [NSArray arrayWithObjects:[NSIndexPath indexPathForRow:rowCount inSection:studentsSection],nil];
 
     if(editing)
         [myTableView insertRowsAtIndexPaths:updatedPaths withRowAnimation:UITableViewRowAnimationTop];
@@ -63,35 +105,6 @@
         [myTableView deleteRowsAtIndexPaths:updatedPaths withRowAnimation:UITableViewRowAnimationTop];
 }
 
-
-/*
- - (void)viewWillAppear:(BOOL)animated {
- [super viewWillAppear:animated];
- }
- */
-/*
- - (void)viewDidAppear:(BOOL)animated {
- [super viewDidAppear:animated];
- }
- */
-/*
- - (void)viewWillDisappear:(BOOL)animated {
- [super viewWillDisappear:animated];
- }
- */
-/*
- - (void)viewDidDisappear:(BOOL)animated {
- [super viewDidDisappear:animated];
- }
- */
-
-/*
- // Override to allow orientations other than the default portrait orientation.
- - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
- // Return YES for supported orientations
- return (interfaceOrientation == UIInterfaceOrientationPortrait);
- }
- */
 
 - (void)didReceiveMemoryWarning {
 	// Releases the view if it doesn't have a superview.
@@ -126,10 +139,14 @@
     if (section == courseSection) {
         return 1;
     } else {
+        id <NSFetchedResultsSectionInfo> sectionInfo = [[fetchController sections] objectAtIndex:0];
+        
+        int count = [sectionInfo numberOfObjects];
+        
         if (self.editing) {
-            return  [addedStudents count] + 1;
+            return count + 1;
         } else {
-            return [addedStudents count];
+            return count;
         }
     }
 }
@@ -149,18 +166,18 @@
         cell.editingAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.accessoryType = UITableViewCellAccessoryNone;
         
-        if ([courseName isEqual:@"Course Name"])
+        if ([course.name isEqual:@"Course Name"])
             cell.textLabel.textColor = [UIColor grayColor];
         else
             cell.textLabel.textColor = [UIColor blackColor];
         
-		cell.textLabel.text = courseName;
-	} else if (indexPath.section == studentsSection && indexPath.row >= [addedStudents count]) {
+		cell.textLabel.text = course.name;
+	} else if (indexPath.section == studentsSection && indexPath.row >= rowCount) {
         cell.textLabel.text = @"enroll students";
         cell.editingAccessoryType = UITableViewCellAccessoryNone;
         cell.accessoryType = UITableViewCellAccessoryNone;
     } else {
-        Student *s = [addedStudents objectAtIndex:indexPath.row];
+        Student *s = [fetchController objectAtIndexPath:[NSIndexPath indexPathForRow:indexPath.row inSection:0]];
         cell.editingAccessoryType = UITableViewCellAccessoryNone;
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", s.firstName, s.lastName];
@@ -172,7 +189,7 @@
 
 - (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	if (self.editing) {
-        if (indexPath.section == studentsSection && indexPath.row >= [addedStudents count]) {
+        if (indexPath.section == studentsSection && indexPath.row >= rowCount) {
             return indexPath;
         } else if (indexPath.section == courseSection) {
             return indexPath;
@@ -200,7 +217,7 @@
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == courseSection) {
         return UITableViewCellEditingStyleNone;
-    } else if (indexPath.section == studentsSection && indexPath.row >= [addedStudents count]) {
+    } else if (indexPath.section == studentsSection && indexPath.row >= rowCount) {
         return UITableViewCellEditingStyleInsert;
     } else {
         return UITableViewCellEditingStyleDelete;
@@ -217,25 +234,25 @@
             textController.myType = [NSNumber numberWithInt:indexPath.row];
             textController.myTitle = @"Course Name";
             
-            if (![courseName isEqual:@"Course Name"])
-                textController.myText = courseName;
+            if (![course.name isEqual:@"Course Name"])
+                textController.myText = course.name;
             
             [self.navigationController pushViewController:textController animated:YES];
             [textController release];
             
-        } else if (indexPath.section == studentsSection && indexPath.row >= [addedStudents count]) {
+        } else if (indexPath.section == studentsSection && indexPath.row >= rowCount) {
             
             EnrollStudentsViewController *enrollController = [[EnrollStudentsViewController alloc] 
                                                               initWithNibName:@"EnrollStudentsViewController" bundle:nil];
             enrollController.delegate = self;
-            enrollController.initial = addedStudents;
+            enrollController.initial = [fetchController fetchedObjects];
             [self.navigationController pushViewController:enrollController animated:YES];
             [enrollController release];
         }
     } else {
     
         StudentViewController *anotherViewController = [[StudentViewController alloc] initWithNibName:@"StudentViewController" bundle:nil];
-        Student *student = [addedStudents objectAtIndex:indexPath.row];
+        Student *student = [fetchController objectAtIndexPath:[NSIndexPath indexPathForRow:indexPath.row inSection:0]];
         anotherViewController.title = [NSString stringWithFormat:@"%@ %@", student.firstName, student.lastName];
         anotherViewController.currentStudent = student;
         
@@ -250,9 +267,6 @@
 - (void)enrollStudentsViewController:(EnrollStudentsViewController *)enrollStudentsViewController
 
                         withStudents:(NSMutableArray *)enrolled {
-    
-    addedStudents = enrolled;
-    [myTableView reloadData];
     
 }
 
@@ -285,9 +299,9 @@
                            withType: (NSNumber*)type didChangeText:(NSString *)text {
     
     if(text){
-        courseName = text;
-        [courseName retain];
-        [self.navigationItem setTitle:courseName];
+        // this needs to be saved
+        course.name = text;
+        [self.navigationItem setTitle:course.name];
         [myTableView reloadData];
         nameComplete = YES;
         if(nameComplete && studentsComplete)
@@ -303,27 +317,147 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        NSManagedObjectContext *context = [aD managedObjectContext];
-        
-        Student *s = [addedStudents objectAtIndex:indexPath.row];
-        
+        Student *s = [fetchController objectAtIndexPath:[NSIndexPath indexPathForRow:indexPath.row inSection:0]];
+        NSLog(@"%@",s.firstName);
         [course removeStudentsObject:s];
         
-        NSError *error;
-        if (![context save:&error]) {
-            // Handle the error.
-        }
-        
-        [addedStudents removeObjectAtIndex:indexPath.row];
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:YES];
     }   
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+    }
+    
+    NSError *error;
+    if (![[aD managedObjectContext] save:&error]) {
+        // Handle the error.
+    }
+}
+
+- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
+    
+    [self.myTableView beginUpdates];
+    
 }
 
 
+- (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo
+
+           atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type {
+    
+    
+    
+    switch(type) {
+            
+        case NSFetchedResultsChangeInsert:
+            
+            
+            [self.myTableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex]
+             
+                            withRowAnimation:UITableViewRowAnimationFade];
+            
+            break;
+            
+            
+            
+        case NSFetchedResultsChangeDelete:
+            
+            
+            
+            [self.myTableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex]
+             
+                            withRowAnimation:UITableViewRowAnimationFade];
+            
+            break;
+            
+    }
+    
+}
+
+
+
+
+
+- (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject
+
+       atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type
+
+      newIndexPath:(NSIndexPath *)newIndexPath {
+    
+    
+    
+    UITableView *tableView = self.myTableView;
+    
+    int hackSection = 0;
+    
+    
+    
+    switch(type) {
+            
+            
+            
+        case NSFetchedResultsChangeInsert:
+            
+            rowCount = [[[controller sections] objectAtIndex:hackSection] numberOfObjects];
+            
+            [tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:newIndexPath.row inSection:studentsSection]]
+             
+                             withRowAnimation:UITableViewRowAnimationRight];
+            
+            break;
+            
+            
+            
+        case NSFetchedResultsChangeDelete:
+            
+            rowCount = [[[controller sections] objectAtIndex:hackSection] numberOfObjects];
+            
+            
+            [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:indexPath.row inSection:studentsSection]]
+             
+                             withRowAnimation:UITableViewRowAnimationRight];
+            
+            break;
+            
+            
+            
+        case NSFetchedResultsChangeUpdate:
+            
+            //[self configureCell:[tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
+            
+            break;
+            
+            
+            
+        case NSFetchedResultsChangeMove:
+                
+            [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
+             
+                             withRowAnimation:UITableViewRowAnimationRight];
+            
+            [tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath]
+             
+                             withRowAnimation:UITableViewRowAnimationRight];
+    
+            
+            break;
+            
+    }
+    
+}
+
+
+
+
+
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
+    
+    [myTableView endUpdates];
+    
+}
+
+
+
 - (void)dealloc {
+    [fetchController release];
     [myTableView release];
     [super dealloc];
 }

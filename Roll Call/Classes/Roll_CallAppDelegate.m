@@ -151,12 +151,10 @@
     
 	[request setResultType:NSManagedObjectResultType];
     
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc]
-                                        
-                                        initWithKey:@"rank" ascending:YES];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"rank" ascending:YES];
     
     [request setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
-    [sortDescriptor release];
+    
     
 	NSError *error;
 	NSArray *objects = [context executeFetchRequest:request error:&error];
@@ -174,6 +172,7 @@
 		}
 	}
     
+    [sortDescriptor release];
 	[request release];
     
 	return p;

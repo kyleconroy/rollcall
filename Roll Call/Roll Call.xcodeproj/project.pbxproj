@@ -68,6 +68,9 @@
 		95345636118C7BE6006EF65B /* AddStatusViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95345634118C7BE6006EF65B /* AddStatusViewController.xib */; };
 		953458CB118CDCCB006EF65B /* EnrollStudentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 953458C9118CDCCB006EF65B /* EnrollStudentsViewController.m */; };
 		953458CC118CDCCB006EF65B /* EnrollStudentsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 953458CA118CDCCB006EF65B /* EnrollStudentsViewController.xib */; };
+		95345E63118EA7BF006EF65B /* ABTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95345E60118EA7BF006EF65B /* ABTableViewCell.m */; };
+		95345E67118EA7FC006EF65B /* AttendanceViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95345E66118EA7FC006EF65B /* AttendanceViewCell.m */; };
+		95345E8B118EACCC006EF65B /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95345E8A118EACCC006EF65B /* CustomCell.m */; };
 		955E41771174129700FF2B8F /* RollSheetTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 955E41761174129700FF2B8F /* RollSheetTableCell.m */; };
 		955E4179117412AB00FF2B8F /* RollSheetTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 955E4178117412AB00FF2B8F /* RollSheetTableCell.xib */; };
 		955E41F21174273900FF2B8F /* cell_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 955E41F11174273900FF2B8F /* cell_background.png */; };
@@ -236,6 +239,12 @@
 		953458C8118CDCCB006EF65B /* EnrollStudentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnrollStudentsViewController.h; sourceTree = "<group>"; };
 		953458C9118CDCCB006EF65B /* EnrollStudentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnrollStudentsViewController.m; sourceTree = "<group>"; };
 		953458CA118CDCCB006EF65B /* EnrollStudentsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EnrollStudentsViewController.xib; sourceTree = "<group>"; };
+		95345E5F118EA7BF006EF65B /* ABTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABTableViewCell.h; sourceTree = "<group>"; };
+		95345E60118EA7BF006EF65B /* ABTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABTableViewCell.m; sourceTree = "<group>"; };
+		95345E65118EA7FC006EF65B /* AttendanceViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttendanceViewCell.h; sourceTree = "<group>"; };
+		95345E66118EA7FC006EF65B /* AttendanceViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttendanceViewCell.m; sourceTree = "<group>"; };
+		95345E89118EACCC006EF65B /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomCell.h; path = "../../../../../../Downloads/CustomTableCell-States-Code/States-IB/Classes/CustomCell.h"; sourceTree = SOURCE_ROOT; };
+		95345E8A118EACCC006EF65B /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomCell.m; path = "../../../../../../Downloads/CustomTableCell-States-Code/States-IB/Classes/CustomCell.m"; sourceTree = SOURCE_ROOT; };
 		955E41751174129700FF2B8F /* RollSheetTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RollSheetTableCell.h; sourceTree = "<group>"; };
 		955E41761174129700FF2B8F /* RollSheetTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RollSheetTableCell.m; sourceTree = "<group>"; };
 		955E4178117412AB00FF2B8F /* RollSheetTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RollSheetTableCell.xib; sourceTree = "<group>"; };
@@ -534,6 +543,8 @@
 		95345317118C1E9F006EF65B /* General */ = {
 			isa = PBXGroup;
 			children = (
+				95345E5F118EA7BF006EF65B /* ABTableViewCell.h */,
+				95345E60118EA7BF006EF65B /* ABTableViewCell.m */,
 				953452B8118C16F9006EF65B /* EditTextFieldViewController.h */,
 				953452B9118C16F9006EF65B /* EditTextFieldViewController.m */,
 				953452BA118C16F9006EF65B /* EditTextFieldViewController.xib */,
@@ -592,6 +603,10 @@
 		95C3EEF91168387500CE11E5 /* Roll Sheet */ = {
 			isa = PBXGroup;
 			children = (
+				95345E89118EACCC006EF65B /* CustomCell.h */,
+				95345E8A118EACCC006EF65B /* CustomCell.m */,
+				95345E65118EA7FC006EF65B /* AttendanceViewCell.h */,
+				95345E66118EA7FC006EF65B /* AttendanceViewCell.m */,
 				9594A273116A9876008AC99A /* AddRollSheetViewController.h */,
 				9594A274116A9876008AC99A /* AddRollSheetViewController.m */,
 				9594A275116A9876008AC99A /* AddRollSheetViewController.xib */,
@@ -908,6 +923,9 @@
 				953454D8118C5A26006EF65B /* EditStatusColorViewController.m in Sources */,
 				95345635118C7BE6006EF65B /* AddStatusViewController.m in Sources */,
 				953458CB118CDCCB006EF65B /* EnrollStudentsViewController.m in Sources */,
+				95345E63118EA7BF006EF65B /* ABTableViewCell.m in Sources */,
+				95345E67118EA7FC006EF65B /* AttendanceViewCell.m in Sources */,
+				95345E8B118EACCC006EF65B /* CustomCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

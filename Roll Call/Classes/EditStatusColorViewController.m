@@ -23,7 +23,7 @@
 - (void)viewDidLoad {
     [self setTitle:@"Pick Color"];
     
-    colors = [[NSArray alloc] initWithObjects:@"Blue", @"Gray", @"Green", @"Orange", @"Purple", @"Red", @"White", @"Yellow", nil];
+    colors = [[NSArray alloc] initWithObjects:@"Blue", @"Gray", @"Green", @"Orange", @"Purple", @"Red", @"Yellow", nil];
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] 
                                              initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancel)];

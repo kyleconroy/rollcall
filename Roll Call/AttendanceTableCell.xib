@@ -76,7 +76,7 @@
 									<bytes key="NSRGB">MSAxIDEgMAA</bytes>
 								</object>
 								<bool key="IBUIOpaque">NO</bool>
-								<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
+								<bool key="IBUIClipsSubviews">YES</bool>
 								<int key="IBUITag">3</int>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<int key="IBUIContentHorizontalAlignment">0</int>
@@ -114,6 +114,7 @@
 								<string key="NSFrameSize">{51, 45}</string>
 								<reference key="NSSuperview" ref="643833839"/>
 								<bool key="IBUIOpaque">NO</bool>
+								<bool key="IBUIClipsSubviews">YES</bool>
 								<int key="IBUITag">1</int>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<int key="IBUIContentHorizontalAlignment">0</int>
@@ -285,7 +286,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">14</int>
+			<int key="maxID">16</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -319,7 +320,6 @@
 							<string>backDate</string>
 							<string>displayDate</string>
 							<string>forwardDate</string>
-							<string>myPickerView</string>
 							<string>myTableView</string>
 							<string>tvCell</string>
 						</object>
@@ -328,7 +328,6 @@
 							<string>UIButton</string>
 							<string>UIButton</string>
 							<string>UIButton</string>
-							<string>UIView</string>
 							<string>UITableView</string>
 							<string>UITableViewCell</string>
 						</object>
@@ -615,7 +614,7 @@
 			</object>
 			<object class="NSMutableArray" key="dict.values">
 				<bool key="EncodedWithXMLCoder">YES</bool>
-				<string>{45, 45}</string>
+				<string>{16, 16}</string>
 				<string>{32, 32}</string>
 				<string>{32, 32}</string>
 			</object>

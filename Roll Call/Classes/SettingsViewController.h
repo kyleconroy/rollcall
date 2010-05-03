@@ -12,7 +12,6 @@
 
 @interface SettingsViewController : UITableViewController <AddStatusDelegate, NSFetchedResultsControllerDelegate> {
     NSFetchedResultsController * statusController;
-    NSMutableArray * statusArray;
     Roll_CallAppDelegate *aD;
     IBOutlet UITableView * myTableView; 
     int rowCount;
@@ -21,7 +20,6 @@
 
 @property(nonatomic, retain) NSFetchedResultsController * statusController;
 @property(nonatomic, assign) Roll_CallAppDelegate * aD;
-@property(nonatomic, retain) NSMutableArray * statusArray;
 @property(nonatomic, retain) IBOutlet UITableView * myTableView;
 @property(nonatomic, assign) int rowCount;
 @property(nonatomic, assign) bool inReorderingOperation;

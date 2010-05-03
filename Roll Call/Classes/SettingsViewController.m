@@ -13,7 +13,6 @@
 
 @implementation SettingsViewController
 
-@synthesize statusArray;
 @synthesize statusController;
 @synthesize aD;
 @synthesize myTableView;
@@ -74,9 +73,6 @@
     }
     
     rowCount = [[[statusController sections] objectAtIndex:0] numberOfObjects];
-    
-    statusArray = [aD getAllStatuses];
-    [statusArray retain];
     
     myTableView.allowsSelectionDuringEditing = YES;
     
@@ -149,8 +145,14 @@
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier] autorelease];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    }
+    
+    if (indexPath.row == 0) {
+        cell.detailTextLabel.text = @"";
+    } else {
+        cell.detailTextLabel.text = @"";
     }
     
     if (indexPath.row >= rowCount) {
@@ -271,6 +273,7 @@ targetIndexPathForMoveFromRowAtIndexPath:(NSIndexPath *)sourceIndexPath
     if (!success)
     {
         NSLog(@"Could not save the reordering");
+
     }
 }
 
@@ -304,7 +307,7 @@ targetIndexPathForMoveFromRowAtIndexPath:(NSIndexPath *)sourceIndexPath
         
         StatusInstanceViewController *addStatusController = [[StatusInstanceViewController alloc] 
                                                           initWithNibName:@"StatusInstanceViewController" bundle:nil];
-        addStatusController.myStatus = [statusArray objectAtIndex:indexPath.row];
+        addStatusController.myStatus = [statusController objectAtIndexPath:indexPath];
         [self.navigationController pushViewController:addStatusController animated:YES];
         [addStatusController release];
         
@@ -412,7 +415,7 @@ targetIndexPathForMoveFromRowAtIndexPath:(NSIndexPath *)sourceIndexPath
             
             [tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath]
              
-                             withRowAnimation:UITableViewRowAnimationFade];
+                             withRowAnimation:UITableViewRowAnimationRight];
             
             break;
             
@@ -425,7 +428,7 @@ targetIndexPathForMoveFromRowAtIndexPath:(NSIndexPath *)sourceIndexPath
             
             [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
              
-                             withRowAnimation:UITableViewRowAnimationFade];
+                             withRowAnimation:UITableViewRowAnimationRight];
             
             break;
             
@@ -445,11 +448,11 @@ targetIndexPathForMoveFromRowAtIndexPath:(NSIndexPath *)sourceIndexPath
             
                 [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
                  
-                                 withRowAnimation:UITableViewRowAnimationFade];
+                                 withRowAnimation:UITableViewRowAnimationRight];
                 
                 [tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath]
                  
-                                 withRowAnimation:UITableViewRowAnimationFade];
+                                 withRowAnimation:UITableViewRowAnimationRight];
             }
             
             break;
@@ -464,7 +467,6 @@ targetIndexPathForMoveFromRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
     
-    [myTableView reloadData];
     [myTableView endUpdates];
     
 }

@@ -38,7 +38,7 @@
                       @"Color", @"section", nil],
                      nil];
     
-    imageName = [NSString stringWithFormat:@"button_%@.png", [@"Blue" lowercaseString]];
+    imageName = [NSString stringWithFormat:@"button_%@.png", @"Blue"];
     letter = @"NS";
     text = @"New Status";
     

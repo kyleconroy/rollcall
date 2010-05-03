@@ -11,7 +11,7 @@
 #import "Roll_CallAppDelegate.h"
 #import "ChangeDateViewController.h"
 
-@interface RollSheetInstance : UIViewController <UITableViewDelegate, DateChangeDelegate> {
+@interface RollSheetInstance : UIViewController <UITableViewDelegate, DateChangeDelegate, NSFetchedResultsControllerDelegate> {
     Course *course;
     Roll_CallAppDelegate *aD;
     
@@ -19,35 +19,37 @@
     NSIndexPath *currentIndexPath;
     NSMutableArray * presencesArray;
     NSMutableArray * statusArray;
+    NSFetchedResultsController * fetchController;
     
     NSDate *myDate;
     NSDate *datePickerDate;
     bool datePickerVisible;
+    bool manualUpdate;
 
     IBOutlet UIButton *backDate;
     IBOutlet UIButton *forwardDate;
     IBOutlet UIButton *displayDate;
     IBOutlet UITableViewCell *tvCell;
     IBOutlet UITableView *myTableView;
-    IBOutlet UIView *myPickerView;
     
 }
 
-@property(nonatomic, retain) Course *course;
-@property(nonatomic, retain) NSMutableArray * presencesArray;
-@property(nonatomic, retain) NSArray * studentsArray;
-@property(nonatomic, retain) NSDate *myDate;
-@property(nonatomic, retain) NSDate *datePickerDate;
-@property(nonatomic, retain) Roll_CallAppDelegate *aD;
+@property (nonatomic, retain) Course *course;
+@property (nonatomic, retain) NSFetchedResultsController * fetchController;
+@property (nonatomic, retain) NSMutableArray * presencesArray;
+@property (nonatomic, retain) NSArray * studentsArray;
+@property (nonatomic, retain) NSDate *myDate;
+@property (nonatomic, retain) NSDate *datePickerDate;
+@property (nonatomic, retain) Roll_CallAppDelegate *aD;
 @property (readwrite, assign) bool datePickerVisible;
-@property(nonatomic, retain) NSIndexPath *currentIndexPath;
-@property(nonatomic, retain) IBOutlet UITableView *myTableView;
-@property(nonatomic, retain) IBOutlet UIView *myPickerView;
-@property(nonatomic, retain) IBOutlet UIButton *backDate;
-@property(nonatomic, retain) IBOutlet UIButton *forwardDate;
-@property(nonatomic, retain) IBOutlet UIButton *displayDate;
-@property(nonatomic, retain) IBOutlet UITableViewCell *tvCell;
-@property(nonatomic, assign) NSMutableArray * statusArray;
+@property (readwrite, assign) bool manualUpdate;
+@property (nonatomic, retain) NSIndexPath *currentIndexPath;
+@property (nonatomic, retain) IBOutlet UITableView *myTableView;
+@property (nonatomic, retain) IBOutlet UIButton *backDate;
+@property (nonatomic, retain) IBOutlet UIButton *forwardDate;
+@property (nonatomic, retain) IBOutlet UIButton *displayDate;
+@property (nonatomic, retain) IBOutlet UITableViewCell *tvCell;
+@property (nonatomic, assign) NSMutableArray * statusArray;
 
 - (IBAction) moveBackOneDay;
 - (IBAction) moveForwardOneDay;
@@ -58,8 +60,8 @@
 - (NSDate *) todayWithDate:(NSDate *)date;
 - (NSDate *) tomorrowWithDate:(NSDate *)date;
 
-- (void) updateDisplayDate;
-- (void) updateAttendance;
+- (void) updateDate:(NSDate *)date;
+- (void) updateAttendance:(UITableViewRowAnimation)rowAnimation;
 - (void) showCourseInfo;
 
 @end
