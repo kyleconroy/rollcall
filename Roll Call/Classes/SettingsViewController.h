@@ -10,17 +10,20 @@
 #import "Roll_CallAppDelegate.h"
 #import "AddStatusViewController.h"
 
-@interface SettingsViewController : UITableViewController <AddStatusDelegate> {
+@interface SettingsViewController : UITableViewController <AddStatusDelegate, NSFetchedResultsControllerDelegate> {
+    NSFetchedResultsController * statusController;
     NSMutableArray * statusArray;
     Roll_CallAppDelegate *aD;
     IBOutlet UITableView * myTableView; 
+    int rowCount;
+    bool inReorderingOperation;
 }
 
+@property(nonatomic, retain) NSFetchedResultsController * statusController;
 @property(nonatomic, assign) Roll_CallAppDelegate * aD;
-@property(nonatomic, assign) NSMutableArray * statusArray;
-@property(nonatomic, assign) IBOutlet UITableView * myTableView;
-
-- (void) editTable;
-- (void) recalculateRank;
+@property(nonatomic, retain) NSMutableArray * statusArray;
+@property(nonatomic, retain) IBOutlet UITableView * myTableView;
+@property(nonatomic, assign) int rowCount;
+@property(nonatomic, assign) bool inReorderingOperation;
 
 @end
