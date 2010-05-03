@@ -52,18 +52,14 @@
     aD = (Roll_CallAppDelegate *)[[UIApplication sharedApplication] delegate];
     myDate = [NSDate date];
     
-    UIButton* infoButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
-    [infoButton addTarget:self action:@selector(showCourseInfo) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem *modalButton = [[UIBarButtonItem alloc] initWithCustomView:infoButton];
-    modalButton.width = 80.0;
-    [self.navigationItem setRightBarButtonItem:modalButton animated:NO];
-    [modalButton release];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Info" 
+                                                style:UIBarButtonItemStylePlain target:self action:@selector(showCourseInfo)];
     
     [self setTitle:course.name];
     
     
     //Get the students, and sort them by last name
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"lastName" ascending:YES];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"firstName" ascending:YES];
     NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
     
     NSMutableArray * ss = [[NSMutableArray alloc] init];
@@ -340,7 +336,13 @@
 - (void) showCourseInfo {
     
     RollSheetInfoViewController *courseInfoController = [[RollSheetInfoViewController alloc] 
-                                                         initWithNibName:@"RollSheetInfoViewController" bundle:nil];
+                                                         initWithNibName:@"AddRollSheetViewController" bundle:nil];
+    
+    courseInfoController.courseName = course.name;
+    courseInfoController.course = course;
+    NSMutableArray *copyOfStudents = [[NSMutableArray alloc] initWithArray:studentsArray];
+    courseInfoController.addedStudents = copyOfStudents;
+    [copyOfStudents release];
     
     [self.navigationController pushViewController:courseInfoController animated:YES];
     

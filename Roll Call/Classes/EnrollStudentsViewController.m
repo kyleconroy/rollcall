@@ -78,19 +78,38 @@
 
 - (void) save {
     NSMutableArray *result = [[NSMutableArray alloc] init];
+    NSMutableArray *added = [[NSMutableArray alloc] init];
+    NSMutableArray *removed = [[NSMutableArray alloc] init];
     
     [chosen sortUsingSelector:@selector(compare:)];
     
     for (NSNumber *n in chosen) {
-        [result addObject:[students objectAtIndex:[n intValue]]];
+        Student *s = [students objectAtIndex:[n intValue]];
+        if (![initial containsObject:s]) {
+            [added addObject:s];
+        }
+        [result addObject:s];
     }
     
+    for (Student *st in initial) {
+        if (![result containsObject:st]) {
+            [removed addObject:st];
+        }
+    }
+
     [delegate enrollStudentsViewController:self withStudents:result];
+    if([delegate respondsToSelector: @selector(enrollStudentsViewController:withAdded:removed:)]) {
+        [delegate enrollStudentsViewController:self withAdded:added removed:removed];
+    }
     
 }
 
 - (void) cancel {
     [delegate enrollStudentsViewController:self withStudents:nil];
+    
+    if([delegate respondsToSelector: @selector(enrollStudentsViewController:withAdded:removed:)]) {
+        [delegate enrollStudentsViewController:self withAdded:nil removed:nil];
+    }
 }
 
 /*

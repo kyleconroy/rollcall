@@ -10,9 +10,9 @@
 	};
 	1D3623250D0F684500981E51 /* Roll_CallAppDelegate.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1053, 3848}}";
-			sepNavSelRange = "{1215, 302}";
-			sepNavVisRange = "{2731, 1573}";
+			sepNavIntBoundsRect = "{{0, 0}, {1143, 3861}}";
+			sepNavSelRange = "{2835, 163}";
+			sepNavVisRange = "{2113, 1579}";
 		};
 	};
 	1D6058900D05DD3D006BFB54 /* Roll Call */ = {
@@ -46,9 +46,10 @@
 		);
 		breakpoints = (
 			95EC83BB11691FC200DA720F /* RollSheetInstance.h:57 */,
-			95EC844C1169235500DA720F /* RollSheetInstance.m:211 */,
-			95EC845B116923C600DA720F /* RollSheetInstance.m:94 */,
+			95EC844C1169235500DA720F /* RollSheetInstance.m:207 */,
+			95EC845B116923C600DA720F /* RollSheetInstance.m:90 */,
 			955E42B1117469A100FF2B8F /* AttendanceTableCell.m:22 */,
+			95345C01118E45B5006EF65B /* RollSheetInfoViewController.m:288 */,
 		);
 		codeSenseManager = 95CAD977115801F100CBC9E9 /* Code sense */;
 		executables = (
@@ -1435,6 +1436,179 @@
 			95345AE9118E002B006EF65B /* PBXTextBookmark */ = 95345AE9118E002B006EF65B /* PBXTextBookmark */;
 			95345AEA118E002B006EF65B /* PBXTextBookmark */ = 95345AEA118E002B006EF65B /* PBXTextBookmark */;
 			95345AEB118E002B006EF65B /* PBXTextBookmark */ = 95345AEB118E002B006EF65B /* PBXTextBookmark */;
+			95345AED118E01D5006EF65B /* PBXTextBookmark */ = 95345AED118E01D5006EF65B /* PBXTextBookmark */;
+			95345AEE118E01D5006EF65B /* PBXTextBookmark */ = 95345AEE118E01D5006EF65B /* PBXTextBookmark */;
+			95345AEF118E01D5006EF65B /* PBXTextBookmark */ = 95345AEF118E01D5006EF65B /* PBXTextBookmark */;
+			95345AF2118E0294006EF65B /* PBXTextBookmark */ = 95345AF2118E0294006EF65B /* PBXTextBookmark */;
+			95345AF3118E0294006EF65B /* PBXTextBookmark */ = 95345AF3118E0294006EF65B /* PBXTextBookmark */;
+			95345AF4118E0294006EF65B /* PBXTextBookmark */ = 95345AF4118E0294006EF65B /* PBXTextBookmark */;
+			95345AF5118E0294006EF65B /* PBXTextBookmark */ = 95345AF5118E0294006EF65B /* PBXTextBookmark */;
+			95345AF9118E10E9006EF65B /* PBXTextBookmark */ = 95345AF9118E10E9006EF65B /* PBXTextBookmark */;
+			95345AFA118E10E9006EF65B /* PBXTextBookmark */ = 95345AFA118E10E9006EF65B /* PBXTextBookmark */;
+			95345AFB118E10E9006EF65B /* PBXTextBookmark */ = 95345AFB118E10E9006EF65B /* PBXTextBookmark */;
+			95345AFD118E123D006EF65B /* PBXTextBookmark */ = 95345AFD118E123D006EF65B /* PBXTextBookmark */;
+			95345AFE118E123D006EF65B /* PBXTextBookmark */ = 95345AFE118E123D006EF65B /* PBXTextBookmark */;
+			95345AFF118E123D006EF65B /* PBXTextBookmark */ = 95345AFF118E123D006EF65B /* PBXTextBookmark */;
+			95345B00118E123D006EF65B /* PBXTextBookmark */ = 95345B00118E123D006EF65B /* PBXTextBookmark */;
+			95345B01118E123D006EF65B /* PBXTextBookmark */ = 95345B01118E123D006EF65B /* PBXTextBookmark */;
+			95345B02118E139F006EF65B /* PBXTextBookmark */ = 95345B02118E139F006EF65B /* PBXTextBookmark */;
+			95345B03118E139F006EF65B /* PBXTextBookmark */ = 95345B03118E139F006EF65B /* PBXTextBookmark */;
+			95345B04118E139F006EF65B /* PBXTextBookmark */ = 95345B04118E139F006EF65B /* PBXTextBookmark */;
+			95345B05118E139F006EF65B /* PBXTextBookmark */ = 95345B05118E139F006EF65B /* PBXTextBookmark */;
+			95345B06118E139F006EF65B /* PBXTextBookmark */ = 95345B06118E139F006EF65B /* PBXTextBookmark */;
+			95345B09118E1601006EF65B /* PBXTextBookmark */ = 95345B09118E1601006EF65B /* PBXTextBookmark */;
+			95345B0A118E1601006EF65B /* PBXTextBookmark */ = 95345B0A118E1601006EF65B /* PBXTextBookmark */;
+			95345B0B118E1601006EF65B /* PBXTextBookmark */ = 95345B0B118E1601006EF65B /* PBXTextBookmark */;
+			95345B0C118E1601006EF65B /* PBXTextBookmark */ = 95345B0C118E1601006EF65B /* PBXTextBookmark */;
+			95345B0D118E1601006EF65B /* PBXTextBookmark */ = 95345B0D118E1601006EF65B /* PBXTextBookmark */;
+			95345B11118E160A006EF65B /* PBXTextBookmark */ = 95345B11118E160A006EF65B /* PBXTextBookmark */;
+			95345B15118E163A006EF65B /* PBXTextBookmark */ = 95345B15118E163A006EF65B /* PBXTextBookmark */;
+			95345B16118E163A006EF65B /* PBXTextBookmark */ = 95345B16118E163A006EF65B /* PBXTextBookmark */;
+			95345B19118E1670006EF65B /* PBXTextBookmark */ = 95345B19118E1670006EF65B /* PBXTextBookmark */;
+			95345B1B118E167A006EF65B /* PBXTextBookmark */ = 95345B1B118E167A006EF65B /* PBXTextBookmark */;
+			95345B1E118E16AD006EF65B /* PBXTextBookmark */ = 95345B1E118E16AD006EF65B /* PBXTextBookmark */;
+			95345B1F118E16AD006EF65B /* PBXTextBookmark */ = 95345B1F118E16AD006EF65B /* PBXTextBookmark */;
+			95345B20118E16AD006EF65B /* PBXTextBookmark */ = 95345B20118E16AD006EF65B /* PBXTextBookmark */;
+			95345B21118E16AD006EF65B /* PBXTextBookmark */ = 95345B21118E16AD006EF65B /* PBXTextBookmark */;
+			95345B23118E16CD006EF65B /* PBXTextBookmark */ = 95345B23118E16CD006EF65B /* PBXTextBookmark */;
+			95345B24118E16CD006EF65B /* PBXTextBookmark */ = 95345B24118E16CD006EF65B /* PBXTextBookmark */;
+			95345B25118E16CD006EF65B /* PBXTextBookmark */ = 95345B25118E16CD006EF65B /* PBXTextBookmark */;
+			95345B26118E16D6006EF65B /* PBXTextBookmark */ = 95345B26118E16D6006EF65B /* PBXTextBookmark */;
+			95345B2B118E170E006EF65B /* PBXTextBookmark */ = 95345B2B118E170E006EF65B /* PBXTextBookmark */;
+			95345B2F118E172A006EF65B /* PBXTextBookmark */ = 95345B2F118E172A006EF65B /* PBXTextBookmark */;
+			95345B30118E172A006EF65B /* PBXTextBookmark */ = 95345B30118E172A006EF65B /* PBXTextBookmark */;
+			95345B33118E1730006EF65B /* PBXTextBookmark */ = 95345B33118E1730006EF65B /* PBXTextBookmark */;
+			95345B34118E1730006EF65B /* PBXTextBookmark */ = 95345B34118E1730006EF65B /* PBXTextBookmark */;
+			95345B37118E178E006EF65B /* PBXTextBookmark */ = 95345B37118E178E006EF65B /* PBXTextBookmark */;
+			95345B38118E178E006EF65B /* PBXTextBookmark */ = 95345B38118E178E006EF65B /* PBXTextBookmark */;
+			95345B39118E178E006EF65B /* PBXTextBookmark */ = 95345B39118E178E006EF65B /* PBXTextBookmark */;
+			95345B3E118E17C0006EF65B /* PBXTextBookmark */ = 95345B3E118E17C0006EF65B /* PBXTextBookmark */;
+			95345B3F118E17C0006EF65B /* PBXTextBookmark */ = 95345B3F118E17C0006EF65B /* PBXTextBookmark */;
+			95345B40118E17C0006EF65B /* PBXTextBookmark */ = 95345B40118E17C0006EF65B /* PBXTextBookmark */;
+			95345B45118E1F3E006EF65B /* PBXTextBookmark */ = 95345B45118E1F3E006EF65B /* PBXTextBookmark */;
+			95345B46118E1F3E006EF65B /* PBXTextBookmark */ = 95345B46118E1F3E006EF65B /* PBXTextBookmark */;
+			95345B47118E1F3E006EF65B /* PBXTextBookmark */ = 95345B47118E1F3E006EF65B /* PBXTextBookmark */;
+			95345B48118E1F3E006EF65B /* PBXTextBookmark */ = 95345B48118E1F3E006EF65B /* PBXTextBookmark */;
+			95345B4C118E1FBD006EF65B /* PBXTextBookmark */ = 95345B4C118E1FBD006EF65B /* PBXTextBookmark */;
+			95345B50118E200C006EF65B /* PBXTextBookmark */ = 95345B50118E200C006EF65B /* PBXTextBookmark */;
+			95345B51118E200C006EF65B /* PBXTextBookmark */ = 95345B51118E200C006EF65B /* PBXTextBookmark */;
+			95345B52118E200C006EF65B /* PBXTextBookmark */ = 95345B52118E200C006EF65B /* PBXTextBookmark */;
+			95345B58118E2073006EF65B /* PBXTextBookmark */ = 95345B58118E2073006EF65B /* PBXTextBookmark */;
+			95345B59118E2073006EF65B /* PBXTextBookmark */ = 95345B59118E2073006EF65B /* PBXTextBookmark */;
+			95345B5A118E2073006EF65B /* PBXTextBookmark */ = 95345B5A118E2073006EF65B /* PBXTextBookmark */;
+			95345B5E118E24EB006EF65B /* PBXTextBookmark */ = 95345B5E118E24EB006EF65B /* PBXTextBookmark */;
+			95345B5F118E24EB006EF65B /* PBXTextBookmark */ = 95345B5F118E24EB006EF65B /* PBXTextBookmark */;
+			95345B60118E24EB006EF65B /* PBXTextBookmark */ = 95345B60118E24EB006EF65B /* PBXTextBookmark */;
+			95345B61118E24EB006EF65B /* PBXTextBookmark */ = 95345B61118E24EB006EF65B /* PBXTextBookmark */;
+			95345B63118E25D7006EF65B /* PBXTextBookmark */ = 95345B63118E25D7006EF65B /* PBXTextBookmark */;
+			95345B64118E25D7006EF65B /* PBXTextBookmark */ = 95345B64118E25D7006EF65B /* PBXTextBookmark */;
+			95345B65118E25D7006EF65B /* PBXTextBookmark */ = 95345B65118E25D7006EF65B /* PBXTextBookmark */;
+			95345B66118E25D7006EF65B /* PBXTextBookmark */ = 95345B66118E25D7006EF65B /* PBXTextBookmark */;
+			95345B69118E2685006EF65B /* PBXTextBookmark */ = 95345B69118E2685006EF65B /* PBXTextBookmark */;
+			95345B6A118E2685006EF65B /* PBXTextBookmark */ = 95345B6A118E2685006EF65B /* PBXTextBookmark */;
+			95345B6B118E2685006EF65B /* PBXTextBookmark */ = 95345B6B118E2685006EF65B /* PBXTextBookmark */;
+			95345B6F118E26E7006EF65B /* PBXTextBookmark */ = 95345B6F118E26E7006EF65B /* PBXTextBookmark */;
+			95345B70118E26E7006EF65B /* PBXTextBookmark */ = 95345B70118E26E7006EF65B /* PBXTextBookmark */;
+			95345B71118E26E7006EF65B /* PBXTextBookmark */ = 95345B71118E26E7006EF65B /* PBXTextBookmark */;
+			95345B75118E275F006EF65B /* PBXTextBookmark */ = 95345B75118E275F006EF65B /* PBXTextBookmark */;
+			95345B76118E275F006EF65B /* PBXTextBookmark */ = 95345B76118E275F006EF65B /* PBXTextBookmark */;
+			95345B77118E275F006EF65B /* PBXTextBookmark */ = 95345B77118E275F006EF65B /* PBXTextBookmark */;
+			95345B78118E275F006EF65B /* PBXTextBookmark */ = 95345B78118E275F006EF65B /* PBXTextBookmark */;
+			95345B79118E275F006EF65B /* PBXTextBookmark */ = 95345B79118E275F006EF65B /* PBXTextBookmark */;
+			95345B7C118E279D006EF65B /* PBXTextBookmark */ = 95345B7C118E279D006EF65B /* PBXTextBookmark */;
+			95345B7F118E2875006EF65B /* PBXTextBookmark */ = 95345B7F118E2875006EF65B /* PBXTextBookmark */;
+			95345B80118E2875006EF65B /* PBXTextBookmark */ = 95345B80118E2875006EF65B /* PBXTextBookmark */;
+			95345B81118E2875006EF65B /* PBXTextBookmark */ = 95345B81118E2875006EF65B /* PBXTextBookmark */;
+			95345B85118E29F5006EF65B /* PBXTextBookmark */ = 95345B85118E29F5006EF65B /* PBXTextBookmark */;
+			95345B86118E29F5006EF65B /* PBXTextBookmark */ = 95345B86118E29F5006EF65B /* PBXTextBookmark */;
+			95345B87118E29F5006EF65B /* PBXTextBookmark */ = 95345B87118E29F5006EF65B /* PBXTextBookmark */;
+			95345B88118E29F5006EF65B /* PBXTextBookmark */ = 95345B88118E29F5006EF65B /* PBXTextBookmark */;
+			95345B8B118E2B1C006EF65B /* PBXTextBookmark */ = 95345B8B118E2B1C006EF65B /* PBXTextBookmark */;
+			95345B8C118E2B1C006EF65B /* PBXTextBookmark */ = 95345B8C118E2B1C006EF65B /* PBXTextBookmark */;
+			95345B8D118E2B1C006EF65B /* PBXTextBookmark */ = 95345B8D118E2B1C006EF65B /* PBXTextBookmark */;
+			95345B8E118E2B1C006EF65B /* PBXTextBookmark */ = 95345B8E118E2B1C006EF65B /* PBXTextBookmark */;
+			95345B8F118E2B1C006EF65B /* PBXTextBookmark */ = 95345B8F118E2B1C006EF65B /* PBXTextBookmark */;
+			95345B94118E2B62006EF65B /* PBXTextBookmark */ = 95345B94118E2B62006EF65B /* PBXTextBookmark */;
+			95345B96118E2B80006EF65B /* PBXTextBookmark */ = 95345B96118E2B80006EF65B /* PBXTextBookmark */;
+			95345B97118E2B87006EF65B /* PBXTextBookmark */ = 95345B97118E2B87006EF65B /* PBXTextBookmark */;
+			95345B9C118E2C0B006EF65B /* PBXTextBookmark */ = 95345B9C118E2C0B006EF65B /* PBXTextBookmark */;
+			95345B9D118E2C0B006EF65B /* PBXTextBookmark */ = 95345B9D118E2C0B006EF65B /* PBXTextBookmark */;
+			95345B9E118E2C0B006EF65B /* PBXTextBookmark */ = 95345B9E118E2C0B006EF65B /* PBXTextBookmark */;
+			95345B9F118E2C0B006EF65B /* PBXTextBookmark */ = 95345B9F118E2C0B006EF65B /* PBXTextBookmark */;
+			95345BA0118E2C0B006EF65B /* PBXTextBookmark */ = 95345BA0118E2C0B006EF65B /* PBXTextBookmark */;
+			95345BA2118E2E4A006EF65B /* PBXTextBookmark */ = 95345BA2118E2E4A006EF65B /* PBXTextBookmark */;
+			95345BA3118E340A006EF65B /* PBXTextBookmark */ = 95345BA3118E340A006EF65B /* PBXTextBookmark */;
+			95345BA4118E340A006EF65B /* PBXTextBookmark */ = 95345BA4118E340A006EF65B /* PBXTextBookmark */;
+			95345BA5118E340A006EF65B /* PBXTextBookmark */ = 95345BA5118E340A006EF65B /* PBXTextBookmark */;
+			95345BA6118E340A006EF65B /* PBXTextBookmark */ = 95345BA6118E340A006EF65B /* PBXTextBookmark */;
+			95345BA7118E340A006EF65B /* PBXTextBookmark */ = 95345BA7118E340A006EF65B /* PBXTextBookmark */;
+			95345BA8118E34B4006EF65B /* PBXTextBookmark */ = 95345BA8118E34B4006EF65B /* PBXTextBookmark */;
+			95345BA9118E34B4006EF65B /* PBXTextBookmark */ = 95345BA9118E34B4006EF65B /* PBXTextBookmark */;
+			95345BAA118E34B4006EF65B /* PBXTextBookmark */ = 95345BAA118E34B4006EF65B /* PBXTextBookmark */;
+			95345BAB118E3514006EF65B /* PBXTextBookmark */ = 95345BAB118E3514006EF65B /* PBXTextBookmark */;
+			95345BAC118E3514006EF65B /* PBXTextBookmark */ = 95345BAC118E3514006EF65B /* PBXTextBookmark */;
+			95345BAD118E3514006EF65B /* PBXTextBookmark */ = 95345BAD118E3514006EF65B /* PBXTextBookmark */;
+			95345BB0118E3543006EF65B /* PBXTextBookmark */ = 95345BB0118E3543006EF65B /* PBXTextBookmark */;
+			95345BB4118E3569006EF65B /* PBXTextBookmark */ = 95345BB4118E3569006EF65B /* PBXTextBookmark */;
+			95345BB7118E356B006EF65B /* PBXTextBookmark */ = 95345BB7118E356B006EF65B /* PBXTextBookmark */;
+			95345BB8118E356B006EF65B /* PBXTextBookmark */ = 95345BB8118E356B006EF65B /* PBXTextBookmark */;
+			95345BBB118E3575006EF65B /* PBXTextBookmark */ = 95345BBB118E3575006EF65B /* PBXTextBookmark */;
+			95345BC0118E35B3006EF65B /* PBXTextBookmark */ = 95345BC0118E35B3006EF65B /* PBXTextBookmark */;
+			95345BC1118E35E4006EF65B /* PBXTextBookmark */ = 95345BC1118E35E4006EF65B /* PBXTextBookmark */;
+			95345BC2118E35E4006EF65B /* PBXTextBookmark */ = 95345BC2118E35E4006EF65B /* PBXTextBookmark */;
+			95345BC3118E35E4006EF65B /* PBXTextBookmark */ = 95345BC3118E35E4006EF65B /* PBXTextBookmark */;
+			95345BC6118E36D0006EF65B /* PBXTextBookmark */ = 95345BC6118E36D0006EF65B /* PBXTextBookmark */;
+			95345BC7118E36D0006EF65B /* PBXTextBookmark */ = 95345BC7118E36D0006EF65B /* PBXTextBookmark */;
+			95345BC8118E36D0006EF65B /* PBXTextBookmark */ = 95345BC8118E36D0006EF65B /* PBXTextBookmark */;
+			95345BC9118E36D0006EF65B /* PBXTextBookmark */ = 95345BC9118E36D0006EF65B /* PBXTextBookmark */;
+			95345BCA118E36D0006EF65B /* PBXTextBookmark */ = 95345BCA118E36D0006EF65B /* PBXTextBookmark */;
+			95345BCE118E36FB006EF65B /* PBXTextBookmark */ = 95345BCE118E36FB006EF65B /* PBXTextBookmark */;
+			95345BCF118E36FB006EF65B /* PBXTextBookmark */ = 95345BCF118E36FB006EF65B /* PBXTextBookmark */;
+			95345BD0118E36FB006EF65B /* PBXTextBookmark */ = 95345BD0118E36FB006EF65B /* PBXTextBookmark */;
+			95345BD3118E3727006EF65B /* PBXTextBookmark */ = 95345BD3118E3727006EF65B /* PBXTextBookmark */;
+			95345BDE118E376A006EF65B /* PBXTextBookmark */ = 95345BDE118E376A006EF65B /* PBXTextBookmark */;
+			95345BDF118E376A006EF65B /* PBXTextBookmark */ = 95345BDF118E376A006EF65B /* PBXTextBookmark */;
+			95345BE1118E38EA006EF65B /* PBXTextBookmark */ = 95345BE1118E38EA006EF65B /* PBXTextBookmark */;
+			95345BE2118E38EA006EF65B /* PBXTextBookmark */ = 95345BE2118E38EA006EF65B /* PBXTextBookmark */;
+			95345BE3118E38EA006EF65B /* PBXTextBookmark */ = 95345BE3118E38EA006EF65B /* PBXTextBookmark */;
+			95345BE4118E38EA006EF65B /* PBXTextBookmark */ = 95345BE4118E38EA006EF65B /* PBXTextBookmark */;
+			95345BE5118E38EA006EF65B /* PBXTextBookmark */ = 95345BE5118E38EA006EF65B /* PBXTextBookmark */;
+			95345BE8118E3A6B006EF65B /* PBXTextBookmark */ = 95345BE8118E3A6B006EF65B /* PBXTextBookmark */;
+			95345BE9118E3A6B006EF65B /* PBXTextBookmark */ = 95345BE9118E3A6B006EF65B /* PBXTextBookmark */;
+			95345BEA118E3A6B006EF65B /* PBXTextBookmark */ = 95345BEA118E3A6B006EF65B /* PBXTextBookmark */;
+			95345BEB118E3A6B006EF65B /* PBXTextBookmark */ = 95345BEB118E3A6B006EF65B /* PBXTextBookmark */;
+			95345BEC118E3A6B006EF65B /* PBXTextBookmark */ = 95345BEC118E3A6B006EF65B /* PBXTextBookmark */;
+			95345BED118E3A6B006EF65B /* PBXTextBookmark */ = 95345BED118E3A6B006EF65B /* PBXTextBookmark */;
+			95345BEF118E3A8D006EF65B /* PBXTextBookmark */ = 95345BEF118E3A8D006EF65B /* PBXTextBookmark */;
+			95345BF2118E3ABC006EF65B /* PBXTextBookmark */ = 95345BF2118E3ABC006EF65B /* PBXTextBookmark */;
+			95345BF3118E3ABC006EF65B /* PBXTextBookmark */ = 95345BF3118E3ABC006EF65B /* PBXTextBookmark */;
+			95345BF9118E43A2006EF65B /* PBXTextBookmark */ = 95345BF9118E43A2006EF65B /* PBXTextBookmark */;
+			95345BFA118E43A2006EF65B /* PBXTextBookmark */ = 95345BFA118E43A2006EF65B /* PBXTextBookmark */;
+			95345BFE118E4589006EF65B /* PBXTextBookmark */ = 95345BFE118E4589006EF65B /* PBXTextBookmark */;
+			95345BFF118E4589006EF65B /* PBXTextBookmark */ = 95345BFF118E4589006EF65B /* PBXTextBookmark */;
+			95345C05118E45B7006EF65B /* PBXTextBookmark */ = 95345C05118E45B7006EF65B /* PBXTextBookmark */;
+			95345C06118E45B7006EF65B /* PBXTextBookmark */ = 95345C06118E45B7006EF65B /* PBXTextBookmark */;
+			95345C08118E5264006EF65B /* PBXTextBookmark */ = 95345C08118E5264006EF65B /* PBXTextBookmark */;
+			95345C09118E5264006EF65B /* PBXTextBookmark */ = 95345C09118E5264006EF65B /* PBXTextBookmark */;
+			95345C0A118E5264006EF65B /* PBXTextBookmark */ = 95345C0A118E5264006EF65B /* PBXTextBookmark */;
+			95345C0B118E5264006EF65B /* PBXTextBookmark */ = 95345C0B118E5264006EF65B /* PBXTextBookmark */;
+			95345C0C118E5264006EF65B /* PBXTextBookmark */ = 95345C0C118E5264006EF65B /* PBXTextBookmark */;
+			95345C0D118E5264006EF65B /* PBXTextBookmark */ = 95345C0D118E5264006EF65B /* PBXTextBookmark */;
+			95345C0E118E52C6006EF65B /* PBXTextBookmark */ = 95345C0E118E52C6006EF65B /* PBXTextBookmark */;
+			95345C0F118E52C6006EF65B /* PBXTextBookmark */ = 95345C0F118E52C6006EF65B /* PBXTextBookmark */;
+			95345C10118E52C6006EF65B /* PBXTextBookmark */ = 95345C10118E52C6006EF65B /* PBXTextBookmark */;
+			95345C11118E52CC006EF65B /* PBXTextBookmark */ = 95345C11118E52CC006EF65B /* PBXTextBookmark */;
+			95345C14118E537D006EF65B /* PBXTextBookmark */ = 95345C14118E537D006EF65B /* PBXTextBookmark */;
+			95345C15118E537D006EF65B /* PBXTextBookmark */ = 95345C15118E537D006EF65B /* PBXTextBookmark */;
+			95345C16118E537D006EF65B /* PBXTextBookmark */ = 95345C16118E537D006EF65B /* PBXTextBookmark */;
+			95345C17118E537D006EF65B /* PBXTextBookmark */ = 95345C17118E537D006EF65B /* PBXTextBookmark */;
+			95345C1B118E5395006EF65B /* PBXTextBookmark */ = 95345C1B118E5395006EF65B /* PBXTextBookmark */;
+			95345C1D118E539E006EF65B /* PBXTextBookmark */ = 95345C1D118E539E006EF65B /* PBXTextBookmark */;
+			95345C1E118E539E006EF65B /* PBXTextBookmark */ = 95345C1E118E539E006EF65B /* PBXTextBookmark */;
+			95345C1F118E539E006EF65B /* XCBuildMessageTextBookmark */ = 95345C1F118E539E006EF65B /* XCBuildMessageTextBookmark */;
+			95345C20118E539E006EF65B /* PBXTextBookmark */ = 95345C20118E539E006EF65B /* PBXTextBookmark */;
+			95345C23118E53CD006EF65B /* PBXTextBookmark */ = 95345C23118E53CD006EF65B /* PBXTextBookmark */;
+			95345C25118E5468006EF65B /* PBXTextBookmark */ = 95345C25118E5468006EF65B /* PBXTextBookmark */;
 			955E420D11742B6500FF2B8F = 955E420D11742B6500FF2B8F /* PBXBookmark */;
 			955E420E11742B6500FF2B8F = 955E420E11742B6500FF2B8F /* PBXBookmark */;
 			955E420F11742B6500FF2B8F = 955E420F11742B6500FF2B8F /* PBXBookmark */;
@@ -1573,8 +1747,8 @@
 	5AB097481168129B00E0CB9F /* RollSheetViewController.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1143, 3315}}";
-			sepNavSelRange = "{8182, 0}";
-			sepNavVisRange = "{6992, 1380}";
+			sepNavSelRange = "{7948, 0}";
+			sepNavVisRange = "{7129, 1249}";
 		};
 	};
 	5AB0974C116812A500E0CB9F /* RollCallDataModel.xcdatamodel */ = {
@@ -1744,7 +1918,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 103";
 		rLen = 0;
-		rLoc = 3385;
+		rLoc = 2745;
 		rType = 0;
 		vrLen = 1757;
 		vrLoc = 2565;
@@ -1795,16 +1969,16 @@
 	};
 	9509E0B3117F88B100A468EB /* SettingsViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1053, 561}}";
-			sepNavSelRange = "{241, 0}";
-			sepNavVisRange = "{0, 664}";
+			sepNavIntBoundsRect = "{{0, 0}, {1143, 567}}";
+			sepNavSelRange = "{540, 16}";
+			sepNavVisRange = "{0, 771}";
 		};
 	};
 	9509E0B4117F88B100A468EB /* SettingsViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1204, 4160}}";
-			sepNavSelRange = "{9057, 0}";
-			sepNavVisRange = "{8710, 728}";
+			sepNavIntBoundsRect = "{{0, 0}, {1143, 4823}}";
+			sepNavSelRange = "{3510, 0}";
+			sepNavVisRange = "{2782, 1190}";
 			sepNavWindowFrame = "{{15, 173}, {1166, 880}}";
 		};
 	};
@@ -1853,7 +2027,7 @@
 		fRef = 9509E0B3117F88B100A468EB /* SettingsViewController.h */;
 		name = "SettingsViewController.h: 22";
 		rLen = 0;
-		rLoc = 612;
+		rLoc = 737;
 		rType = 0;
 		vrLen = 582;
 		vrLoc = 0;
@@ -1863,7 +2037,7 @@
 		fRef = 95B5B82911772B0E00A4A356 /* RollSheetInfoViewController.h */;
 		name = "RollSheetInfoViewController.h: 25";
 		rLen = 0;
-		rLoc = 652;
+		rLoc = 152;
 		rType = 0;
 		vrLen = 718;
 		vrLoc = 0;
@@ -1873,7 +2047,7 @@
 		fRef = 95B5B82A11772B0E00A4A356 /* RollSheetInfoViewController.m */;
 		name = "RollSheetInfoViewController.m: 165";
 		rLen = 0;
-		rLoc = 5245;
+		rLoc = 193;
 		rType = 0;
 		vrLen = 1377;
 		vrLoc = 4966;
@@ -2002,7 +2176,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 15";
 		rLen = 0;
-		rLoc = 361;
+		rLoc = 391;
 		rType = 0;
 		vrLen = 1200;
 		vrLoc = 0;
@@ -2042,7 +2216,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 171";
 		rLen = 0;
-		rLoc = 5199;
+		rLoc = 6770;
 		rType = 0;
 		vrLen = 1944;
 		vrLoc = 3035;
@@ -2172,7 +2346,7 @@
 		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
 		name = "RollSheetInstance.m: 223";
 		rLen = 0;
-		rLoc = 7216;
+		rLoc = 7028;
 		rType = 0;
 		vrLen = 1378;
 		vrLoc = 9395;
@@ -2182,7 +2356,7 @@
 		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
 		name = "RollSheetInstance.m: 307";
 		rLen = 0;
-		rLoc = 9706;
+		rLoc = 9518;
 		rType = 0;
 		vrLen = 1240;
 		vrLoc = 9748;
@@ -2392,7 +2566,7 @@
 		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
 		name = "RollSheetInstance.m: 310";
 		rLen = 0;
-		rLoc = 9784;
+		rLoc = 9596;
 		rType = 0;
 		vrLen = 1343;
 		vrLoc = 9507;
@@ -2402,7 +2576,7 @@
 		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
 		name = "RollSheetInstance.m: 310";
 		rLen = 0;
-		rLoc = 9743;
+		rLoc = 9555;
 		rType = 0;
 		vrLen = 1221;
 		vrLoc = 9842;
@@ -2412,7 +2586,7 @@
 		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
 		name = "RollSheetInstance.m: 312";
 		rLen = 0;
-		rLoc = 9794;
+		rLoc = 9606;
 		rType = 0;
 		vrLen = 1121;
 		vrLoc = 9942;
@@ -2422,7 +2596,7 @@
 		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
 		name = "RollSheetInstance.m: 311";
 		rLen = 0;
-		rLoc = 9784;
+		rLoc = 9596;
 		rType = 0;
 		vrLen = 1124;
 		vrLoc = 9942;
@@ -2492,7 +2666,7 @@
 		fRef = 95B5B82A11772B0E00A4A356 /* RollSheetInfoViewController.m */;
 		name = "RollSheetInfoViewController.m: 165";
 		rLen = 0;
-		rLoc = 5245;
+		rLoc = 193;
 		rType = 0;
 		vrLen = 1374;
 		vrLoc = 4966;
@@ -2502,7 +2676,7 @@
 		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
 		name = "RollSheetInstance.m: 310";
 		rLen = 0;
-		rLoc = 9748;
+		rLoc = 9560;
 		rType = 0;
 		vrLen = 1121;
 		vrLoc = 9942;
@@ -2512,7 +2686,7 @@
 		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
 		name = "RollSheetInstance.m: 310";
 		rLen = 0;
-		rLoc = 9748;
+		rLoc = 9560;
 		rType = 0;
 		vrLen = 1157;
 		vrLoc = 9942;
@@ -2522,7 +2696,7 @@
 		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
 		name = "RollSheetInstance.m: 311";
 		rLen = 0;
-		rLoc = 9749;
+		rLoc = 9561;
 		rType = 0;
 		vrLen = 1157;
 		vrLoc = 9942;
@@ -2576,7 +2750,7 @@
 		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
 		fallbackIsa = XCBuildMessageTextBookmark;
 		rLen = 1;
-		rLoc = 298;
+		rLoc = 294;
 		rType = 1;
 	};
 	9534518D118BE72F006EF65B /* PBXTextBookmark */ = {
@@ -2584,7 +2758,7 @@
 		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
 		name = "RollSheetInstance.m: 311";
 		rLen = 36;
-		rLoc = 9749;
+		rLoc = 9561;
 		rType = 0;
 		vrLen = 776;
 		vrLoc = 9942;
@@ -2624,7 +2798,7 @@
 		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
 		name = "RollSheetInstance.m: 311";
 		rLen = 0;
-		rLoc = 9784;
+		rLoc = 9596;
 		rType = 0;
 		vrLen = 1316;
 		vrLoc = 9945;
@@ -2753,7 +2927,7 @@
 		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
 		name = "RollSheetInstance.m: 311";
 		rLen = 0;
-		rLoc = 9772;
+		rLoc = 9584;
 		rType = 0;
 		vrLen = 1414;
 		vrLoc = 9424;
@@ -2832,7 +3006,7 @@
 		fRef = 95B5B82A11772B0E00A4A356 /* RollSheetInfoViewController.m */;
 		name = "RollSheetInfoViewController.m: 165";
 		rLen = 0;
-		rLoc = 5245;
+		rLoc = 193;
 		rType = 0;
 		vrLen = 1089;
 		vrLoc = 6582;
@@ -2862,7 +3036,7 @@
 		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
 		name = "RollSheetInstance.m: 329";
 		rLen = 0;
-		rLoc = 10210;
+		rLoc = 10022;
 		rType = 0;
 		vrLen = 1306;
 		vrLoc = 9940;
@@ -2872,7 +3046,7 @@
 		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
 		name = "RollSheetInstance.m: 328";
 		rLen = 0;
-		rLoc = 10211;
+		rLoc = 10023;
 		rType = 0;
 		vrLen = 1535;
 		vrLoc = 9794;
@@ -2912,7 +3086,7 @@
 		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
 		name = "RollSheetInstance.m: 328";
 		rLen = 0;
-		rLoc = 10211;
+		rLoc = 10023;
 		rType = 0;
 		vrLen = 1535;
 		vrLoc = 9794;
@@ -2922,7 +3096,7 @@
 		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
 		name = "RollSheetInstance.m: 92";
 		rLen = 0;
-		rLoc = 2783;
+		rLoc = 2595;
 		rType = 0;
 		vrLen = 1433;
 		vrLoc = 1804;
@@ -2932,7 +3106,7 @@
 		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
 		name = "RollSheetInstance.m: 205";
 		rLen = 0;
-		rLoc = 6802;
+		rLoc = 6614;
 		rType = 0;
 		vrLen = 1708;
 		vrLoc = 5358;
@@ -2962,7 +3136,7 @@
 		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
 		name = "RollSheetInstance.m: 202";
 		rLen = 0;
-		rLoc = 6707;
+		rLoc = 6519;
 		rType = 0;
 		vrLen = 1652;
 		vrLoc = 5537;
@@ -2972,7 +3146,7 @@
 		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
 		name = "RollSheetInstance.m: 113";
 		rLen = 0;
-		rLoc = 3527;
+		rLoc = 3339;
 		rType = 0;
 		vrLen = 1377;
 		vrLoc = 2544;
@@ -2992,7 +3166,7 @@
 		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
 		name = "RollSheetInstance.m: 105";
 		rLen = 0;
-		rLoc = 3226;
+		rLoc = 3038;
 		rType = 0;
 		vrLen = 1819;
 		vrLoc = 650;
@@ -3002,7 +3176,7 @@
 		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
 		name = "RollSheetInstance.m: 105";
 		rLen = 0;
-		rLoc = 3226;
+		rLoc = 3038;
 		rType = 0;
 		vrLen = 1788;
 		vrLoc = 681;
@@ -3012,7 +3186,7 @@
 		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
 		name = "RollSheetInstance.m: 230";
 		rLen = 0;
-		rLoc = 7961;
+		rLoc = 7773;
 		rType = 0;
 		vrLen = 1668;
 		vrLoc = 6875;
@@ -3262,7 +3436,7 @@
 		fRef = 9509E0B3117F88B100A468EB /* SettingsViewController.h */;
 		name = "SettingsViewController.h: 22";
 		rLen = 0;
-		rLoc = 612;
+		rLoc = 737;
 		rType = 0;
 		vrLen = 582;
 		vrLoc = 0;
@@ -3272,7 +3446,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 24";
 		rLen = 0;
-		rLoc = 517;
+		rLoc = 547;
 		rType = 0;
 		vrLen = 1738;
 		vrLoc = 3127;
@@ -3282,7 +3456,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 17";
 		rLen = 0;
-		rLoc = 387;
+		rLoc = 417;
 		rType = 0;
 		vrLen = 1145;
 		vrLoc = 3;
@@ -3291,8 +3465,8 @@
 		isa = PBXTextBookmark;
 		fRef = 9509E0B3117F88B100A468EB /* SettingsViewController.h */;
 		name = "SettingsViewController.h: 13";
-		rLen = 222;
-		rLoc = 323;
+		rLen = 298;
+		rLoc = 374;
 		rType = 0;
 		vrLen = 582;
 		vrLoc = 0;
@@ -3312,7 +3486,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 28";
 		rLen = 64;
-		rLoc = 602;
+		rLoc = 2075;
 		rType = 0;
 		vrLen = 1104;
 		vrLoc = 1187;
@@ -3332,7 +3506,7 @@
 		fRef = 95B5B82A11772B0E00A4A356 /* RollSheetInfoViewController.m */;
 		name = "RollSheetInfoViewController.m: 165";
 		rLen = 0;
-		rLoc = 5245;
+		rLoc = 193;
 		rType = 0;
 		vrLen = 1105;
 		vrLoc = 6566;
@@ -3352,7 +3526,7 @@
 		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
 		name = "RollSheetInstance.m: 230";
 		rLen = 0;
-		rLoc = 7740;
+		rLoc = 7552;
 		rType = 0;
 		vrLen = 1370;
 		vrLoc = 6978;
@@ -3362,7 +3536,7 @@
 		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
 		name = "RollSheetInstance.m: 234";
 		rLen = 0;
-		rLoc = 7885;
+		rLoc = 7697;
 		rType = 0;
 		vrLen = 1424;
 		vrLoc = 7029;
@@ -3372,7 +3546,7 @@
 		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
 		name = "RollSheetInstance.m: 228";
 		rLen = 0;
-		rLoc = 7643;
+		rLoc = 7455;
 		rType = 0;
 		vrLen = 1332;
 		vrLoc = 7128;
@@ -3382,7 +3556,7 @@
 		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
 		name = "RollSheetInstance.m: 228";
 		rLen = 0;
-		rLoc = 7643;
+		rLoc = 7455;
 		rType = 0;
 		vrLen = 1422;
 		vrLoc = 7150;
@@ -3392,7 +3566,7 @@
 		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
 		name = "RollSheetInstance.m: 228";
 		rLen = 0;
-		rLoc = 7643;
+		rLoc = 7455;
 		rType = 0;
 		vrLen = 1538;
 		vrLoc = 7153;
@@ -3402,7 +3576,7 @@
 		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
 		name = "RollSheetInstance.m: 228";
 		rLen = 0;
-		rLoc = 7645;
+		rLoc = 7457;
 		rType = 0;
 		vrLen = 1332;
 		vrLoc = 7122;
@@ -3412,7 +3586,7 @@
 		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
 		name = "RollSheetInstance.m: 228";
 		rLen = 0;
-		rLoc = 7673;
+		rLoc = 7485;
 		rType = 0;
 		vrLen = 1332;
 		vrLoc = 7122;
@@ -4282,7 +4456,7 @@
 		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
 		name = "RollSheetInstance.m: 228";
 		rLen = 0;
-		rLoc = 7673;
+		rLoc = 7485;
 		rType = 0;
 		vrLen = 1425;
 		vrLoc = 7029;
@@ -4292,7 +4466,7 @@
 		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
 		name = "RollSheetInstance.m: 228";
 		rLen = 0;
-		rLoc = 7673;
+		rLoc = 7485;
 		rType = 0;
 		vrLen = 1425;
 		vrLoc = 7029;
@@ -4312,7 +4486,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 260";
 		rLen = 5;
-		rLoc = 10107;
+		rLoc = 11016;
 		rType = 0;
 		vrLen = 512;
 		vrLoc = 7471;
@@ -4323,7 +4497,7 @@
 		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
 		fallbackIsa = XCBuildMessageTextBookmark;
 		rLen = 1;
-		rLoc = 233;
+		rLoc = 229;
 		rType = 1;
 	};
 	95345214118BF673006EF65B /* PBXTextBookmark */ = {
@@ -4331,7 +4505,7 @@
 		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
 		name = "RollSheetInstance.m: 231";
 		rLen = 0;
-		rLoc = 7785;
+		rLoc = 7597;
 		rType = 0;
 		vrLen = 848;
 		vrLoc = 7133;
@@ -4341,7 +4515,7 @@
 		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
 		name = "RollSheetInstance.m: 228";
 		rLen = 0;
-		rLoc = 7673;
+		rLoc = 7485;
 		rType = 0;
 		vrLen = 1451;
 		vrLoc = 7029;
@@ -4351,7 +4525,7 @@
 		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
 		name = "RollSheetInstance.m: 228";
 		rLen = 0;
-		rLoc = 7673;
+		rLoc = 7485;
 		rType = 0;
 		vrLen = 1465;
 		vrLoc = 7128;
@@ -4371,7 +4545,7 @@
 		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
 		name = "RollSheetInstance.m: 228";
 		rLen = 0;
-		rLoc = 7673;
+		rLoc = 7485;
 		rType = 0;
 		vrLen = 1468;
 		vrLoc = 7128;
@@ -4381,7 +4555,7 @@
 		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
 		name = "RollSheetInstance.m: 235";
 		rLen = 0;
-		rLoc = 7886;
+		rLoc = 7698;
 		rType = 0;
 		vrLen = 1543;
 		vrLoc = 7133;
@@ -4391,7 +4565,7 @@
 		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
 		name = "RollSheetInstance.m: 235";
 		rLen = 0;
-		rLoc = 7886;
+		rLoc = 7698;
 		rType = 0;
 		vrLen = 1526;
 		vrLoc = 7150;
@@ -4401,7 +4575,7 @@
 		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
 		name = "RollSheetInstance.m: 235";
 		rLen = 0;
-		rLoc = 7886;
+		rLoc = 7698;
 		rType = 0;
 		vrLen = 1572;
 		vrLoc = 7150;
@@ -4411,7 +4585,7 @@
 		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
 		name = "RollSheetInstance.m: 238";
 		rLen = 0;
-		rLoc = 7960;
+		rLoc = 7772;
 		rType = 0;
 		vrLen = 1569;
 		vrLoc = 7153;
@@ -4421,7 +4595,7 @@
 		fRef = 95B5B82A11772B0E00A4A356 /* RollSheetInfoViewController.m */;
 		name = "RollSheetInfoViewController.m: 165";
 		rLen = 0;
-		rLoc = 5245;
+		rLoc = 193;
 		rType = 0;
 		vrLen = 1794;
 		vrLoc = 1062;
@@ -4431,7 +4605,7 @@
 		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
 		name = "RollSheetInstance.m: 124";
 		rLen = 106;
-		rLoc = 3803;
+		rLoc = 3615;
 		rType = 0;
 		vrLen = 1585;
 		vrLoc = 3322;
@@ -4441,7 +4615,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 161";
 		rLen = 0;
-		rLoc = 4732;
+		rLoc = 6303;
 		rType = 0;
 		vrLen = 1142;
 		vrLoc = 0;
@@ -4451,7 +4625,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 196";
 		rLen = 0;
-		rLoc = 5975;
+		rLoc = 7546;
 		rType = 0;
 		vrLen = 1527;
 		vrLoc = 4761;
@@ -4461,7 +4635,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 184";
 		rLen = 0;
-		rLoc = 5730;
+		rLoc = 7301;
 		rType = 0;
 		vrLen = 1465;
 		vrLoc = 4761;
@@ -4471,7 +4645,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 188";
 		rLen = 0;
-		rLoc = 5835;
+		rLoc = 7406;
 		rType = 0;
 		vrLen = 1509;
 		vrLoc = 4802;
@@ -4481,7 +4655,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 188";
 		rLen = 0;
-		rLoc = 5835;
+		rLoc = 7406;
 		rType = 0;
 		vrLen = 1645;
 		vrLoc = 4809;
@@ -4491,7 +4665,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 192";
 		rLen = 0;
-		rLoc = 5939;
+		rLoc = 7510;
 		rType = 0;
 		vrLen = 1529;
 		vrLoc = 4807;
@@ -4501,7 +4675,7 @@
 		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
 		name = "RollSheetInstance.m: 133";
 		rLen = 0;
-		rLoc = 4030;
+		rLoc = 3842;
 		rType = 0;
 		vrLen = 1609;
 		vrLoc = 2835;
@@ -4511,7 +4685,7 @@
 		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
 		name = "RollSheetInstance.m: 135";
 		rLen = 0;
-		rLoc = 4092;
+		rLoc = 3904;
 		rType = 0;
 		vrLen = 1399;
 		vrLoc = 2802;
@@ -4521,7 +4695,7 @@
 		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
 		name = "RollSheetInstance.m: 135";
 		rLen = 0;
-		rLoc = 4092;
+		rLoc = 3904;
 		rType = 0;
 		vrLen = 1399;
 		vrLoc = 2802;
@@ -4541,7 +4715,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 192";
 		rLen = 0;
-		rLoc = 5939;
+		rLoc = 7510;
 		rType = 0;
 		vrLen = 1529;
 		vrLoc = 4807;
@@ -4551,7 +4725,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 231";
 		rLen = 0;
-		rLoc = 8484;
+		rLoc = 9361;
 		rType = 0;
 		vrLen = 1703;
 		vrLoc = 6276;
@@ -4566,9 +4740,9 @@
 	};
 	95345249118C00AA006EF65B /* StatusInstanceViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1083, 2665}}";
-			sepNavSelRange = "{5452, 706}";
-			sepNavVisRange = "{3149, 1796}";
+			sepNavIntBoundsRect = "{{0, 0}, {1143, 2678}}";
+			sepNavSelRange = "{1516, 0}";
+			sepNavVisRange = "{519, 1929}";
 		};
 	};
 	9534524D118C00DF006EF65B /* PBXTextBookmark */ = {
@@ -4596,7 +4770,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 133";
 		rLen = 0;
-		rLoc = 3502;
+		rLoc = 3500;
 		rType = 0;
 		vrLen = 1416;
 		vrLoc = 3077;
@@ -4606,7 +4780,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 231";
 		rLen = 0;
-		rLoc = 8484;
+		rLoc = 9361;
 		rType = 0;
 		vrLen = 1709;
 		vrLoc = 6270;
@@ -4616,7 +4790,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 233";
 		rLen = 0;
-		rLoc = 8484;
+		rLoc = 9361;
 		rType = 0;
 		vrLen = 1727;
 		vrLoc = 6291;
@@ -4626,7 +4800,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 233";
 		rLen = 0;
-		rLoc = 8484;
+		rLoc = 9361;
 		rType = 0;
 		vrLen = 1727;
 		vrLoc = 6291;
@@ -4656,7 +4830,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 164";
 		rLen = 0;
-		rLoc = 6625;
+		rLoc = 6623;
 		rType = 0;
 		vrLen = 1141;
 		vrLoc = 3481;
@@ -4676,7 +4850,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 142";
 		rLen = 0;
-		rLoc = 4839;
+		rLoc = 4837;
 		rType = 0;
 		vrLen = 1337;
 		vrLoc = 1001;
@@ -4696,7 +4870,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 233";
 		rLen = 0;
-		rLoc = 8484;
+		rLoc = 9361;
 		rType = 0;
 		vrLen = 1735;
 		vrLoc = 6285;
@@ -4706,7 +4880,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 232";
 		rLen = 0;
-		rLoc = 8484;
+		rLoc = 9361;
 		rType = 0;
 		vrLen = 1453;
 		vrLoc = 6617;
@@ -4716,7 +4890,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 29";
 		rLen = 0;
-		rLoc = 694;
+		rLoc = 2167;
 		rType = 0;
 		vrLen = 1119;
 		vrLoc = 332;
@@ -4776,7 +4950,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 29";
 		rLen = 0;
-		rLoc = 694;
+		rLoc = 2167;
 		rType = 0;
 		vrLen = 1041;
 		vrLoc = 1185;
@@ -4786,7 +4960,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 92";
 		rLen = 0;
-		rLoc = 2330;
+		rLoc = 2328;
 		rType = 0;
 		vrLen = 1482;
 		vrLoc = 1246;
@@ -4816,7 +4990,7 @@
 		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
 		name = "RollSheetInstance.m: 136";
 		rLen = 2;
-		rLoc = 4093;
+		rLoc = 3905;
 		rType = 0;
 		vrLen = 817;
 		vrLoc = 3628;
@@ -4826,7 +5000,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 232";
 		rLen = 0;
-		rLoc = 8484;
+		rLoc = 9361;
 		rType = 0;
 		vrLen = 958;
 		vrLoc = 7063;
@@ -4895,7 +5069,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 89";
 		rLen = 0;
-		rLoc = 2306;
+		rLoc = 2304;
 		rType = 0;
 		vrLen = 1396;
 		vrLoc = 1219;
@@ -4905,7 +5079,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 86";
 		rLen = 0;
-		rLoc = 2103;
+		rLoc = 2101;
 		rType = 0;
 		vrLen = 1395;
 		vrLoc = 1219;
@@ -4915,7 +5089,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 90";
 		rLen = 0;
-		rLoc = 2424;
+		rLoc = 2422;
 		rType = 0;
 		vrLen = 1574;
 		vrLoc = 1225;
@@ -4925,7 +5099,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 89";
 		rLen = 0;
-		rLoc = 2247;
+		rLoc = 2245;
 		rType = 0;
 		vrLen = 1579;
 		vrLoc = 1225;
@@ -4944,8 +5118,8 @@
 		isa = PBXTextBookmark;
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 37";
-		rLen = 163;
-		rLoc = 1048;
+		rLen = 63;
+		rLoc = 2337;
 		rType = 0;
 		vrLen = 1182;
 		vrLoc = 0;
@@ -4974,8 +5148,8 @@
 		isa = PBXTextBookmark;
 		fRef = 9509E0B3117F88B100A468EB /* SettingsViewController.h */;
 		name = "SettingsViewController.h: 22";
-		rLen = 19;
-		rLoc = 612;
+		rLen = 0;
+		rLoc = 737;
 		rType = 0;
 		vrLen = 582;
 		vrLoc = 0;
@@ -4994,8 +5168,8 @@
 		isa = PBXTextBookmark;
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 197";
-		rLen = 1315;
-		rLoc = 6162;
+		rLen = 597;
+		rLoc = 7733;
 		rType = 0;
 		vrLen = 1834;
 		vrLoc = 5372;
@@ -5005,7 +5179,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 148";
 		rLen = 0;
-		rLoc = 3582;
+		rLoc = 3580;
 		rType = 0;
 		vrLen = 1300;
 		vrLoc = 4072;
@@ -5015,7 +5189,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 101";
 		rLen = 0;
-		rLoc = 2789;
+		rLoc = 2787;
 		rType = 0;
 		vrLen = 2112;
 		vrLoc = 2035;
@@ -5024,8 +5198,8 @@
 		isa = PBXTextBookmark;
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 197";
-		rLen = 1315;
-		rLoc = 6162;
+		rLen = 597;
+		rLoc = 7733;
 		rType = 0;
 		vrLen = 1585;
 		vrLoc = 4842;
@@ -5034,8 +5208,8 @@
 		isa = PBXTextBookmark;
 		fRef = 9509E0B3117F88B100A468EB /* SettingsViewController.h */;
 		name = "SettingsViewController.h: 15";
-		rLen = 223;
-		rLoc = 387;
+		rLen = 299;
+		rLoc = 438;
 		rType = 0;
 		vrLen = 582;
 		vrLoc = 0;
@@ -5045,7 +5219,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 100";
 		rLen = 0;
-		rLoc = 2683;
+		rLoc = 2681;
 		rType = 0;
 		vrLen = 1253;
 		vrLoc = 0;
@@ -5075,7 +5249,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 100";
 		rLen = 0;
-		rLoc = 2683;
+		rLoc = 2681;
 		rType = 0;
 		vrLen = 1253;
 		vrLoc = 0;
@@ -5085,7 +5259,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 109";
 		rLen = 0;
-		rLoc = 3142;
+		rLoc = 3140;
 		rType = 0;
 		vrLen = 1628;
 		vrLoc = 2246;
@@ -5095,7 +5269,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 91";
 		rLen = 0;
-		rLoc = 2230;
+		rLoc = 2228;
 		rType = 0;
 		vrLen = 1630;
 		vrLoc = 1736;
@@ -5104,15 +5278,15 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1143, 598}}";
 			sepNavSelRange = "{541, 36}";
-			sepNavVisRange = "{0, 1185}";
+			sepNavVisRange = "{0, 1169}";
 		};
 	};
 	953452B9118C16F9006EF65B /* EditTextFieldViewController.m */ = {
 		uiCtxt = {
 			sepNavFolds = "{\n    c =     (\n                {\n            l = DetailViewController;\n            r = \"{2183, 24}\";\n            s = 1;\n        },\n                {\n            l = DetailViewController;\n            r = \"{2234, 24}\";\n            s = 1;\n        },\n                {\n            l = \"Nib name\";\n            r = \"{2284, 12}\";\n            s = 1;\n        }\n    );\n    r = \"{0, 3550}\";\n    s = 0;\n}";
-			sepNavIntBoundsRect = "{{0, 0}, {1143, 1794}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1143, 1872}}";
 			sepNavSelRange = "{1012, 0}";
-			sepNavVisRange = "{308, 1150}";
+			sepNavVisRange = "{308, 1149}";
 			sepNavWindowFrame = "{{170, 64}, {1166, 880}}";
 		};
 	};
@@ -5195,7 +5369,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 136";
 		rLen = 0;
-		rLoc = 3582;
+		rLoc = 3580;
 		rType = 0;
 		vrLen = 1642;
 		vrLoc = 3345;
@@ -5205,7 +5379,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 148";
 		rLen = 0;
-		rLoc = 5549;
+		rLoc = 5547;
 		rType = 0;
 		vrLen = 1400;
 		vrLoc = 4111;
@@ -5225,7 +5399,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 139";
 		rLen = 0;
-		rLoc = 3582;
+		rLoc = 3580;
 		rType = 0;
 		vrLen = 1401;
 		vrLoc = 4111;
@@ -5245,7 +5419,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 139";
 		rLen = 0;
-		rLoc = 3582;
+		rLoc = 3580;
 		rType = 0;
 		vrLen = 1401;
 		vrLoc = 4111;
@@ -5265,7 +5439,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 139";
 		rLen = 0;
-		rLoc = 3582;
+		rLoc = 3580;
 		rType = 0;
 		vrLen = 1401;
 		vrLoc = 4111;
@@ -5305,7 +5479,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 139";
 		rLen = 0;
-		rLoc = 3582;
+		rLoc = 3580;
 		rType = 0;
 		vrLen = 1406;
 		vrLoc = 4108;
@@ -5315,7 +5489,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 150";
 		rLen = 0;
-		rLoc = 6155;
+		rLoc = 6153;
 		rType = 0;
 		vrLen = 1427;
 		vrLoc = 4112;
@@ -5365,7 +5539,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 148";
 		rLen = 0;
-		rLoc = 5594;
+		rLoc = 5592;
 		rType = 0;
 		vrLen = 1427;
 		vrLoc = 4112;
@@ -5375,7 +5549,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 148";
 		rLen = 0;
-		rLoc = 5568;
+		rLoc = 5566;
 		rType = 0;
 		vrLen = 1490;
 		vrLoc = 4116;
@@ -5405,7 +5579,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 148";
 		rLen = 0;
-		rLoc = 5568;
+		rLoc = 5566;
 		rType = 0;
 		vrLen = 1380;
 		vrLoc = 52;
@@ -5486,7 +5660,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		fallbackIsa = XCBuildMessageTextBookmark;
 		rLen = 0;
-		rLoc = 108;
+		rLoc = 106;
 		rType = 1;
 	};
 	95345300118C1CA7006EF65B /* PBXTextBookmark */ = {
@@ -5494,7 +5668,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 141";
 		rLen = 0;
-		rLoc = 3582;
+		rLoc = 3580;
 		rType = 0;
 		vrLen = 1379;
 		vrLoc = 4136;
@@ -5514,7 +5688,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 141";
 		rLen = 0;
-		rLoc = 3582;
+		rLoc = 3580;
 		rType = 0;
 		vrLen = 1360;
 		vrLoc = 4131;
@@ -5534,7 +5708,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 141";
 		rLen = 0;
-		rLoc = 3582;
+		rLoc = 3580;
 		rType = 0;
 		vrLen = 1469;
 		vrLoc = 4137;
@@ -5564,7 +5738,7 @@
 		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
 		name = "RollSheetInstance.m: 135";
 		rLen = 0;
-		rLoc = 4092;
+		rLoc = 3904;
 		rType = 0;
 		vrLen = 1193;
 		vrLoc = 27;
@@ -5574,7 +5748,7 @@
 		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
 		name = "RollSheetInstance.m: 135";
 		rLen = 0;
-		rLoc = 4092;
+		rLoc = 3904;
 		rType = 0;
 		vrLen = 1394;
 		vrLoc = 3628;
@@ -5594,7 +5768,7 @@
 		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
 		name = "RollSheetInstance.m: 135";
 		rLen = 0;
-		rLoc = 4092;
+		rLoc = 3904;
 		rType = 0;
 		vrLen = 1425;
 		vrLoc = 3628;
@@ -5604,7 +5778,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 141";
 		rLen = 0;
-		rLoc = 3582;
+		rLoc = 3580;
 		rType = 0;
 		vrLen = 1342;
 		vrLoc = 4387;
@@ -5670,7 +5844,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 141";
 		rLen = 0;
-		rLoc = 3582;
+		rLoc = 3580;
 		rType = 0;
 		vrLen = 1020;
 		vrLoc = 4386;
@@ -5680,7 +5854,7 @@
 		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
 		name = "RollSheetInstance.m: 135";
 		rLen = 0;
-		rLoc = 4092;
+		rLoc = 3904;
 		rType = 0;
 		vrLen = 1815;
 		vrLoc = 5860;
@@ -6109,7 +6283,7 @@
 		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
 		name = "RollSheetInstance.m: 201";
 		rLen = 0;
-		rLoc = 6419;
+		rLoc = 6231;
 		rType = 0;
 		vrLen = 1764;
 		vrLoc = 5860;
@@ -6259,7 +6433,7 @@
 		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
 		name = "RollSheetInstance.m: 201";
 		rLen = 0;
-		rLoc = 6419;
+		rLoc = 6231;
 		rType = 0;
 		vrLen = 1523;
 		vrLoc = 9892;
@@ -6549,7 +6723,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 151";
 		rLen = 0;
-		rLoc = 6142;
+		rLoc = 6140;
 		rType = 0;
 		vrLen = 1280;
 		vrLoc = 0;
@@ -6639,7 +6813,7 @@
 		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
 		name = "RollSheetInstance.m: 135";
 		rLen = 0;
-		rLoc = 4092;
+		rLoc = 3904;
 		rType = 0;
 		vrLen = 1125;
 		vrLoc = 0;
@@ -6809,7 +6983,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 151";
 		rLen = 0;
-		rLoc = 6142;
+		rLoc = 6140;
 		rType = 0;
 		vrLen = 1372;
 		vrLoc = 0;
@@ -6819,7 +6993,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 141";
 		rLen = 0;
-		rLoc = 3582;
+		rLoc = 3580;
 		rType = 0;
 		vrLen = 1408;
 		vrLoc = 3944;
@@ -6839,7 +7013,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 141";
 		rLen = 0;
-		rLoc = 3582;
+		rLoc = 3580;
 		rType = 0;
 		vrLen = 1333;
 		vrLoc = 4436;
@@ -6859,7 +7033,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 142";
 		rLen = 0;
-		rLoc = 3582;
+		rLoc = 3580;
 		rType = 0;
 		vrLen = 1522;
 		vrLoc = 3948;
@@ -6899,7 +7073,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 65";
 		rLen = 7;
-		rLoc = 2417;
+		rLoc = 2415;
 		rType = 0;
 		vrLen = 1456;
 		vrLoc = 1070;
@@ -6919,7 +7093,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 141";
 		rLen = 0;
-		rLoc = 3582;
+		rLoc = 3580;
 		rType = 0;
 		vrLen = 1552;
 		vrLoc = 4133;
@@ -6939,7 +7113,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 141";
 		rLen = 0;
-		rLoc = 3582;
+		rLoc = 3580;
 		rType = 0;
 		vrLen = 926;
 		vrLoc = 4386;
@@ -7058,7 +7232,7 @@
 		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
 		name = "RollSheetInstance.m: 123";
 		rLen = 106;
-		rLoc = 3803;
+		rLoc = 3615;
 		rType = 0;
 		vrLen = 1628;
 		vrLoc = 2893;
@@ -7148,7 +7322,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 172";
 		rLen = 0;
-		rLoc = 6092;
+		rLoc = 6090;
 		rType = 0;
 		vrLen = 993;
 		vrLoc = 5596;
@@ -7168,7 +7342,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 164";
 		rLen = 0;
-		rLoc = 5632;
+		rLoc = 5630;
 		rType = 0;
 		vrLen = 1542;
 		vrLoc = 0;
@@ -7217,7 +7391,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 170";
 		rLen = 0;
-		rLoc = 5655;
+		rLoc = 5653;
 		rType = 0;
 		vrLen = 1448;
 		vrLoc = 4549;
@@ -7257,7 +7431,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 147";
 		rLen = 0;
-		rLoc = 3582;
+		rLoc = 3580;
 		rType = 0;
 		vrLen = 1448;
 		vrLoc = 4549;
@@ -7267,7 +7441,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 147";
 		rLen = 0;
-		rLoc = 3582;
+		rLoc = 3580;
 		rType = 0;
 		vrLen = 1574;
 		vrLoc = 4300;
@@ -7297,7 +7471,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 172";
 		rLen = 0;
-		rLoc = 5655;
+		rLoc = 5653;
 		rType = 0;
 		vrLen = 1447;
 		vrLoc = 1239;
@@ -7337,7 +7511,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 172";
 		rLen = 0;
-		rLoc = 5655;
+		rLoc = 5653;
 		rType = 0;
 		vrLen = 1544;
 		vrLoc = 4576;
@@ -7357,7 +7531,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 172";
 		rLen = 0;
-		rLoc = 5655;
+		rLoc = 5653;
 		rType = 0;
 		vrLen = 1636;
 		vrLoc = 4577;
@@ -7377,7 +7551,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 172";
 		rLen = 0;
-		rLoc = 5655;
+		rLoc = 5653;
 		rType = 0;
 		vrLen = 1641;
 		vrLoc = 4625;
@@ -7397,7 +7571,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 172";
 		rLen = 0;
-		rLoc = 5655;
+		rLoc = 5653;
 		rType = 0;
 		vrLen = 1713;
 		vrLoc = 4625;
@@ -7407,7 +7581,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 172";
 		rLen = 0;
-		rLoc = 5655;
+		rLoc = 5653;
 		rType = 0;
 		vrLen = 1713;
 		vrLoc = 4625;
@@ -7437,7 +7611,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 174";
 		rLen = 0;
-		rLoc = 6140;
+		rLoc = 6138;
 		rType = 0;
 		vrLen = 1713;
 		vrLoc = 4625;
@@ -7486,7 +7660,7 @@
 		isa = PBXTextBookmark;
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		rLen = 0;
-		rLoc = 172;
+		rLoc = 170;
 		rType = 1;
 	};
 	9534545F118C4842006EF65B /* PBXTextBookmark */ = {
@@ -7494,7 +7668,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 172";
 		rLen = 0;
-		rLoc = 5655;
+		rLoc = 5653;
 		rType = 0;
 		vrLen = 1712;
 		vrLoc = 4626;
@@ -7514,7 +7688,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 172";
 		rLen = 0;
-		rLoc = 5655;
+		rLoc = 5653;
 		rType = 0;
 		vrLen = 1592;
 		vrLoc = 1293;
@@ -7534,7 +7708,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 118";
 		rLen = 0;
-		rLoc = 3431;
+		rLoc = 3429;
 		rType = 0;
 		vrLen = 1536;
 		vrLoc = 4961;
@@ -7574,7 +7748,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 118";
 		rLen = 0;
-		rLoc = 3431;
+		rLoc = 3429;
 		rType = 0;
 		vrLen = 1536;
 		vrLoc = 4961;
@@ -7584,7 +7758,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 161";
 		rLen = 0;
-		rLoc = 5655;
+		rLoc = 5653;
 		rType = 0;
 		vrLen = 1429;
 		vrLoc = 5029;
@@ -7604,7 +7778,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 177";
 		rLen = 0;
-		rLoc = 6092;
+		rLoc = 6090;
 		rType = 0;
 		vrLen = 1500;
 		vrLoc = 4809;
@@ -7624,7 +7798,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 177";
 		rLen = 0;
-		rLoc = 6092;
+		rLoc = 6090;
 		rType = 0;
 		vrLen = 1500;
 		vrLoc = 4809;
@@ -7633,7 +7807,7 @@
 		isa = PBXTextBookmark;
 		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
 		rLen = 0;
-		rLoc = 131;
+		rLoc = 127;
 		rType = 1;
 	};
 	95345479118C4954006EF65B /* PBXTextBookmark */ = {
@@ -7641,7 +7815,7 @@
 		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
 		name = "RollSheetInstance.m: 132";
 		rLen = 0;
-		rLoc = 3987;
+		rLoc = 3799;
 		rType = 0;
 		vrLen = 1571;
 		vrLoc = 2950;
@@ -7661,7 +7835,7 @@
 		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
 		name = "RollSheetInstance.m: 124";
 		rLen = 0;
-		rLoc = 3874;
+		rLoc = 3686;
 		rType = 0;
 		vrLen = 1606;
 		vrLoc = 2834;
@@ -7670,8 +7844,8 @@
 		isa = PBXTextBookmark;
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 197";
-		rLen = 1315;
-		rLoc = 6162;
+		rLen = 597;
+		rLoc = 7733;
 		rType = 0;
 		vrLen = 1577;
 		vrLoc = 4850;
@@ -7681,7 +7855,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 49";
 		rLen = 0;
-		rLoc = 1370;
+		rLoc = 2559;
 		rType = 0;
 		vrLen = 1154;
 		vrLoc = 226;
@@ -7701,7 +7875,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 49";
 		rLen = 0;
-		rLoc = 1370;
+		rLoc = 2559;
 		rType = 0;
 		vrLen = 1119;
 		vrLoc = 266;
@@ -7721,7 +7895,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 31";
 		rLen = 0;
-		rLoc = 766;
+		rLoc = 2239;
 		rType = 0;
 		vrLen = 1153;
 		vrLoc = 32;
@@ -7741,7 +7915,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 31";
 		rLen = 0;
-		rLoc = 766;
+		rLoc = 2239;
 		rType = 0;
 		vrLen = 1153;
 		vrLoc = 32;
@@ -7761,7 +7935,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 177";
 		rLen = 0;
-		rLoc = 6092;
+		rLoc = 6090;
 		rType = 0;
 		vrLen = 1435;
 		vrLoc = 373;
@@ -7770,8 +7944,8 @@
 		isa = PBXTextBookmark;
 		fRef = 9509E0B3117F88B100A468EB /* SettingsViewController.h */;
 		name = "SettingsViewController.h: 15";
-		rLen = 223;
-		rLoc = 387;
+		rLen = 299;
+		rLoc = 438;
 		rType = 0;
 		vrLen = 582;
 		vrLoc = 0;
@@ -7790,8 +7964,8 @@
 		isa = PBXTextBookmark;
 		fRef = 9509E0B3117F88B100A468EB /* SettingsViewController.h */;
 		name = "SettingsViewController.h: 15";
-		rLen = 223;
-		rLoc = 387;
+		rLen = 299;
+		rLoc = 438;
 		rType = 0;
 		vrLen = 582;
 		vrLoc = 0;
@@ -7801,7 +7975,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 102";
 		rLen = 0;
-		rLoc = 3431;
+		rLoc = 3429;
 		rType = 0;
 		vrLen = 1621;
 		vrLoc = 2428;
@@ -7821,7 +7995,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 101";
 		rLen = 0;
-		rLoc = 3431;
+		rLoc = 3429;
 		rType = 0;
 		vrLen = 1627;
 		vrLoc = 2428;
@@ -7841,7 +8015,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 72";
 		rLen = 0;
-		rLoc = 2432;
+		rLoc = 2430;
 		rType = 0;
 		vrLen = 1601;
 		vrLoc = 1414;
@@ -7861,7 +8035,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 59";
 		rLen = 0;
-		rLoc = 1737;
+		rLoc = 1735;
 		rType = 0;
 		vrLen = 1566;
 		vrLoc = 1452;
@@ -7881,7 +8055,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 71";
 		rLen = 0;
-		rLoc = 2373;
+		rLoc = 2371;
 		rType = 0;
 		vrLen = 1567;
 		vrLoc = 1452;
@@ -7891,7 +8065,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 72";
 		rLen = 0;
-		rLoc = 2432;
+		rLoc = 2430;
 		rType = 0;
 		vrLen = 1553;
 		vrLoc = 1466;
@@ -7911,7 +8085,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 73";
 		rLen = 0;
-		rLoc = 2432;
+		rLoc = 2430;
 		rType = 0;
 		vrLen = 1558;
 		vrLoc = 1466;
@@ -7931,7 +8105,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 78";
 		rLen = 0;
-		rLoc = 2578;
+		rLoc = 2576;
 		rType = 0;
 		vrLen = 1638;
 		vrLoc = 1469;
@@ -7951,7 +8125,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 76";
 		rLen = 0;
-		rLoc = 2492;
+		rLoc = 2490;
 		rType = 0;
 		vrLen = 1644;
 		vrLoc = 2681;
@@ -7971,7 +8145,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 101";
 		rLen = 0;
-		rLoc = 3431;
+		rLoc = 3429;
 		rType = 0;
 		vrLen = 1472;
 		vrLoc = 1088;
@@ -8031,7 +8205,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 24";
 		rLen = 0;
-		rLoc = 509;
+		rLoc = 539;
 		rType = 0;
 		vrLen = 1123;
 		vrLoc = 265;
@@ -8041,7 +8215,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 239";
 		rLen = 0;
-		rLoc = 9641;
+		rLoc = 10518;
 		rType = 0;
 		vrLen = 1714;
 		vrLoc = 6336;
@@ -8051,7 +8225,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 241";
 		rLen = 0;
-		rLoc = 9641;
+		rLoc = 10518;
 		rType = 0;
 		vrLen = 1700;
 		vrLoc = 6336;
@@ -8061,7 +8235,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 143";
 		rLen = 0;
-		rLoc = 4280;
+		rLoc = 5851;
 		rType = 0;
 		vrLen = 1678;
 		vrLoc = 3219;
@@ -8071,7 +8245,7 @@
 		fRef = 9509E0B3117F88B100A468EB /* SettingsViewController.h */;
 		name = "SettingsViewController.h: 23";
 		rLen = 0;
-		rLoc = 657;
+		rLoc = 764;
 		rType = 0;
 		vrLen = 608;
 		vrLoc = 0;
@@ -8081,7 +8255,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 187";
 		rLen = 0;
-		rLoc = 5835;
+		rLoc = 7406;
 		rType = 0;
 		vrLen = 1707;
 		vrLoc = 5214;
@@ -8091,7 +8265,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 155";
 		rLen = 0;
-		rLoc = 4728;
+		rLoc = 6299;
 		rType = 0;
 		vrLen = 1488;
 		vrLoc = 3777;
@@ -8101,7 +8275,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 143";
 		rLen = 0;
-		rLoc = 4206;
+		rLoc = 5777;
 		rType = 0;
 		vrLen = 1456;
 		vrLoc = 3543;
@@ -8111,7 +8285,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 151";
 		rLen = 0;
-		rLoc = 4616;
+		rLoc = 6187;
 		rType = 0;
 		vrLen = 1500;
 		vrLoc = 3543;
@@ -8131,7 +8305,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 126";
 		rLen = 0;
-		rLoc = 4818;
+		rLoc = 4816;
 		rType = 0;
 		vrLen = 1696;
 		vrLoc = 3112;
@@ -8175,7 +8349,7 @@
 		fRef = 9509E0B3117F88B100A468EB /* SettingsViewController.h */;
 		name = "SettingsViewController.h: 23";
 		rLen = 0;
-		rLoc = 657;
+		rLoc = 764;
 		rType = 0;
 		vrLen = 608;
 		vrLoc = 0;
@@ -8206,7 +8380,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		fallbackIsa = XCBuildMessageTextBookmark;
 		rLen = 1;
-		rLoc = 133;
+		rLoc = 131;
 		rType = 1;
 	};
 	953454E7118C5BA8006EF65B /* PBXTextBookmark */ = {
@@ -8214,7 +8388,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 123";
 		rLen = 0;
-		rLoc = 4314;
+		rLoc = 4312;
 		rType = 0;
 		vrLen = 1684;
 		vrLoc = 3502;
@@ -8254,7 +8428,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 128";
 		rLen = 0;
-		rLoc = 4507;
+		rLoc = 4505;
 		rType = 0;
 		vrLen = 1684;
 		vrLoc = 3502;
@@ -8668,7 +8842,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 143";
 		rLen = 0;
-		rLoc = 5450;
+		rLoc = 5448;
 		rType = 0;
 		vrLen = 1735;
 		vrLoc = 3578;
@@ -8748,7 +8922,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 145";
 		rLen = 0;
-		rLoc = 5306;
+		rLoc = 5304;
 		rType = 0;
 		vrLen = 1441;
 		vrLoc = 4433;
@@ -8828,7 +9002,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 145";
 		rLen = 0;
-		rLoc = 5306;
+		rLoc = 5304;
 		rType = 0;
 		vrLen = 1441;
 		vrLoc = 4433;
@@ -8838,7 +9012,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 132";
 		rLen = 0;
-		rLoc = 4634;
+		rLoc = 4632;
 		rType = 0;
 		vrLen = 1860;
 		vrLoc = 3544;
@@ -8878,7 +9052,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 132";
 		rLen = 0;
-		rLoc = 4634;
+		rLoc = 4632;
 		rType = 0;
 		vrLen = 1860;
 		vrLoc = 3544;
@@ -8948,7 +9122,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 132";
 		rLen = 0;
-		rLoc = 4634;
+		rLoc = 4632;
 		rType = 0;
 		vrLen = 1876;
 		vrLoc = 3529;
@@ -8958,7 +9132,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 150";
 		rLen = 0;
-		rLoc = 5448;
+		rLoc = 5446;
 		rType = 0;
 		vrLen = 1317;
 		vrLoc = 4938;
@@ -8998,7 +9172,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 148";
 		rLen = 0;
-		rLoc = 5374;
+		rLoc = 5372;
 		rType = 0;
 		vrLen = 1255;
 		vrLoc = 5039;
@@ -9038,7 +9212,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 146";
 		rLen = 0;
-		rLoc = 5034;
+		rLoc = 5032;
 		rType = 0;
 		vrLen = 1484;
 		vrLoc = 4411;
@@ -9078,7 +9252,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 133";
 		rLen = 0;
-		rLoc = 4634;
+		rLoc = 4632;
 		rType = 0;
 		vrLen = 1875;
 		vrLoc = 3673;
@@ -9118,7 +9292,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 133";
 		rLen = 0;
-		rLoc = 4634;
+		rLoc = 4632;
 		rType = 0;
 		vrLen = 1875;
 		vrLoc = 3673;
@@ -9158,7 +9332,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 137";
 		rLen = 0;
-		rLoc = 4634;
+		rLoc = 4632;
 		rType = 0;
 		vrLen = 1964;
 		vrLoc = 3711;
@@ -9198,7 +9372,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 133";
 		rLen = 0;
-		rLoc = 4700;
+		rLoc = 4698;
 		rType = 0;
 		vrLen = 1801;
 		vrLoc = 3397;
@@ -9318,7 +9492,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 155";
 		rLen = 0;
-		rLoc = 5374;
+		rLoc = 5372;
 		rType = 0;
 		vrLen = 1372;
 		vrLoc = 4834;
@@ -9359,7 +9533,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		fallbackIsa = XCBuildMessageTextBookmark;
 		rLen = 1;
-		rLoc = 133;
+		rLoc = 131;
 		rType = 1;
 	};
 	95345596118C6ADD006EF65B /* PBXTextBookmark */ = {
@@ -9367,7 +9541,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 139";
 		rLen = 0;
-		rLoc = 4839;
+		rLoc = 4837;
 		rType = 0;
 		vrLen = 655;
 		vrLoc = 0;
@@ -9381,7 +9555,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 155";
 		rLen = 0;
-		rLoc = 5374;
+		rLoc = 5372;
 		rType = 0;
 		vrLen = 1606;
 		vrLoc = 0;
@@ -9431,7 +9605,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 69";
 		rLen = 0;
-		rLoc = 2171;
+		rLoc = 2169;
 		rType = 0;
 		vrLen = 1478;
 		vrLoc = 1463;
@@ -9471,7 +9645,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 69";
 		rLen = 0;
-		rLoc = 2171;
+		rLoc = 2169;
 		rType = 0;
 		vrLen = 1478;
 		vrLoc = 1463;
@@ -10073,7 +10247,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 151";
 		rLen = 0;
-		rLoc = 4616;
+		rLoc = 6187;
 		rType = 0;
 		vrLen = 2022;
 		vrLoc = 6138;
@@ -10083,7 +10257,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 151";
 		rLen = 0;
-		rLoc = 4616;
+		rLoc = 6187;
 		rType = 0;
 		vrLen = 1906;
 		vrLoc = 6254;
@@ -10113,7 +10287,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 255";
 		rLen = 0;
-		rLoc = 8739;
+		rLoc = 9616;
 		rType = 0;
 		vrLen = 1560;
 		vrLoc = 6887;
@@ -10143,7 +10317,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 255";
 		rLen = 0;
-		rLoc = 8739;
+		rLoc = 9616;
 		rType = 0;
 		vrLen = 1569;
 		vrLoc = 6878;
@@ -10153,7 +10327,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 255";
 		rLen = 0;
-		rLoc = 8739;
+		rLoc = 9616;
 		rType = 0;
 		vrLen = 1554;
 		vrLoc = 6917;
@@ -10183,7 +10357,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 31";
 		rLen = 0;
-		rLoc = 723;
+		rLoc = 2196;
 		rType = 0;
 		vrLen = 1197;
 		vrLoc = 46;
@@ -10213,7 +10387,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 31";
 		rLen = 0;
-		rLoc = 723;
+		rLoc = 2196;
 		rType = 0;
 		vrLen = 1482;
 		vrLoc = 7185;
@@ -10247,9 +10421,9 @@
 	};
 	95345633118C7BE6006EF65B /* AddStatusViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1053, 2587}}";
-			sepNavSelRange = "{574, 74}";
-			sepNavVisRange = "{0, 1329}";
+			sepNavIntBoundsRect = "{{0, 0}, {1143, 2366}}";
+			sepNavSelRange = "{4413, 0}";
+			sepNavVisRange = "{3605, 1594}";
 		};
 	};
 	95345637118C7BEC006EF65B /* PBXTextBookmark */ = {
@@ -10257,7 +10431,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 248";
 		rLen = 0;
-		rLoc = 8484;
+		rLoc = 9361;
 		rType = 0;
 		vrLen = 1652;
 		vrLoc = 6677;
@@ -10267,7 +10441,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 69";
 		rLen = 0;
-		rLoc = 2171;
+		rLoc = 2169;
 		rType = 0;
 		vrLen = 1478;
 		vrLoc = 1463;
@@ -10277,7 +10451,7 @@
 		fRef = 9509E0B3117F88B100A468EB /* SettingsViewController.h */;
 		name = "SettingsViewController.h: 23";
 		rLen = 0;
-		rLoc = 657;
+		rLoc = 764;
 		rType = 0;
 		vrLen = 608;
 		vrLoc = 0;
@@ -10346,7 +10520,7 @@
 		isa = PBXTextBookmark;
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 1";
-		rLen = 6658;
+		rLen = 6656;
 		rLoc = 0;
 		rType = 0;
 		vrLen = 1478;
@@ -10447,7 +10621,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 134";
 		rLen = 0;
-		rLoc = 4839;
+		rLoc = 4837;
 		rType = 0;
 		vrLen = 657;
 		vrLoc = 0;
@@ -10516,7 +10690,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 248";
 		rLen = 0;
-		rLoc = 8484;
+		rLoc = 9361;
 		rType = 0;
 		vrLen = 1709;
 		vrLoc = 6677;
@@ -10526,7 +10700,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 258";
 		rLen = 0;
-		rLoc = 8484;
+		rLoc = 9361;
 		rType = 0;
 		vrLen = 1732;
 		vrLoc = 7014;
@@ -10556,7 +10730,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 252";
 		rLen = 0;
-		rLoc = 8037;
+		rLoc = 8902;
 		rType = 0;
 		vrLen = 1739;
 		vrLoc = 7014;
@@ -10586,7 +10760,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 252";
 		rLen = 0;
-		rLoc = 8037;
+		rLoc = 8902;
 		rType = 0;
 		vrLen = 1335;
 		vrLoc = 7864;
@@ -10726,7 +10900,7 @@
 		fRef = 95345633118C7BE6006EF65B /* AddStatusViewController.m */;
 		name = "AddStatusViewController.m: 122";
 		rLen = 0;
-		rLoc = 4522;
+		rLoc = 4523;
 		rType = 0;
 		vrLen = 1645;
 		vrLoc = 3129;
@@ -10746,7 +10920,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 153";
 		rLen = 58;
-		rLoc = 5390;
+		rLoc = 5388;
 		rType = 0;
 		vrLen = 1449;
 		vrLoc = 4315;
@@ -10756,7 +10930,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 281";
 		rLen = 0;
-		rLoc = 9634;
+		rLoc = 10511;
 		rType = 0;
 		vrLen = 1580;
 		vrLoc = 7508;
@@ -10815,7 +10989,7 @@
 		fRef = 95345633118C7BE6006EF65B /* AddStatusViewController.m */;
 		name = "AddStatusViewController.m: 122";
 		rLen = 0;
-		rLoc = 4522;
+		rLoc = 4523;
 		rType = 0;
 		vrLen = 1795;
 		vrLoc = 649;
@@ -10825,7 +10999,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 281";
 		rLen = 0;
-		rLoc = 9634;
+		rLoc = 10511;
 		rType = 0;
 		vrLen = 1427;
 		vrLoc = 7864;
@@ -10835,7 +11009,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 281";
 		rLen = 0;
-		rLoc = 9634;
+		rLoc = 10511;
 		rType = 0;
 		vrLen = 1305;
 		vrLoc = 7986;
@@ -10865,7 +11039,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 250";
 		rLen = 0;
-		rLoc = 7915;
+		rLoc = 8774;
 		rType = 0;
 		vrLen = 1785;
 		vrLoc = 6984;
@@ -10895,7 +11069,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 250";
 		rLen = 0;
-		rLoc = 7915;
+		rLoc = 8774;
 		rType = 0;
 		vrLen = 1195;
 		vrLoc = 8265;
@@ -10925,7 +11099,7 @@
 		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
 		name = "RollSheetInstance.m: 110";
 		rLen = 588;
-		rLoc = 3321;
+		rLoc = 3133;
 		rType = 0;
 		vrLen = 1605;
 		vrLoc = 2835;
@@ -10945,7 +11119,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 289";
 		rLen = 1;
-		rLoc = 9521;
+		rLoc = 10398;
 		rType = 0;
 		vrLen = 1256;
 		vrLoc = 3;
@@ -10955,7 +11129,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 287";
 		rLen = 0;
-		rLoc = 9330;
+		rLoc = 10207;
 		rType = 0;
 		vrLen = 1127;
 		vrLoc = 8710;
@@ -10985,7 +11159,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 287";
 		rLen = 0;
-		rLoc = 9365;
+		rLoc = 10242;
 		rType = 0;
 		vrLen = 1143;
 		vrLoc = 8710;
@@ -11044,7 +11218,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 287";
 		rLen = 0;
-		rLoc = 9365;
+		rLoc = 10242;
 		rType = 0;
 		vrLen = 1228;
 		vrLoc = 8740;
@@ -11054,7 +11228,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 287";
 		rLen = 0;
-		rLoc = 9365;
+		rLoc = 10242;
 		rType = 0;
 		vrLen = 1228;
 		vrLoc = 8740;
@@ -11064,7 +11238,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 287";
 		rLen = 0;
-		rLoc = 9365;
+		rLoc = 10242;
 		rType = 0;
 		vrLen = 1228;
 		vrLoc = 8740;
@@ -11074,7 +11248,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 287";
 		rLen = 0;
-		rLoc = 9365;
+		rLoc = 10242;
 		rType = 0;
 		vrLen = 1232;
 		vrLoc = 8779;
@@ -11084,7 +11258,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 286";
 		rLen = 0;
-		rLoc = 9303;
+		rLoc = 10180;
 		rType = 0;
 		vrLen = 1232;
 		vrLoc = 8779;
@@ -11164,7 +11338,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 289";
 		rLen = 0;
-		rLoc = 9507;
+		rLoc = 10384;
 		rType = 0;
 		vrLen = 1229;
 		vrLoc = 8502;
@@ -11174,7 +11348,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 289";
 		rLen = 0;
-		rLoc = 9515;
+		rLoc = 10392;
 		rType = 0;
 		vrLen = 1166;
 		vrLoc = 8607;
@@ -11194,7 +11368,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 289";
 		rLen = 0;
-		rLoc = 9515;
+		rLoc = 10392;
 		rType = 0;
 		vrLen = 1166;
 		vrLoc = 8607;
@@ -11204,7 +11378,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 289";
 		rLen = 0;
-		rLoc = 9515;
+		rLoc = 10392;
 		rType = 0;
 		vrLen = 1166;
 		vrLoc = 8607;
@@ -11254,7 +11428,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 282";
 		rLen = 0;
-		rLoc = 9057;
+		rLoc = 9934;
 		rType = 0;
 		vrLen = 1166;
 		vrLoc = 8607;
@@ -11264,7 +11438,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 282";
 		rLen = 0;
-		rLoc = 9057;
+		rLoc = 9934;
 		rType = 0;
 		vrLen = 1224;
 		vrLoc = 8628;
@@ -11274,7 +11448,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 282";
 		rLen = 0;
-		rLoc = 9057;
+		rLoc = 9934;
 		rType = 0;
 		vrLen = 1224;
 		vrLoc = 8628;
@@ -11284,7 +11458,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 282";
 		rLen = 0;
-		rLoc = 9057;
+		rLoc = 9934;
 		rType = 0;
 		vrLen = 1224;
 		vrLoc = 8628;
@@ -11294,7 +11468,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 282";
 		rLen = 0;
-		rLoc = 9057;
+		rLoc = 9934;
 		rType = 0;
 		vrLen = 1166;
 		vrLoc = 8607;
@@ -11304,7 +11478,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 289";
 		rLen = 0;
-		rLoc = 9535;
+		rLoc = 10412;
 		rType = 0;
 		vrLen = 893;
 		vrLoc = 9169;
@@ -11340,7 +11514,7 @@
 		isa = PBXTextBookmark;
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		rLen = 0;
-		rLoc = 299;
+		rLoc = 336;
 		rType = 1;
 	};
 	95345821118C9568006EF65B /* PBXTextBookmark */ = {
@@ -11348,7 +11522,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 298";
 		rLen = 0;
-		rLoc = 9542;
+		rLoc = 10419;
 		rType = 0;
 		vrLen = 1309;
 		vrLoc = 8284;
@@ -11358,7 +11532,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 289";
 		rLen = 0;
-		rLoc = 9522;
+		rLoc = 10399;
 		rType = 0;
 		vrLen = 1143;
 		vrLoc = 8494;
@@ -11368,7 +11542,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 289";
 		rLen = 0;
-		rLoc = 9522;
+		rLoc = 10399;
 		rType = 0;
 		vrLen = 1234;
 		vrLoc = 8494;
@@ -11378,7 +11552,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 296";
 		rLen = 0;
-		rLoc = 9541;
+		rLoc = 10418;
 		rType = 0;
 		vrLen = 1282;
 		vrLoc = 8502;
@@ -11388,7 +11562,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 296";
 		rLen = 0;
-		rLoc = 9541;
+		rLoc = 10418;
 		rType = 0;
 		vrLen = 1282;
 		vrLoc = 8502;
@@ -11398,7 +11572,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 283";
 		rLen = 0;
-		rLoc = 9160;
+		rLoc = 10037;
 		rType = 0;
 		vrLen = 1156;
 		vrLoc = 8500;
@@ -11408,7 +11582,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 298";
 		rLen = 0;
-		rLoc = 9541;
+		rLoc = 10418;
 		rType = 0;
 		vrLen = 1167;
 		vrLoc = 8503;
@@ -11438,7 +11612,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 298";
 		rLen = 0;
-		rLoc = 9541;
+		rLoc = 10418;
 		rType = 0;
 		vrLen = 1223;
 		vrLoc = 184;
@@ -11448,7 +11622,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 298";
 		rLen = 0;
-		rLoc = 9535;
+		rLoc = 10412;
 		rType = 0;
 		vrLen = 1163;
 		vrLoc = 8740;
@@ -11458,7 +11632,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 296";
 		rLen = 0;
-		rLoc = 9522;
+		rLoc = 10399;
 		rType = 0;
 		vrLen = 1164;
 		vrLoc = 8740;
@@ -11467,8 +11641,8 @@
 		isa = PBXTextBookmark;
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 217";
-		rLen = 85;
-		rLoc = 6218;
+		rLen = 0;
+		rLoc = 7733;
 		rType = 0;
 		vrLen = 1715;
 		vrLoc = 5525;
@@ -11528,7 +11702,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 231";
 		rLen = 0;
-		rLoc = 9989;
+		rLoc = 8745;
 		rType = 0;
 		vrLen = 1282;
 		vrLoc = 2606;
@@ -11538,7 +11712,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 231";
 		rLen = 0;
-		rLoc = 9989;
+		rLoc = 8745;
 		rType = 0;
 		vrLen = 1282;
 		vrLoc = 2606;
@@ -11568,7 +11742,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 231";
 		rLen = 0;
-		rLoc = 9989;
+		rLoc = 8745;
 		rType = 0;
 		vrLen = 1715;
 		vrLoc = 2443;
@@ -11608,7 +11782,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 143";
 		rLen = 0;
-		rLoc = 4714;
+		rLoc = 4140;
 		rType = 0;
 		vrLen = 1423;
 		vrLoc = 2913;
@@ -11628,7 +11802,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 156";
 		rLen = 0;
-		rLoc = 8624;
+		rLoc = 8115;
 		rType = 0;
 		vrLen = 1506;
 		vrLoc = 3898;
@@ -11648,7 +11822,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 147";
 		rLen = 0;
-		rLoc = 4912;
+		rLoc = 4404;
 		rType = 0;
 		vrLen = 1536;
 		vrLoc = 2794;
@@ -11688,7 +11862,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 125";
 		rLen = 0;
-		rLoc = 3736;
+		rLoc = 3096;
 		rType = 0;
 		vrLen = 1229;
 		vrLoc = 2543;
@@ -11708,7 +11882,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 156";
 		rLen = 0;
-		rLoc = 5483;
+		rLoc = 4975;
 		rType = 0;
 		vrLen = 1366;
 		vrLoc = 3568;
@@ -11748,7 +11922,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 164";
 		rLen = 0;
-		rLoc = 5758;
+		rLoc = 5250;
 		rType = 0;
 		vrLen = 1629;
 		vrLoc = 3278;
@@ -11768,7 +11942,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 166";
 		rLen = 0;
-		rLoc = 5935;
+		rLoc = 5427;
 		rType = 0;
 		vrLen = 1679;
 		vrLoc = 3432;
@@ -11788,7 +11962,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 300";
 		rLen = 0;
-		rLoc = 9542;
+		rLoc = 10419;
 		rType = 0;
 		vrLen = 1759;
 		vrLoc = 7679;
@@ -11798,7 +11972,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 166";
 		rLen = 0;
-		rLoc = 5935;
+		rLoc = 5427;
 		rType = 0;
 		vrLen = 1679;
 		vrLoc = 3432;
@@ -11808,7 +11982,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 147";
 		rLen = 0;
-		rLoc = 4712;
+		rLoc = 4072;
 		rType = 0;
 		vrLen = 1552;
 		vrLoc = 3276;
@@ -11818,7 +11992,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 147";
 		rLen = 0;
-		rLoc = 4708;
+		rLoc = 4068;
 		rType = 0;
 		vrLen = 1217;
 		vrLoc = 1415;
@@ -11828,7 +12002,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 266";
 		rLen = 284;
-		rLoc = 8503;
+		rLoc = 9380;
 		rType = 0;
 		vrLen = 1759;
 		vrLoc = 7679;
@@ -11838,7 +12012,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 160";
 		rLen = 0;
-		rLoc = 5219;
+		rLoc = 4711;
 		rType = 0;
 		vrLen = 1545;
 		vrLoc = 3278;
@@ -11868,7 +12042,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 147";
 		rLen = 0;
-		rLoc = 4708;
+		rLoc = 4068;
 		rType = 0;
 		vrLen = 1217;
 		vrLoc = 1415;
@@ -11888,7 +12062,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 160";
 		rLen = 0;
-		rLoc = 5219;
+		rLoc = 4711;
 		rType = 0;
 		vrLen = 1545;
 		vrLoc = 3278;
@@ -11898,7 +12072,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 159";
 		rLen = 0;
-		rLoc = 5153;
+		rLoc = 4645;
 		rType = 0;
 		vrLen = 1502;
 		vrLoc = 3327;
@@ -11908,7 +12082,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 147";
 		rLen = 0;
-		rLoc = 4708;
+		rLoc = 4068;
 		rType = 0;
 		vrLen = 1217;
 		vrLoc = 1415;
@@ -11928,7 +12102,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 148";
 		rLen = 0;
-		rLoc = 4708;
+		rLoc = 4068;
 		rType = 0;
 		vrLen = 1511;
 		vrLoc = 1064;
@@ -11958,7 +12132,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 148";
 		rLen = 0;
-		rLoc = 4708;
+		rLoc = 4068;
 		rType = 0;
 		vrLen = 1511;
 		vrLoc = 1064;
@@ -11978,7 +12152,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 147";
 		rLen = 0;
-		rLoc = 4708;
+		rLoc = 4068;
 		rType = 0;
 		vrLen = 1533;
 		vrLoc = 1064;
@@ -11998,7 +12172,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 147";
 		rLen = 0;
-		rLoc = 4708;
+		rLoc = 4068;
 		rType = 0;
 		vrLen = 1533;
 		vrLoc = 1064;
@@ -12008,7 +12182,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 145";
 		rLen = 0;
-		rLoc = 4559;
+		rLoc = 3919;
 		rType = 0;
 		vrLen = 1356;
 		vrLoc = 3476;
@@ -12018,7 +12192,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 147";
 		rLen = 0;
-		rLoc = 4708;
+		rLoc = 4068;
 		rType = 0;
 		vrLen = 1528;
 		vrLoc = 1064;
@@ -12028,7 +12202,7 @@
 		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
 		name = "StatusInstanceViewController.m: 156";
 		rLen = 706;
-		rLoc = 5452;
+		rLoc = 5450;
 		rType = 0;
 		vrLen = 1796;
 		vrLoc = 3149;
@@ -12059,7 +12233,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		fallbackIsa = XCBuildMessageTextBookmark;
 		rLen = 0;
-		rLoc = 226;
+		rLoc = 198;
 		rType = 1;
 	};
 	953458A4118CD81D006EF65B /* PBXTextBookmark */ = {
@@ -12067,7 +12241,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 201";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 1564;
 		vrLoc = 5049;
@@ -12077,7 +12251,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 147";
 		rLen = 0;
-		rLoc = 4708;
+		rLoc = 4068;
 		rType = 0;
 		vrLen = 1528;
 		vrLoc = 1064;
@@ -12087,7 +12261,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 201";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 1479;
 		vrLoc = 3476;
@@ -12097,7 +12271,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 147";
 		rLen = 0;
-		rLoc = 4708;
+		rLoc = 4068;
 		rType = 0;
 		vrLen = 1528;
 		vrLoc = 1064;
@@ -12117,7 +12291,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 147";
 		rLen = 0;
-		rLoc = 4708;
+		rLoc = 4068;
 		rType = 0;
 		vrLen = 1217;
 		vrLoc = 1415;
@@ -12137,7 +12311,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 147";
 		rLen = 0;
-		rLoc = 4708;
+		rLoc = 4068;
 		rType = 0;
 		vrLen = 1344;
 		vrLoc = 1253;
@@ -12206,7 +12380,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 222";
 		rLen = 0;
-		rLoc = 8558;
+		rLoc = 8050;
 		rType = 0;
 		vrLen = 1863;
 		vrLoc = 5255;
@@ -12226,23 +12400,23 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 208";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2026;
 		vrLoc = 4749;
 	};
 	953458C8118CDCCB006EF65B /* EnrollStudentsViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1053, 584}}";
-			sepNavSelRange = "{911, 0}";
-			sepNavVisRange = "{0, 1087}";
+			sepNavIntBoundsRect = "{{0, 0}, {1143, 611}}";
+			sepNavSelRange = "{462, 191}";
+			sepNavVisRange = "{38, 1252}";
 		};
 	};
 	953458C9118CDCCB006EF65B /* EnrollStudentsViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1153, 2327}}";
-			sepNavSelRange = "{460, 79}";
-			sepNavVisRange = "{0, 1220}";
+			sepNavIntBoundsRect = "{{0, 0}, {1153, 2964}}";
+			sepNavSelRange = "{455, 0}";
+			sepNavVisRange = "{432, 934}";
 			sepNavWindowFrame = "{{389, 121}, {1166, 874}}";
 		};
 	};
@@ -12261,7 +12435,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 214";
 		rLen = 0;
-		rLoc = 7188;
+		rLoc = 6680;
 		rType = 0;
 		vrLen = 1842;
 		vrLoc = 4970;
@@ -12271,7 +12445,7 @@
 		fRef = 953458C8118CDCCB006EF65B /* EnrollStudentsViewController.h */;
 		name = "EnrollStudentsViewController.h: 16";
 		rLen = 0;
-		rLoc = 1047;
+		rLoc = 1250;
 		rType = 0;
 		vrLen = 342;
 		vrLoc = 0;
@@ -12301,7 +12475,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 208";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2119;
 		vrLoc = 4749;
@@ -12340,7 +12514,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 208";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2090;
 		vrLoc = 4749;
@@ -12359,7 +12533,7 @@
 		isa = PBXTextBookmark;
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		rLen = 0;
-		rLoc = 299;
+		rLoc = 336;
 		rType = 1;
 	};
 	953458E3118CDF3E006EF65B /* PBXTextBookmark */ = {
@@ -12367,7 +12541,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 300";
 		rLen = 0;
-		rLoc = 9542;
+		rLoc = 10419;
 		rType = 0;
 		vrLen = 1230;
 		vrLoc = 8873;
@@ -12387,7 +12561,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 208";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2090;
 		vrLoc = 4749;
@@ -12397,7 +12571,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 300";
 		rLen = 0;
-		rLoc = 9542;
+		rLoc = 10419;
 		rType = 0;
 		vrLen = 1305;
 		vrLoc = 5159;
@@ -12417,7 +12591,7 @@
 		fRef = 953458C8118CDCCB006EF65B /* EnrollStudentsViewController.h */;
 		name = "EnrollStudentsViewController.h: 18";
 		rLen = 0;
-		rLoc = 1047;
+		rLoc = 1250;
 		rType = 0;
 		vrLen = 426;
 		vrLoc = 0;
@@ -12437,7 +12611,7 @@
 		fRef = 953458C9118CDCCB006EF65B /* EnrollStudentsViewController.m */;
 		name = "EnrollStudentsViewController.m: 164";
 		rLen = 0;
-		rLoc = 5132;
+		rLoc = 5876;
 		rType = 0;
 		vrLen = 1075;
 		vrLoc = 3485;
@@ -12457,7 +12631,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 208";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2090;
 		vrLoc = 4749;
@@ -12467,7 +12641,7 @@
 		fRef = 953458C8118CDCCB006EF65B /* EnrollStudentsViewController.h */;
 		name = "EnrollStudentsViewController.h: 18";
 		rLen = 0;
-		rLoc = 1047;
+		rLoc = 1250;
 		rType = 0;
 		vrLen = 426;
 		vrLoc = 0;
@@ -12507,7 +12681,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 208";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2090;
 		vrLoc = 4749;
@@ -12566,7 +12740,7 @@
 		fRef = 953458C8118CDCCB006EF65B /* EnrollStudentsViewController.h */;
 		name = "EnrollStudentsViewController.h: 21";
 		rLen = 0;
-		rLoc = 1047;
+		rLoc = 1250;
 		rType = 0;
 		vrLen = 549;
 		vrLoc = 0;
@@ -12586,7 +12760,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 214";
 		rLen = 0;
-		rLoc = 7188;
+		rLoc = 6680;
 		rType = 0;
 		vrLen = 1220;
 		vrLoc = 742;
@@ -12626,7 +12800,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 300";
 		rLen = 0;
-		rLoc = 9542;
+		rLoc = 10419;
 		rType = 0;
 		vrLen = 1192;
 		vrLoc = 149;
@@ -12636,7 +12810,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 29";
 		rLen = 0;
-		rLoc = 601;
+		rLoc = 2074;
 		rType = 0;
 		vrLen = 1192;
 		vrLoc = 149;
@@ -12656,7 +12830,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 208";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2090;
 		vrLoc = 4749;
@@ -12666,7 +12840,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 29";
 		rLen = 0;
-		rLoc = 601;
+		rLoc = 2074;
 		rType = 0;
 		vrLen = 1192;
 		vrLoc = 149;
@@ -12706,7 +12880,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 208";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2090;
 		vrLoc = 4749;
@@ -12716,7 +12890,7 @@
 		fRef = 953458C9118CDCCB006EF65B /* EnrollStudentsViewController.m */;
 		name = "EnrollStudentsViewController.m: 75";
 		rLen = 0;
-		rLoc = 3214;
+		rLoc = 3958;
 		rType = 0;
 		vrLen = 1309;
 		vrLoc = 2456;
@@ -12766,7 +12940,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 210";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2339;
 		vrLoc = 4714;
@@ -12786,7 +12960,7 @@
 		fRef = 953458C9118CDCCB006EF65B /* EnrollStudentsViewController.m */;
 		name = "EnrollStudentsViewController.m: 75";
 		rLen = 0;
-		rLoc = 3214;
+		rLoc = 3958;
 		rType = 0;
 		vrLen = 1309;
 		vrLoc = 2456;
@@ -12816,7 +12990,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 210";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2339;
 		vrLoc = 4714;
@@ -12836,7 +13010,7 @@
 		fRef = 953458C8118CDCCB006EF65B /* EnrollStudentsViewController.h */;
 		name = "EnrollStudentsViewController.h: 24";
 		rLen = 0;
-		rLoc = 1080;
+		rLoc = 1283;
 		rType = 0;
 		vrLen = 582;
 		vrLoc = 0;
@@ -12846,7 +13020,7 @@
 		fRef = 953458C9118CDCCB006EF65B /* EnrollStudentsViewController.m */;
 		name = "EnrollStudentsViewController.m: 72";
 		rLen = 0;
-		rLoc = 2674;
+		rLoc = 3418;
 		rType = 0;
 		vrLen = 1233;
 		vrLoc = 1144;
@@ -12856,7 +13030,7 @@
 		fRef = 953458C9118CDCCB006EF65B /* EnrollStudentsViewController.m */;
 		name = "EnrollStudentsViewController.m: 121";
 		rLen = 0;
-		rLoc = 4577;
+		rLoc = 5321;
 		rType = 0;
 		vrLen = 1028;
 		vrLoc = 2881;
@@ -12876,7 +13050,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 210";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2339;
 		vrLoc = 4714;
@@ -12886,7 +13060,7 @@
 		fRef = 953458C9118CDCCB006EF65B /* EnrollStudentsViewController.m */;
 		name = "EnrollStudentsViewController.m: 121";
 		rLen = 0;
-		rLoc = 4577;
+		rLoc = 5321;
 		rType = 0;
 		vrLen = 1265;
 		vrLoc = 2882;
@@ -12906,7 +13080,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 210";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2339;
 		vrLoc = 4714;
@@ -12916,7 +13090,7 @@
 		fRef = 953458C9118CDCCB006EF65B /* EnrollStudentsViewController.m */;
 		name = "EnrollStudentsViewController.m: 127";
 		rLen = 0;
-		rLoc = 4577;
+		rLoc = 5321;
 		rType = 0;
 		vrLen = 1288;
 		vrLoc = 2886;
@@ -12936,7 +13110,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 210";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2339;
 		vrLoc = 4714;
@@ -12946,7 +13120,7 @@
 		fRef = 953458C9118CDCCB006EF65B /* EnrollStudentsViewController.m */;
 		name = "EnrollStudentsViewController.m: 129";
 		rLen = 0;
-		rLoc = 4581;
+		rLoc = 5325;
 		rType = 0;
 		vrLen = 1280;
 		vrLoc = 3044;
@@ -12966,7 +13140,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 210";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2339;
 		vrLoc = 4714;
@@ -12976,7 +13150,7 @@
 		fRef = 953458C9118CDCCB006EF65B /* EnrollStudentsViewController.m */;
 		name = "EnrollStudentsViewController.m: 129";
 		rLen = 0;
-		rLoc = 4581;
+		rLoc = 5325;
 		rType = 0;
 		vrLen = 1275;
 		vrLoc = 3044;
@@ -12996,7 +13170,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 210";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2339;
 		vrLoc = 4714;
@@ -13007,7 +13181,7 @@
 		fRef = 953458C9118CDCCB006EF65B /* EnrollStudentsViewController.m */;
 		fallbackIsa = XCBuildMessageTextBookmark;
 		rLen = 1;
-		rLoc = 176;
+		rLoc = 195;
 		rType = 1;
 	};
 	95345944118CE654006EF65B /* PBXTextBookmark */ = {
@@ -13035,7 +13209,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 210";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2339;
 		vrLoc = 4714;
@@ -13045,7 +13219,7 @@
 		fRef = 953458C9118CDCCB006EF65B /* EnrollStudentsViewController.m */;
 		name = "EnrollStudentsViewController.m: 129";
 		rLen = 0;
-		rLoc = 4643;
+		rLoc = 5387;
 		rType = 0;
 		vrLen = 1182;
 		vrLoc = 3044;
@@ -13065,7 +13239,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 210";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2339;
 		vrLoc = 4714;
@@ -13075,7 +13249,7 @@
 		fRef = 953458C9118CDCCB006EF65B /* EnrollStudentsViewController.m */;
 		name = "EnrollStudentsViewController.m: 121";
 		rLen = 0;
-		rLoc = 4577;
+		rLoc = 5321;
 		rType = 0;
 		vrLen = 1108;
 		vrLoc = 3109;
@@ -13095,7 +13269,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 210";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2339;
 		vrLoc = 4714;
@@ -13105,7 +13279,7 @@
 		fRef = 953458C9118CDCCB006EF65B /* EnrollStudentsViewController.m */;
 		name = "EnrollStudentsViewController.m: 127";
 		rLen = 0;
-		rLoc = 4581;
+		rLoc = 5325;
 		rType = 0;
 		vrLen = 1170;
 		vrLoc = 3044;
@@ -13125,7 +13299,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 210";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2339;
 		vrLoc = 4714;
@@ -13135,7 +13309,7 @@
 		fRef = 953458C9118CDCCB006EF65B /* EnrollStudentsViewController.m */;
 		name = "EnrollStudentsViewController.m: 125";
 		rLen = 0;
-		rLoc = 4577;
+		rLoc = 5321;
 		rType = 0;
 		vrLen = 1265;
 		vrLoc = 2881;
@@ -13155,7 +13329,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 210";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2339;
 		vrLoc = 4714;
@@ -13165,7 +13339,7 @@
 		fRef = 953458C9118CDCCB006EF65B /* EnrollStudentsViewController.m */;
 		name = "EnrollStudentsViewController.m: 127";
 		rLen = 0;
-		rLoc = 4581;
+		rLoc = 5325;
 		rType = 0;
 		vrLen = 1231;
 		vrLoc = 2876;
@@ -13185,7 +13359,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 210";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2339;
 		vrLoc = 4714;
@@ -13195,7 +13369,7 @@
 		fRef = 953458C9118CDCCB006EF65B /* EnrollStudentsViewController.m */;
 		name = "EnrollStudentsViewController.m: 127";
 		rLen = 0;
-		rLoc = 4581;
+		rLoc = 5325;
 		rType = 0;
 		vrLen = 1229;
 		vrLoc = 2876;
@@ -13215,7 +13389,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 210";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2339;
 		vrLoc = 4714;
@@ -13225,7 +13399,7 @@
 		fRef = 953458C9118CDCCB006EF65B /* EnrollStudentsViewController.m */;
 		name = "EnrollStudentsViewController.m: 127";
 		rLen = 0;
-		rLoc = 4581;
+		rLoc = 5325;
 		rType = 0;
 		vrLen = 1229;
 		vrLoc = 2876;
@@ -13235,7 +13409,7 @@
 		fRef = 953458C9118CDCCB006EF65B /* EnrollStudentsViewController.m */;
 		name = "EnrollStudentsViewController.m: 127";
 		rLen = 0;
-		rLoc = 4581;
+		rLoc = 5325;
 		rType = 0;
 		vrLen = 1229;
 		vrLoc = 2876;
@@ -13255,7 +13429,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 210";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2339;
 		vrLoc = 4714;
@@ -13265,7 +13439,7 @@
 		fRef = 953458C9118CDCCB006EF65B /* EnrollStudentsViewController.m */;
 		name = "EnrollStudentsViewController.m: 127";
 		rLen = 0;
-		rLoc = 4581;
+		rLoc = 5325;
 		rType = 0;
 		vrLen = 1109;
 		vrLoc = 3130;
@@ -13285,7 +13459,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 210";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2339;
 		vrLoc = 4714;
@@ -13295,7 +13469,7 @@
 		fRef = 953458C9118CDCCB006EF65B /* EnrollStudentsViewController.m */;
 		name = "EnrollStudentsViewController.m: 119";
 		rLen = 0;
-		rLoc = 4139;
+		rLoc = 4883;
 		rType = 0;
 		vrLen = 1191;
 		vrLoc = 3044;
@@ -13305,7 +13479,7 @@
 		fRef = 953458C9118CDCCB006EF65B /* EnrollStudentsViewController.m */;
 		name = "EnrollStudentsViewController.m: 120";
 		rLen = 0;
-		rLoc = 4139;
+		rLoc = 4883;
 		rType = 0;
 		vrLen = 1141;
 		vrLoc = 3131;
@@ -13325,7 +13499,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 210";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2339;
 		vrLoc = 4714;
@@ -13335,7 +13509,7 @@
 		fRef = 953458C9118CDCCB006EF65B /* EnrollStudentsViewController.m */;
 		name = "EnrollStudentsViewController.m: 120";
 		rLen = 0;
-		rLoc = 4139;
+		rLoc = 4883;
 		rType = 0;
 		vrLen = 1141;
 		vrLoc = 3131;
@@ -13345,7 +13519,7 @@
 		fRef = 953458C9118CDCCB006EF65B /* EnrollStudentsViewController.m */;
 		name = "EnrollStudentsViewController.m: 120";
 		rLen = 0;
-		rLoc = 4139;
+		rLoc = 4883;
 		rType = 0;
 		vrLen = 1142;
 		vrLoc = 3130;
@@ -13365,7 +13539,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 210";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2339;
 		vrLoc = 4714;
@@ -13375,7 +13549,7 @@
 		fRef = 953458C9118CDCCB006EF65B /* EnrollStudentsViewController.m */;
 		name = "EnrollStudentsViewController.m: 120";
 		rLen = 0;
-		rLoc = 4139;
+		rLoc = 4883;
 		rType = 0;
 		vrLen = 1119;
 		vrLoc = 3109;
@@ -13395,7 +13569,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 210";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2339;
 		vrLoc = 4714;
@@ -13405,7 +13579,7 @@
 		fRef = 953458C9118CDCCB006EF65B /* EnrollStudentsViewController.m */;
 		name = "EnrollStudentsViewController.m: 120";
 		rLen = 0;
-		rLoc = 4139;
+		rLoc = 4883;
 		rType = 0;
 		vrLen = 1119;
 		vrLoc = 3109;
@@ -13425,7 +13599,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 210";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2339;
 		vrLoc = 4714;
@@ -13435,7 +13609,7 @@
 		fRef = 953458C9118CDCCB006EF65B /* EnrollStudentsViewController.m */;
 		name = "EnrollStudentsViewController.m: 120";
 		rLen = 0;
-		rLoc = 4139;
+		rLoc = 4883;
 		rType = 0;
 		vrLen = 1087;
 		vrLoc = 3131;
@@ -13455,7 +13629,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 210";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2339;
 		vrLoc = 4714;
@@ -13465,7 +13639,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 100";
 		rLen = 373;
-		rLoc = 2478;
+		rLoc = 4049;
 		rType = 0;
 		vrLen = 1559;
 		vrLoc = 2285;
@@ -13515,7 +13689,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 210";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2339;
 		vrLoc = 4714;
@@ -13545,7 +13719,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 210";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2339;
 		vrLoc = 4714;
@@ -13565,7 +13739,7 @@
 		fRef = 953458C8118CDCCB006EF65B /* EnrollStudentsViewController.h */;
 		name = "EnrollStudentsViewController.h: 22";
 		rLen = 0;
-		rLoc = 1047;
+		rLoc = 1250;
 		rType = 0;
 		vrLen = 663;
 		vrLoc = 0;
@@ -13585,7 +13759,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 210";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2339;
 		vrLoc = 4714;
@@ -13595,7 +13769,7 @@
 		fRef = 953458C8118CDCCB006EF65B /* EnrollStudentsViewController.h */;
 		name = "EnrollStudentsViewController.h: 21";
 		rLen = 0;
-		rLoc = 969;
+		rLoc = 1172;
 		rType = 0;
 		vrLen = 663;
 		vrLoc = 0;
@@ -13615,7 +13789,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 210";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2339;
 		vrLoc = 4714;
@@ -13625,7 +13799,7 @@
 		fRef = 953458C8118CDCCB006EF65B /* EnrollStudentsViewController.h */;
 		name = "EnrollStudentsViewController.h: 16";
 		rLen = 0;
-		rLoc = 704;
+		rLoc = 907;
 		rType = 0;
 		vrLen = 663;
 		vrLoc = 0;
@@ -13645,7 +13819,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 210";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2339;
 		vrLoc = 4714;
@@ -13655,7 +13829,7 @@
 		fRef = 953458C8118CDCCB006EF65B /* EnrollStudentsViewController.h */;
 		name = "EnrollStudentsViewController.h: 19";
 		rLen = 0;
-		rLoc = 791;
+		rLoc = 994;
 		rType = 0;
 		vrLen = 663;
 		vrLoc = 0;
@@ -13675,7 +13849,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 210";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2339;
 		vrLoc = 4714;
@@ -13685,7 +13859,7 @@
 		fRef = 953458C8118CDCCB006EF65B /* EnrollStudentsViewController.h */;
 		name = "EnrollStudentsViewController.h: 19";
 		rLen = 0;
-		rLoc = 791;
+		rLoc = 994;
 		rType = 0;
 		vrLen = 663;
 		vrLoc = 0;
@@ -13705,7 +13879,7 @@
 		fRef = 953458C9118CDCCB006EF65B /* EnrollStudentsViewController.m */;
 		name = "EnrollStudentsViewController.m: 121";
 		rLen = 0;
-		rLoc = 4139;
+		rLoc = 4883;
 		rType = 0;
 		vrLen = 1055;
 		vrLoc = 3184;
@@ -13725,7 +13899,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 210";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2339;
 		vrLoc = 4714;
@@ -13755,7 +13929,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 210";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2339;
 		vrLoc = 4714;
@@ -13815,7 +13989,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 210";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2339;
 		vrLoc = 4714;
@@ -13845,7 +14019,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 210";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2339;
 		vrLoc = 4714;
@@ -13875,7 +14049,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 210";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2339;
 		vrLoc = 4714;
@@ -13885,7 +14059,7 @@
 		fRef = 953458C9118CDCCB006EF65B /* EnrollStudentsViewController.m */;
 		name = "EnrollStudentsViewController.m: 117";
 		rLen = 0;
-		rLoc = 4139;
+		rLoc = 4883;
 		rType = 0;
 		vrLen = 1279;
 		vrLoc = 2829;
@@ -13905,7 +14079,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 210";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2339;
 		vrLoc = 4714;
@@ -13915,7 +14089,7 @@
 		fRef = 953458C9118CDCCB006EF65B /* EnrollStudentsViewController.m */;
 		name = "EnrollStudentsViewController.m: 117";
 		rLen = 0;
-		rLoc = 4139;
+		rLoc = 4883;
 		rType = 0;
 		vrLen = 1283;
 		vrLoc = 2829;
@@ -13935,7 +14109,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 210";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2339;
 		vrLoc = 4714;
@@ -13945,7 +14119,7 @@
 		fRef = 953458C9118CDCCB006EF65B /* EnrollStudentsViewController.m */;
 		name = "EnrollStudentsViewController.m: 117";
 		rLen = 0;
-		rLoc = 4139;
+		rLoc = 4883;
 		rType = 0;
 		vrLen = 1320;
 		vrLoc = 2832;
@@ -13965,7 +14139,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 210";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2339;
 		vrLoc = 4714;
@@ -13975,7 +14149,7 @@
 		fRef = 953458C9118CDCCB006EF65B /* EnrollStudentsViewController.m */;
 		name = "EnrollStudentsViewController.m: 116";
 		rLen = 0;
-		rLoc = 4139;
+		rLoc = 4883;
 		rType = 0;
 		vrLen = 1182;
 		vrLoc = 2990;
@@ -13995,7 +14169,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 210";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2339;
 		vrLoc = 4714;
@@ -14005,7 +14179,7 @@
 		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
 		name = "RollSheetInstance.m: 110";
 		rLen = 588;
-		rLoc = 3321;
+		rLoc = 3133;
 		rType = 0;
 		vrLen = 1605;
 		vrLoc = 2835;
@@ -14015,7 +14189,7 @@
 		fRef = 953458C9118CDCCB006EF65B /* EnrollStudentsViewController.m */;
 		name = "EnrollStudentsViewController.m: 116";
 		rLen = 0;
-		rLoc = 4139;
+		rLoc = 4883;
 		rType = 0;
 		vrLen = 1110;
 		vrLoc = 3093;
@@ -14045,7 +14219,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 210";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2339;
 		vrLoc = 4714;
@@ -14055,7 +14229,7 @@
 		fRef = 953458C9118CDCCB006EF65B /* EnrollStudentsViewController.m */;
 		name = "EnrollStudentsViewController.m: 125";
 		rLen = 0;
-		rLoc = 4530;
+		rLoc = 5274;
 		rType = 0;
 		vrLen = 1060;
 		vrLoc = 3210;
@@ -14075,7 +14249,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 210";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2339;
 		vrLoc = 4714;
@@ -14085,7 +14259,7 @@
 		fRef = 953458C9118CDCCB006EF65B /* EnrollStudentsViewController.m */;
 		name = "EnrollStudentsViewController.m: 125";
 		rLen = 0;
-		rLoc = 4530;
+		rLoc = 5274;
 		rType = 0;
 		vrLen = 1060;
 		vrLoc = 3210;
@@ -14115,7 +14289,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 210";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2339;
 		vrLoc = 4714;
@@ -14165,7 +14339,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 210";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2339;
 		vrLoc = 4714;
@@ -14225,7 +14399,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 210";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2339;
 		vrLoc = 4714;
@@ -14255,7 +14429,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 210";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2339;
 		vrLoc = 4714;
@@ -14305,7 +14479,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 210";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2339;
 		vrLoc = 4714;
@@ -14315,7 +14489,7 @@
 		fRef = 953458C9118CDCCB006EF65B /* EnrollStudentsViewController.m */;
 		name = "EnrollStudentsViewController.m: 126";
 		rLen = 0;
-		rLoc = 4337;
+		rLoc = 5081;
 		rType = 0;
 		vrLen = 1320;
 		vrLoc = 3143;
@@ -14335,7 +14509,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 210";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2339;
 		vrLoc = 4714;
@@ -14345,7 +14519,7 @@
 		fRef = 953458C9118CDCCB006EF65B /* EnrollStudentsViewController.m */;
 		name = "EnrollStudentsViewController.m: 126";
 		rLen = 0;
-		rLoc = 4337;
+		rLoc = 5081;
 		rType = 0;
 		vrLen = 1359;
 		vrLoc = 3147;
@@ -14365,7 +14539,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 210";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2339;
 		vrLoc = 4714;
@@ -14415,7 +14589,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 232";
 		rLen = 0;
-		rLoc = 8038;
+		rLoc = 7530;
 		rType = 0;
 		vrLen = 1405;
 		vrLoc = 3527;
@@ -14455,7 +14629,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 210";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2342;
 		vrLoc = 4714;
@@ -14485,7 +14659,7 @@
 		fRef = 953458C9118CDCCB006EF65B /* EnrollStudentsViewController.m */;
 		name = "EnrollStudentsViewController.m: 74";
 		rLen = 0;
-		rLoc = 2585;
+		rLoc = 3138;
 		rType = 0;
 		vrLen = 1368;
 		vrLoc = 1642;
@@ -14505,7 +14679,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 210";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2342;
 		vrLoc = 4714;
@@ -14515,7 +14689,7 @@
 		fRef = 953458C9118CDCCB006EF65B /* EnrollStudentsViewController.m */;
 		name = "EnrollStudentsViewController.m: 73";
 		rLen = 0;
-		rLoc = 2580;
+		rLoc = 2941;
 		rType = 0;
 		vrLen = 1484;
 		vrLoc = 1642;
@@ -14535,7 +14709,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 210";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2342;
 		vrLoc = 4714;
@@ -14545,7 +14719,7 @@
 		fRef = 953458C9118CDCCB006EF65B /* EnrollStudentsViewController.m */;
 		name = "EnrollStudentsViewController.m: 73";
 		rLen = 0;
-		rLoc = 2580;
+		rLoc = 2941;
 		rType = 0;
 		vrLen = 1613;
 		vrLoc = 1513;
@@ -14555,7 +14729,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 232";
 		rLen = 0;
-		rLoc = 8038;
+		rLoc = 7530;
 		rType = 0;
 		vrLen = 1405;
 		vrLoc = 3527;
@@ -14565,7 +14739,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 217";
 		rLen = 0;
-		rLoc = 7493;
+		rLoc = 6985;
 		rType = 0;
 		vrLen = 1878;
 		vrLoc = 5360;
@@ -14585,7 +14759,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 210";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2389;
 		vrLoc = 4714;
@@ -14595,7 +14769,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 217";
 		rLen = 0;
-		rLoc = 7493;
+		rLoc = 6985;
 		rType = 0;
 		vrLen = 1320;
 		vrLoc = 7168;
@@ -14605,7 +14779,7 @@
 		fRef = 953458C9118CDCCB006EF65B /* EnrollStudentsViewController.m */;
 		name = "EnrollStudentsViewController.m: 73";
 		rLen = 0;
-		rLoc = 2580;
+		rLoc = 2941;
 		rType = 0;
 		vrLen = 1426;
 		vrLoc = 1513;
@@ -14635,7 +14809,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 210";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2389;
 		vrLoc = 4714;
@@ -14655,7 +14829,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 217";
 		rLen = 0;
-		rLoc = 7493;
+		rLoc = 6985;
 		rType = 0;
 		vrLen = 1309;
 		vrLoc = 6550;
@@ -14665,7 +14839,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 217";
 		rLen = 0;
-		rLoc = 7493;
+		rLoc = 6985;
 		rType = 0;
 		vrLen = 1318;
 		vrLoc = 6541;
@@ -14685,7 +14859,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 210";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2389;
 		vrLoc = 4714;
@@ -14695,7 +14869,7 @@
 		fRef = 953458C9118CDCCB006EF65B /* EnrollStudentsViewController.m */;
 		name = "EnrollStudentsViewController.m: 168";
 		rLen = 5;
-		rLoc = 5158;
+		rLoc = 5902;
 		rType = 0;
 		vrLen = 759;
 		vrLoc = 300;
@@ -14705,7 +14879,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 229";
 		rLen = 0;
-		rLoc = 7882;
+		rLoc = 7374;
 		rType = 0;
 		vrLen = 1385;
 		vrLoc = 3547;
@@ -14725,7 +14899,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 210";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2273;
 		vrLoc = 4664;
@@ -14735,7 +14909,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 228";
 		rLen = 0;
-		rLoc = 7814;
+		rLoc = 7306;
 		rType = 0;
 		vrLen = 1723;
 		vrLoc = 5778;
@@ -14755,7 +14929,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 210";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2273;
 		vrLoc = 4664;
@@ -14765,7 +14939,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 228";
 		rLen = 0;
-		rLoc = 7814;
+		rLoc = 7306;
 		rType = 0;
 		vrLen = 1723;
 		vrLoc = 5778;
@@ -14775,7 +14949,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 228";
 		rLen = 0;
-		rLoc = 7814;
+		rLoc = 7306;
 		rType = 0;
 		vrLen = 1723;
 		vrLoc = 5778;
@@ -14795,7 +14969,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 210";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2273;
 		vrLoc = 4664;
@@ -14805,7 +14979,7 @@
 		fRef = 953458C9118CDCCB006EF65B /* EnrollStudentsViewController.m */;
 		name = "EnrollStudentsViewController.m: 168";
 		rLen = 5;
-		rLoc = 5158;
+		rLoc = 5902;
 		rType = 0;
 		vrLen = 850;
 		vrLoc = 300;
@@ -14815,7 +14989,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 230";
 		rLen = 0;
-		rLoc = 8027;
+		rLoc = 7519;
 		rType = 0;
 		vrLen = 1786;
 		vrLoc = 5778;
@@ -14835,7 +15009,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 210";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2274;
 		vrLoc = 4664;
@@ -14845,7 +15019,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 230";
 		rLen = 0;
-		rLoc = 7915;
+		rLoc = 7407;
 		rType = 0;
 		vrLen = 1786;
 		vrLoc = 5778;
@@ -14865,7 +15039,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 210";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2274;
 		vrLoc = 4664;
@@ -14895,7 +15069,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 153";
 		rLen = 0;
-		rLoc = 4886;
+		rLoc = 4378;
 		rType = 0;
 		vrLen = 1523;
 		vrLoc = 3186;
@@ -14925,7 +15099,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 212";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2120;
 		vrLoc = 4219;
@@ -14955,7 +15129,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 212";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2120;
 		vrLoc = 4219;
@@ -14985,7 +15159,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 212";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2120;
 		vrLoc = 4219;
@@ -14995,7 +15169,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 242";
 		rLen = 0;
-		rLoc = 8305;
+		rLoc = 7797;
 		rType = 0;
 		vrLen = 1483;
 		vrLoc = 6447;
@@ -15015,7 +15189,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 212";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2120;
 		vrLoc = 4219;
@@ -15025,7 +15199,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 242";
 		rLen = 0;
-		rLoc = 8305;
+		rLoc = 7797;
 		rType = 0;
 		vrLen = 1483;
 		vrLoc = 6447;
@@ -15055,7 +15229,7 @@
 		fRef = 953458C9118CDCCB006EF65B /* EnrollStudentsViewController.m */;
 		name = "EnrollStudentsViewController.m: 75";
 		rLen = 0;
-		rLoc = 2355;
+		rLoc = 2475;
 		rType = 0;
 		vrLen = 1474;
 		vrLoc = 1232;
@@ -15075,7 +15249,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 212";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2120;
 		vrLoc = 4219;
@@ -15085,7 +15259,7 @@
 		fRef = 953458C8118CDCCB006EF65B /* EnrollStudentsViewController.h */;
 		name = "EnrollStudentsViewController.h: 34";
 		rLen = 0;
-		rLoc = 911;
+		rLoc = 1114;
 		rType = 0;
 		vrLen = 1087;
 		vrLoc = 0;
@@ -15125,7 +15299,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 212";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2170;
 		vrLoc = 4219;
@@ -15154,7 +15328,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 242";
 		rLen = 0;
-		rLoc = 8305;
+		rLoc = 7797;
 		rType = 0;
 		vrLen = 1483;
 		vrLoc = 6447;
@@ -15164,7 +15338,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 219";
 		rLen = 0;
-		rLoc = 7492;
+		rLoc = 6984;
 		rType = 0;
 		vrLen = 1949;
 		vrLoc = 5427;
@@ -15184,7 +15358,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 212";
 		rLen = 0;
-		rLoc = 7073;
+		rLoc = 6565;
 		rType = 0;
 		vrLen = 2120;
 		vrLoc = 4219;
@@ -15223,7 +15397,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 224";
 		rLen = 0;
-		rLoc = 7492;
+		rLoc = 6984;
 		rType = 0;
 		vrLen = 2003;
 		vrLoc = 5391;
@@ -15233,7 +15407,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 241";
 		rLen = 0;
-		rLoc = 8027;
+		rLoc = 7519;
 		rType = 0;
 		vrLen = 1341;
 		vrLoc = 6887;
@@ -15253,7 +15427,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 254";
 		rLen = 0;
-		rLoc = 8395;
+		rLoc = 7887;
 		rType = 0;
 		vrLen = 1231;
 		vrLoc = 750;
@@ -15383,7 +15557,7 @@
 		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
 		name = "AddRollSheetViewController.m: 261";
 		rLen = 58;
-		rLoc = 8563;
+		rLoc = 8055;
 		rType = 0;
 		vrLen = 1351;
 		vrLoc = 7376;
@@ -15523,7 +15697,7 @@
 		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
 		name = "RollSheetInstance.m: 110";
 		rLen = 588;
-		rLoc = 3321;
+		rLoc = 3133;
 		rType = 0;
 		vrLen = 1376;
 		vrLoc = 9785;
@@ -15659,6 +15833,1750 @@
 		vrLen = 1319;
 		vrLoc = 1214;
 	};
+	95345AED118E01D5006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
+		name = "AddRollSheetViewController.m: 56";
+		rLen = 158;
+		rLoc = 1454;
+		rType = 0;
+		vrLen = 1441;
+		vrLoc = 857;
+	};
+	95345AEE118E01D5006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
+		name = "RollSheetInstance.m: 55";
+		rLen = 0;
+		rLoc = 1635;
+		rType = 0;
+		vrLen = 1352;
+		vrLoc = 555;
+	};
+	95345AEF118E01D5006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
+		name = "RollSheetInstance.m: 55";
+		rLen = 0;
+		rLoc = 1419;
+		rType = 0;
+		vrLen = 1377;
+		vrLoc = 555;
+	};
+	95345AF2118E0294006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9594A273116A9876008AC99A /* AddRollSheetViewController.h */;
+		name = "AddRollSheetViewController.h: 19";
+		rLen = 121;
+		rLoc = 386;
+		rType = 0;
+		vrLen = 1205;
+		vrLoc = 50;
+	};
+	95345AF3118E0294006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
+		name = "AddRollSheetViewController.m: 56";
+		rLen = 158;
+		rLoc = 1454;
+		rType = 0;
+		vrLen = 1440;
+		vrLoc = 857;
+	};
+	95345AF4118E0294006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
+		name = "RollSheetInstance.m: 55";
+		rLen = 0;
+		rLoc = 1414;
+		rType = 0;
+		vrLen = 1621;
+		vrLoc = 555;
+	};
+	95345AF5118E0294006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
+		name = "RollSheetInstance.m: 56";
+		rLen = 0;
+		rLoc = 1556;
+		rType = 0;
+		vrLen = 1575;
+		vrLoc = 583;
+	};
+	95345AF9118E10E9006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82911772B0E00A4A356 /* RollSheetInfoViewController.h */;
+		name = "RollSheetInfoViewController.h: 25";
+		rLen = 0;
+		rLoc = 152;
+		rType = 0;
+		vrLen = 718;
+		vrLoc = 0;
+	};
+	95345AFA118E10E9006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
+		name = "RollSheetInstance.m: 56";
+		rLen = 0;
+		rLoc = 1556;
+		rType = 0;
+		vrLen = 1424;
+		vrLoc = 10020;
+	};
+	95345AFB118E10E9006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
+		name = "RollSheetInstance.m: 14";
+		rLen = 0;
+		rLoc = 311;
+		rType = 0;
+		vrLen = 1081;
+		vrLoc = 44;
+	};
+	95345AFD118E123D006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5AB097471168129B00E0CB9F /* RollSheetViewController.h */;
+		name = "RollSheetViewController.h: 23";
+		rLen = 0;
+		rLoc = 689;
+		rType = 0;
+		vrLen = 799;
+		vrLoc = 0;
+	};
+	95345AFE118E123D006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
+		name = "RollSheetInstance.m: 336";
+		rLen = 0;
+		rLoc = 10873;
+		rType = 0;
+		vrLen = 1341;
+		vrLoc = 10315;
+	};
+	95345AFF118E123D006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9594A273116A9876008AC99A /* AddRollSheetViewController.h */;
+		name = "AddRollSheetViewController.h: 1";
+		rLen = 1495;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1268;
+		vrLoc = 36;
+	};
+	95345B00118E123D006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82911772B0E00A4A356 /* RollSheetInfoViewController.h */;
+		name = "RollSheetInfoViewController.h: 25";
+		rLen = 0;
+		rLoc = 152;
+		rType = 0;
+		vrLen = 718;
+		vrLoc = 0;
+	};
+	95345B01118E123D006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82911772B0E00A4A356 /* RollSheetInfoViewController.h */;
+		name = "RollSheetInfoViewController.h: 13";
+		rLen = 0;
+		rLoc = 512;
+		rType = 0;
+		vrLen = 1282;
+		vrLoc = 0;
+	};
+	95345B02118E139F006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82911772B0E00A4A356 /* RollSheetInfoViewController.h */;
+		name = "RollSheetInfoViewController.h: 38";
+		rLen = 0;
+		rLoc = 1400;
+		rType = 0;
+		vrLen = 1188;
+		vrLoc = 0;
+	};
+	95345B03118E139F006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
+		name = "AddRollSheetViewController.m: 1";
+		rLen = 8777;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1448;
+		vrLoc = 850;
+	};
+	95345B04118E139F006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82A11772B0E00A4A356 /* RollSheetInfoViewController.m */;
+		name = "RollSheetInfoViewController.m: 47";
+		rLen = 0;
+		rLoc = 992;
+		rType = 0;
+		vrLen = 1312;
+		vrLoc = 479;
+	};
+	95345B05118E139F006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95345633118C7BE6006EF65B /* AddStatusViewController.m */;
+		name = "AddStatusViewController.m: 30";
+		rLen = 74;
+		rLoc = 574;
+		rType = 0;
+		vrLen = 1305;
+		vrLoc = 0;
+	};
+	95345B06118E139F006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95345633118C7BE6006EF65B /* AddStatusViewController.m */;
+		name = "AddStatusViewController.m: 30";
+		rLen = 74;
+		rLoc = 574;
+		rType = 0;
+		vrLen = 1594;
+		vrLoc = 3605;
+	};
+	95345B09118E1601006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95345633118C7BE6006EF65B /* AddStatusViewController.m */;
+		name = "AddStatusViewController.m: 127";
+		rLen = 0;
+		rLoc = 4413;
+		rType = 0;
+		vrLen = 1594;
+		vrLoc = 3605;
+	};
+	95345B0A118E1601006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82911772B0E00A4A356 /* RollSheetInfoViewController.h */;
+		name = "RollSheetInfoViewController.h: 40";
+		rLen = 0;
+		rLoc = 1421;
+		rType = 0;
+		vrLen = 1171;
+		vrLoc = 0;
+	};
+	95345B0B118E1601006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
+		name = "SettingsViewController.m: 215";
+		rLen = 0;
+		rLoc = 7733;
+		rType = 0;
+		vrLen = 1730;
+		vrLoc = 5940;
+	};
+	95345B0C118E1601006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82A11772B0E00A4A356 /* RollSheetInfoViewController.m */;
+		name = "RollSheetInfoViewController.m: 59";
+		rLen = 0;
+		rLoc = 1878;
+		rType = 0;
+		vrLen = 977;
+		vrLoc = 1269;
+	};
+	95345B0D118E1601006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82A11772B0E00A4A356 /* RollSheetInfoViewController.m */;
+		name = "RollSheetInfoViewController.m: 48";
+		rLen = 0;
+		rLoc = 1054;
+		rType = 0;
+		vrLen = 1305;
+		vrLoc = 707;
+	};
+	95345B11118E160A006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82A11772B0E00A4A356 /* RollSheetInfoViewController.m */;
+		name = "RollSheetInfoViewController.m: 41";
+		rLen = 0;
+		rLoc = 961;
+		rType = 0;
+		vrLen = 1248;
+		vrLoc = 757;
+	};
+	95345B15118E163A006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82A11772B0E00A4A356 /* RollSheetInfoViewController.m */;
+		name = "RollSheetInfoViewController.m: 41";
+		rLen = 0;
+		rLoc = 961;
+		rType = 0;
+		vrLen = 1303;
+		vrLoc = 618;
+	};
+	95345B16118E163A006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82A11772B0E00A4A356 /* RollSheetInfoViewController.m */;
+		name = "RollSheetInfoViewController.m: 41";
+		rLen = 0;
+		rLoc = 961;
+		rType = 0;
+		vrLen = 1303;
+		vrLoc = 618;
+	};
+	95345B19118E1670006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82A11772B0E00A4A356 /* RollSheetInfoViewController.m */;
+		name = "RollSheetInfoViewController.m: 44";
+		rLen = 0;
+		rLoc = 992;
+		rType = 0;
+		vrLen = 1256;
+		vrLoc = 702;
+	};
+	95345B1B118E167A006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82A11772B0E00A4A356 /* RollSheetInfoViewController.m */;
+		name = "RollSheetInfoViewController.m: 44";
+		rLen = 0;
+		rLoc = 992;
+		rType = 0;
+		vrLen = 1256;
+		vrLoc = 702;
+	};
+	95345B1E118E16AD006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82A11772B0E00A4A356 /* RollSheetInfoViewController.m */;
+		name = "RollSheetInfoViewController.m: 44";
+		rLen = 0;
+		rLoc = 992;
+		rType = 0;
+		vrLen = 1256;
+		vrLoc = 702;
+	};
+	95345B1F118E16AD006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95E6B30D1189525B00C3F6B3 /* NSStringAdditions.h */;
+		name = "NSStringAdditions.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1340;
+		vrLoc = 0;
+	};
+	95345B20118E16AD006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
+		name = "RollSheetInstance.m: 336";
+		rLen = 0;
+		rLoc = 10873;
+		rType = 0;
+		vrLen = 1290;
+		vrLoc = 10315;
+	};
+	95345B21118E16AD006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
+		name = "RollSheetInstance.m: 341";
+		rLen = 0;
+		rLoc = 11364;
+		rType = 0;
+		vrLen = 981;
+		vrLoc = 10846;
+	};
+	95345B23118E16CD006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
+		name = "RollSheetInstance.m: 341";
+		rLen = 0;
+		rLoc = 11364;
+		rType = 0;
+		vrLen = 1685;
+		vrLoc = 5343;
+	};
+	95345B24118E16CD006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82A11772B0E00A4A356 /* RollSheetInfoViewController.m */;
+		name = "RollSheetInfoViewController.m: 44";
+		rLen = 0;
+		rLoc = 992;
+		rType = 0;
+		vrLen = 1253;
+		vrLoc = 702;
+	};
+	95345B25118E16CD006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82A11772B0E00A4A356 /* RollSheetInfoViewController.m */;
+		name = "RollSheetInfoViewController.m: 30";
+		rLen = 0;
+		rLoc = 670;
+		rType = 0;
+		vrLen = 1150;
+		vrLoc = 91;
+	};
+	95345B26118E16D6006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82A11772B0E00A4A356 /* RollSheetInfoViewController.m */;
+		name = "RollSheetInfoViewController.m: 36";
+		rLen = 0;
+		rLoc = 816;
+		rType = 0;
+		vrLen = 1149;
+		vrLoc = 91;
+	};
+	95345B2B118E170E006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82A11772B0E00A4A356 /* RollSheetInfoViewController.m */;
+		name = "RollSheetInfoViewController.m: 171";
+		rLen = 0;
+		rLoc = 5465;
+		rType = 0;
+		vrLen = 1385;
+		vrLoc = 3903;
+	};
+	95345B2F118E172A006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82A11772B0E00A4A356 /* RollSheetInfoViewController.m */;
+		name = "RollSheetInfoViewController.m: 171";
+		rLen = 0;
+		rLoc = 5465;
+		rType = 0;
+		vrLen = 1385;
+		vrLoc = 3903;
+	};
+	95345B30118E172A006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82A11772B0E00A4A356 /* RollSheetInfoViewController.m */;
+		name = "RollSheetInfoViewController.m: 171";
+		rLen = 0;
+		rLoc = 5465;
+		rType = 0;
+		vrLen = 1385;
+		vrLoc = 3903;
+	};
+	95345B33118E1730006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82A11772B0E00A4A356 /* RollSheetInfoViewController.m */;
+		name = "RollSheetInfoViewController.m: 171";
+		rLen = 0;
+		rLoc = 5465;
+		rType = 0;
+		vrLen = 1385;
+		vrLoc = 3903;
+	};
+	95345B34118E1730006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82A11772B0E00A4A356 /* RollSheetInfoViewController.m */;
+		name = "RollSheetInfoViewController.m: 171";
+		rLen = 0;
+		rLoc = 5465;
+		rType = 0;
+		vrLen = 1385;
+		vrLoc = 3903;
+	};
+	95345B37118E178E006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82A11772B0E00A4A356 /* RollSheetInfoViewController.m */;
+		name = "RollSheetInfoViewController.m: 171";
+		rLen = 0;
+		rLoc = 5465;
+		rType = 0;
+		vrLen = 913;
+		vrLoc = 0;
+	};
+	95345B38118E178E006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82911772B0E00A4A356 /* RollSheetInfoViewController.h */;
+		name = "RollSheetInfoViewController.h: 40";
+		rLen = 0;
+		rLoc = 1421;
+		rType = 0;
+		vrLen = 1168;
+		vrLoc = 3;
+	};
+	95345B39118E178E006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
+		name = "RollSheetInstance.m: 339";
+		rLen = 0;
+		rLoc = 11074;
+		rType = 0;
+		vrLen = 1480;
+		vrLoc = 9929;
+	};
+	95345B3E118E17C0006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
+		name = "RollSheetInstance.m: 339";
+		rLen = 0;
+		rLoc = 11051;
+		rType = 0;
+		vrLen = 1446;
+		vrLoc = 9963;
+	};
+	95345B3F118E17C0006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82A11772B0E00A4A356 /* RollSheetInfoViewController.m */;
+		rLen = 0;
+		rLoc = 173;
+		rType = 1;
+	};
+	95345B40118E17C0006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82A11772B0E00A4A356 /* RollSheetInfoViewController.m */;
+		name = "RollSheetInfoViewController.m: 154";
+		rLen = 0;
+		rLoc = 4964;
+		rType = 0;
+		vrLen = 1344;
+		vrLoc = 3772;
+	};
+	95345B45118E1F3E006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82A11772B0E00A4A356 /* RollSheetInfoViewController.m */;
+		name = "RollSheetInfoViewController.m: 38";
+		rLen = 14;
+		rLoc = 848;
+		rType = 0;
+		vrLen = 1079;
+		vrLoc = 235;
+	};
+	95345B46118E1F3E006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95BE6A0711683BFE00764D65 /* RollSheetInstance.h */;
+		name = "RollSheetInstance.h: 16";
+		rLen = 25;
+		rLoc = 373;
+		rType = 0;
+		vrLen = 1311;
+		vrLoc = 27;
+	};
+	95345B47118E1F3E006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
+		name = "RollSheetInstance.m: 342";
+		rLen = 0;
+		rLoc = 11364;
+		rType = 0;
+		vrLen = 1441;
+		vrLoc = 9963;
+	};
+	95345B48118E1F3E006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
+		name = "RollSheetInstance.m: 342";
+		rLen = 0;
+		rLoc = 11319;
+		rType = 0;
+		vrLen = 1502;
+		vrLoc = 9964;
+	};
+	95345B4C118E1FBD006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
+		name = "RollSheetInstance.m: 344";
+		rLen = 0;
+		rLoc = 11364;
+		rType = 0;
+		vrLen = 1567;
+		vrLoc = 10021;
+	};
+	95345B50118E200C006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
+		name = "RollSheetInstance.m: 344";
+		rLen = 0;
+		rLoc = 11364;
+		rType = 0;
+		vrLen = 1425;
+		vrLoc = 4834;
+	};
+	95345B51118E200C006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82A11772B0E00A4A356 /* RollSheetInfoViewController.m */;
+		name = "RollSheetInfoViewController.m: 38";
+		rLen = 14;
+		rLoc = 848;
+		rType = 0;
+		vrLen = 1078;
+		vrLoc = 235;
+	};
+	95345B52118E200C006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82A11772B0E00A4A356 /* RollSheetInfoViewController.m */;
+		name = "RollSheetInfoViewController.m: 129";
+		rLen = 0;
+		rLoc = 3500;
+		rType = 0;
+		vrLen = 1184;
+		vrLoc = 2405;
+	};
+	95345B58118E2073006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
+		name = "SettingsViewController.m: 223";
+		rLen = 0;
+		rLoc = 7733;
+		rType = 0;
+		vrLen = 1701;
+		vrLoc = 5768;
+	};
+	95345B59118E2073006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82A11772B0E00A4A356 /* RollSheetInfoViewController.m */;
+		name = "RollSheetInfoViewController.m: 129";
+		rLen = 0;
+		rLoc = 3500;
+		rType = 0;
+		vrLen = 1572;
+		vrLoc = 2855;
+	};
+	95345B5A118E2073006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82A11772B0E00A4A356 /* RollSheetInfoViewController.m */;
+		name = "RollSheetInfoViewController.m: 72";
+		rLen = 0;
+		rLoc = 1775;
+		rType = 0;
+		vrLen = 1631;
+		vrLoc = 758;
+	};
+	95345B5E118E24EB006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82911772B0E00A4A356 /* RollSheetInfoViewController.h */;
+		name = "RollSheetInfoViewController.h: 40";
+		rLen = 0;
+		rLoc = 1421;
+		rType = 0;
+		vrLen = 1171;
+		vrLoc = 0;
+	};
+	95345B5F118E24EB006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95345249118C00AA006EF65B /* StatusInstanceViewController.m */;
+		name = "StatusInstanceViewController.m: 49";
+		rLen = 0;
+		rLoc = 1516;
+		rType = 0;
+		vrLen = 1929;
+		vrLoc = 519;
+	};
+	95345B60118E24EB006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82A11772B0E00A4A356 /* RollSheetInfoViewController.m */;
+		name = "RollSheetInfoViewController.m: 123";
+		rLen = 0;
+		rLoc = 2939;
+		rType = 0;
+		vrLen = 1249;
+		vrLoc = 3154;
+	};
+	95345B61118E24EB006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82A11772B0E00A4A356 /* RollSheetInfoViewController.m */;
+		name = "RollSheetInfoViewController.m: 132";
+		rLen = 0;
+		rLoc = 3144;
+		rType = 0;
+		vrLen = 1096;
+		vrLoc = 3117;
+	};
+	95345B63118E25D7006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82A11772B0E00A4A356 /* RollSheetInfoViewController.m */;
+		name = "RollSheetInfoViewController.m: 132";
+		rLen = 0;
+		rLoc = 3144;
+		rType = 0;
+		vrLen = 1179;
+		vrLoc = 3326;
+	};
+	95345B64118E25D7006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
+		name = "SettingsViewController.m: 154";
+		rLen = 0;
+		rLoc = 6159;
+		rType = 0;
+		vrLen = 1321;
+		vrLoc = 3838;
+	};
+	95345B65118E25D7006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
+		name = "AddRollSheetViewController.m: 1";
+		rLen = 8777;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1440;
+		vrLoc = 857;
+	};
+	95345B66118E25D7006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
+		name = "AddRollSheetViewController.m: 86";
+		rLen = 0;
+		rLoc = 2445;
+		rType = 0;
+		vrLen = 1072;
+		vrLoc = 2364;
+	};
+	95345B69118E2685006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
+		name = "SettingsViewController.m: 148";
+		rLen = 48;
+		rLoc = 5803;
+		rType = 0;
+		vrLen = 1321;
+		vrLoc = 3838;
+	};
+	95345B6A118E2685006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
+		name = "AddRollSheetViewController.m: 257";
+		rLen = 0;
+		rLoc = 8390;
+		rType = 0;
+		vrLen = 1423;
+		vrLoc = 7784;
+	};
+	95345B6B118E2685006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
+		name = "AddRollSheetViewController.m: 257";
+		rLen = 0;
+		rLoc = 8354;
+		rType = 0;
+		vrLen = 1367;
+		vrLoc = 7895;
+	};
+	95345B6F118E26E7006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
+		name = "AddRollSheetViewController.m: 253";
+		rLen = 0;
+		rLoc = 8698;
+		rType = 0;
+		vrLen = 1251;
+		vrLoc = 7394;
+	};
+	95345B70118E26E7006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82A11772B0E00A4A356 /* RollSheetInfoViewController.m */;
+		name = "RollSheetInfoViewController.m: 132";
+		rLen = 0;
+		rLoc = 3144;
+		rType = 0;
+		vrLen = 1133;
+		vrLoc = 3326;
+	};
+	95345B71118E26E7006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82A11772B0E00A4A356 /* RollSheetInfoViewController.m */;
+		name = "RollSheetInfoViewController.m: 287";
+		rLen = 0;
+		rLoc = 10517;
+		rType = 0;
+		vrLen = 1180;
+		vrLoc = 8156;
+	};
+	95345B75118E275F006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
+		name = "AddRollSheetViewController.m: 142";
+		rLen = 0;
+		rLoc = 4378;
+		rType = 0;
+		vrLen = 1682;
+		vrLoc = 3126;
+	};
+	95345B76118E275F006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 955E41761174129700FF2B8F /* RollSheetTableCell.m */;
+		name = "RollSheetTableCell.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 697;
+		vrLoc = 0;
+	};
+	95345B77118E275F006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5AB097481168129B00E0CB9F /* RollSheetViewController.m */;
+		name = "RollSheetViewController.m: 229";
+		rLen = 0;
+		rLoc = 8182;
+		rType = 0;
+		vrLen = 1379;
+		vrLoc = 6992;
+	};
+	95345B78118E275F006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82A11772B0E00A4A356 /* RollSheetInfoViewController.m */;
+		name = "RollSheetInfoViewController.m: 287";
+		rLen = 0;
+		rLoc = 10517;
+		rType = 0;
+		vrLen = 1850;
+		vrLoc = 5826;
+	};
+	95345B79118E275F006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82A11772B0E00A4A356 /* RollSheetInfoViewController.m */;
+		name = "RollSheetInfoViewController.m: 170";
+		rLen = 0;
+		rLoc = 4646;
+		rType = 0;
+		vrLen = 1704;
+		vrLoc = 3953;
+	};
+	95345B7C118E279D006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82A11772B0E00A4A356 /* RollSheetInfoViewController.m */;
+		name = "RollSheetInfoViewController.m: 161";
+		rLen = 0;
+		rLoc = 4140;
+		rType = 0;
+		vrLen = 1827;
+		vrLoc = 4005;
+	};
+	95345B7F118E2875006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95CAD9EA11580F2300CBC9E9 /* StudentsViewController.m */;
+		name = "StudentsViewController.m: 178";
+		rLen = 743;
+		rLoc = 6394;
+		rType = 0;
+		vrLen = 1741;
+		vrLoc = 5400;
+	};
+	95345B80118E2875006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82A11772B0E00A4A356 /* RollSheetInfoViewController.m */;
+		name = "RollSheetInfoViewController.m: 175";
+		rLen = 0;
+		rLoc = 4791;
+		rType = 0;
+		vrLen = 1818;
+		vrLoc = 4014;
+	};
+	95345B81118E2875006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82A11772B0E00A4A356 /* RollSheetInfoViewController.m */;
+		name = "RollSheetInfoViewController.m: 250";
+		rLen = 0;
+		rLoc = 7770;
+		rType = 0;
+		vrLen = 1083;
+		vrLoc = 51;
+	};
+	95345B85118E29F5006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95CADA4D1158457500CBC9E9 /* StudentViewController.h */;
+		name = "StudentViewController.h: 13";
+		rLen = 30;
+		rLoc = 243;
+		rType = 0;
+		vrLen = 1518;
+		vrLoc = 223;
+	};
+	95345B86118E29F5006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95CADA4E1158457500CBC9E9 /* StudentViewController.m */;
+		name = "StudentViewController.m: 59";
+		rLen = 0;
+		rLoc = 1851;
+		rType = 0;
+		vrLen = 1370;
+		vrLoc = 3282;
+	};
+	95345B87118E29F5006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82A11772B0E00A4A356 /* RollSheetInfoViewController.m */;
+		name = "RollSheetInfoViewController.m: 250";
+		rLen = 0;
+		rLoc = 7770;
+		rType = 0;
+		vrLen = 1083;
+		vrLoc = 51;
+	};
+	95345B88118E29F5006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82A11772B0E00A4A356 /* RollSheetInfoViewController.m */;
+		name = "RollSheetInfoViewController.m: 45";
+		rLen = 0;
+		rLoc = 1053;
+		rType = 0;
+		vrLen = 1325;
+		vrLoc = 483;
+	};
+	95345B8B118E2B1C006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95CAD9EA11580F2300CBC9E9 /* StudentsViewController.m */;
+		name = "StudentsViewController.m: 180";
+		rLen = 0;
+		rLoc = 6588;
+		rType = 0;
+		vrLen = 1413;
+		vrLoc = 6865;
+	};
+	95345B8C118E2B1C006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95CADA4E1158457500CBC9E9 /* StudentViewController.m */;
+		name = "StudentViewController.m: 521";
+		rLen = 67;
+		rLoc = 19247;
+		rType = 0;
+		vrLen = 1963;
+		vrLoc = 18586;
+	};
+	95345B8D118E2B1C006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82A11772B0E00A4A356 /* RollSheetInfoViewController.m */;
+		name = "RollSheetInfoViewController.m: 51";
+		rLen = 0;
+		rLoc = 1269;
+		rType = 0;
+		vrLen = 1422;
+		vrLoc = 742;
+	};
+	95345B8E118E2B1C006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82911772B0E00A4A356 /* RollSheetInfoViewController.h */;
+		name = "RollSheetInfoViewController.h: 40";
+		rLen = 0;
+		rLoc = 1421;
+		rType = 0;
+		vrLen = 1171;
+		vrLoc = 0;
+	};
+	95345B8F118E2B1C006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82911772B0E00A4A356 /* RollSheetInfoViewController.h */;
+		name = "RollSheetInfoViewController.h: 38";
+		rLen = 0;
+		rLoc = 1421;
+		rType = 0;
+		vrLen = 1155;
+		vrLoc = 0;
+	};
+	95345B94118E2B62006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82911772B0E00A4A356 /* RollSheetInfoViewController.h */;
+		name = "RollSheetInfoViewController.h: 38";
+		rLen = 0;
+		rLoc = 1421;
+		rType = 0;
+		vrLen = 1155;
+		vrLoc = 0;
+	};
+	95345B96118E2B80006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82911772B0E00A4A356 /* RollSheetInfoViewController.h */;
+		name = "RollSheetInfoViewController.h: 38";
+		rLen = 0;
+		rLoc = 1421;
+		rType = 0;
+		vrLen = 1155;
+		vrLoc = 0;
+	};
+	95345B97118E2B87006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 953458C9118CDCCB006EF65B /* EnrollStudentsViewController.m */;
+		name = "EnrollStudentsViewController.m: 25";
+		rLen = 0;
+		rLoc = 455;
+		rType = 0;
+		vrLen = 918;
+		vrLoc = 300;
+	};
+	95345B9C118E2C0B006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82911772B0E00A4A356 /* RollSheetInfoViewController.h */;
+		name = "RollSheetInfoViewController.h: 38";
+		rLen = 0;
+		rLoc = 1421;
+		rType = 0;
+		vrLen = 1155;
+		vrLoc = 0;
+	};
+	95345B9D118E2C0B006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
+		name = "AddRollSheetViewController.m: 142";
+		rLen = 0;
+		rLoc = 4378;
+		rType = 0;
+		vrLen = 1474;
+		vrLoc = 2746;
+	};
+	95345B9E118E2C0B006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9509E0B3117F88B100A468EB /* SettingsViewController.h */;
+		name = "SettingsViewController.h: 22";
+		rLen = 0;
+		rLoc = 738;
+		rType = 0;
+		vrLen = 644;
+		vrLoc = 0;
+	};
+	95345B9F118E2C0B006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
+		name = "SettingsViewController.m: 214";
+		rLen = 0;
+		rLoc = 7733;
+		rType = 0;
+		vrLen = 1833;
+		vrLoc = 6159;
+	};
+	95345BA0118E2C0B006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
+		name = "SettingsViewController.m: 38";
+		rLen = 0;
+		rLoc = 2334;
+		rType = 0;
+		vrLen = 931;
+		vrLoc = 281;
+	};
+	95345BA2118E2E4A006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
+		name = "SettingsViewController.m: 38";
+		rLen = 0;
+		rLoc = 2334;
+		rType = 0;
+		vrLen = 936;
+		vrLoc = 281;
+	};
+	95345BA3118E340A006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
+		name = "SettingsViewController.m: 40";
+		rLen = 0;
+		rLoc = 2402;
+		rType = 0;
+		vrLen = 936;
+		vrLoc = 281;
+	};
+	95345BA4118E340A006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 953452B9118C16F9006EF65B /* EditTextFieldViewController.m */;
+		name = "EditTextFieldViewController.m: 35";
+		rLen = 0;
+		rLoc = 1012;
+		rType = 0;
+		vrLen = 1149;
+		vrLoc = 308;
+	};
+	95345BA5118E340A006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 953458C8118CDCCB006EF65B /* EnrollStudentsViewController.h */;
+		name = "EnrollStudentsViewController.h: 27";
+		rLen = 0;
+		rLoc = 877;
+		rType = 0;
+		vrLen = 1087;
+		vrLoc = 0;
+	};
+	95345BA6118E340A006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 953458C9118CDCCB006EF65B /* EnrollStudentsViewController.m */;
+		name = "EnrollStudentsViewController.m: 19";
+		rLen = 0;
+		rLoc = 387;
+		rType = 0;
+		vrLen = 1183;
+		vrLoc = 216;
+	};
+	95345BA7118E340A006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 953458C9118CDCCB006EF65B /* EnrollStudentsViewController.m */;
+		name = "EnrollStudentsViewController.m: 83";
+		rLen = 0;
+		rLoc = 2463;
+		rType = 0;
+		vrLen = 1238;
+		vrLoc = 1864;
+	};
+	95345BA8118E34B4006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 953458C9118CDCCB006EF65B /* EnrollStudentsViewController.m */;
+		name = "EnrollStudentsViewController.m: 101";
+		rLen = 0;
+		rLoc = 3134;
+		rType = 0;
+		vrLen = 1240;
+		vrLoc = 1864;
+	};
+	95345BA9118E34B4006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 953458C8118CDCCB006EF65B /* EnrollStudentsViewController.h */;
+		name = "EnrollStudentsViewController.h: 27";
+		rLen = 0;
+		rLoc = 877;
+		rType = 0;
+		vrLen = 1087;
+		vrLoc = 0;
+	};
+	95345BAA118E34B4006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 953458C8118CDCCB006EF65B /* EnrollStudentsViewController.h */;
+		name = "EnrollStudentsViewController.h: 22";
+		rLen = 0;
+		rLoc = 652;
+		rType = 0;
+		vrLen = 1275;
+		vrLoc = 0;
+	};
+	95345BAB118E3514006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 953458C8118CDCCB006EF65B /* EnrollStudentsViewController.h */;
+		name = "EnrollStudentsViewController.h: 20";
+		rLen = 0;
+		rLoc = 461;
+		rType = 0;
+		vrLen = 1252;
+		vrLoc = 38;
+	};
+	95345BAC118E3514006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 953458C9118CDCCB006EF65B /* EnrollStudentsViewController.m */;
+		name = "EnrollStudentsViewController.m: 101";
+		rLen = 0;
+		rLoc = 3134;
+		rType = 0;
+		vrLen = 1246;
+		vrLoc = 1858;
+	};
+	95345BAD118E3514006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 953458C9118CDCCB006EF65B /* EnrollStudentsViewController.m */;
+		name = "EnrollStudentsViewController.m: 104";
+		rLen = 0;
+		rLoc = 3134;
+		rType = 0;
+		vrLen = 1197;
+		vrLoc = 2079;
+	};
+	95345BB0118E3543006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 953458C9118CDCCB006EF65B /* EnrollStudentsViewController.m */;
+		name = "EnrollStudentsViewController.m: 104";
+		rLen = 0;
+		rLoc = 3134;
+		rType = 0;
+		vrLen = 1216;
+		vrLoc = 2085;
+	};
+	95345BB4118E3569006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 953458C9118CDCCB006EF65B /* EnrollStudentsViewController.m */;
+		name = "EnrollStudentsViewController.m: 25";
+		rLen = 0;
+		rLoc = 455;
+		rType = 0;
+		vrLen = 842;
+		vrLoc = 432;
+	};
+	95345BB7118E356B006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 953458C9118CDCCB006EF65B /* EnrollStudentsViewController.m */;
+		name = "EnrollStudentsViewController.m: 104";
+		rLen = 0;
+		rLoc = 3134;
+		rType = 0;
+		vrLen = 1216;
+		vrLoc = 2085;
+	};
+	95345BB8118E356B006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 953458C9118CDCCB006EF65B /* EnrollStudentsViewController.m */;
+		name = "EnrollStudentsViewController.m: 104";
+		rLen = 0;
+		rLoc = 3134;
+		rType = 0;
+		vrLen = 1216;
+		vrLoc = 2085;
+	};
+	95345BBB118E3575006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 953458C9118CDCCB006EF65B /* EnrollStudentsViewController.m */;
+		name = "EnrollStudentsViewController.m: 104";
+		rLen = 0;
+		rLoc = 3134;
+		rType = 0;
+		vrLen = 1157;
+		vrLoc = 2148;
+	};
+	95345BC0118E35B3006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 953458C9118CDCCB006EF65B /* EnrollStudentsViewController.m */;
+		name = "EnrollStudentsViewController.m: 103";
+		rLen = 0;
+		rLoc = 3134;
+		rType = 0;
+		vrLen = 1390;
+		vrLoc = 2085;
+	};
+	95345BC1118E35E4006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 953458C9118CDCCB006EF65B /* EnrollStudentsViewController.m */;
+		name = "EnrollStudentsViewController.m: 103";
+		rLen = 0;
+		rLoc = 3134;
+		rType = 0;
+		vrLen = 1545;
+		vrLoc = 1275;
+	};
+	95345BC2118E35E4006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 953458C8118CDCCB006EF65B /* EnrollStudentsViewController.h */;
+		name = "EnrollStudentsViewController.h: 20";
+		rLen = 0;
+		rLoc = 461;
+		rType = 0;
+		vrLen = 1252;
+		vrLoc = 38;
+	};
+	95345BC3118E35E4006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 953458C8118CDCCB006EF65B /* EnrollStudentsViewController.h */;
+		name = "EnrollStudentsViewController.h: 21";
+		rLen = 191;
+		rLoc = 462;
+		rType = 0;
+		vrLen = 1252;
+		vrLoc = 38;
+	};
+	95345BC6118E36D0006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 953458C8118CDCCB006EF65B /* EnrollStudentsViewController.h */;
+		name = "EnrollStudentsViewController.h: 21";
+		rLen = 191;
+		rLoc = 462;
+		rType = 0;
+		vrLen = 1252;
+		vrLoc = 38;
+	};
+	95345BC7118E36D0006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82911772B0E00A4A356 /* RollSheetInfoViewController.h */;
+		name = "RollSheetInfoViewController.h: 38";
+		rLen = 0;
+		rLoc = 1421;
+		rType = 0;
+		vrLen = 1155;
+		vrLoc = 0;
+	};
+	95345BC8118E36D0006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82A11772B0E00A4A356 /* RollSheetInfoViewController.m */;
+		name = "RollSheetInfoViewController.m: 268";
+		rLen = 0;
+		rLoc = 9613;
+		rType = 0;
+		vrLen = 1375;
+		vrLoc = 8373;
+	};
+	95345BC9118E36D0006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 953458C9118CDCCB006EF65B /* EnrollStudentsViewController.m */;
+		name = "EnrollStudentsViewController.m: 103";
+		rLen = 0;
+		rLoc = 3134;
+		rType = 0;
+		vrLen = 1454;
+		vrLoc = 1366;
+	};
+	95345BCA118E36D0006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 953458C9118CDCCB006EF65B /* EnrollStudentsViewController.m */;
+		name = "EnrollStudentsViewController.m: 111";
+		rLen = 0;
+		rLoc = 3411;
+		rType = 0;
+		vrLen = 1383;
+		vrLoc = 2555;
+	};
+	95345BCE118E36FB006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 953458C9118CDCCB006EF65B /* EnrollStudentsViewController.m */;
+		name = "EnrollStudentsViewController.m: 111";
+		rLen = 0;
+		rLoc = 3412;
+		rType = 0;
+		vrLen = 1383;
+		vrLoc = 2555;
+	};
+	95345BCF118E36FB006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82A11772B0E00A4A356 /* RollSheetInfoViewController.m */;
+		name = "RollSheetInfoViewController.m: 268";
+		rLen = 0;
+		rLoc = 9613;
+		rType = 0;
+		vrLen = 1368;
+		vrLoc = 8373;
+	};
+	95345BD0118E36FB006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82A11772B0E00A4A356 /* RollSheetInfoViewController.m */;
+		name = "RollSheetInfoViewController.m: 276";
+		rLen = 0;
+		rLoc = 9616;
+		rType = 0;
+		vrLen = 1361;
+		vrLoc = 8405;
+	};
+	95345BD3118E3727006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 953458C9118CDCCB006EF65B /* EnrollStudentsViewController.m */;
+		name = "EnrollStudentsViewController.m: 25";
+		rLen = 0;
+		rLoc = 455;
+		rType = 0;
+		vrLen = 842;
+		vrLoc = 432;
+	};
+	95345BDE118E376A006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82A11772B0E00A4A356 /* RollSheetInfoViewController.m */;
+		name = "RollSheetInfoViewController.m: 252";
+		rLen = 0;
+		rLoc = 8403;
+		rType = 0;
+		vrLen = 1484;
+		vrLoc = 7344;
+	};
+	95345BDF118E376A006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82A11772B0E00A4A356 /* RollSheetInfoViewController.m */;
+		name = "RollSheetInfoViewController.m: 285";
+		rLen = 0;
+		rLoc = 9615;
+		rType = 0;
+		vrLen = 1020;
+		vrLoc = 8144;
+	};
+	95345BE1118E38EA006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
+		name = "AddRollSheetViewController.m: 142";
+		rLen = 0;
+		rLoc = 4378;
+		rType = 0;
+		vrLen = 1083;
+		vrLoc = 1665;
+	};
+	95345BE2118E38EA006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95EC81951168D0E600DA720F /* DebugViewController.m */;
+		name = "DebugViewController.m: 84";
+		rLen = 91;
+		rLoc = 4788;
+		rType = 0;
+		vrLen = 2879;
+		vrLoc = 2192;
+	};
+	95345BE3118E38EA006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5AB097481168129B00E0CB9F /* RollSheetViewController.m */;
+		name = "RollSheetViewController.m: 222";
+		rLen = 0;
+		rLoc = 7948;
+		rType = 0;
+		vrLen = 1249;
+		vrLoc = 7129;
+	};
+	95345BE4118E38EA006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82A11772B0E00A4A356 /* RollSheetInfoViewController.m */;
+		name = "RollSheetInfoViewController.m: 265";
+		rLen = 0;
+		rLoc = 8780;
+		rType = 0;
+		vrLen = 1063;
+		vrLoc = 8248;
+	};
+	95345BE5118E38EA006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82A11772B0E00A4A356 /* RollSheetInfoViewController.m */;
+		name = "RollSheetInfoViewController.m: 270";
+		rLen = 0;
+		rLoc = 8842;
+		rType = 0;
+		vrLen = 1023;
+		vrLoc = 8248;
+	};
+	95345BE8118E3A6B006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82911772B0E00A4A356 /* RollSheetInfoViewController.h */;
+		name = "RollSheetInfoViewController.h: 31";
+		rLen = 0;
+		rLoc = 935;
+		rType = 0;
+		vrLen = 1221;
+		vrLoc = 0;
+	};
+	95345BE9118E3A6B006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9594A274116A9876008AC99A /* AddRollSheetViewController.m */;
+		name = "AddRollSheetViewController.m: 219";
+		rLen = 25;
+		rLoc = 7317;
+		rType = 0;
+		vrLen = 1421;
+		vrLoc = 7071;
+	};
+	95345BEA118E3A6B006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
+		name = "RollSheetInstance.m: 342";
+		rLen = 0;
+		rLoc = 11186;
+		rType = 0;
+		vrLen = 1392;
+		vrLoc = 10431;
+	};
+	95345BEB118E3A6B006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5AB097481168129B00E0CB9F /* RollSheetViewController.m */;
+		name = "RollSheetViewController.m: 222";
+		rLen = 0;
+		rLoc = 7948;
+		rType = 0;
+		vrLen = 1249;
+		vrLoc = 7129;
+	};
+	95345BEC118E3A6B006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82A11772B0E00A4A356 /* RollSheetInfoViewController.m */;
+		name = "RollSheetInfoViewController.m: 40";
+		rLen = 13;
+		rLoc = 848;
+		rType = 0;
+		vrLen = 1224;
+		vrLoc = 4965;
+	};
+	95345BED118E3A6B006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82A11772B0E00A4A356 /* RollSheetInfoViewController.m */;
+		name = "RollSheetInfoViewController.m: 255";
+		rLen = 0;
+		rLoc = 8398;
+		rType = 0;
+		vrLen = 1073;
+		vrLoc = 8164;
+	};
+	95345BEF118E3A8D006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82A11772B0E00A4A356 /* RollSheetInfoViewController.m */;
+		name = "RollSheetInfoViewController.m: 268";
+		rLen = 0;
+		rLoc = 8766;
+		rType = 0;
+		vrLen = 1108;
+		vrLoc = 8164;
+	};
+	95345BF2118E3ABC006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82A11772B0E00A4A356 /* RollSheetInfoViewController.m */;
+		name = "RollSheetInfoViewController.m: 268";
+		rLen = 0;
+		rLoc = 8766;
+		rType = 0;
+		vrLen = 1108;
+		vrLoc = 8164;
+	};
+	95345BF3118E3ABC006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82A11772B0E00A4A356 /* RollSheetInfoViewController.m */;
+		name = "RollSheetInfoViewController.m: 269";
+		rLen = 0;
+		rLoc = 8841;
+		rType = 0;
+		vrLen = 1174;
+		vrLoc = 8168;
+	};
+	95345BF9118E43A2006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82A11772B0E00A4A356 /* RollSheetInfoViewController.m */;
+		name = "RollSheetInfoViewController.m: 269";
+		rLen = 0;
+		rLoc = 8841;
+		rType = 0;
+		vrLen = 1174;
+		vrLoc = 8168;
+	};
+	95345BFA118E43A2006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82A11772B0E00A4A356 /* RollSheetInfoViewController.m */;
+		name = "RollSheetInfoViewController.m: 314";
+		rLen = 0;
+		rLoc = 10141;
+		rType = 0;
+		vrLen = 1419;
+		vrLoc = 9049;
+	};
+	95345BFE118E4589006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82A11772B0E00A4A356 /* RollSheetInfoViewController.m */;
+		name = "RollSheetInfoViewController.m: 314";
+		rLen = 0;
+		rLoc = 10141;
+		rType = 0;
+		vrLen = 1438;
+		vrLoc = 9049;
+	};
+	95345BFF118E4589006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82A11772B0E00A4A356 /* RollSheetInfoViewController.m */;
+		name = "RollSheetInfoViewController.m: 290";
+		rLen = 0;
+		rLoc = 9356;
+		rType = 0;
+		vrLen = 1253;
+		vrLoc = 8957;
+	};
+	95345C01118E45B5006EF65B /* RollSheetInfoViewController.m:288 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 95B5B82A11772B0E00A4A356 /* RollSheetInfoViewController.m */;
+		functionName = "-editTextFieldViewController:withType:didChangeText:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 288;
+		location = "Roll Call";
+		modificationTime = 294540238.402234;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
+	};
+	95345C05118E45B7006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82A11772B0E00A4A356 /* RollSheetInfoViewController.m */;
+		name = "RollSheetInfoViewController.m: 296";
+		rLen = 0;
+		rLoc = 9545;
+		rType = 0;
+		vrLen = 1289;
+		vrLoc = 8843;
+	};
+	95345C06118E45B7006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82A11772B0E00A4A356 /* RollSheetInfoViewController.m */;
+		name = "RollSheetInfoViewController.m: 296";
+		rLen = 0;
+		rLoc = 9545;
+		rType = 0;
+		vrLen = 1256;
+		vrLoc = 8876;
+	};
+	95345C08118E5264006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 953452B8118C16F9006EF65B /* EditTextFieldViewController.h */;
+		name = "EditTextFieldViewController.h: 24";
+		rLen = 36;
+		rLoc = 541;
+		rType = 0;
+		vrLen = 1169;
+		vrLoc = 0;
+	};
+	95345C09118E5264006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82A11772B0E00A4A356 /* RollSheetInfoViewController.m */;
+		name = "RollSheetInfoViewController.m: 290";
+		rLen = 28;
+		rLoc = 9316;
+		rType = 0;
+		vrLen = 992;
+		vrLoc = 2517;
+	};
+	95345C0A118E5264006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82911772B0E00A4A356 /* RollSheetInfoViewController.h */;
+		name = "RollSheetInfoViewController.h: 20";
+		rLen = 0;
+		rLoc = 506;
+		rType = 0;
+		vrLen = 1170;
+		vrLoc = 0;
+	};
+	95345C0B118E5264006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* Roll_CallAppDelegate.m */;
+		name = "Roll_CallAppDelegate.m: 46";
+		rLen = 302;
+		rLoc = 1215;
+		rType = 0;
+		vrLen = 1646;
+		vrLoc = 2113;
+	};
+	95345C0C118E5264006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
+		name = "SettingsViewController.m: 38";
+		rLen = 0;
+		rLoc = 1109;
+		rType = 0;
+		vrLen = 1514;
+		vrLoc = 697;
+	};
+	95345C0D118E5264006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
+		name = "SettingsViewController.m: 56";
+		rLen = 0;
+		rLoc = 1762;
+		rType = 0;
+		vrLen = 1450;
+		vrLoc = 432;
+	};
+	95345C0E118E52C6006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
+		name = "SettingsViewController.m: 17";
+		rLen = 0;
+		rLoc = 375;
+		rType = 0;
+		vrLen = 1134;
+		vrLoc = 0;
+	};
+	95345C0F118E52C6006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9509E0B3117F88B100A468EB /* SettingsViewController.h */;
+		name = "SettingsViewController.h: 22";
+		rLen = 0;
+		rLoc = 738;
+		rType = 0;
+		vrLen = 644;
+		vrLoc = 0;
+	};
+	95345C10118E52C6006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9509E0B3117F88B100A468EB /* SettingsViewController.h */;
+		name = "SettingsViewController.h: 14";
+		rLen = 0;
+		rLoc = 373;
+		rType = 0;
+		vrLen = 695;
+		vrLoc = 0;
+	};
+	95345C11118E52CC006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9509E0B3117F88B100A468EB /* SettingsViewController.h */;
+		name = "SettingsViewController.h: 14";
+		rLen = 0;
+		rLoc = 373;
+		rType = 0;
+		vrLen = 695;
+		vrLoc = 0;
+	};
+	95345C14118E537D006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9509E0B3117F88B100A468EB /* SettingsViewController.h */;
+		name = "SettingsViewController.h: 20";
+		rLen = 16;
+		rLoc = 540;
+		rType = 0;
+		vrLen = 771;
+		vrLoc = 0;
+	};
+	95345C15118E537D006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* Roll_CallAppDelegate.m */;
+		name = "Roll_CallAppDelegate.m: 87";
+		rLen = 163;
+		rLoc = 2835;
+		rType = 0;
+		vrLen = 1579;
+		vrLoc = 2113;
+	};
+	95345C16118E537D006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
+		name = "SettingsViewController.m: 68";
+		rLen = 0;
+		rLoc = 2063;
+		rType = 0;
+		vrLen = 1451;
+		vrLoc = 485;
+	};
+	95345C17118E537D006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
+		name = "SettingsViewController.m: 57";
+		rLen = 0;
+		rLoc = 1887;
+		rType = 0;
+		vrLen = 1552;
+		vrLoc = 543;
+	};
+	95345C1B118E5395006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
+		name = "SettingsViewController.m: 37";
+		rLen = 0;
+		rLoc = 914;
+		rType = 0;
+		vrLen = 1592;
+		vrLoc = 548;
+	};
+	95345C1D118E539E006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 953458C9118CDCCB006EF65B /* EnrollStudentsViewController.m */;
+		name = "EnrollStudentsViewController.m: 25";
+		rLen = 0;
+		rLoc = 455;
+		rType = 0;
+		vrLen = 934;
+		vrLoc = 432;
+	};
+	95345C1E118E539E006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 95B5B82A11772B0E00A4A356 /* RollSheetInfoViewController.m */;
+		name = "RollSheetInfoViewController.m: 299";
+		rLen = 0;
+		rLoc = 9615;
+		rType = 0;
+		vrLen = 819;
+		vrLoc = 8646;
+	};
+	95345C1F118E539E006EF65B /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "Local declaration of 'statusController' hides instance variable";
+		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 287;
+		rType = 1;
+	};
+	95345C20118E539E006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
+		name = "SettingsViewController.m: 272";
+		rLen = 45;
+		rLoc = 8730;
+		rType = 0;
+		vrLen = 1131;
+		vrLoc = 7843;
+	};
+	95345C23118E53CD006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
+		name = "SettingsViewController.m: 281";
+		rLen = 0;
+		rLoc = 9292;
+		rType = 0;
+		vrLen = 1536;
+		vrLoc = 7946;
+	};
+	95345C25118E5468006EF65B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
+		name = "SettingsViewController.m: 132";
+		rLen = 0;
+		rLoc = 3510;
+		rType = 0;
+		vrLen = 1190;
+		vrLoc = 2782;
+	};
 	955E41751174129700FF2B8F /* RollSheetTableCell.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1516, 575}}";
@@ -15668,7 +17586,7 @@
 	};
 	955E41761174129700FF2B8F /* RollSheetTableCell.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1011, 578}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1143, 544}}";
 			sepNavSelRange = "{0, 0}";
 			sepNavVisRange = "{0, 697}";
 		};
@@ -15780,7 +17698,7 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 22;
-		modificationTime = 294518813.0669;
+		modificationTime = 294540238.402197;
 		originalNumberOfMultipleMatches = 1;
 		state = 0;
 	};
@@ -15829,15 +17747,15 @@
 	9594A273116A9876008AC99A /* AddRollSheetViewController.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1143, 702}}";
-			sepNavSelRange = "{386, 121}";
-			sepNavVisRange = "{50, 1303}";
+			sepNavSelRange = "{0, 1495}";
+			sepNavVisRange = "{36, 1268}";
 		};
 	};
 	9594A274116A9876008AC99A /* AddRollSheetViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1153, 4485}}";
-			sepNavSelRange = "{2384, 0}";
-			sepNavVisRange = "{1214, 1319}";
+			sepNavIntBoundsRect = "{{0, 0}, {1153, 3380}}";
+			sepNavSelRange = "{7317, 25}";
+			sepNavVisRange = "{7071, 1421}";
 			sepNavWindowFrame = "{{434, 166}, {902, 836}}";
 		};
 	};
@@ -16016,17 +17934,16 @@
 	};
 	95B5B82911772B0E00A4A356 /* RollSheetInfoViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1516, 591}}";
-			sepNavSelRange = "{652, 0}";
-			sepNavVisRange = "{0, 718}";
+			sepNavIntBoundsRect = "{{0, 0}, {1143, 702}}";
+			sepNavSelRange = "{506, 0}";
+			sepNavVisRange = "{0, 1170}";
 		};
 	};
 	95B5B82A11772B0E00A4A356 /* RollSheetInfoViewController.m */ = {
 		uiCtxt = {
-			sepNavFolds = "{\n    c =     (\n                {\n            l = DetailViewController;\n            r = \"{6816, 24}\";\n            s = 1;\n        },\n                {\n            l = DetailViewController;\n            r = \"{6867, 24}\";\n            s = 1;\n        },\n                {\n            l = \"Nib name\";\n            r = \"{6917, 12}\";\n            s = 1;\n        }\n    );\n    r = \"{0, 7671}\";\n    s = 0;\n}";
-			sepNavIntBoundsRect = "{{0, 0}, {1307, 3185}}";
-			sepNavSelRange = "{5245, 0}";
-			sepNavVisRange = "{1062, 1794}";
+			sepNavIntBoundsRect = "{{0, 0}, {1139, 4225}}";
+			sepNavSelRange = "{9615, 0}";
+			sepNavVisRange = "{8646, 819}";
 			sepNavWindowFrame = "{{354, 99}, {1166, 880}}";
 		};
 	};
@@ -16035,7 +17952,7 @@
 		fRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 171";
 		rLen = 0;
-		rLoc = 5199;
+		rLoc = 6770;
 		rType = 0;
 		vrLen = 1527;
 		vrLoc = 3452;
@@ -16045,7 +17962,7 @@
 		fRef = 95BE6A0811683BFE00764D65 /* RollSheetInstance.m */;
 		name = "RollSheetInstance.m: 223";
 		rLen = 0;
-		rLoc = 7216;
+		rLoc = 7028;
 		rType = 0;
 		vrLen = 1964;
 		vrLoc = 5941;
@@ -16062,17 +17979,17 @@
 	};
 	95BE6A0711683BFE00764D65 /* RollSheetInstance.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1011, 858}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1143, 845}}";
 			sepNavSelRange = "{373, 25}";
-			sepNavVisRange = "{27, 1490}";
+			sepNavVisRange = "{27, 1311}";
 			sepNavWindowFrame = "{{84, 110}, {1166, 880}}";
 		};
 	};
 	95BE6A0811683BFE00764D65 /* RollSheetInstance.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1272, 4771}}";
-			sepNavSelRange = "{3321, 588}";
-			sepNavVisRange = "{9785, 1376}";
+			sepNavIntBoundsRect = "{{0, 0}, {1146, 5005}}";
+			sepNavSelRange = "{11186, 0}";
+			sepNavVisRange = "{10431, 1392}";
 			sepNavWindowFrame = "{{687, 222}, {902, 836}}";
 		};
 	};
@@ -16277,23 +18194,23 @@
 	};
 	95CAD9EA11580F2300CBC9E9 /* StudentsViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1167, 3016}}";
-			sepNavSelRange = "{1162, 0}";
-			sepNavVisRange = "{4112, 1788}";
+			sepNavIntBoundsRect = "{{0, 0}, {1181, 3003}}";
+			sepNavSelRange = "{6588, 0}";
+			sepNavVisRange = "{6865, 1413}";
 		};
 	};
 	95CADA4D1158457500CBC9E9 /* StudentViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1195, 936}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1195, 845}}";
 			sepNavSelRange = "{243, 30}";
-			sepNavVisRange = "{0, 1386}";
+			sepNavVisRange = "{223, 1518}";
 		};
 	};
 	95CADA4E1158457500CBC9E9 /* StudentViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1384, 8073}}";
-			sepNavSelRange = "{5994, 0}";
-			sepNavVisRange = "{5274, 1815}";
+			sepNavIntBoundsRect = "{{0, 0}, {1143, 8255}}";
+			sepNavSelRange = "{19247, 67}";
+			sepNavVisRange = "{18586, 1963}";
 		};
 	};
 	95CADA73115848F100CBC9E9 /* ClassViewController.h */ = {
@@ -16334,6 +18251,13 @@
 		vrLen = 662;
 		vrLoc = 0;
 	};
+	95E6B30D1189525B00C3F6B3 /* NSStringAdditions.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1143, 559}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 1340}";
+		};
+	};
 	95EC81081168B6F100DA720F /* PBXBookmark */ = {
 		isa = PBXBookmark;
 		fRef = 95EC80CB1168B01D00DA720F /* note_on.png */;
@@ -16348,8 +18272,8 @@
 	95EC81951168D0E600DA720F /* DebugViewController.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1146, 1833}}";
-			sepNavSelRange = "{4711, 168}";
-			sepNavVisRange = "{1473, 3440}";
+			sepNavSelRange = "{4788, 91}";
+			sepNavVisRange = "{2192, 2879}";
 		};
 	};
 	95EC822B1168EA6B00DA720F /* PBXTextBookmark */ = {
@@ -16408,11 +18332,11 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 57;
-		modificationTime = 294518813.066734;
+		modificationTime = 294540238.402044;
 		originalNumberOfMultipleMatches = 1;
 		state = 0;
 	};
-	95EC844C1169235500DA720F /* RollSheetInstance.m:211 */ = {
+	95EC844C1169235500DA720F /* RollSheetInstance.m:207 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -16424,13 +18348,13 @@
 		functionName = "-tableView:cellForRowAtIndexPath:";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 211;
+		lineNumber = 207;
 		location = "Roll Call";
-		modificationTime = 294518813.066821;
+		modificationTime = 294540238.402083;
 		originalNumberOfMultipleMatches = 1;
 		state = 2;
 	};
-	95EC845B116923C600DA720F /* RollSheetInstance.m:94 */ = {
+	95EC845B116923C600DA720F /* RollSheetInstance.m:90 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -16442,9 +18366,9 @@
 		functionName = "-viewDidLoad";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 94;
+		lineNumber = 90;
 		location = "Roll Call";
-		modificationTime = 294518813.066847;
+		modificationTime = 294540238.402161;
 		originalNumberOfMultipleMatches = 1;
 		state = 2;
 	};

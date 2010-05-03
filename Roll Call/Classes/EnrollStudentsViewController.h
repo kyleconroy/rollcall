@@ -17,6 +17,11 @@
 
                         withStudents:(NSMutableArray *)enrolled;
 
+@optional
+- (void)enrollStudentsViewController:(EnrollStudentsViewController *)enrollStudentsViewController
+
+                        withAdded:(NSMutableArray *)added removed:(NSMutableArray *)removed;
+
 @end
 
 @interface EnrollStudentsViewController : UITableViewController {

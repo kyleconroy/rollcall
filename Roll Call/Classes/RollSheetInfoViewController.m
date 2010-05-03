@@ -7,238 +7,328 @@
 //
 
 #import "RollSheetInfoViewController.h"
-
+#import "EnrollStudentsViewController.h"
+#import "Student.h"
+#import "StudentViewController.h"
 
 @implementation RollSheetInfoViewController
 
-
 @synthesize course;
-@synthesize students;
-@synthesize tableLayout;
-@synthesize editTableLayout;
+@synthesize aD;
+@synthesize addedStudents;
 @synthesize myTableView;
+@synthesize courseName;
+@synthesize studentsSection;
+@synthesize courseSection;
+@synthesize studentsComplete;
+@synthesize nameComplete;
 
-#pragma mark -
-#pragma mark View lifecycle
+- (IBAction) enrollStudentsInClass: (id) sender {
+    
+}
 
 
 - (void)viewDidLoad {
-   
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    [self setTitle:@"Course Info"];
+    self.title = @"Class Info";
     
-
-    tableLayout = [[NSArray alloc] initWithObjects:
-                   [NSDictionary dictionaryWithObjectsAndKeys:
-                    [NSNumber numberWithInt:1], @"count", [NSNumber numberWithBool:YES], @"edit", nil],
-                   [NSDictionary dictionaryWithObjectsAndKeys:
-                    [NSNumber numberWithInt:3], @"count",
-                    @"Actions", @"header", nil],
-                   [NSDictionary dictionaryWithObjectsAndKeys:
-                    [NSNumber numberWithInt:3], @"count",
-                    @"Schedule", @"header", [NSNumber numberWithBool:YES], @"edit", nil],
-                    nil];
+    aD = (Roll_CallAppDelegate *)[[UIApplication sharedApplication] delegate];
     
+    studentsComplete = NO;
+    nameComplete = NO;
     
-    editTableLayout = [[NSArray alloc] initWithObjects:
-                   [NSDictionary dictionaryWithObjectsAndKeys:
-                    [NSNumber numberWithInt:1], @"count", [NSNumber numberWithBool:YES], @"edit", nil],
-                   [NSDictionary dictionaryWithObjectsAndKeys:
-                    [NSNumber numberWithInt:3], @"count",
-                    @"Schedule", @"header", [NSNumber numberWithBool:YES], @"edit", nil],
-                   nil];
+    if(!addedStudents)
+        addedStudents = [[NSMutableArray alloc] initWithCapacity:0];
     
-    myTableView = (UITableView *) self.view;
-
-    [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(enterEditMode)] animated:NO];
+    courseSection = 0;
+    studentsSection = 1;
+    
+	//self.editing=YES;
+    self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     [super viewDidLoad];
-}
-
-- (void) enterEditMode {
     
-    [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(leaveEditMode)] animated:YES];
-    [myTableView setEditing:YES animated:YES];
-    [myTableView deleteSections:[NSIndexSet indexSetWithIndex:1] withRowAnimation:YES];
-    
-    
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-- (void) leaveEditMode {
-    [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(enterEditMode)] animated:YES];
-    [myTableView setEditing:NO animated:YES];
-    [myTableView insertSections:[NSIndexSet indexSetWithIndex:1] withRowAnimation:YES];
+- (void)setEditing:(BOOL)editing animated:(BOOL)animated {
+    [super setEditing:editing animated:animated];
+    [myTableView setEditing:editing animated:animated];
+    [self.navigationItem setHidesBackButton:editing animated:animated];
+    NSArray *updatedPaths = [NSArray arrayWithObjects:[NSIndexPath indexPathForRow:[addedStudents count] inSection:studentsSection],nil];
+
+    if(editing)
+        [myTableView insertRowsAtIndexPaths:updatedPaths withRowAnimation:UITableViewRowAnimationTop];
+    else
+        [myTableView deleteRowsAtIndexPaths:updatedPaths withRowAnimation:UITableViewRowAnimationTop];
 }
-/*
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-}
-*/
-/*
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-}
-*/
-/*
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-}
-*/
-/*
-- (void)viewDidDisappear:(BOOL)animated {
-    [super viewDidDisappear:animated];
-}
-*/
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-*/
 
 
-#pragma mark -
-#pragma mark Table view data source
+/*
+ - (void)viewWillAppear:(BOOL)animated {
+ [super viewWillAppear:animated];
+ }
+ */
+/*
+ - (void)viewDidAppear:(BOOL)animated {
+ [super viewDidAppear:animated];
+ }
+ */
+/*
+ - (void)viewWillDisappear:(BOOL)animated {
+ [super viewWillDisappear:animated];
+ }
+ */
+/*
+ - (void)viewDidDisappear:(BOOL)animated {
+ [super viewDidDisappear:animated];
+ }
+ */
+
+/*
+ // Override to allow orientations other than the default portrait orientation.
+ - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+ // Return YES for supported orientations
+ return (interfaceOrientation == UIInterfaceOrientationPortrait);
+ }
+ */
+
+- (void)didReceiveMemoryWarning {
+	// Releases the view if it doesn't have a superview.
+    [super didReceiveMemoryWarning];
+	
+	// Release any cached data, images, etc that aren't in use.
+}
+
+- (void)viewDidUnload {
+	// Release any retained subviews of the main view.
+	// e.g. self.myOutlet = nil;
+}
+
+
+#pragma mark Table view methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    // Return the number of sections.
-    if (tableView.editing) {
-        return [editTableLayout count];
-    } else {
-        return [tableLayout count];
-    }
-    
+    return 2;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     
-    // The header for the section is the region name -- get this from the region at the section index.
-    if (tableView.editing) {
-        return [[editTableLayout objectAtIndex:section] valueForKey:@"header"];
-    } else {
-        return [[tableLayout objectAtIndex:section] valueForKey:@"header"];
+    if (section == studentsSection) {
+        return @"Enrolled Students";
     }
     
-    
+    return nil;
 }
 
-
+// Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    // Return the number of rows in the section.
-    if (tableView.editing) {
-        return [[[editTableLayout objectAtIndex:section] valueForKey:@"count"] intValue];
+    if (section == courseSection) {
+        return 1;
     } else {
-        return [[[tableLayout objectAtIndex:section] valueForKey:@"count"] intValue];
+        if (self.editing) {
+            return  [addedStudents count] + 1;
+        } else {
+            return [addedStudents count];
+        }
     }
 }
 
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+	static NSString *CellIdentifier = @"Cell";
+	UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+	
     
-    static NSString *CellIdentifier = @"Cell";
+	if (cell == nil) {
+		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+	}
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    if (indexPath.section == courseSection) {
+        cell.editingAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        cell.accessoryType = UITableViewCellAccessoryNone;
+        
+        if ([courseName isEqual:@"Course Name"])
+            cell.textLabel.textColor = [UIColor grayColor];
+        else
+            cell.textLabel.textColor = [UIColor blackColor];
+        
+		cell.textLabel.text = courseName;
+	} else if (indexPath.section == studentsSection && indexPath.row >= [addedStudents count]) {
+        cell.textLabel.text = @"enroll students";
+        cell.editingAccessoryType = UITableViewCellAccessoryNone;
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    } else {
+        Student *s = [addedStudents objectAtIndex:indexPath.row];
+        cell.editingAccessoryType = UITableViewCellAccessoryNone;
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", s.firstName, s.lastName];
     }
     
-    // Configure the cell...
-    
+	
     return cell;
 }
 
-
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    if([[tableLayout objectAtIndex:indexPath.section] valueForKey:@"edit"]) {
-        return YES;
+- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	if (self.editing) {
+        if (indexPath.section == studentsSection && indexPath.row >= [addedStudents count]) {
+            return indexPath;
+        } else if (indexPath.section == courseSection) {
+            return indexPath;
+        } else {
+            return nil;
+        }
     } else {
-        return NO;
+        if (indexPath.section == courseSection) {
+            return nil;
+        } else {
+            return indexPath;
+        }
     }
+    
+}
 
+- (BOOL)tableView:(UITableView *)tableView shouldIndentWhileEditingRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == courseSection) {
+        return NO;
+    } else {
+        return YES;
+    }
 }
 
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == courseSection) {
+        return UITableViewCellEditingStyleNone;
+    } else if (indexPath.section == studentsSection && indexPath.row >= [addedStudents count]) {
+        return UITableViewCellEditingStyleInsert;
+    } else {
+        return UITableViewCellEditingStyleDelete;
+    }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if(self.editing) {
+        if (indexPath.section == courseSection){
+            
+            EditTextFieldViewController *textController = [[EditTextFieldViewController alloc] 
+                                                           initWithNibName:@"EditTextFieldViewController" bundle:nil];
+            textController.delegate = self;
+            textController.myType = [NSNumber numberWithInt:indexPath.row];
+            textController.myTitle = @"Course Name";
+            
+            if (![courseName isEqual:@"Course Name"])
+                textController.myText = courseName;
+            
+            [self.navigationController pushViewController:textController animated:YES];
+            [textController release];
+            
+        } else if (indexPath.section == studentsSection && indexPath.row >= [addedStudents count]) {
+            
+            EnrollStudentsViewController *enrollController = [[EnrollStudentsViewController alloc] 
+                                                              initWithNibName:@"EnrollStudentsViewController" bundle:nil];
+            enrollController.delegate = self;
+            enrollController.initial = addedStudents;
+            [self.navigationController pushViewController:enrollController animated:YES];
+            [enrollController release];
+        }
+    } else {
     
-    [[tableView cellForRowAtIndexPath:indexPath] setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+        StudentViewController *anotherViewController = [[StudentViewController alloc] initWithNibName:@"StudentViewController" bundle:nil];
+        Student *student = [addedStudents objectAtIndex:indexPath.row];
+        anotherViewController.title = [NSString stringWithFormat:@"%@ %@", student.firstName, student.lastName];
+        anotherViewController.currentStudent = student;
+        
+        [self.navigationController pushViewController:anotherViewController animated:YES];
+        [anotherViewController release];
+        
+    }
     
-    return UITableViewCellEditingStyleNone;
+	
+}
+
+- (void)enrollStudentsViewController:(EnrollStudentsViewController *)enrollStudentsViewController
+
+                        withStudents:(NSMutableArray *)enrolled {
+    
+    addedStudents = enrolled;
+    [myTableView reloadData];
     
 }
 
 
-/*
-// Override to support editing the table view.
+- (void)enrollStudentsViewController:(EnrollStudentsViewController *)enrollStudentsViewController
+
+                           withAdded:(NSMutableArray *)added removed:(NSMutableArray *)removed {
+    
+    if (added && removed) {
+        
+        NSManagedObjectContext *context = [aD managedObjectContext];
+        
+        [course addStudents:[NSSet setWithArray:added]];
+        [course removeStudents:[NSSet setWithArray:removed]];
+        
+        NSError *error;
+        if (![context save:&error]) {
+            // Handle the error.
+        }
+        
+    }
+    
+    [self.navigationController popViewControllerAnimated:YES];
+    
+};
+
+
+- (void)editTextFieldViewController:(EditTextFieldViewController *)editTextFieldViewController
+
+                           withType: (NSNumber*)type didChangeText:(NSString *)text {
+    
+    if(text){
+        courseName = text;
+        [courseName retain];
+        [self.navigationItem setTitle:courseName];
+        [myTableView reloadData];
+        nameComplete = YES;
+        if(nameComplete && studentsComplete)
+            self.navigationItem.rightBarButtonItem.enabled = YES;
+        
+    }
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+
+
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
+        NSManagedObjectContext *context = [aD managedObjectContext];
+        
+        Student *s = [addedStudents objectAtIndex:indexPath.row];
+        
+        [course removeStudentsObject:s];
+        
+        NSError *error;
+        if (![context save:&error]) {
+            // Handle the error.
+        }
+        
+        [addedStudents removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:YES];
     }   
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-*/
-
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-
-#pragma mark -
-#pragma mark Table view delegate
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Navigation logic may go here. Create and push another view controller.
-	/*
-	 <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-	 [self.navigationController pushViewController:detailViewController animated:YES];
-	 [detailViewController release];
-	 */
-}
-
-
-#pragma mark -
-#pragma mark Memory management
-
-- (void)didReceiveMemoryWarning {
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Relinquish ownership any cached data, images, etc that aren't in use.
-}
-
-- (void)viewDidUnload {
-    // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
-    // For example: self.myOutlet = nil;
-}
 
 
 - (void)dealloc {
-    [editTableLayout release];
-    [tableLayout release];
+    [myTableView release];
     [super dealloc];
 }
 
 
 @end
+
 
