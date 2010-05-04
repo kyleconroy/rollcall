@@ -10,6 +10,9 @@
 #import "Student.h"
 #import "Course.h"
 #import "Status.h"
+#import "Presence.h"
+
+#define DAY  86400
 
 @implementation DebugViewController
 
@@ -28,12 +31,27 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     aD = (Roll_CallAppDelegate *)[[UIApplication sharedApplication] delegate];
+    [self becomeFirstResponder];
     [super viewDidLoad];
 }
 
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {
+    if (event.type == UIEventSubtypeMotionShake) {
+//        [self installCourses];
+//        [self installStudents];
+        NSString *title = [NSString stringWithFormat:@"Testing Framework"];
+        NSString *alertMessage = [NSString stringWithFormat:@"Installed student and class test data"];
+        NSString *ok = [NSString stringWithFormat:@"Dismiss"];
+        
+        // open an alert with just an OK button
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:alertMessage  delegate:self cancelButtonTitle:ok otherButtonTitles:nil];
+        [alert show];
+        [alert release];
+    }
+}
+
 -(IBAction) installData {
-    [self installCourses];
-    [self installStudents];
+
 }
 
 - (void) installStudents {
@@ -111,13 +129,95 @@
     }
 }
 
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+-(IBAction)mailIt {
+    MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
+    picker.mailComposeDelegate = self;  
+    
+    [picker setSubject:@"[Roll Call] Class Attendance Report"];
+    
+    NSArray *courses = [aD getAllCourses];
+    
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    
+    NSDateComponents *comps = [calendar components:NSYearCalendarUnit | NSMonthCalendarUnit |  NSDayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit 
+                                          fromDate:[aD getEarliestPresenceDate]];
+    
+    [comps setHour:00];
+    [comps setMinute:00];
+    [comps setSecond:00];
+
+    for (Course *c in courses) {
+        
+        
+        //Get the students, and sort them by last name
+        NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"firstName" ascending:YES];
+        NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+        NSMutableArray * ss = [[NSMutableArray alloc] init];
+        
+        //get all students in the class
+        NSEnumerator *e = [c.students objectEnumerator];
+        id collectionMemberObject;
+        
+        //add them to a temporary array
+        while ( (collectionMemberObject = [e nextObject]) ) {
+            [ss addObject:collectionMemberObject];
+        }
+        
+        // return the sorted array
+        NSArray *students = [ss sortedArrayUsingDescriptors:sortDescriptors];
+        
+        //NSString *csv = [[header componentsJoinedByString:@","] stringByAppendingString:@"\n"];
+        NSString *csv = @"";
+        
+        for (Student *s in students) {
+            NSMutableArray *row = [NSMutableArray arrayWithObjects:s.firstName, s.lastName, nil];
+            NSDate *startDate = [calendar dateFromComponents:comps];
+            
+            while ([startDate compare:[NSDate date]] ==  NSOrderedAscending) {
+                NSPredicate *myPredicate = [NSPredicate predicateWithFormat:@"(date >= %@) AND (date <= %@) AND (course == %@)", startDate, [startDate addTimeInterval:DAY] , c];    
+                NSSet *events = [s.presences filteredSetUsingPredicate:myPredicate];
+                Presence *p = [events anyObject];
+                if (p) {
+                    [row addObject:p.status.text];
+                } else {
+                    [row addObject:@""];
+                }
+                startDate = [startDate addTimeInterval:DAY];
+            }
+            
+            csv = [csv stringByAppendingString:[[row componentsJoinedByString:@","] stringByAppendingString:@"\n"]];
+            
+        }
+        
+        
+        NSLog(@"%@\n: %@", c.name, csv);
+        
+        [picker addAttachmentData:[csv dataUsingEncoding:NSUTF8StringEncoding] 
+                       mimeType:@"text/csv" fileName:[NSString stringWithFormat:@"%@_attendance_report.csv", c.name]]; // addd ate?
+        
+        [sortDescriptor release];
+        [sortDescriptors release];
+        [ss release];
+    }
+    
+
+    
+    NSString *emailBody = @"Thanks for using Roll Call! Here is your data, sorted by class.";
+    [picker setMessageBody:emailBody isHTML:YES];
+    
+    [self presentModalViewController:picker animated:YES];
+    [picker release];
 }
-*/
+
+-(void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error {
+    if (result == MFMailComposeResultSent){
+        NSLog(@"Message Sent");
+    } else {
+        NSLog(@"Message not Sent");
+    }
+
+    [self dismissModalViewControllerAnimated:YES];
+}
 
 - (void)didReceiveMemoryWarning {
 	// Releases the view if it doesn't have a superview.
@@ -129,6 +229,7 @@
 - (void)viewDidUnload {
 	// Release any retained subviews of the main view.
 	// e.g. self.myOutlet = nil;
+    [self resignFirstResponder];
 }
 
 

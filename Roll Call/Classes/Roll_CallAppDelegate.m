@@ -8,6 +8,7 @@
 
 #import "Roll_CallAppDelegate.h"
 #import "Student.h"
+#import "Presence.h"
 
 @implementation Roll_CallAppDelegate
 
@@ -206,6 +207,44 @@
 	return p;
 }
 
+
+-(NSDate *) getEarliestPresenceDate {
+	Presence *p;
+    
+    NSManagedObjectContext *context = [self managedObjectContext];
+    
+	NSFetchRequest *request = [[NSFetchRequest alloc] init];
+	NSEntityDescription *entity = [NSEntityDescription entityForName: @"Presence" inManagedObjectContext:context];
+	[request setEntity:entity];
+    
+	[request setResultType:NSManagedObjectResultType];
+    
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:YES];
+    
+    [request setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+    
+    
+	NSError *error;
+	NSArray *objects = [context executeFetchRequest:request error:&error];
+	p = nil;
+	if (objects == nil)
+	{
+		NSLog(@"No Presence to return");
+        return nil;
+	}
+	else
+	{
+		if ([objects count] > 0)
+		{
+			p = (Presence *)[objects objectAtIndex:0];
+		}
+	}
+    
+    [sortDescriptor release];
+	[request release];
+    
+	return p.date;
+}
 
 #pragma mark -
 #pragma mark Core Data stack

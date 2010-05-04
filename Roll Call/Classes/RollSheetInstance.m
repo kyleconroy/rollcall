@@ -195,6 +195,8 @@
         UIButton *attendanceButton  = [UIButton buttonWithType:UIButtonTypeCustom];
         attendanceButton.frame = CGRectMake(0, 0, 51, 44); // position in the parent view and set the size of the button
         attendanceButton.tag = attendanceTag;
+        attendanceButton.titleLabel.font = [UIFont boldSystemFontOfSize:22.0];
+        attendanceButton.titleLabel.textColor = [UIColor blackColor];
         [attendanceButton addTarget:self action:@selector(changeAttendance:) forControlEvents:UIControlEventTouchUpInside];
         [cell.contentView addSubview:attendanceButton];
         

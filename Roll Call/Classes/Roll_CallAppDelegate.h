@@ -36,5 +36,6 @@
 - (Status *) getStatusWithLetter:(NSString *)letter;
 - (Status *) getStatusWithLowestRank;
 - (Status *) getStatusWithNextRank:(NSInteger)rank;
+- (NSDate *) getEarliestPresenceDate;
 
 @end

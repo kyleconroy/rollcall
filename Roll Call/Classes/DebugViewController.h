@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "Roll_CallAppDelegate.h"
+#import <MessageUI/MFMailComposeViewController.h>
+#import <MessageUI/MessageUI.h>
 
-@interface DebugViewController : UIViewController {
+@interface DebugViewController : UIViewController <MFMailComposeViewControllerDelegate> {
 
     Roll_CallAppDelegate *aD;
 
@@ -21,6 +23,7 @@
 
 -(void) installStudents;
 -(void) installCourses;
+-(IBAction) mailIt;
 
 
 @end
