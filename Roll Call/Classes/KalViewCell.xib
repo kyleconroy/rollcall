@@ -48,10 +48,11 @@
 							<object class="IBUIButton" id="419330882">
 								<reference key="NSNextResponder" ref="1053612806"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{11, 3}, {34.9961, 37}}</string>
+								<string key="NSFrame">{{11, 1}, {45, 45}}</string>
 								<reference key="NSSuperview" ref="1053612806"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<int key="IBUITag">1</int>
+								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<int key="IBUIContentHorizontalAlignment">0</int>
 								<int key="IBUIContentVerticalAlignment">0</int>
 								<object class="NSFont" key="IBUIFont">
@@ -59,6 +60,8 @@
 									<double key="NSSize">21</double>
 									<int key="NSfFlags">16</int>
 								</object>
+								<bool key="IBUIAdjustsImageWhenHighlighted">NO</bool>
+								<bool key="IBUIAdjustsImageWhenDisabled">NO</bool>
 								<double key="IBUITitleEdgeInsets.top">-2</double>
 								<double key="IBUITitleEdgeInsets.bottom">0.0</double>
 								<double key="IBUITitleEdgeInsets.left">0.0</double>
@@ -74,10 +77,6 @@
 								<object class="NSColor" key="IBUINormalTitleShadowColor">
 									<int key="NSColorSpace">3</int>
 									<bytes key="NSWhite">MC41AA</bytes>
-								</object>
-								<object class="NSCustomResource" key="IBUINormalBackgroundImage">
-									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">button_empty.png</string>
 								</object>
 							</object>
 							<object class="IBUILabel" id="157143000">
@@ -227,7 +226,7 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>KalViewDataSource</string>
 					<string>UIResponder</string>
-					<string>{{266, 605}, {320, 44}}</string>
+					<string>{{68, 605}, {320, 44}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>

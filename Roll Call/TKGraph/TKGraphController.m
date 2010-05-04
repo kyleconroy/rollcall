@@ -51,9 +51,6 @@
 	
 	close = [[UIButton buttonWithType:UIButtonTypeCustom] retain];
 	close.frame = CGRectMake(-10, 0, 65, 45);
-	
-	
-	
 	[close setImage:[UIImage imageFromPath:TKBUNDLE(@"TapkuLibrary.bundle/Images/graph/close.png")] forState:UIControlStateNormal];
 	[close setImage:[UIImage imageFromPath:TKBUNDLE(@"TapkuLibrary.bundle/Images/graph/close_touch.png")] forState:UIControlStateHighlighted];
 	[close addTarget:self action:@selector(close) forControlEvents:UIControlEventTouchUpInside];

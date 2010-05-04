@@ -13,6 +13,7 @@
 #import "KalViewController.h"
 
 @class AddStudentNameViewController;
+@class Status;
 
 @interface StudentViewController : UITableViewController  <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIActionSheetDelegate, UITableViewDelegate> {
     Roll_CallAppDelegate *aD;
@@ -21,23 +22,22 @@
 	UIButton *photoButton;
 	UIButton *addNameButton;
 	UILabel *name;
-	NSInteger tC;
-	NSInteger aC;
-	NSInteger eC;
 	IBOutlet UITableViewCell *tvCell;
 	KalViewController *calendar;
-	IBOutlet UIButton  *tB;
 	IBOutlet UIButton  *aB;
-	IBOutlet UIButton  *eB;
-	IBOutlet UILabel  *tL;
-	IBOutlet UILabel  *aL;
-	IBOutlet UILabel  *eL;
+	IBOutlet UILabel  *stName;
+	IBOutlet UILabel  *stAll;
+	IBOutlet UILabel  *stCount;
 	NSMutableArray *presences;
 	IBOutlet UITableViewCell *tableCell;
 	IBOutlet UILabel *cellLabel;
 	IBOutlet UIImageView *cellImage;
 	IBOutlet UIButton  *cB;
 	IBOutlet UITableViewCell *dsCell;
+	NSMutableArray *statusArray;
+	NSMutableArray *emtIndex;
+	Status *currentStatus;
+
 }
 
 @property(nonatomic, retain) Roll_CallAppDelegate *aD;
@@ -54,6 +54,8 @@
 @property(nonatomic, retain) IBOutlet UIImageView *cellImage;
 @property(nonatomic, retain) IBOutlet UIButton  *cB;
 @property(nonatomic, retain) IBOutlet UITableViewCell *dsCell;
+@property(nonatomic, retain) NSMutableArray *statusArray;
+@property(nonatomic, retain) NSMutableArray *emtIndex;
 
 - (IBAction) photoTapped;
 - (IBAction) addName: (id)sender;

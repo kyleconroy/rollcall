@@ -38,14 +38,17 @@
 		9509E0A2117F862600A468EB /* sync.png in Resources */ = {isa = PBXBuildFile; fileRef = 9509E0A1117F862600A468EB /* sync.png */; };
 		9509E0B6117F88B100A468EB /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9509E0B4117F88B100A468EB /* SettingsViewController.m */; };
 		9509E0B7117F88B100A468EB /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9509E0B5117F88B100A468EB /* SettingsViewController.xib */; };
+		9514C5A31190CF5000082C84 /* 16-line-chart.png in Resources */ = {isa = PBXBuildFile; fileRef = 9514C59C1190CF5000082C84 /* 16-line-chart.png */; };
+		9514C5A41190CF5000082C84 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 9514C59D1190CF5000082C84 /* background.png */; };
+		9514C5A51190CF5000082C84 /* calendar_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 9514C59E1190CF5000082C84 /* calendar_button.png */; };
+		9514C5A61190CF5000082C84 /* AttCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9514C59F1190CF5000082C84 /* AttCell.xib */; };
+		9514C5A91190CF5000082C84 /* list_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 9514C5A21190CF5000082C84 /* list_button.png */; };
 		952086A5118AC08C00F12AB9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 952086A4118AC08C00F12AB9 /* QuartzCore.framework */; };
 		952086C7118ACBA000F12AB9 /* NoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 952086C5118ACBA000F12AB9 /* NoteViewController.m */; };
 		952086C8118ACBA000F12AB9 /* NoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 952086C6118ACBA000F12AB9 /* NoteViewController.xib */; };
 		952086CB118ACBB800F12AB9 /* KalViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 952086CA118ACBB800F12AB9 /* KalViewDataSource.m */; };
 		952086DD118ACC7400F12AB9 /* AttendanceEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 952086DC118ACC7400F12AB9 /* AttendanceEditViewController.m */; };
 		9520878A118AD50400F12AB9 /* AttendanceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95208789118AD50400F12AB9 /* AttendanceCell.xib */; };
-		952087D4118AD5C000F12AB9 /* ChatTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 952087D3118AD5C000F12AB9 /* ChatTableCell.xib */; };
-		952087DE118AD61300F12AB9 /* icon_chart_lg.png in Resources */ = {isa = PBXBuildFile; fileRef = 952087DD118AD61300F12AB9 /* icon_chart_lg.png */; };
 		952087E8118AD67E00F12AB9 /* DeleteTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 952087E7118AD67E00F12AB9 /* DeleteTableCell.xib */; };
 		95345137118BDA9A006EF65B /* ChangeDateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95345135118BDA9A006EF65B /* ChangeDateViewController.m */; };
 		95345138118BDA9A006EF65B /* ChangeDateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95345136118BDA9A006EF65B /* ChangeDateViewController.xib */; };
@@ -61,9 +64,6 @@
 		95345592118C6A88006EF65B /* button_orange.png in Resources */ = {isa = PBXBuildFile; fileRef = 95345591118C6A88006EF65B /* button_orange.png */; };
 		953455F3118C700A006EF65B /* KalViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 953455EE118C700A006EF65B /* KalViewCell.xib */; };
 		953455F4118C700A006EF65B /* NotesTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 953455EF118C700A006EF65B /* NotesTableCell.xib */; };
-		953455F5118C700A006EF65B /* ind_y_l.png in Resources */ = {isa = PBXBuildFile; fileRef = 953455F0118C700A006EF65B /* ind_y_l.png */; };
-		953455F6118C700A006EF65B /* ind_y_m.png in Resources */ = {isa = PBXBuildFile; fileRef = 953455F1118C700A006EF65B /* ind_y_m.png */; };
-		953455F7118C700A006EF65B /* ind_y_r.png in Resources */ = {isa = PBXBuildFile; fileRef = 953455F2118C700A006EF65B /* ind_y_r.png */; };
 		95345635118C7BE6006EF65B /* AddStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95345633118C7BE6006EF65B /* AddStatusViewController.m */; };
 		95345636118C7BE6006EF65B /* AddStatusViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95345634118C7BE6006EF65B /* AddStatusViewController.xib */; };
 		953458CB118CDCCB006EF65B /* EnrollStudentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 953458C9118CDCCB006EF65B /* EnrollStudentsViewController.m */; };
@@ -202,6 +202,11 @@
 		9509E0B3117F88B100A468EB /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		9509E0B4117F88B100A468EB /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		9509E0B5117F88B100A468EB /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		9514C59C1190CF5000082C84 /* 16-line-chart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "16-line-chart.png"; sourceTree = SOURCE_ROOT; };
+		9514C59D1190CF5000082C84 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = SOURCE_ROOT; };
+		9514C59E1190CF5000082C84 /* calendar_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar_button.png; sourceTree = SOURCE_ROOT; };
+		9514C59F1190CF5000082C84 /* AttCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AttCell.xib; sourceTree = "<group>"; };
+		9514C5A21190CF5000082C84 /* list_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = list_button.png; sourceTree = SOURCE_ROOT; };
 		952086A4118AC08C00F12AB9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		952086C4118ACBA000F12AB9 /* NoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteViewController.h; sourceTree = "<group>"; };
 		952086C5118ACBA000F12AB9 /* NoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteViewController.m; sourceTree = "<group>"; };
@@ -211,8 +216,6 @@
 		952086DB118ACC7400F12AB9 /* AttendanceEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttendanceEditViewController.h; sourceTree = "<group>"; };
 		952086DC118ACC7400F12AB9 /* AttendanceEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttendanceEditViewController.m; sourceTree = "<group>"; };
 		95208789118AD50400F12AB9 /* AttendanceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AttendanceCell.xib; sourceTree = "<group>"; };
-		952087D3118AD5C000F12AB9 /* ChatTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatTableCell.xib; sourceTree = "<group>"; };
-		952087DD118AD61300F12AB9 /* icon_chart_lg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_chart_lg.png; sourceTree = "<group>"; };
 		952087E7118AD67E00F12AB9 /* DeleteTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeleteTableCell.xib; sourceTree = "<group>"; };
 		95345134118BDA9A006EF65B /* ChangeDateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeDateViewController.h; sourceTree = "<group>"; };
 		95345135118BDA9A006EF65B /* ChangeDateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeDateViewController.m; sourceTree = "<group>"; };
@@ -232,9 +235,6 @@
 		95345591118C6A88006EF65B /* button_orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_orange.png; sourceTree = "<group>"; };
 		953455EE118C700A006EF65B /* KalViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = KalViewCell.xib; path = ../Classes/KalViewCell.xib; sourceTree = "<group>"; };
 		953455EF118C700A006EF65B /* NotesTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = NotesTableCell.xib; path = ../Classes/NotesTableCell.xib; sourceTree = "<group>"; };
-		953455F0118C700A006EF65B /* ind_y_l.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ind_y_l.png; sourceTree = SOURCE_ROOT; };
-		953455F1118C700A006EF65B /* ind_y_m.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ind_y_m.png; sourceTree = SOURCE_ROOT; };
-		953455F2118C700A006EF65B /* ind_y_r.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ind_y_r.png; sourceTree = SOURCE_ROOT; };
 		95345632118C7BE6006EF65B /* AddStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddStatusViewController.h; sourceTree = "<group>"; };
 		95345633118C7BE6006EF65B /* AddStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddStatusViewController.m; sourceTree = "<group>"; };
 		95345634118C7BE6006EF65B /* AddStatusViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddStatusViewController.xib; sourceTree = "<group>"; };
@@ -390,6 +390,11 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				9514C59C1190CF5000082C84 /* 16-line-chart.png */,
+				9514C59D1190CF5000082C84 /* background.png */,
+				9514C59E1190CF5000082C84 /* calendar_button.png */,
+				9514C59F1190CF5000082C84 /* AttCell.xib */,
+				9514C5A21190CF5000082C84 /* list_button.png */,
 				95345317118C1E9F006EF65B /* General */,
 				95EC81941168D0E600DA720F /* DebugViewController.h */,
 				95EC81951168D0E600DA720F /* DebugViewController.m */,
@@ -506,7 +511,6 @@
 			isa = PBXGroup;
 			children = (
 				952087E7118AD67E00F12AB9 /* DeleteTableCell.xib */,
-				952087D3118AD5C000F12AB9 /* ChatTableCell.xib */,
 				5A1B8A34116A0C4900E979FF /* AddStudent */,
 				95208789118AD50400F12AB9 /* AttendanceCell.xib */,
 				952086DB118ACC7400F12AB9 /* AttendanceEditViewController.h */,
@@ -566,7 +570,6 @@
 				9534558B118C6A83006EF65B /* button_gray.png */,
 				9534558C118C6A83006EF65B /* button_purple.png */,
 				9534558D118C6A83006EF65B /* button_white.png */,
-				952087DD118AD61300F12AB9 /* icon_chart_lg.png */,
 				9509E0A1117F862600A468EB /* sync.png */,
 				9509E09E117F81BF00A468EB /* gear.png */,
 				955E426D11745DBC00FF2B8F /* button_blue.png */,
@@ -651,9 +654,6 @@
 			children = (
 				953455EE118C700A006EF65B /* KalViewCell.xib */,
 				953455EF118C700A006EF65B /* NotesTableCell.xib */,
-				953455F0118C700A006EF65B /* ind_y_l.png */,
-				953455F1118C700A006EF65B /* ind_y_m.png */,
-				953455F2118C700A006EF65B /* ind_y_r.png */,
 				95E6B2CA1189524500C3F6B3 /* Kal.h */,
 				95E6B2CB1189524500C3F6B3 /* kal_grid_background.png */,
 				95E6B2CC1189524500C3F6B3 /* kal_grid_shadow.png */,
@@ -846,8 +846,6 @@
 				95E6B3221189525B00C3F6B3 /* TapkuLibrary.bundle in Resources */,
 				952086C8118ACBA000F12AB9 /* NoteViewController.xib in Resources */,
 				9520878A118AD50400F12AB9 /* AttendanceCell.xib in Resources */,
-				952087D4118AD5C000F12AB9 /* ChatTableCell.xib in Resources */,
-				952087DE118AD61300F12AB9 /* icon_chart_lg.png in Resources */,
 				952087E8118AD67E00F12AB9 /* DeleteTableCell.xib in Resources */,
 				95345138118BDA9A006EF65B /* ChangeDateViewController.xib in Resources */,
 				9534524C118C00AA006EF65B /* StatusInstanceViewController.xib in Resources */,
@@ -859,12 +857,14 @@
 				95345592118C6A88006EF65B /* button_orange.png in Resources */,
 				953455F3118C700A006EF65B /* KalViewCell.xib in Resources */,
 				953455F4118C700A006EF65B /* NotesTableCell.xib in Resources */,
-				953455F5118C700A006EF65B /* ind_y_l.png in Resources */,
-				953455F6118C700A006EF65B /* ind_y_m.png in Resources */,
-				953455F7118C700A006EF65B /* ind_y_r.png in Resources */,
 				95345636118C7BE6006EF65B /* AddStatusViewController.xib in Resources */,
 				953458CC118CDCCB006EF65B /* EnrollStudentsViewController.xib in Resources */,
 				9534621B118FA7E4006EF65B /* logo.png in Resources */,
+				9514C5A31190CF5000082C84 /* 16-line-chart.png in Resources */,
+				9514C5A41190CF5000082C84 /* background.png in Resources */,
+				9514C5A51190CF5000082C84 /* calendar_button.png in Resources */,
+				9514C5A61190CF5000082C84 /* AttCell.xib in Resources */,
+				9514C5A91190CF5000082C84 /* list_button.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

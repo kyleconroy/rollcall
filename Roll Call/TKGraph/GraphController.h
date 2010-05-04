@@ -39,11 +39,13 @@
 	NSMutableArray *presences;
 	NSString *lastName;
 	NSString *firstName;
+	NSString *statusText;
 }
 
 @property (nonatomic, retain) NSMutableArray *presences;
 @property (nonatomic, retain) NSString *lastName;
 @property (nonatomic, retain) NSString *firstName;
+@property (nonatomic, retain) NSString *statusText;
 
 - (BOOL)comparedate:(NSDate*)date isBetweenDate:(NSDate*)beginDate andDate:(NSDate*)endDate;
 

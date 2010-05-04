@@ -36,6 +36,7 @@
 	Presence *presence;
 	NSString *name;
 	NSIndexPath *lastIndexPath;
+	NSMutableArray *statusArray;
 	NSInteger initialSelection;
 	IBOutlet UITableViewCell *nCell;
 	IBOutlet UITextView *notes;
@@ -47,8 +48,10 @@
 @property NSInteger initialSelection;
 @property (nonatomic, retain) IBOutlet UITableViewCell *nCell;
 @property (nonatomic, retain) IBOutlet UITextView *notes;
+@property (nonatomic, retain) NSMutableArray *statusArray;
 
 - (IBAction) showNotes;
+- (IBAction) deleteNotes;
 
 @end
 

@@ -349,8 +349,6 @@ static float highValue;
 
 - (id) initWithFrame:(CGRect)frame {
 	if(![super initWithFrame:frame]) return nil;
-	
-
 	titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
 	titleLabel.backgroundColor = [UIColor colorWithRed:249./255 green:249./255 blue:249./255 alpha:1.0];
 	titleLabel.opaque = YES;
@@ -410,7 +408,7 @@ static float highValue;
 
 - (void) scrollToPoint:(NSInteger)point animated:(BOOL)animated{
 	
-	if(point<0 || point >= [data count]) return;
+	if(point<0 || point > [data count]) return;
 	
 	
 	

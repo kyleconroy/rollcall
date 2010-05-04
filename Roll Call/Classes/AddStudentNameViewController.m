@@ -49,18 +49,22 @@
     if (indexPath.row == 0) {
         cell.textField.placeholder = @"First";
 		cell.textField.font=[UIFont boldSystemFontOfSize:20];
+		if (student.firstName!=nil)
+			cell.textField.text=student.firstName;
 		[cell.textField becomeFirstResponder];
     }
 	else     {    
         cell.textField.placeholder = @"Last";
 		cell.textField.font=[UIFont boldSystemFontOfSize:20];
+		if (student.lastName!=nil)
+			cell.textField.text=student.lastName;
     }
     return cell;
 }
 
 
 - (void)save {
-	AddStudentNameTableCell *cell; 
+	AddStudentNameTableCell *cell;
     cell = (AddStudentNameTableCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
     student.firstName = cell.textField.text;
     cell = (AddStudentNameTableCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];

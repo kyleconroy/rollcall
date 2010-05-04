@@ -10,6 +10,7 @@
 #import "AddStudentNameTableCell.h"
 #import "Student.h"
 #import "Address.h"
+#import "Roll_CallAppDelegate.h"
 
 @implementation AddAddressViewController
 
@@ -38,7 +39,11 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *CellIdentifier = @"NameCell";
+	Roll_CallAppDelegate *aD = (Roll_CallAppDelegate *)[[UIApplication sharedApplication] delegate];
+	NSManagedObjectContext *context=[aD managedObjectContext];
+	if (student.address==nil)
+		student.address = (Address *)[NSEntityDescription insertNewObjectForEntityForName:@"Address" inManagedObjectContext:context];
+	static NSString *CellIdentifier = @"NameCell";
     AddStudentNameTableCell *cell = (AddStudentNameTableCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
 		[[NSBundle mainBundle] loadNibNamed:@"AddStudentNameTableCell" owner:self options:nil];
@@ -51,6 +56,8 @@
 		cell.textField3.hidden=YES;
         cell.textField.placeholder = @"Street";
 		cell.textField.font=[UIFont systemFontOfSize:18];
+		if (student.address.apt!=nil)
+			cell.textField.text=student.address.apt;
 		[cell.textField becomeFirstResponder];
     }
 	else if (indexPath.row == 1){  
@@ -59,16 +66,24 @@
 		cell.textField3.hidden=YES;
         cell.textField.placeholder = @"Street";
 		cell.textField.font=[UIFont systemFontOfSize:18];
+		if (student.address.street!=nil)
+			cell.textField.text=student.address.street;
     } else {
 		cell.textField.hidden=YES;
         cell.textField1.placeholder = @"City";
 		cell.textField1.font=[UIFont systemFontOfSize:18];
+		if (student.address.city!=nil)
+			cell.textField1.text=student.address.city;
 		
         cell.textField2.placeholder = @"State";
 		cell.textField2.font=[UIFont systemFontOfSize:18];
+		if (student.address.state!=nil)
+			cell.textField2.text=student.address.state;
 		
         cell.textField3.placeholder = @"ZIP";
 		cell.textField3.font=[UIFont systemFontOfSize:18];
+		if (student.address.zip!=nil)
+			cell.textField3.text=student.address.zip;
 	}
     return cell;
 }

@@ -56,7 +56,7 @@
 		[self addSubview:subtitle];
 		
 		
-		indicator = [[TKOverviewIndicatorView alloc] initWithColor:TKOverviewIndicatorViewColorBlue];
+		indicator = [[TKOverviewIndicatorView alloc] initWithColor:button_blue];
 		CGRect f = indicator.frame;
 		f.origin.y = 18;
 		f.origin.x = 175;

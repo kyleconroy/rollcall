@@ -20,7 +20,7 @@
 #import "Status.h"
 #import "AttendanceTableViewController.h"
 #import "KalViewDataSource.h"
-#import "GraphController.h"
+#import "RollSheetInfoViewController.h"
 
 @implementation StudentViewController
 
@@ -38,6 +38,8 @@
 @synthesize cellImage;
 @synthesize cB;
 @synthesize dsCell;
+@synthesize statusArray;
+@synthesize emtIndex;
 
 
 - (void)viewDidLoad {
@@ -46,7 +48,10 @@
 	presences=nil;
 	if (currentStudent.presences!=nil)
 		presences= [[NSMutableArray alloc] initWithArray:[currentStudent.presences allObjects]];
+	
     aD = (Roll_CallAppDelegate *)[[UIApplication sharedApplication] delegate];
+	statusArray= [aD getAllStatuses];
+	[statusArray retain];
 	if (tableHeaderView == nil) {
         [[NSBundle mainBundle] loadNibNamed:@"StudentHeaderView" owner:self options:nil];
         self.tableView.tableHeaderView = tableHeaderView;
@@ -57,15 +62,14 @@
 	self.tableView.tableHeaderView.backgroundColor = [UIColor groupTableViewBackgroundColor];
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
-	[self.tableView reloadData];
+	//[self.tableView reloadData];
 	[super viewDidLoad];
 }
-
-
 
 - (void)viewWillAppear:(BOOL)animated {
 	
     [super viewWillAppear:animated];
+	emtIndex=[[NSMutableArray alloc] init];
 	if (currentStudent==nil) {
 		name.text=@"First Last";
 		name.font=[UIFont boldSystemFontOfSize:20];
@@ -79,28 +83,18 @@
 			name.text=fullname;
 			name.textColor=[UIColor blackColor];
 			name.font=[UIFont boldSystemFontOfSize:20];
+			[fullname release];
 		}
 		if (currentStudent.thumbnailPhoto==nil) {
 			[photoButton setImage:[UIImage imageNamed:@"deafultphoto.JPG"] forState:UIControlStateNormal];
 		} else                                                 
 			[photoButton setImage:currentStudent.thumbnailPhoto  forState:UIControlStateNormal];
-		
-		aC=0;
-		eC=0;
-		tC=0;
-		presences=nil;
-		if (currentStudent.presences!=nil)
-			presences= [[NSMutableArray alloc] initWithArray:[currentStudent.presences allObjects]];
-		for (Presence *presence in presences) {
-			if ([presence.status.letter isEqualToString:@"A"])
-				aC++;
-			if ([presence.status.letter isEqualToString:@"E"])
-				eC++;
-			if ([presence.status.letter isEqualToString:@"T"])
-				tC++;		
-		}
 	}
 	[self.tableView reloadData];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+	[emtIndex release];
 }
 
 - (void)viewDidUnload {
@@ -112,16 +106,8 @@
 - (void)didReceiveMemoryWarning {
 	// Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
-	
 	// Release any cached data, images, etc that aren't in use.
 }
-
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return YES;
-}
-
 
 #pragma mark -
 #pragma mark Change view methods
@@ -165,22 +151,36 @@
 
 - (IBAction) showKal {
 	calendar = [[KalViewController alloc] init];
+	calendar.hidesBottomBarWhenPushed=YES;
 	KalViewDataSource *data= [[KalViewDataSource alloc] init];
 	id<KalDataSource> source = data;
 	id<UITableViewDelegate> delegate=data;
-	data.statuses=presences;
+	
+	NSMutableArray *statuses=[[NSMutableArray alloc] init];
+	for (Presence *p in presences) {
+		if (p.status.letter!=nil)
+			[statuses addObject:p];
+	}
+	calendar.isAll=YES;
+	data.statuses=statuses;
 	data.kal=calendar;
+	calendar.student=currentStudent;
+	calendar.statuses=statuses;
 	data.name=[[NSString alloc] initWithFormat:@"%@ %@'s Attendance",currentStudent.firstName, currentStudent.lastName];
 	[calendar setDataSource:source];
 	[calendar setDelegate:delegate];
 	calendar.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Today" style:UIBarButtonItemStyleBordered target:self action:@selector(showAndSelectToday)] autorelease];
 	calendar.title=currentStudent.firstName;
 	[self.navigationController pushViewController:calendar animated:YES];
+	[data release];
+	[calendar release];
+	[statuses release];
 }
 
 - (IBAction) showNotes {
 	AttendanceTableViewController *aView = [[AttendanceTableViewController alloc] initWithNibName:@"AttendanceTableViewController" bundle:nil];
-	aView.type=3;
+	aView.type=1;
+	aView.title = @"Notes";	
 	aView.student=currentStudent;
 	[self.navigationController pushViewController:aView animated:YES];
 	[aView release];
@@ -221,7 +221,8 @@
 				// Handle the error.
 			}
 			[self.navigationController pushViewController:targetViewController animated:NO];	
-			
+			[targetViewController release];
+			[courses release];
 			break;
 		}
 	}
@@ -230,26 +231,34 @@
 #pragma mark Table view methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 5;
+	return 5;
 }
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 	NSMutableArray *courses=nil;
+	int stRows=[statusArray count]+1;
 	if (currentStudent.courses!=nil)
 		courses = [[NSMutableArray alloc] initWithArray:[currentStudent.courses allObjects]];
-	if (section==0){
+	if (section==2){
 		NSInteger cout=[courses count];
+		[courses release];
 		if (self.editing) 
 			cout++;
 		return cout;
 	}
-	else if (section==3) 
-		return 5;
-	else if (section==1)
-		return 2;   //not sure//not sure//not sure//not sure//not sure
-	else if (section==2) {
-		return 1;  //not sure//not sure//not sure//not sure//not sure
+	else if (section==3) {
+			return 5;
+	}
+	else if (section==0) {
+		if (self.editing)
+			return 0;
+		return stRows; 
+	}
+	else if (section==1) {
+		if (self.editing)
+			return 0;
+		return 1;  
 	} else if (section==4) {
 		if (self.editing) 
 			return 1;
@@ -263,20 +272,22 @@
 	if (currentStudent.courses!=nil)
 		courses = [[NSMutableArray alloc] initWithArray:[currentStudent.courses allObjects]];
 	UITableViewCell *cell = nil;
-    if (indexPath.section == 0) {
+    if (indexPath.section == 2) {
         if (indexPath.row < [courses count]) {
             // If the row is within the range, then configure the cell to show the class name.
 			static NSString *ClassesCellIdentifier = @"CoursesCell";
 			cell = [tableView dequeueReusableCellWithIdentifier:ClassesCellIdentifier];
 			if (cell == nil) {
 				// Create a cell to display a class.
-				cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ClassesCellIdentifier] autorelease];
-				cell.accessoryType = UITableViewCellAccessoryNone;
-				cell.selectionStyle = UITableViewCellSelectionStyleNone;
+				cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ClassesCellIdentifier] autorelease];
+				cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+				cell.selectionStyle = UITableViewCellSelectionStyleBlue;
 			}
 			Course *course = [courses objectAtIndex:indexPath.row];
-			cell.textLabel.text = [NSString stringWithFormat:@"%@", course.name];
-			cell.editingAccessoryType = UITableViewCellAccessoryNone;
+			NSString *courseName=[NSString stringWithFormat:@"%@", course.name];
+			cell.textLabel.text = courseName;
+			cell.editingAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+			[course release];
         } else {
             // If the row is outside the range, it's the row that was added to allow insertion (see tableView:numberOfRowsInSection:) so give it an appropriate label.
 			static NSString *AddClassCellIdentifier = @"AddCourseCell";
@@ -333,6 +344,7 @@
 			}
 			cell.detailTextLabel.text = address1;
 			cell.selectionStyle = UITableViewCellSelectionStyleNone;
+			[address1 release];
 		} else if (indexPath.row == 4) {
 			cell.selectionStyle = UITableViewCellSelectionStyleNone;
 			cell.editingAccessoryType = UITableViewCellAccessoryNone;
@@ -350,47 +362,52 @@
 				city=@"";
 			}
 			address2 = [[NSString alloc] initWithFormat:@" %@     %@  %@", city, state, zip];
-			[state release];
 			cell.detailTextLabel.text = address2;
+			[state release];
+			[address2 release];
 		}
-	} else if (indexPath.section == 1) {
-		if (indexPath.row == 0) {
-			static NSString *CellIdentifier = @"AttendanceCell";
-			UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-			if (cell == nil) {
-				[[NSBundle mainBundle] loadNibNamed:@"AttendanceCell" owner:self options:nil];
-				cell = tvCell;
-				self.tvCell = nil;
-				cell.selectionStyle = UITableViewCellSelectionStyleBlue;
-			}
-			[aB setTitle:@"A" forState: UIControlStateNormal];
-			[aB setBackgroundImage:[UIImage imageNamed:@"button_red.png"] forState:UIControlStateNormal];
-			aL.text=[[NSString alloc] initWithFormat:@"%d", aC];
-			[tB setTitle:@"T" forState: UIControlStateNormal];
-			[tB setBackgroundImage:[UIImage imageNamed:@"button_yellow.png"] forState:UIControlStateNormal];
-			tL.text=[[NSString alloc] initWithFormat:@"%d", tC];
-			[eB setTitle:@"E" forState: UIControlStateNormal];
-			[eB setBackgroundImage:[UIImage imageNamed:@"button_blue.png"] forState:UIControlStateNormal];
-			eL.text=[[NSString alloc] initWithFormat:@"%d", eC];
+	} else if (indexPath.section == 0) {
+		static NSString *CellIdentifier = @"AttendanceCell";
+		UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+		if (cell == nil) {
+			[[NSBundle mainBundle] loadNibNamed:@"AttendanceCell" owner:self options:nil];
+			cell = tvCell;
+			self.tvCell = nil;
 			cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-			return cell;
+			cell.selectionStyle = UITableViewCellSelectionStyleBlue;
 		}
-		else if (indexPath.row == 1) {
-			static NSString *CellIdentifier = @"OverViewCell";
-			UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-			if (cell == nil) {
-				[[NSBundle mainBundle] loadNibNamed:@"ChatTableCell" owner:self options:nil];
-				cell = tableCell;
-				self.tableCell = nil;
-				cellLabel.text=@"Monthly Overview";
-				cB.hidden=YES;
-				cellImage.hidden=NO;
-				[cellImage setImage:[UIImage imageNamed:@"icon_chart_lg.png"]];
-				cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+		if (indexPath.row==0) {
+			stAll.text=@"All Attendances";
+			stAll.hidden=NO;
+			stCount.hidden=YES;
+			stName.hidden=YES;
+			aB.hidden=YES;
+		}
+		else {
+			stAll.hidden=YES;
+			stCount.hidden=NO;
+			stName.hidden=NO;
+			aB.hidden=NO;	
+			Status *status=[statusArray objectAtIndex:indexPath.row-1];
+			[aB setTitle:status.letter forState: UIControlStateNormal];
+			[aB setBackgroundImage:[UIImage imageNamed:status.imageName] forState:UIControlStateNormal];
+			stName.text=status.text;
+			int count=0;
+			for (Presence *p in presences) {
+				if ([p.status.letter isEqualToString:status.letter])
+					count++;
 			}
-			return cell;
+			if (count==0) {
+				cell.accessoryType = UITableViewCellAccessoryNone;
+				cell.selectionStyle = UITableViewCellSelectionStyleNone;
+				[emtIndex addObject: indexPath];
+			}
+			NSString *cStr=[[NSString alloc] initWithFormat:@"%i", count];
+			stCount.text=cStr;
+			[cStr release];
 		}
-	} else if (indexPath.section == 2) {
+		return cell;
+	} else if (indexPath.section == 1) {
 		static NSString *CellIdentifier = @"OverViewCell";
 		UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 		if (cell == nil) {
@@ -419,35 +436,68 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-	if (indexPath.section==1||indexPath.section==2)
-		return 50;
+	if (indexPath.section==0||indexPath.section==1)
+		return 40;
+	if (indexPath.section==3) {
+		if (indexPath.row==2)
+			return 35;
+		return 45;
+	}
 	if (indexPath.section==4)
 		return 29;
-	return 45;
+	return 40;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	NSMutableArray *courses=nil;
 	if (currentStudent.courses!=nil)
 		courses = [[NSMutableArray alloc] initWithArray:[currentStudent.courses allObjects]];
-	if (indexPath.section==0) {
+	if (indexPath.section==2) {
 		if (indexPath.row == [courses count]) {
 			[self addCourse];
 		}
-	} else if (indexPath.section==1) {
-		if (indexPath.row==1) {
-			GraphController *vc = [[GraphController alloc] init];
-			vc.presences=presences;
-			vc.lastName=currentStudent.lastName;
-			vc.firstName=currentStudent.firstName;
-			[vc setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
-			[self presentModalViewController:vc animated:YES];
-			[vc release];	
+		else if (indexPath.row != [courses count]){
+			RollSheetInfoViewController *coursesInfo = [[RollSheetInfoViewController alloc] initWithNibName:@"RollSheetInfoViewController" bundle:nil];
+			[self.navigationController pushViewController:coursesInfo animated:YES];
+			//coursesInfo.course=[courses objectAtIndex:indexPath.row];
+			[courses release];
+			[coursesInfo release];
 		}
+	} else if (indexPath.section==0) {
 		if (indexPath.row==0) {
 			[self showKal];
+		} else {
+			if (![emtIndex containsObject:indexPath]) {
+			calendar=[[KalViewController alloc] init];
+			calendar.hidesBottomBarWhenPushed=YES;
+			KalViewDataSource *data= [[KalViewDataSource alloc] init];
+			id<KalDataSource> source = data;
+			id<UITableViewDelegate> delegate=data;
+			
+			NSMutableArray *statuses=[[NSMutableArray alloc] init];
+			Status *status=[statusArray objectAtIndex:indexPath.row-1];
+			currentStatus=status;
+			for (Presence *p in presences) {
+				if ([p.status.letter isEqualToString:status.letter])
+					[statuses addObject:p];
+			}
+			calendar.student=currentStudent;
+			calendar.statuses=statuses;
+			data.statuses=statuses;
+			data.kal=calendar;
+			data.name=[[NSString alloc] initWithFormat:@"%@ %@'s Attendance",currentStudent.firstName, currentStudent.lastName];
+			[calendar setDataSource:source];
+			[calendar setDelegate:delegate];
+			//calendar.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Today" style:UIBarButtonItemStyleBordered target:self action:@selector(showAndSelectToday)] autorelease];
+			calendar.title=status.text;
+			calendar.titleString=status.text;
+			[self.navigationController pushViewController:calendar animated:YES];
+			[data release];
+			[calendar release];
+			[statuses release];
+			}
 		}
-	} else if (indexPath.section==2) {
+	} else if (indexPath.section==1) {
 		[self showNotes];
 	} if (self.editing&&(indexPath.section == 3)&&(indexPath.row == 0)) {
 		[self addPhone];
@@ -461,20 +511,15 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-	if  (section==0)
+	if  (section==2)
 		return @"Course(s)";
 	if  (section==3)
 		return @"Contact Info";
-	if  (section==1)
-		return @"Attendance";
+	//if  (section==0)
+		//return @"Attendance";
 	return @"";
 }
 
-
-- (void)showAndSelectToday
-{
-	[calendar showAndSelectDate:[NSDate date]];
-}
 /*
  // Override to support conditional editing of the table view.
  - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -488,7 +533,7 @@
 	NSMutableArray *courses=nil;
 	if (currentStudent.courses!=nil)
 		courses = [[NSMutableArray alloc] initWithArray:[currentStudent.courses allObjects]];
-    if ((editingStyle == UITableViewCellEditingStyleDelete) && (indexPath.section == 0)){
+    if ((editingStyle == UITableViewCellEditingStyleDelete) && (indexPath.section == 2)){
         // Delete the row from the data source
 		Course *course = [courses objectAtIndex:indexPath.row];
 		[currentStudent removeCoursesObject:course];
@@ -496,14 +541,14 @@
 		[courses removeObjectAtIndex:indexPath.row];		
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:YES];
 	}
+	[courses release];
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-	if (indexPath.section==0||indexPath.section==3)
+	if (indexPath.section==2||indexPath.section==3)
 		return TRUE;
 	return FALSE;
 }
-
 
 - (void)setEditing:(BOOL)editing animated:(BOOL)animated {
 	
@@ -511,26 +556,37 @@
 	if (currentStudent.courses!=nil)
 		courses = [[NSMutableArray alloc] initWithArray:[currentStudent.courses allObjects]];
     [super setEditing:editing animated:animated];
-	
 	[self.tableView beginUpdates];
 	NSUInteger count = [courses count];
-    NSArray *classesInsertIndexPath = [NSArray arrayWithObject:[NSIndexPath indexPathForRow:count inSection:0]];
+    NSArray *classesInsertIndexPath = [NSArray arrayWithObject:[NSIndexPath indexPathForRow:count inSection:2]];
 	NSArray *deleteInsertIndexPath = [NSArray arrayWithObject:[NSIndexPath indexPathForRow:0 inSection:4]];
+	NSArray *noteIndexPath = [NSArray arrayWithObject:[NSIndexPath indexPathForRow:0 inSection:1]];
+	int rowNums=[statusArray count]+1;
 	[self.navigationItem setHidesBackButton:editing animated:animated];
     if (editing) {
 		[self.navigationItem setHidesBackButton:editing animated:animated];
-        [self.tableView insertRowsAtIndexPaths:classesInsertIndexPath withRowAnimation:UITableViewRowAnimationTop];
 		[self updatePhotoButton];
+        [self.tableView insertRowsAtIndexPaths:classesInsertIndexPath withRowAnimation:UITableViewRowAnimationTop];
 		[self.tableView insertRowsAtIndexPaths:deleteInsertIndexPath withRowAnimation:UITableViewRowAnimationTop];
+		[self.tableView deleteRowsAtIndexPaths:noteIndexPath withRowAnimation:UITableViewRowAnimationTop];
+		[self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationTop];
+		for (int i=1; i<rowNums; i++) {
+			[self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:i inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+		}
 		addNameButton.enabled=TRUE;
 	} else {
 		addNameButton.enabled=FALSE;
 		if (currentStudent.thumbnailPhoto==nil) {
 			[photoButton setImage:[UIImage imageNamed:@"deafultphoto.JPG"] forState:UIControlStateNormal];
 		} else                                           
-			[photoButton setImage:currentStudent.thumbnailPhoto  forState:UIControlStateNormal];
+		[photoButton setImage:currentStudent.thumbnailPhoto  forState:UIControlStateNormal];
         [self.tableView deleteRowsAtIndexPaths:classesInsertIndexPath withRowAnimation:UITableViewRowAnimationTop];
-		[self.tableView deleteRowsAtIndexPaths:deleteInsertIndexPath withRowAnimation:UITableViewRowAnimationTop];	
+		[self.tableView deleteRowsAtIndexPaths:deleteInsertIndexPath withRowAnimation:UITableViewRowAnimationTop];
+		[self.tableView insertRowsAtIndexPaths:noteIndexPath withRowAnimation:UITableViewRowAnimationTop];
+		[self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationTop];
+		for (int i=1; i<rowNums; i++) {
+			[self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:i inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+		}
 		NSManagedObjectContext *context=[aD managedObjectContext];
 		NSError *error;
 		if (![context save:&error]) {
@@ -538,15 +594,15 @@
 		}
 	}
     [self.tableView endUpdates];
+	[courses release];
 }
-
 
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
 	UITableViewCellEditingStyle style = UITableViewCellEditingStyleNone;
 	NSMutableArray *courses=nil;
 	if (currentStudent.courses!=nil)
 		courses = [[NSMutableArray alloc] initWithArray:[currentStudent.courses allObjects]];
-	if (indexPath.section == 0) {
+	if (indexPath.section == 2) {
         // If this is the last item, it's the insertion row.
         if (indexPath.row == [courses count]) {
             style = UITableViewCellEditingStyleInsert;
@@ -556,9 +612,9 @@
         }		
     } else 
 		style = UITableViewCellEditingStyleNone;
+	[courses release];
     return style;
 }
-
 
 - (IBAction)photoTapped {
 	if (self.editing) {
@@ -568,7 +624,6 @@
 		[imagePicker release];
 	}
 }
-
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)selectedImage editingInfo:(NSDictionary *)editingInfo {
 	
@@ -589,11 +644,9 @@
     [self dismissModalViewControllerAnimated:YES];
 }
 
-
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
     [self dismissModalViewControllerAnimated:YES];
 }
-
 
 - (void)updatePhotoButton {
 	photoButton.enabled = TRUE;
@@ -606,13 +659,13 @@
 	[tableHeaderView release];
 	[addNameButton release];
 	[name release];
-	[calendar release];
 	[presences release];
 	[cellImage release];
 	[tableCell release];
 	[cellLabel release];
 	[dsCell release];
 	[tvCell release];
+	[statusArray release];
 	[super dealloc];
 }
 

@@ -74,12 +74,12 @@ static BOOL IsDateBetweenInclusive(NSDate *date, NSDate *begin, NSDate *end)
 	NSString *theDate = [dateFormat stringFromDate:presence.date];
 	dateLabel.text =[NSString stringWithFormat:@"%@", theDate];
 	[dateFormat release];
+			NSLog(@"Asfafasf");
 	return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	NSLog(@"Asfafasf");
 	Presence *presence = [self presenceAtIndexPath:indexPath];
 	AttendanceEditViewController *vc = [[AttendanceEditViewController alloc] init];
 	vc.name=name;
@@ -96,19 +96,18 @@ static BOOL IsDateBetweenInclusive(NSDate *date, NSDate *begin, NSDate *end)
 {
 	if ([date compare:beginDate] == NSOrderedAscending)
 		return NO;
-			
+	
 	if ([date compare:endDate] == NSOrderedDescending) 
 		return NO;
-			
 	return YES;
 }
-		 
+
 - (void)loadPresencesFrom:(NSDate *)fromDate to:(NSDate *)toDate delegate:(id<KalDataSourceCallbacks>)delegate
 {
 	
 	for (Presence *p in statuses) {
 		if ([self comparedate: p.date isBetweenDate:fromDate andDate:toDate])
-			if (![p.status.letter isEqualToString:@"P"])
+			//if (![p.status.letter isEqualToString:@"P"])
 				[presences addObject:p];
 	}
 	[delegate loadedDataSource:self];
