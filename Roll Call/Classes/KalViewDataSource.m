@@ -83,7 +83,6 @@ static BOOL IsDateBetweenInclusive(NSDate *date, NSDate *begin, NSDate *end)
 	Presence *presence = [self presenceAtIndexPath:indexPath];
 	AttendanceEditViewController *vc = [[AttendanceEditViewController alloc] init];
 	vc.name=name;
-	vc.kal=kal;
 	vc.presence=presence;
 	[kal.navigationController pushViewController:vc animated:YES];
 }
@@ -108,7 +107,7 @@ static BOOL IsDateBetweenInclusive(NSDate *date, NSDate *begin, NSDate *end)
 	
 	for (Presence *p in statuses) {
 		if ([self comparedate: p.date isBetweenDate:fromDate andDate:toDate])
-			if (![p.status.letter isEqualToString:@"P"])
+			//if (![p.status.letter isEqualToString:@"P"])
 				[presences addObject:p];
 	}
 	[delegate loadedDataSource:self];

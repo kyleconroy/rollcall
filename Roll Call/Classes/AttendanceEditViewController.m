@@ -36,8 +36,6 @@
 #import "RollSheetAddNoteController.h"
 #import "Roll_CallAppDelegate.h"
 #import "NoteViewController.h"
-#import "KalViewController.h"
-
 
 @implementation AttendanceEditViewController
 
@@ -45,10 +43,13 @@
 @synthesize lastIndexPath;
 @synthesize initialSelection;
 @synthesize nCell, notes;
-@synthesize kal;
+@synthesize statusArray;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+	Roll_CallAppDelegate *aD = (Roll_CallAppDelegate *)[[UIApplication sharedApplication] delegate];
+    statusArray = [aD getAllStatuses];
+    [statusArray retain];
 	NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
 	[dateFormat setDateFormat:@"EEEE ha"];
 	NSString *theDate = [dateFormat stringFromDate:presence.date];
@@ -74,25 +75,33 @@
 
 - (void)viewWillAppear:(BOOL)animated {
 	initialSelection=-1;
-	if ([presence.status.letter isEqualToString:@"P"]) {
-		initialSelection=0;
-		self.header.indicator.text = @"Present";
-		self.header.indicator.color = TKOverviewIndicatorViewColorGreen;
-	}
-	else if ([presence.status.letter isEqualToString:@"A"]) {
-		initialSelection=1;
-		self.header.indicator.text = @"Absent";
-		self.header.indicator.color = TKOverviewIndicatorViewColorRed;
-	}
-	else if ([presence.status.letter isEqualToString:@"E"]) {
-		initialSelection=2;
-		self.header.indicator.text = @"Excused";
-		self.header.indicator.color = TKOverviewIndicatorViewColorBlue;
-	}
-	else if ([presence.status.letter isEqualToString:@"T"]) {
-		initialSelection=3;
-		self.header.indicator.text = @"Tardy";
-		self.header.indicator.color = TKOverviewIndicatorViewColorYellow;
+	//find initialSelection
+	self.header.indicator.text = presence.status.text;
+	
+	if ([presence.status.imageName isEqualToString:@"button_blue.png"])
+		self.header.indicator.color = button_blue;
+	if ([presence.status.imageName isEqualToString:@"button_gray.png"])
+		self.header.indicator.color = button_gray;
+	if ([presence.status.imageName isEqualToString:@"button_green.png"])
+		self.header.indicator.color = button_green;
+	if ([presence.status.imageName isEqualToString:@"button_orange.png"])
+		self.header.indicator.color = button_orange;
+	if ([presence.status.imageName isEqualToString:@"button_purple.png"])
+		self.header.indicator.color = button_purple;
+	if ([presence.status.imageName isEqualToString:@"button_red.png"])
+		self.header.indicator.color = button_red;
+	if ([presence.status.imageName isEqualToString:@"button_white.png"])
+		self.header.indicator.color = button_white;
+	if ([presence.status.imageName isEqualToString:@"button_yellow.png"])
+		self.header.indicator.color = button_yellow;
+	
+	int i=0;
+	for (Status *s in statusArray) {
+		if ([presence.status.letter isEqualToString:s.letter]) {
+			initialSelection=i;
+			break;
+		}
+		i++;					  
 	}
 	if (initialSelection !=-1)
     {
@@ -113,42 +122,13 @@
 - (IBAction) save
 {
 	Roll_CallAppDelegate *aD = (Roll_CallAppDelegate *)[[UIApplication sharedApplication] delegate];
-	UIActionSheet *saveAlert = [[UIActionSheet alloc] initWithTitle: @"Are you sure you want to save the change?"
-															 delegate: self cancelButtonTitle:@"No"
-											   destructiveButtonTitle: nil
-												    otherButtonTitles: @"Yes", nil, nil];
-	saveAlert.actionSheetStyle = UIBarStyleBlackTranslucent;
-	[saveAlert showInView:[[aD tabBarController] view]];
-	[saveAlert release];
-}
-#pragma mark -
-#pragma mark UIActionSheetDelegate
-
-- (void)actionSheet:(UIActionSheet *)modalView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    // Change the navigation bar style, also make the status bar match with it
-	switch (buttonIndex)
-	{
-		case 0:
-		{
-			Roll_CallAppDelegate *aD = (Roll_CallAppDelegate *)[[UIApplication sharedApplication] delegate];
-			if([lastIndexPath row]==0){
-				presence.status = [aD getStatusWithLetter:@"P"];
-			} else if([lastIndexPath row]==1){
-				presence.status = [aD getStatusWithLetter:@"A"];
-			} else if([lastIndexPath row]==2){
-				presence.status = [aD getStatusWithLetter:@"E"];
-			} else if([lastIndexPath row]==3){
-				presence.status = [aD getStatusWithLetter:@"T"];
-			}
-			NSError *error;
-			if (![[aD managedObjectContext] save:&error]) {
-				// Handle the error.
-			}
-			[self.navigationController popViewControllerAnimated:YES];
-			break;
-		}
+	int index=[lastIndexPath row];
+	presence.status=[statusArray objectAtIndex: index];
+	NSError *error;
+	if (![[aD managedObjectContext] save:&error]) {
+		// Handle the error.
 	}
+	[self.navigationController popViewControllerAnimated:YES];	
 }
 
 #pragma mark Table view methods
@@ -158,7 +138,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section==0)
-		return 4;
+		return [statusArray count];
 	return 1;
 }
 - (UITableViewCell *)tableView:(UITableView *)table cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -169,14 +149,8 @@
 			 cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
 		 }
 		 // Set up the cell...
-		 if(indexPath.row == 0)
-			 cell.textLabel.text = @"Present";
-		 if(indexPath.row == 1)
-			 cell.textLabel.text = @"Absent";
-		 if(indexPath.row == 2)
-			 cell.textLabel.text = @"Excused";
-		 if(indexPath.row == 3)
-			 cell.textLabel.text = @"Tardy";
+		 Status *status=[statusArray objectAtIndex:indexPath.row];
+		 cell.textLabel.text = status.text;
 		 NSUInteger row = [indexPath row];
 		 NSUInteger oldRow = [lastIndexPath row];
 		 cell.accessoryType = (row == oldRow && lastIndexPath != nil) ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
@@ -187,7 +161,7 @@
 			 UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 			 if (cell == nil) {
 				 cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-				 cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+				 cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 			 }
 			 cell.textLabel.text =@"Add Note";
 			 return cell;
@@ -211,19 +185,25 @@
 		if (initialSelection!=indexPath.row) {
 			self.navigationItem.rightBarButtonItem.enabled=YES;
 		}
-		if(indexPath.row==0){
-			self.header.indicator.color = TKOverviewIndicatorViewColorGreen;
-			self.header.indicator.text = @"Present";
-		}else if(indexPath.row==1){
-			self.header.indicator.color = TKOverviewIndicatorViewColorRed;
-			self.header.indicator.text = @"Absent";
-		}else if(indexPath.row==2){
-			self.header.indicator.color = TKOverviewIndicatorViewColorBlue;
-			self.header.indicator.text = @"Excused";
-		}else if(indexPath.row==3){
-			self.header.indicator.color = TKOverviewIndicatorViewColorYellow;
-			self.header.indicator.text = @"Tardy";
-		}
+		Status *status=[statusArray objectAtIndex:indexPath.row];
+		if ([status.imageName isEqualToString:@"button_blue.png"])
+			self.header.indicator.color = button_blue;
+		if ([status.imageName isEqualToString:@"button_gray.png"])
+			self.header.indicator.color = button_gray;
+		if ([status.imageName isEqualToString:@"button_green.png"])
+			self.header.indicator.color = button_green;
+		if ([status.imageName isEqualToString:@"button_orange.png"])
+			self.header.indicator.color = button_orange;
+		if ([status.imageName isEqualToString:@"button_purple.png"])
+			self.header.indicator.color = button_purple;
+		if ([status.imageName isEqualToString:@"button_red.png"])
+			self.header.indicator.color = button_red;
+		if ([status.imageName isEqualToString:@"button_white.png"])
+			self.header.indicator.color = button_white;
+		if ([status.imageName isEqualToString:@"button_yellow.png"])
+			self.header.indicator.color = button_yellow;
+		self.header.indicator.text = status.text;
+
 		int newRow = [indexPath row];
 		int oldRow = [lastIndexPath row];
 		if (newRow != oldRow)
@@ -262,24 +242,7 @@
 	return 160;
 }
 
-- (void)viewWillDisappear:(BOOL)animated {
-	if ([presence.status.letter isEqualToString:@"P"]) {
-		self.header.indicator.text = @"Present";
-		self.header.indicator.color = TKOverviewIndicatorViewColorGreen;
-	}
-	else if ([presence.status.letter isEqualToString:@"A"]) {
-		self.header.indicator.text = @"Absent";
-		self.header.indicator.color = TKOverviewIndicatorViewColorRed;
-	}
-	else if ([presence.status.letter isEqualToString:@"E"]) {
-		self.header.indicator.text = @"Excused";
-		self.header.indicator.color = TKOverviewIndicatorViewColorBlue;
-	}
-	else if ([presence.status.letter isEqualToString:@"T"]) {
-		self.header.indicator.text = @"Tardy";
-		self.header.indicator.color = TKOverviewIndicatorViewColorYellow;
-	}
-}
+//- (void)viewWillDisappear:(BOOL)animated {}
 
 
 - (IBAction) showNotes {
@@ -290,10 +253,16 @@
 	[myNoteView release];
 }
 
+- (IBAction) deleteNotes {
+	presence.note=nil;
+	[self.tableView reloadData];
+}
+
 - (void)dealloc {
 	[presence release];
 	[nCell release];
 	[notes release];
+	[statusArray release];
     [super dealloc];
 }
 

@@ -10,6 +10,7 @@
 #import "Kal.h"
 
 @class Presence;
+@class StudentViewController;
 
 @interface KalViewDataSource : NSObject <KalDataSource, UITableViewDelegate>{
 		

@@ -42,9 +42,9 @@ static UIImage *right = nil;
 static UIImage *middle = nil;
 
 - (id) initWithColor:(TKOverviewIndicatorViewColor)colour{
-	if (self = [super initWithFrame:CGRectMake(0, 0, 130, 27)]) {
+	if (self = [super initWithFrame:CGRectMake(0, 0, 130, 30)]) {
         // Initialization code
-		textLabel = [[UILabel alloc] initWithFrame:CGRectInset(CGRectMake(0, 0, 120, 27), 6, 2)];
+		textLabel = [[UILabel alloc] initWithFrame:CGRectInset(CGRectMake(0, 0, 120, 30), 6, 2)];
 		textLabel.textAlignment = UITextAlignmentCenter;
 		textLabel.backgroundColor = [UIColor clearColor];
 		textLabel.textColor = [UIColor whiteColor];
@@ -52,16 +52,11 @@ static UIImage *middle = nil;
 		textLabel.shadowColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:.6];
 		textLabel.shadowOffset = CGSizeMake(0,-1);
 		[self addSubview:textLabel];
-		
-		
-		
 		[self setColor:colour];
-		
 		self.backgroundColor = [UIColor clearColor];
     }
     return self;
 }
-
 
 + (float) calculateHeightOfTextFromWidth:(NSString*)text 
 									font:(UIFont*)withFont 
@@ -94,28 +89,40 @@ static UIImage *middle = nil;
 	[left release];
 	[right release];
 	[middle release];
-	
-	
-	NSString *bundle = TKBUNDLE(@"TapkuLibrary.bundle/Images/overview/");
-	
-	if(color == TKOverviewIndicatorViewColorBlue){
-		left = [UIImage imageFromPath:[bundle stringByAppendingPathComponent:@"ind_blue_left.png"]];
-		middle = [UIImage imageFromPath:[bundle stringByAppendingPathComponent:@"ind_blue_middle.png"]];
-		right = [UIImage imageFromPath:[bundle stringByAppendingPathComponent:@"ind_blue_right.png"]];
-	}else if(color == TKOverviewIndicatorViewColorGreen){
-		left = [UIImage imageFromPath:[bundle stringByAppendingPathComponent:@"ind_green_left.png"]];
-		middle = [UIImage imageFromPath:[bundle stringByAppendingPathComponent:@"ind_green_middle.png"]];
-		right =  [UIImage imageFromPath:[bundle stringByAppendingPathComponent:@"ind_green_right.png"]];
-	}else if(color == TKOverviewIndicatorViewColorYellow){
-		left = [UIImage imageNamed:@"ind_y_l.png"];
-		middle = [UIImage imageNamed:@"ind_y_m.png"];
-		right =  [UIImage imageNamed:@"ind_y_r.png"];
+	//NSString *bundle = TKBUNDLE(@"TapkuLibrary.bundle/Images/overview/");
+	if(color == button_blue){
+		left = [UIImage imageNamed:@"button_blue.png"];
+		middle = [UIImage imageNamed:@"button_blue.png"];
+		right =  [UIImage imageNamed:@"button_blue.png"];
+	}else if(color == button_gray){
+		left = [UIImage imageNamed:@"button_gray.png"];
+		middle = [UIImage imageNamed:@"button_gray.png"];
+		right =  [UIImage imageNamed:@"button_gray.png"];
+	}else if(color == button_green){
+		left = [UIImage imageNamed:@"button_green.png"];
+		middle = [UIImage imageNamed:@"button_green.png"];
+		right =  [UIImage imageNamed:@"button_green.png"];
+	}else if(color == button_orange){
+		left = [UIImage imageNamed:@"button_orange.png"];
+		middle = [UIImage imageNamed:@"button_orange.png"];
+		right =  [UIImage imageNamed:@"button_orange.png"];
+	}else if(color == button_purple){
+		left = [UIImage imageNamed:@"button_purple.png"];
+		middle = [UIImage imageNamed:@"button_purple.png"];
+		right =  [UIImage imageNamed:@"button_purple.png"];
+	}else if(color == button_red){
+		left = [UIImage imageNamed:@"button_red.png"];
+		middle = [UIImage imageNamed:@"button_red.png"];
+		right =  [UIImage imageNamed:@"button_red.png"];
+	}else if(color == button_white){
+		left = [UIImage imageNamed:@"button_white.png"];
+		middle = [UIImage imageNamed:@"button_white.png"];
+		right =  [UIImage imageNamed:@"button_white.png"];
 	}else{
-		left = [UIImage imageFromPath:[bundle stringByAppendingPathComponent:@"ind_red_left.png"]];
-		middle = [UIImage imageFromPath:[bundle stringByAppendingPathComponent:@"ind_red_middle.png"]];
-		right =[UIImage imageFromPath:[bundle stringByAppendingPathComponent:@"ind_red_right.png"]];
+		left = [UIImage imageNamed:@"button_yellow.png"];
+		middle = [UIImage imageNamed:@"button_yellow.png"];
+		right =  [UIImage imageNamed:@"button_yellow.png"];
 	}
-	
 	[left retain];
 	[right retain];
 	[middle retain];
@@ -128,19 +135,12 @@ static UIImage *middle = nil;
 	CGContextRef context = UIGraphicsGetCurrentContext();
 	CGContextTranslateCTM(context, 0.0, self.bounds.size.height);
 	CGContextScaleCTM(context, 1.0, -1.0);
-	
 	float w = 6 + [textLabel.text heightWithFont:textLabel.font  width:textLabel.bounds.size.width  linebreak:textLabel.lineBreakMode].width;
 	float ow = self.frame.size.width - w - 5;
-	
-	
 	CGRect f = textLabel.frame;
 	f.size.width=w;
 	f.origin.x = ow;
 	textLabel.frame = f;
-	 
-
-
-	
 	CGRect sr = CGRectMake(ow-5, 0, 5, 27);
 	CGContextDrawImage(context, sr, [left CGImage]);
 	sr.origin.x = self.bounds.size.width - 5;
@@ -150,11 +150,7 @@ static UIImage *middle = nil;
 	CGRect imageRect = CGRectMake(0, 0, 1, 27);
 	imageRect.origin = CGPointMake(0, 0);
 	CGContextDrawTiledImage(context, imageRect, [middle CGImage]);
-	
-
-
 }
-
 
 - (void)dealloc {
 	[textLabel release];

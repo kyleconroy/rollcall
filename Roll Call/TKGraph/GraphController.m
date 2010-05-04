@@ -59,11 +59,11 @@
 
 @implementation GraphController
 
-@synthesize presences, lastName, firstName;
+@synthesize presences, lastName, firstName, statusText;
 
 - (void)viewDidLoad{
 	[super viewDidLoad];
-	graph.title.text = [[NSString alloc] initWithFormat:@"%@ %@'s Absences in Last 30 Days", firstName, lastName];
+	graph.title.text = [[NSString alloc] initWithFormat:@"%@ %@'s %@ in Last 30 Days", firstName, lastName, statusText];
 	[graph setPointDistance:25];
 	indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
 	CGRect r = indicator.frame;
@@ -93,15 +93,8 @@
 		for (Presence *presence in presences) {
 			NSDate *oneDayBefore=[newDate addTimeInterval:-3600*24];
 			if ([self comparedate:presence.date isBetweenDate:oneDayBefore andDate:newDate]) {
-				if ([presence.status.letter isEqualToString:@"A"])
+				//if ([presence.status.letter isEqualToString:@"A"])
 					aC++;
-				
-				int pc=[presences count];
-				NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-				[dateFormat setDateFormat:@"ha, EEEE MMMM d"];
-				NSString *dateString = [dateFormat stringFromDate:presence.date];
-				NSLog(@"date: %@ %i \n", dateString, pc);
-				
 			}
 		}
 		GraphPoint *gp = [[GraphPoint alloc] initWithID:i value:[NSNumber numberWithFloat:aC*8]];
@@ -133,8 +126,9 @@
 	[self.graph setGraphWithDataPoints:data];
 	self.graph.goalValue = [NSNumber numberWithFloat:30.0];
 	self.graph.goalShown = NO;
-	[self.graph scrollToPoint:80 animated:YES];
 	[self.graph showIndicatorForPoint:75];
+	int count=[data count];
+	[self.graph scrollToPoint:count animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

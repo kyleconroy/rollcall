@@ -33,10 +33,14 @@
 
 
 typedef enum {
-	TKOverviewIndicatorViewColorBlue,
-    TKOverviewIndicatorViewColorRed,
-    TKOverviewIndicatorViewColorGreen,
-	TKOverviewIndicatorViewColorYellow
+	button_blue,
+    button_gray,
+    button_green,
+	button_orange,
+	button_purple,
+	button_red,
+	button_white,
+	button_yellow
 } TKOverviewIndicatorViewColor;
 
 
