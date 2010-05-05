@@ -142,7 +142,7 @@
         id <NSFetchedResultsSectionInfo> sectionInfo = [[fetchController sections] objectAtIndex:0];
         
         int count = [sectionInfo numberOfObjects];
-        
+        NSLog(@"%i",count);
         if (self.editing) {
             return count + 1;
         } else {

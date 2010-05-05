@@ -69,6 +69,7 @@
 - (void)viewWillAppear:(BOOL)animated {
 	
     [super viewWillAppear:animated];
+	photoButton.enabled=NO;
 	emtIndex=[[NSMutableArray alloc] init];
 	if (currentStudent==nil) {
 		name.text=@"First Last";
@@ -148,6 +149,7 @@
 	[self.navigationController pushViewController:addCourseView animated:YES];
 	[addCourseView release];
 }
+
 
 - (IBAction) showKal {
 	calendar = [[KalViewController alloc] init];
@@ -328,6 +330,7 @@
 			}
 		}
 		else if (indexPath.row == 2) {
+			cell.detailTextLabel.text = @"";
 			cell.textLabel.text = @"Address";
 		}
 		else if (indexPath.row == 3) {
@@ -346,6 +349,7 @@
 			cell.selectionStyle = UITableViewCellSelectionStyleNone;
 			[address1 release];
 		} else if (indexPath.row == 4) {
+			cell.textLabel.text = @"";
 			cell.selectionStyle = UITableViewCellSelectionStyleNone;
 			cell.editingAccessoryType = UITableViewCellAccessoryNone;
 			NSString *address2=@"";
@@ -458,8 +462,8 @@
 		}
 		else if (indexPath.row != [courses count]){
 			RollSheetInfoViewController *coursesInfo = [[RollSheetInfoViewController alloc] initWithNibName:@"RollSheetInfoViewController" bundle:nil];
+			coursesInfo.course=[courses objectAtIndex:indexPath.row];;
 			[self.navigationController pushViewController:coursesInfo animated:YES];
-			//coursesInfo.course=[courses objectAtIndex:indexPath.row];
 			[courses release];
 			[coursesInfo release];
 		}
@@ -636,7 +640,6 @@
 		ratio = 44.0 / size.height;
 	}
 	CGRect rect = CGRectMake(0.0, 0.0, ratio * size.width, ratio * size.height);
-	
 	UIGraphicsBeginImageContext(rect.size);
 	[selectedImage drawInRect:rect];
 	currentStudent.thumbnailPhoto = UIGraphicsGetImageFromCurrentImageContext();
@@ -666,6 +669,7 @@
 	[dsCell release];
 	[tvCell release];
 	[statusArray release];
+	[cB release];
 	[super dealloc];
 }
 

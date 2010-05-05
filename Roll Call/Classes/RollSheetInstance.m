@@ -12,7 +12,7 @@
 #import "Status.h"
 #import "RollSheetAddNoteController.h"
 #import "RollSheetInfoViewController.h"
-#import "AttendanceViewCell.h"
+//#import "AttendanceViewCell.h"
 
 #define DAY  86400
 
@@ -114,9 +114,49 @@
 - (void) viewDidAppear:(BOOL)animated {
     statusArray = [aD getAllStatuses];
     [statusArray retain];
-    
+    [self becomeFirstResponder];
     [super viewDidAppear:animated];
 }
+
+- (void)viewWillDisappear:(BOOL)animated {
+	[self resignFirstResponder];
+	[super viewWillDisappear:animated];
+}
+
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {
+	if (motion == UIEventSubtypeMotionShake) {
+		NSDate *today = [self todayWithDate:myDate];
+		NSDate *tomorrow = [self tomorrowWithDate:myDate];
+		Status *stat = [aD getStatusWithLowestRank];
+		NSManagedObjectContext *context = [aD managedObjectContext];
+		NSPredicate *myPredicate = [NSPredicate predicateWithFormat:@"(date >= %@) AND (date <= %@) AND (course == %@)", today, tomorrow, course];		
+		studentsArray = [[NSMutableArray alloc] initWithArray:[course.students allObjects]];
+		for(Student* s in studentsArray){
+			NSLog(@"im here");
+			NSSet *events = [s.presences filteredSetUsingPredicate:myPredicate];
+			Presence *p = [events anyObject];
+			if (p == nil) {
+				p = (Presence *)[NSEntityDescription insertNewObjectForEntityForName:@"Presence" inManagedObjectContext:context];
+				p.date = myDate;
+				p.student = s;
+				p.course = course;
+				p.status = stat;
+			}
+			[presencesArray addObject:p];
+		}
+		
+		NSError *error;
+		if (![[aD managedObjectContext] save:&error]) {
+			// Handle the error.
+		}
+		
+		[self.myTableView reloadData];
+		}
+}
+
+- (BOOL)canBecomeFirstResponder
+{ return YES; }
+
 
 - (NSDate *)todayWithDate:(NSDate *)date {
     NSCalendar *calendar = [NSCalendar currentCalendar];
@@ -248,6 +288,7 @@
     }
     
 	UILabel * nameLabel = (UILabel *) [cell.contentView viewWithTag:nameTag];
+	nameLabel.font = [UIFont boldSystemFontOfSize:18.0];
 	nameLabel.text = [NSString stringWithFormat:@"%@ %@", s.firstName, s.lastName];
     
     return cell;

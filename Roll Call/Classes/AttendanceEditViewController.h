@@ -31,6 +31,8 @@
 
 #import "TKOverviewTableViewController.h"
 @class Presence;
+@class AttendanceTableViewController;
+@class KalViewController;
 
 @interface AttendanceEditViewController : TKOverviewTableViewController <UIActionSheetDelegate> {
 	Presence *presence;
@@ -40,8 +42,11 @@
 	NSInteger initialSelection;
 	IBOutlet UITableViewCell *nCell;
 	IBOutlet UITextView *notes;
+	AttendanceTableViewController *listView;
+	KalViewController *kal;
+	BOOL isKal;
 }
-
+@property (nonatomic) BOOL isKal;
 @property (nonatomic, retain) Presence *presence;
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSIndexPath *lastIndexPath;
@@ -49,6 +54,8 @@
 @property (nonatomic, retain) IBOutlet UITableViewCell *nCell;
 @property (nonatomic, retain) IBOutlet UITextView *notes;
 @property (nonatomic, retain) NSMutableArray *statusArray;
+@property (nonatomic, retain) AttendanceTableViewController *listView;
+@property(nonatomic, retain) KalViewController *kal;
 
 - (IBAction) showNotes;
 - (IBAction) deleteNotes;

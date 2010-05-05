@@ -25,6 +25,7 @@
 	IBOutlet UIButton  *indicator;
 	KalViewController *kal;
 	IBOutlet UITableView *tableView;
+	IBOutlet UISegmentedControl *sortControl;
 }
 
 @property(nonatomic, retain) IBOutlet UITableView *tableView;
@@ -37,9 +38,14 @@
 @property(nonatomic, retain) IBOutlet UILabel  *dateL;
 @property(nonatomic, retain) IBOutlet UIButton  *aB;
 @property(nonatomic, retain) NSString *myTitle;
+@property(nonatomic, retain) IBOutlet UISegmentedControl *sortControl;
 
 //- (IBAction) showGraph;
 - (IBAction) addNote;
 - (IBAction)setEditing:(BOOL)editing animated:(BOOL)animated;
+- (IBAction) sort;
+- (void) sortDate;
+- (void) sortCourse;
+- (void) sortType;
 
 @end

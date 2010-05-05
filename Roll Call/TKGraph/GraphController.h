@@ -32,6 +32,7 @@
 #import "TKGraphView.h"
 
 @class GraphPoint;
+@class KalViewController;
 
 @interface GraphController : TKGraphController {
 	UIActivityIndicatorView *indicator;
@@ -40,8 +41,13 @@
 	NSString *lastName;
 	NSString *firstName;
 	NSString *statusText;
+	KalViewController *kal;
+	BOOL isKal;
+	
 }
 
+@property (nonatomic) BOOL isKal;
+@property(nonatomic, retain) KalViewController *kal;
 @property (nonatomic, retain) NSMutableArray *presences;
 @property (nonatomic, retain) NSString *lastName;
 @property (nonatomic, retain) NSString *firstName;

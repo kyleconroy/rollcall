@@ -36,6 +36,9 @@
 #import "RollSheetAddNoteController.h"
 #import "Roll_CallAppDelegate.h"
 #import "NoteViewController.h"
+#import "AttendanceTableViewController.h"
+#import "KalViewController.h"
+
 
 @implementation AttendanceEditViewController
 
@@ -44,6 +47,8 @@
 @synthesize initialSelection;
 @synthesize nCell, notes;
 @synthesize statusArray;
+@synthesize listView;
+@synthesize kal, isKal;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -116,11 +121,16 @@
 
 -(IBAction)cancel
 {
+	if (kal!=nil)
+		kal.isKal=isKal;
+	[listView.tableView reloadData];
 	[self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction) save
 {
+	if (kal!=nil)
+		kal.isKal=isKal;
 	Roll_CallAppDelegate *aD = (Roll_CallAppDelegate *)[[UIApplication sharedApplication] delegate];
 	int index=[lastIndexPath row];
 	presence.status=[statusArray objectAtIndex: index];
@@ -128,6 +138,7 @@
 	if (![[aD managedObjectContext] save:&error]) {
 		// Handle the error.
 	}
+	[listView.tableView reloadData];
 	[self.navigationController popViewControllerAnimated:YES];	
 }
 

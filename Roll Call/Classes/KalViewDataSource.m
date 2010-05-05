@@ -148,13 +148,10 @@ static BOOL IsDateBetweenInclusive(NSDate *date, NSDate *begin, NSDate *end)
 	return matches;
 }
 
-
-
 - (void)dealloc
 {
 	[items release];
 	[presences release];
-	[kal release];
 	[super dealloc];
 }
 

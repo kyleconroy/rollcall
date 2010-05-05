@@ -30,5 +30,7 @@
 - (void)addPresences:(NSSet *)value;
 - (void)removePresences:(NSSet *)value;
 
+- (NSComparisonResult) statusCompare:(Status*) s;
+
 @end
 

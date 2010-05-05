@@ -43,6 +43,32 @@
 
 }
 
+/*
+ 
+ - (void)viewWillAppear:(BOOL)animated {
+ [super viewDidAppear:animated];
+ [self.myTableView becomeFirstResponder];
+ }
+ 
+ - (void)viewWillDisappear:(BOOL)animated {
+ [self.myTableView resignFirstResponder];
+ [super viewWillDisappear:animated];
+ }
+ 
+ - (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {
+ if (motion == UIEventSubtypeMotionShake) {
+ int i=0;
+ for (Student *st in initial) { 
+ [chosen addObject:[NSNumber numberWithInt:i]];
+ }
+ [self.myTableView reloadData];
+ }
+ }
+ 
+ - (BOOL)canBecomeFirstResponder
+ { return YES; }
+ 
+*/
 
 #pragma mark -
 #pragma mark Table view data source
