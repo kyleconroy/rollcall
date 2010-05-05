@@ -39,7 +39,7 @@ void mach_absolute_difference(uint64_t end, uint64_t start, struct timespec *tp)
 
 @implementation KalViewController
 
-@synthesize dataSource, delegate, student, statuses, titleString, isAll;
+@synthesize dataSource, delegate, student, statuses, titleString, isAll, isKal;
 
 - (id)initWithSelectedDate:(NSDate *)selectedDate
 {
@@ -269,6 +269,8 @@ void mach_absolute_difference(uint64_t end, uint64_t start, struct timespec *tp)
 	vc.lastName=student.lastName;
 	vc.firstName=student.firstName;
 	vc.statusText=titleString;
+	vc.isKal=isKal;
+	vc.kal=self;
 	[vc setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
 	[self presentModalViewController:vc animated:YES];
 	[vc release];	

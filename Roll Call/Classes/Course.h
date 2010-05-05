@@ -35,5 +35,7 @@
 - (void)addStudents:(NSSet *)value;
 - (void)removeStudents:(NSSet *)value;
 
+- (NSComparisonResult) courseCompare:(Course*) c;
+
 @end
 

@@ -18,7 +18,7 @@
 @synthesize classes;
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
-    
+    application.applicationSupportsShakeToEdit = YES;
     // Add the tab bar controller's current view as a subview of the window
     [window addSubview:tabBarController.view];
 

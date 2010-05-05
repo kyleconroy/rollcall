@@ -13,6 +13,11 @@
 
 @implementation Course 
 
+- (NSComparisonResult) courseCompare:(Course*) c
+{
+    return [((Course*)self).name compare: c.name];
+}
+
 @dynamic startDate;
 @dynamic name;
 @dynamic endDate;

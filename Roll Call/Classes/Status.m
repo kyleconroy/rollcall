@@ -12,6 +12,11 @@
 
 @implementation Status 
 
+- (NSComparisonResult) statusCompare:(Status*) s
+{
+    return [((Status*)self).letter compare: s.letter];
+}
+
 @dynamic color;
 @dynamic letter;
 @dynamic imageName;

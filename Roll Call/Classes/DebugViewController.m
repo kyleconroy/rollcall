@@ -51,7 +51,8 @@
 }
 
 -(IBAction) installData {
-
+	[self installStudents];
+	[self installCourses];
 }
 
 - (void) installStudents {

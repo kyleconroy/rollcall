@@ -78,10 +78,22 @@
     
     // Uncomment the following line to preserve selection between presentations.
     //self.clearsSelectionOnViewWillAppear = NO;
- 
+	self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] 
+											  initWithTitle:@"Help" 
+											  style:UIBarButtonItemStyleBordered 
+											  target:self 
+											  action:@selector(showHelp)];
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
 
 }
+
+- (IBAction)showHelp {
+	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Help" message:@"Reorder this table to change attendance-taking order. You can mark all students \"default\" status with shake gesture"
+												   delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+	[alert show];
+	[alert release];
+}
+
 
 
 /*
@@ -150,7 +162,7 @@
     }
     
     if (indexPath.row == 0) {
-        cell.detailTextLabel.text = @"";
+        cell.detailTextLabel.text = @"default";
     } else {
         cell.detailTextLabel.text = @"";
     }
@@ -287,6 +299,7 @@ targetIndexPathForMoveFromRowAtIndexPath:(NSIndexPath *)sourceIndexPath
         [myTableView insertRowsAtIndexPaths:updatedPaths withRowAnimation:UITableViewRowAnimationTop];
     else
         [myTableView deleteRowsAtIndexPaths:updatedPaths withRowAnimation:UITableViewRowAnimationTop];
+	[myTableView reloadData];
 }
 
 

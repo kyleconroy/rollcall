@@ -31,6 +31,7 @@
 @synthesize myTitle;
 @synthesize kal;
 @synthesize tableView;
+@synthesize sortControl;
 
 - (void)viewDidLoad {
 	
@@ -50,10 +51,46 @@
     [rButton release];
 	[footer release];
 	} else {
-		//self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Edit" style:UIBarButtonItemStylePlain target:self action:@selector(setEditing)];
-	 self.navigationItem.rightBarButtonItem = self.editButtonItem;
+	self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target: self action:@selector(addNote)];
 	}
+	[self sortDate];
 	//self.navigationController.navigationBar.barStyle=UIBarStyleBlackTranslucent;
+}
+
+- (IBAction) sort {
+	if (sortControl.selectedSegmentIndex==0)
+		[self sortDate];
+	else if (sortControl.selectedSegmentIndex==1)
+		[self sortCourse];
+	else if (sortControl.selectedSegmentIndex==2)
+		[self sortType];
+}
+
+- (void) sortDate {
+	NSSortDescriptor *dateDescriptor =
+    [[[NSSortDescriptor alloc] initWithKey:@"date"
+								 ascending:NO
+								  selector:@selector(compare:)] autorelease];
+	[statuses sortUsingDescriptors:[NSArray arrayWithObject:dateDescriptor]];
+	[self.tableView reloadData];
+}
+
+- (void) sortType {
+	NSSortDescriptor *typeDescriptor =
+    [[[NSSortDescriptor alloc] initWithKey:@"status"
+								 ascending:YES
+								  selector:@selector(statusCompare:)] autorelease];
+	[statuses sortUsingDescriptors:[NSArray arrayWithObject:typeDescriptor]];
+	[self.tableView reloadData];
+}
+
+- (void) sortCourse {
+	NSSortDescriptor *courseDescriptor =
+    [[[NSSortDescriptor alloc] initWithKey:@"course"
+								 ascending:YES
+								  selector:@selector(courseCompare:)] autorelease];
+	[statuses sortUsingDescriptors:[NSArray arrayWithObject:courseDescriptor]];
+	[self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -79,6 +116,7 @@
 				[statuses addObject:presence];
 			}
 		}
+		[presences release];/////////////////
 	}
 	[self.tableView reloadData];
 	[super viewWillAppear:animated];
@@ -117,7 +155,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 	
-	if (self.editing&&type==1) {
+	if (type==1) {
 		NSMutableArray *presences=nil;
 		statuses=[[NSMutableArray alloc] init];
 		if (student.presences!=nil)
@@ -127,6 +165,7 @@
 				[statuses addObject:presence];
 			}
 		}
+		[presences release];////////////
 	}
 	NSInteger count= [statuses count];
 	if (self.editing) 
@@ -138,7 +177,6 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
 	return 45;
 }
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableview cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -159,7 +197,7 @@
 	addL.hidden=YES;
 	if (type==1) {
 		if (indexPath.row < ([statuses count])) {
-			[aB setBackgroundImage:[UIImage imageNamed:@"note_outline.png"] forState:UIControlStateNormal];
+			[aB setBackgroundImage:[UIImage imageNamed:@"note_on.png"] forState:UIControlStateNormal];
 			Presence  *presence=[statuses objectAtIndex:indexPath.row];
 			courseL.text=presence.course.name;
 			NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
@@ -209,16 +247,22 @@
 		AttendanceEditViewController *vc = [[AttendanceEditViewController alloc] init];
 		vc.name=[[NSString alloc] initWithFormat:@"%@ %@'s Attendance",student.firstName, student.lastName];
 		vc.presence=presence;
+		vc.listView=self;
+		vc.kal=kal;
+		vc.isKal=0;
 		[kal.navigationController pushViewController:vc animated:YES];
+		[vc release];
 	} else {
 		Presence *presence = [statuses objectAtIndex:indexPath.row];
 		AttendanceEditViewController *vc = [[AttendanceEditViewController alloc] init];
 		vc.name=[[NSString alloc] initWithFormat:@"%@ %@'s Attendance",student.firstName, student.lastName];
 		vc.presence=presence;
+		vc.kal=kal;
+		vc.isKal=0;
 		[self.navigationController pushViewController:vc animated:YES];
+		[vc release];
 	}
 }	
-	
 
 - (void)tableView:(UITableView *)tableview commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
 	NSMutableArray *courses=nil;
@@ -257,9 +301,11 @@
     [self.tableView endUpdates];
 }
 
-- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView
+           editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
+ {
 	UITableViewCellEditingStyle style = UITableViewCellEditingStyleDelete;
-	if (self.editing && indexPath.row == ([statuses count])) {
+	if (self.tableView.editing && indexPath.row == ([statuses count])) {
             style = UITableViewCellEditingStyleInsert;
         }
 	return style;
@@ -269,9 +315,14 @@
 - (void)dealloc {
 	[statuses release];
 	[student release];
+	[myCell release];
+	[courseL release];
+	[dateL release];
+	[aB release];
+	[myTitle release];
+	[sortControl release];
     [super dealloc];
 }
-
 
 @end
 

@@ -31,6 +31,7 @@
 #import "GraphController.h"
 #import "Presence.h"
 #import "Status.h"
+#import "KalViewController.h"
 
 @implementation GraphPoint
 
@@ -60,9 +61,11 @@
 @implementation GraphController
 
 @synthesize presences, lastName, firstName, statusText;
+@synthesize kal, isKal;
 
 - (void)viewDidLoad{
 	[super viewDidLoad];
+	kal.isKal=isKal;
 	graph.title.text = [[NSString alloc] initWithFormat:@"%@ %@'s %@ in Last 30 Days", firstName, lastName, statusText];
 	[graph setPointDistance:25];
 	indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
