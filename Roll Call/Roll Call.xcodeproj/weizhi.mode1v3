@@ -273,14 +273,14 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>61</integer>
-									<integer>43</integer>
+									<integer>28</integer>
+									<integer>13</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 621}, {208, 609}}</string>
+							<string>{{0, 192}, {208, 609}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -317,7 +317,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>StudentViewController.m</string>
+								<string>RollSheetInfoViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -325,11 +325,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>StudentViewController.m</string>
+										<string>RollSheetInfoViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>5A7AF2E91194CE8100786B7E</string>
+										<string>5A7AF2F91194D1AB00786B7E</string>
 										<key>history</key>
 										<array>
 											<string>5AB09781116814CE00E0CB9F</string>
@@ -501,8 +501,6 @@
 											<string>5ACA587711943B6400298D3F</string>
 											<string>5ACA588811943F2900298D3F</string>
 											<string>5ACA588911943F2900298D3F</string>
-											<string>5ACA588A11943F2900298D3F</string>
-											<string>5ACA588B11943F2900298D3F</string>
 											<string>5ACA588D11943F2900298D3F</string>
 											<string>5ACA588E11943F2900298D3F</string>
 											<string>5ACA588F11943F2900298D3F</string>
@@ -510,7 +508,9 @@
 											<string>5ACA589111943F2900298D3F</string>
 											<string>5ACA589211943F2900298D3F</string>
 											<string>5A7B39BF119486FC00D18899</string>
-											<string>5A7B39C1119486FC00D18899</string>
+											<string>5A7AF2F61194D1AB00786B7E</string>
+											<string>5A7AF2F71194D1AB00786B7E</string>
+											<string>5A7AF2F81194D1AB00786B7E</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -711,6 +711,7 @@
 		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>5A76506511657DC400B9A8E2</string>
+		<string>/Users/weizhi/Desktop/Roll Call/Roll Call.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>59 110 1138 668 0 0 1280 778 </string>

@@ -375,9 +375,12 @@
         course.name = text;
         [self.navigationItem setTitle:course.name];
         [myTableView reloadData];
-        nameComplete = YES;
-        if(nameComplete && studentsComplete)
-            self.navigationItem.rightBarButtonItem.enabled = YES;
+		
+		NSError *error;
+		if (![[aD managedObjectContext] save:&error]) {
+			// Handle the error.
+		}
+		
         
     }
     
