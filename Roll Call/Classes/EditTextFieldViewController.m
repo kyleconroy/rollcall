@@ -7,6 +7,7 @@
 //
 
 #import "EditTextFieldViewController.h"
+#import "Course.h"
 
 @implementation EditTextFieldViewController
 
@@ -17,6 +18,7 @@
 @synthesize myTextField;
 @synthesize myTitle;
 @synthesize myType;
+@synthesize course;
 
 
 #pragma mark -
@@ -131,6 +133,7 @@
     [myType release];
     [myTextField release];
     [myCell release];
+	[course release];
     [super dealloc];
 }
 

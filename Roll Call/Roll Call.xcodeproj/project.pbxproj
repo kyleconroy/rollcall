@@ -24,11 +24,13 @@
 		5A1B89FE116A09C300E979FF /* Address.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A1B89F4116A09C300E979FF /* Address.m */; };
 		5A1B89FF116A09C300E979FF /* StudentHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A1B89F5116A09C300E979FF /* StudentHeaderView.xib */; };
 		5A1B8A2F116A0BC100E979FF /* deafultphoto.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 5A1B8A2E116A0BC100E979FF /* deafultphoto.JPG */; };
+		5A1BFFF6119245BA001D7FAA /* export_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A1BFFF5119245BA001D7FAA /* export_bg.png */; };
 		5A3911C2116759EB003EF6F8 /* AddStudentHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A3911C1116759EB003EF6F8 /* AddStudentHeaderView.xib */; };
 		5A39130E11678C06003EF6F8 /* addphoto.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5A39130D11678C06003EF6F8 /* addphoto.jpg */; };
 		5A4215C111911D9A00A3FC17 /* ChatTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A4215C011911D9A00A3FC17 /* ChatTableCell.xib */; };
 		5A7B2E8A11674DD4004332A7 /* AddStudentNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7B2E8811674DD4004332A7 /* AddStudentNameViewController.m */; };
 		5A7B2E8B11674DD4004332A7 /* AddStudentNameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A7B2E8911674DD4004332A7 /* AddStudentNameViewController.xib */; };
+		5A8354B6119427DB00176526 /* DeleteCourseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A8354B5119427DB00176526 /* DeleteCourseCell.xib */; };
 		5AB095571167F60C00E0CB9F /* AddStudentNameTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AB095561167F60C00E0CB9F /* AddStudentNameTableCell.m */; };
 		5AB095661167F75000E0CB9F /* AddStudentNameTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AB095651167F75000E0CB9F /* AddStudentNameTableCell.xib */; };
 		5AB0974A1168129B00E0CB9F /* RollSheetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AB097481168129B00E0CB9F /* RollSheetViewController.m */; };
@@ -179,12 +181,14 @@
 		5A1B89F4116A09C300E979FF /* Address.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Address.m; sourceTree = "<group>"; };
 		5A1B89F5116A09C300E979FF /* StudentHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StudentHeaderView.xib; sourceTree = "<group>"; };
 		5A1B8A2E116A0BC100E979FF /* deafultphoto.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = deafultphoto.JPG; sourceTree = "<group>"; };
+		5A1BFFF5119245BA001D7FAA /* export_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = export_bg.png; sourceTree = SOURCE_ROOT; };
 		5A3911C1116759EB003EF6F8 /* AddStudentHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddStudentHeaderView.xib; sourceTree = "<group>"; };
 		5A39130D11678C06003EF6F8 /* addphoto.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = addphoto.jpg; sourceTree = "<group>"; };
 		5A4215C011911D9A00A3FC17 /* ChatTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatTableCell.xib; sourceTree = "<group>"; };
 		5A7B2E8711674DD4004332A7 /* AddStudentNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddStudentNameViewController.h; sourceTree = "<group>"; };
 		5A7B2E8811674DD4004332A7 /* AddStudentNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddStudentNameViewController.m; sourceTree = "<group>"; };
 		5A7B2E8911674DD4004332A7 /* AddStudentNameViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddStudentNameViewController.xib; sourceTree = "<group>"; };
+		5A8354B5119427DB00176526 /* DeleteCourseCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeleteCourseCell.xib; sourceTree = "<group>"; };
 		5AB095551167F60C00E0CB9F /* AddStudentNameTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddStudentNameTableCell.h; sourceTree = "<group>"; };
 		5AB095561167F60C00E0CB9F /* AddStudentNameTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddStudentNameTableCell.m; sourceTree = "<group>"; };
 		5AB095651167F75000E0CB9F /* AddStudentNameTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddStudentNameTableCell.xib; sourceTree = "<group>"; };
@@ -497,6 +501,7 @@
 				953455EF118C700A006EF65B /* NotesTableCell.xib */,
 				9514C59F1190CF5000082C84 /* AttCell.xib */,
 				952087E7118AD67E00F12AB9 /* DeleteTableCell.xib */,
+				5A8354B5119427DB00176526 /* DeleteCourseCell.xib */,
 				5A4215C011911D9A00A3FC17 /* ChatTableCell.xib */,
 				5A1B89F5116A09C300E979FF /* StudentHeaderView.xib */,
 				95208789118AD50400F12AB9 /* AttendanceCell.xib */,
@@ -552,6 +557,7 @@
 		95345317118C1E9F006EF65B /* General */ = {
 			isa = PBXGroup;
 			children = (
+				5A1BFFF5119245BA001D7FAA /* export_bg.png */,
 				95EC81941168D0E600DA720F /* DebugViewController.h */,
 				95EC81951168D0E600DA720F /* DebugViewController.m */,
 				95EC81961168D0E600DA720F /* DebugViewController.xib */,
@@ -858,6 +864,8 @@
 				9514C5A61190CF5000082C84 /* AttCell.xib in Resources */,
 				9514C5A91190CF5000082C84 /* list_button.png in Resources */,
 				5A4215C111911D9A00A3FC17 /* ChatTableCell.xib in Resources */,
+				5A1BFFF6119245BA001D7FAA /* export_bg.png in Resources */,
+				5A8354B6119427DB00176526 /* DeleteCourseCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

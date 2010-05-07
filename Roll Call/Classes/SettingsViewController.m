@@ -297,9 +297,10 @@ targetIndexPathForMoveFromRowAtIndexPath:(NSIndexPath *)sourceIndexPath
     
     if(editing)
         [myTableView insertRowsAtIndexPaths:updatedPaths withRowAnimation:UITableViewRowAnimationTop];
-    else
+    else {
         [myTableView deleteRowsAtIndexPaths:updatedPaths withRowAnimation:UITableViewRowAnimationTop];
-	[myTableView reloadData];
+		[myTableView reloadData];
+	}
 }
 
 

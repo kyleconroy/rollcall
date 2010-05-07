@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @class EditTextFieldViewController;
+@class Course;
 
 @protocol EditTextFieldDelegate <NSObject>
 
@@ -26,11 +27,12 @@
     NSString *myPlaceHolder;
     NSString *myText;
     NSString *myTitle;
+	Course *course;
     IBOutlet UITableViewCell *myCell;
     IBOutlet UITextField *myTextField;
 
 }
-
+@property (nonatomic, retain) Course *course;
 @property (nonatomic, assign) id <EditTextFieldDelegate> delegate;
 @property (nonatomic, retain) NSNumber *myType;
 @property (nonatomic, retain) NSString *myPlaceHolder;
