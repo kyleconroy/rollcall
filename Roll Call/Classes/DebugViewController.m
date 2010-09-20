@@ -51,8 +51,8 @@
 }
 
 -(IBAction) installData {
-	[self installStudents];
 	[self installCourses];
+    [self installStudents];
 }
 
 - (void) installStudents {
@@ -102,7 +102,7 @@
     
     NSError *error;
     if (![context save:&error]) {
-        // Handle the error.
+        
     }
 }
 
