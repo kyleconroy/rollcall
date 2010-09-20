@@ -30,6 +30,9 @@
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
+	UIColor *bkg = [[UIColor alloc] initWithPatternImage: [UIImage imageNamed: @"export_bg.png"]];
+	self.view.backgroundColor=bkg;
+	[bkg release];
     aD = (Roll_CallAppDelegate *)[[UIApplication sharedApplication] delegate];
     [self becomeFirstResponder];
     [super viewDidLoad];

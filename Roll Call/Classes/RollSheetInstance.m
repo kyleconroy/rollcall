@@ -35,7 +35,7 @@
 @synthesize displayDate;
 @synthesize datePickerVisible;
 @synthesize currentIndexPath;
-@synthesize markDefault;
+@synthesize markDefault, pop;
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -49,6 +49,7 @@
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
+	pop=0;
     datePickerVisible = NO;
     manualUpdate = NO;
     currentIndexPath = nil;
@@ -112,6 +113,8 @@
 }
 
 - (void) viewDidAppear:(BOOL)animated {
+	if (pop==1)
+		[self.navigationController popViewControllerAnimated:YES];
     statusArray = [aD getAllStatuses];
     [statusArray retain];
     [self becomeFirstResponder];
@@ -421,6 +424,7 @@
                                                          initWithNibName:@"AddRollSheetViewController" bundle:nil];
     
     courseInfoController.course = course;
+	courseInfoController.iView=self;
     NSMutableArray *copyOfStudents = [[NSMutableArray alloc] initWithArray:studentsArray];
     [copyOfStudents release];
     

@@ -11,6 +11,7 @@
 #import "EditTextFieldViewController.h"
 #import "EnrollStudentsViewController.h"
 #import "Course.h"
+@class RollSheetInstance;
 
 @protocol ClassEditProtocol <NSObject>
 
@@ -21,9 +22,9 @@
 @end
 
 
-@interface RollSheetInfoViewController : UITableViewController <EditTextFieldDelegate, EnrollDelegate, NSFetchedResultsControllerDelegate> {
+@interface RollSheetInfoViewController : UITableViewController <EditTextFieldDelegate, EnrollDelegate, NSFetchedResultsControllerDelegate, UIActionSheetDelegate> {
     
-    
+    RollSheetInstance *iView;
     Course *course;
     Roll_CallAppDelegate *aD;
     NSFetchedResultsController *fetchController;
@@ -33,9 +34,11 @@
     int rowCount;
     bool studentsComplete;
     bool nameComplete;
+	IBOutlet UITableViewCell *dsCell;
     
 }
-
+@property (nonatomic, retain) RollSheetInstance *iView;
+@property (nonatomic, retain) IBOutlet UITableViewCell *dsCell;
 @property (nonatomic, assign) Course *course;
 @property (nonatomic, retain) NSFetchedResultsController *fetchController;
 @property (nonatomic, retain) Roll_CallAppDelegate *aD;
@@ -47,5 +50,6 @@
 @property (readwrite, assign) bool studentsComplete;
 
 - (IBAction) enrollStudentsInClass: (id) sender;
+- (IBAction)deleteCourse;
 
 @end

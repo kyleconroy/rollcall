@@ -87,11 +87,13 @@
     
 }
 
-/*
+
 - (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
+	
+	[self setCoursesArray:[aD getAllCourses]];
+	[myTableView reloadData];
 }
-*/
+
 /*
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
@@ -150,12 +152,10 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-    }
-    
-    Course *c = (Course *)[coursesArray objectAtIndex:indexPath.row];
-    
-    cell.textLabel.text = c.name;
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+	}
+	Course *c = (Course *)[coursesArray objectAtIndex:indexPath.row];
+	cell.textLabel.text = c.name;
+	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 
     return cell;
 }

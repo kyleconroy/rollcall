@@ -32,9 +32,11 @@
     IBOutlet UITableViewCell *tvCell;
     IBOutlet UITableView *myTableView;
     IBOutlet UIButton *markDefault;
+	int pop;
     
 }
 
+@property (nonatomic) int pop;
 @property (nonatomic, retain) Course *course;
 @property (nonatomic, retain) NSFetchedResultsController * fetchController;
 @property (nonatomic, retain) NSMutableArray * presencesArray;

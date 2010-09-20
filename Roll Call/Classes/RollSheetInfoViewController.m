@@ -10,6 +10,8 @@
 #import "EnrollStudentsViewController.h"
 #import "Student.h"
 #import "StudentViewController.h"
+#import "RollSheetViewController.h"
+#import "RollSheetInstance.h"
 
 @implementation RollSheetInfoViewController
 
@@ -22,6 +24,8 @@
 @synthesize studentsComplete;
 @synthesize nameComplete;
 @synthesize rowCount;
+@synthesize dsCell;
+@synthesize iView;
 
 - (IBAction) enrollStudentsInClass: (id) sender {
     
@@ -93,16 +97,58 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+
+- (IBAction)deleteCourse
+{
+	UIActionSheet *deleteAlert = [[UIActionSheet alloc] initWithTitle: nil
+															 delegate: self cancelButtonTitle:@"Cancel"
+											   destructiveButtonTitle: nil
+												    otherButtonTitles: @"Delete", nil, nil];
+	deleteAlert.actionSheetStyle = UIBarStyleBlackTranslucent;
+	[deleteAlert showInView:[[aD tabBarController] view]];
+	[deleteAlert release];
+}
+
+#pragma mark -
+#pragma mark UIActionSheetDelegate
+
+- (void)actionSheet:(UIActionSheet *)modalView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    // Change the navigation bar style, also make the status bar match with it
+	switch (buttonIndex)
+	{
+		case 0:
+		{
+			NSManagedObjectContext *context=[aD managedObjectContext];
+			[[aD managedObjectContext] deleteObject:course];
+			NSError *error;
+			if (![context save:&error]) {
+				// Handle the error.
+			}
+			[self.navigationController popViewControllerAnimated:NO];
+			iView.pop=1;
+			break;
+		}
+	}
+}
+
+
 - (void)setEditing:(BOOL)editing animated:(BOOL)animated {
     [super setEditing:editing animated:animated];
     [myTableView setEditing:editing animated:animated];
     [self.navigationItem setHidesBackButton:editing animated:animated];
+	[self.tableView beginUpdates];
     NSArray *updatedPaths = [NSArray arrayWithObjects:[NSIndexPath indexPathForRow:rowCount inSection:studentsSection],nil];
-
-    if(editing)
+	NSArray *deleteInsertIndexPath = [NSArray arrayWithObject:[NSIndexPath indexPathForRow:0 inSection:2]];
+    if(editing) {
+		[self.tableView insertRowsAtIndexPaths:deleteInsertIndexPath withRowAnimation:UITableViewRowAnimationTop];
         [myTableView insertRowsAtIndexPaths:updatedPaths withRowAnimation:UITableViewRowAnimationTop];
-    else
+	}
+    else {
+		[self.tableView deleteRowsAtIndexPaths:deleteInsertIndexPath withRowAnimation:UITableViewRowAnimationTop];
         [myTableView deleteRowsAtIndexPaths:updatedPaths withRowAnimation:UITableViewRowAnimationTop];
+	}
+	[self.tableView endUpdates];
 }
 
 
@@ -122,7 +168,7 @@
 #pragma mark Table view methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
+    return 3;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
@@ -130,7 +176,6 @@
     if (section == studentsSection) {
         return @"Enrolled Students";
     }
-    
     return nil;
 }
 
@@ -138,6 +183,9 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section == courseSection) {
         return 1;
+	} else if (section==2) {
+			if (self.editing) 
+				return 1;
     } else {
         id <NSFetchedResultsSectionInfo> sectionInfo = [[fetchController sections] objectAtIndex:0];
         
@@ -149,6 +197,7 @@
             return count;
         }
     }
+	return 0;
 }
 
 
@@ -172,19 +221,40 @@
             cell.textLabel.textColor = [UIColor blackColor];
         
 		cell.textLabel.text = course.name;
+		iView.title=course.name;
 	} else if (indexPath.section == studentsSection && indexPath.row >= rowCount) {
         cell.textLabel.text = @"enroll students";
         cell.editingAccessoryType = UITableViewCellAccessoryNone;
         cell.accessoryType = UITableViewCellAccessoryNone;
-    } else {
+	} else if (indexPath.section == 2) {
+		static NSString *DeleteCellIdentifier = @"DeleteCell";
+		UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:DeleteCellIdentifier];
+		if (cell == nil) {
+			[[NSBundle mainBundle] loadNibNamed:@"DeleteCourseCell" owner:self options:nil];
+			cell = dsCell;
+			self.dsCell = nil;
+		}
+		cell.backgroundColor = [UIColor groupTableViewBackgroundColor];
+		return cell;
+	} else {
         Student *s = [fetchController objectAtIndexPath:[NSIndexPath indexPathForRow:indexPath.row inSection:0]];
         cell.editingAccessoryType = UITableViewCellAccessoryNone;
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", s.firstName, s.lastName];
     }
-    
-	
     return cell;
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+	if (indexPath.section==0||indexPath.section==1)
+		return TRUE;
+	return FALSE;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+	if (indexPath.section==2)
+		return 29;
+	return 40;
 }
 
 - (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -239,6 +309,8 @@
             
             [self.navigationController pushViewController:textController animated:YES];
             [textController release];
+		} else if (indexPath.section == 2&&self.editing) {
+				[self deleteCourse];
             
         } else if (indexPath.section == studentsSection && indexPath.row >= rowCount) {
             
@@ -303,9 +375,12 @@
         course.name = text;
         [self.navigationItem setTitle:course.name];
         [myTableView reloadData];
-        nameComplete = YES;
-        if(nameComplete && studentsComplete)
-            self.navigationItem.rightBarButtonItem.enabled = YES;
+		
+		NSError *error;
+		if (![[aD managedObjectContext] save:&error]) {
+			// Handle the error.
+		}
+		
         
     }
     
